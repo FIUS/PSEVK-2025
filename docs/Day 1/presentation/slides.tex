@@ -1,0 +1,324 @@
+\documentclass{../../presentation}
+
+\title{Programmierung und Softwareentwicklung}
+\author{Prof. Dr. Christian Becker}
+\institute{Universität Stuttgart, Institut für Parallele und Verteilte Systeme}
+\date{\today}
+
+\makeatletter
+\renewcommand{\lecture@pathprefix}[1]{../}
+\makeatother
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Todos}
+  \listoftodos{}
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[fragile]
+  \frametitle{Programmierung und Softwareentwicklung}
+
+  Informatik ist die Wissenschaft von der systematischen Darstellung, Speicherung, Verarbeitung und Übertragung von Informationen, wobei in der Regel die automatische Verarbeitung mit Computern betrachtet wird. Sie ist sowohl Grundlagen- und Formalwissenschaft als auch Ingenieurdisziplin. (Wikipedia)
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Teilgebiete der Informatik}
+
+  \begin{itemize}
+    \item Programmiersprachen und ihre Semantik
+    \item Logik, Kalküle und Beweisverfahren
+    \item Automaten, Schaltwerke, Maschinenmodelle
+    \item Datenstrukturen, Datentypen, Objekte
+    \item Algorithmen und ihre Komplexität
+    \item Programme und Prozesse
+    \item Nebenläufigkeit, Parallele Verarbeitung
+    \item Künstliche Intelligenz
+    \item Naturanaloge Verahren und Heuristiken
+    \item Sicherheit, Korrektheit und Zuverlässigkeit
+    \item \enquote{und vieles mehr}
+  \end{itemize}
+  (Gesellschaft für Informatik e.V.)
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Programmierung, Softwareentwicklung und Informatik}
+
+  \begin{itemize}
+    \item Informatik ist eine Wissenschaft. Konzepte, Methoden, Algorithmen, Architekturen (Hardware, Software) stehen im Fokus der Betrachtung
+    \item Softwareentwicklung ist der strukturierte Prozess, Anforderungen an ein System zu gewinnen und in die Konstruktion eines Systems zu überführen
+    \item Programmierung ist Bestandteil der Konstruktion von Softwaresystemen.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Lernziele}
+
+  \begin{itemize}
+    \item Die Teilnehmenden haben einen Überblick über das Gebiet der Informatik.
+    \item Sie haben die wichtigsten Konzepte von Computern und ihrer Programmierung verstanden.
+    \item Sie haben die wichtigsten Konzepte einer höheren Programmiersprache und ihrer Verwendung verstanden und sind in der Lage kleine Programme zu analysieren, zu konzipieren und zu implementieren.
+    \item Sie kennen die Möglichkeiten, Datenstrukturen und Algorithmen zu entwerfen, zu beschreiben und zu codieren.
+    \item Sie haben Abstraktionskonzepte moderner Programmiersprachen verstanden.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Inhalt}
+
+  \begin{itemize}
+    \item Grundlagen von Speicherlayout und die Funktionsweise eines Prozessors
+    \item Datenrepräsentation
+    \item Übersicht über verschiedene Programmiersprachen
+    \item Die Programmiersprache Java
+    \item Blöcke, Programmstrukturen, Verzweigungen, Schleifen, Variablen und Zuweisungen
+    \item Grundlagen des objektorierentierten Programmierens (Objekte, Klassen, Schnittstellen, Vererbung und Polymorphie)
+    \item Erstellen von Datenstrukturen
+    \item Entwurf von einfachen Algorithmen
+    \item Komplexitätsabschätzungen einfacher Algorithmen
+    \item Einführung in Software Engineering
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Vorsicht: Umstellung der Vorlesung}
+
+  \begin{itemize}
+    \item Inhalte der PSE bis Wintersemester 24/25 haben eine Überlappung aber
+    \item \textbf{PSE ab Wintersemester 25/26 ist eine neu konzipierte Vorlesung}
+    \item Alte Scheine sind gültig; die Teilnahme an der Übung ist dringend empfohlen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Team}
+  \begin{tikzpicture}
+    \begin{scope}[shift={(1, -3)}]
+      \clip (0,0) circle(1.5cm);
+      \node[anchor=center] at (0,0) {\includegraphics[width=3.5cm]{img/Simon_Koenig.jpg}};
+    \end{scope}
+    \begin{scope}[shift={(0,-0.5)}]
+      \clip (0,0.5) circle(2cm);
+      \node[anchor=center] at (0,0) {\includegraphics[width=5cm]{img/Christian_Becker.jpg}};
+    \end{scope}
+
+    \node[anchor=west] at (2.4, 0) {\large Prof. Dr. Christian Becker};
+    \node[anchor=west] at (2.4, -1.4em) {Vorlesung};
+
+    \begin{scope}[shift={(2.8,-2.5)}]
+      \node[anchor=west] at (0, 0) {\large Simon König};
+      \node[anchor=west] at (0, -1.4em) {Übung, Vortragsübung, Kummerkasten};
+      \node[anchor=west] at (0, -1.4em-1.4em) {\large \href{mailto:pse@ipvs.uni-stuttgart.de}{pse@ipvs.uni-stuttgart.de}};
+    \end{scope}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]{Fragen?}
+
+  \begin{center}
+    {\Large Stellen Sie Fragen!}
+  \end{center}
+
+  \vspace{1cm}
+
+  \begin{itemize}
+    \item Am besten direkt in der Vorlesung, Übung, Vortragsübung, \ldots
+    \item Im Ilias-Forum -- Sie sind oftmals nicht allein mit Ihrer Frage
+    \item Bei Fragen, die nur Sie betreffen: \href{mailto:pse@ipvs.uni-stuttgart.de}{pse@ipvs.uni-stuttgart.de}
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Vorlesung und Übung}
+
+  \begin{itemize}
+    \item \textbf{Vorlesung} (hier sind Sie gerade)
+
+      \begingroup
+      \large
+      \medskip
+      \begin{tabular}{lll}
+      montags & 15:45-17:15 Uhr & Pfaffenwaldring 47, Raum V47.01 \\
+      dienstags & 17:30-19:00 Uhr & Pfaffenwaldring 47, Raum V47.01 \\
+      \end{tabular}
+      \medskip
+      \endgroup
+    \item \textbf{Vortragsübung:}
+      Zusatzveranstaltung neben der Vorlesung \newline
+      Inhalte werden vertieft und wiederholt \newline
+      Teilnahme freiwillig aber dringend empfohlen!
+
+      \begingroup
+      \large
+      \medskip
+      \begin{tabular}{lll}
+      freitags & 11:30-13:00 Uhr & Universitätsstraße 38, Raum V38.01 \\
+      \end{tabular}
+      \medskip
+      \endgroup
+    \item \textbf{Übung:} wöchentliches Tutorium in dem Übungsaufgaben besprochen werden (mehr Infos folgen)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Prüfung}
+
+  \begin{itemize}
+    \item Die Prüfung findet am Ende des Semesters schriftlich statt.
+    \item Um an der Prüfung teilzunehmen benötigen Sie einen \emph{Schein}
+    \item Den Schein erhalten Sie durch erfolgreiche Teilnahme an der Übung
+
+    \item Für viele von Ihnen ist dieses Fach Teil der \enquote{Orientierungsprüfung}.
+      Das heißt, Sie müssen PSE bis zu Beginn der Vorlesungszeit des vierten Semesters erfolgreich abgelegt haben!
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Übungsbetrieb und Scheinbedingungen}
+
+  Übung und Abgaben
+  \begin{itemize}
+    \item Die Übung ist ein wichtiger Teil der Klausurvorbereitung
+    \item Wöchentliche Tutorien (ca. 20 Studierende pro Tutorium)
+    \item Wöchentliche Theorie-Abgaben als Gruppe (3-4 Personen)
+    \item Wöchentliche Programmier-Aufgaben werden alleine abgegeben
+  \end{itemize}
+
+  \vspace{0.5cm}
+
+  Scheinbedingungen
+  \begin{itemize}
+    \item Anwesenheit in 80\% der Tutorien (max. 2x unentschuldigt fehlen)
+    \item 80\% der Abgaben erfolgreich bestehen. Das heißt jeweils
+      \begin{center}
+      50\% der Punkte im Programmierteil
+
+      UND
+
+      50\% der Punkte im Theorieteil
+      \end{center}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Anmeldung zur Übung}
+  \todo{Anmeldungsdeadlines}
+\end{frame}
+
+\begin{frame}{Poolraum und Uni-Computer}
+  Wenn Sie \emph{keinen} eigenen Computer/Laptop haben oder nicht ihren privaten Computer benutzen möchten:
+  \begin{itemize}
+    \item In den Poolräumen in der Universitätsstraße 38 (Informatikgebäude) stehen Computer zur Verfügung!
+    \item Melden Sie sich zu einem dieser Tutorien an (diese finden in den Poolraümen statt)
+      \todo{Welche Tutorien sind in den Poolräumen?}
+  \end{itemize}
+  \todo{Bild vom Poolraum + Wegeplan}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \begin{center}
+    \Large
+    Ein paar Worte vorab\ldots
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Welcome to the jungle}
+
+  \begin{itemize}
+    \item Universität unterscheidet sich fundamental von Schule oder anderen Hochschulen
+    \item Groß und anonym
+    \item Lernfortschirtt und Überprüfung ist Eigenverantwortung
+    \item Es ist so unglaublich einfach...
+      \uncover<2->{
+        \begin{itemize}
+          \item sich zu belügen -- das hole ich dann vor der Klausur nach
+          \item Dinge aufzuschieben -- das reicht dann auch noch im nächsten Semester
+          \item sich zu frustrieren -- die anderen verstehen das sofort, nur ich brauch länger
+          \item zu Prokrastinieren
+        \end{itemize}
+      }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Universitäts-Life Hacks}
+
+  \begin{itemize}
+    \item Arbeiten Sie mit anderen Studierenden zusammen!
+      \only<2>{
+        \begin{itemize}
+          \item Bilden Sie Lerngruppen
+          \item Austausch, Notizen, Motivation, Lernen während des Semesters, Übungen, Klausurvorbereitung
+        \end{itemize}
+      }
+    \item Prokrastinieren Sie nicht
+      \only<3>{
+        \begin{itemize}
+          \item Auch wenn's schwer fällt, ohne Selbstdisziplin geht's nicht
+        \end{itemize}
+      }
+    \item Verzweifeln Sie nicht
+      \only<4>{
+        \begin{itemize}
+          \item Andere sind auch nicht (viel) schlauer -- Erfolg ist Arbeit und Talent
+          \item Aber: wenn Uni oder das Fach nichts für Sie ist, treffen Sie eine Entscheidung
+        \end{itemize}
+      }
+    \item Generationenvertrag
+      \only<5>{
+        \begin{itemize}
+          \item Die Erstsemesterwoche, Programmierkurse, Mathehilfe etc. sind wichtig und hilfreich -- aber nur wenn Sie jemand organisiert
+          \item Prüfungsprotokolle gibt's bei der Fachschaft, aber nur wenn Sie jemand macht
+        \end{itemize}
+      }
+    \item Glauben Sie keinen Gerüchten
+      \only<6>{
+        \begin{itemize}
+          \item Alle können durchkommen, es gibt keine Quote oder Verteilung
+          \item Bei Unsicherheiten: Fragen Sie nach! Forum, Sprechstunden, ...
+        \end{itemize}
+      }
+    \item Lassen Sie sich helfen
+      \only<7>{
+        \begin{itemize}
+          \item Studiendinge: Prüfungsausschuss, Fachschaft
+          \item Persönlich: Psychologische Betreuung
+        \end{itemize}
+      }
+    \item Lachen Sie, seien Sie fröhlich und nett zueinander \uncover<8>{!!!}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Umgang miteinander}
+  Wir sind hier viele Leute
+  \begin{itemize}
+    \item Bitte seien Sie pünktlich
+    \item Bitte seien Sie leise -- wenn nur jeder fünfte \enquote{kurz mal mit der Nachbarin...}
+    \item Stellen Sie Ihre Fragen! (nicht der Nebensitzerin)
+    \item Konzentrieren Sie sich auf die Vorlesung -- eMails, Plaudern, Flirten geht besser im Café
+  \end{itemize}
+\end{frame}
+
+
+\end{document}

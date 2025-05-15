@@ -1,10 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{vorkurs}
+\ProvidesClass{exercise}
 \LoadClass[a4paper,11pt]{article}
 
 %% Import settings for links, names and file names
-\input{./vorkurs-settings.cls}
+\input{./exercise-settings.cls}
 
 
 %%%%%%%%%%%%
