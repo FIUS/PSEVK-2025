@@ -15,4 +15,8 @@
 *.run.xml
 *.synctex
 *.pdfsync
+*.vrb
+*.nav
+*.snm
+*.tdo
 
