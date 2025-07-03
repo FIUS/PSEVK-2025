@@ -1,4 +1,4 @@
-\ProvidesClass{lecture}[2024/11/27 Lecture Slides for PSE]
+\ProvidesClass{presentation}[2024/11/27 Lecture Slides for PSE]
 
 % Beamer class requires the following line to be included
 \LoadClass[aspectratio=1610]{beamer}
@@ -167,8 +167,8 @@ cross/.default={1pt}}
 % Define custom background for content slides
 \newcommand{\custombackground}{
   \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=south west] (uni) at (current page.south west) {\includegraphics[height=1.5em]{\lecture@pathprefix{}unilogo_de}};
-    \node[right=0.5em of uni] {\includegraphics[height=1.5em]{\lecture@pathprefix{}ipvslogo}};
+    \node[anchor=south west] (uni) at (current page.south west) {\includegraphics[height=1.5em]{\lecture@pathprefix{}logo-uni.pdf}};
+    \node[right=0.5em of uni] {\includegraphics[height=1.5em]{\lecture@pathprefix{}fius-logo-neu.png}};
   \end{tikzpicture}
 }
 \makeatother
