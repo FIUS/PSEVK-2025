@@ -20,3 +20,5 @@
 *.snm
 *.tdo
 
+//macOS 
+.DS_Store
