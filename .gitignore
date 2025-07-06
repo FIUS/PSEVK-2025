@@ -19,6 +19,7 @@
 *.nav
 *.snm
 *.tdo
+_minted-*/
 
 //macOS 
 .DS_Store
