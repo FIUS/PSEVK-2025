@@ -20,6 +20,9 @@
 *.snm
 *.tdo
 _minted-*/
+*.pyg
+*.pygtex
+*.vrb
 
 //macOS 
 .DS_Store

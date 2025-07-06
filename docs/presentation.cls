@@ -86,7 +86,7 @@ cross/.default={1pt}}
 
 
 \usepackage{tcolorbox}
-\definecolor{codebackgroundcolor}{rgb}{0.18, 0.18, 0.18}  % #2d2d2d (dark background)
+\definecolor{codebackgroundcolor}{rgb}{0.18, 0.18, 0.18}  %rgb(255, 255, 255) (dark background)
 \definecolor{codelinenocolor}{rgb}{0.8, 0.8, 0.8}           % #ccc (light text)
 
 \usepackage{minted}
