@@ -142,7 +142,7 @@ if (Bedingung) {
 }
 \end{minted}
     \item<2-> Beispiel:
-\begin{minted}[style=friendly,fontsize=\small]{java}
+\begin{minted}[fontsize=\small]{java}
 boolean a = false;
 if (a) {
   System.out.println("a ist wahr");
@@ -151,7 +151,7 @@ if (a) {
 }
 \end{minted}
 \only<3->{\mintinline[style=friendly]{java}{//Ausgabe:}}
-\only<3->{\mintinline[style=friendly]{java}{a ist falsch}}
+\only<3->{\mintinline{java}{a ist falsch}}
   \end{itemize}
 \end{frame}
 
@@ -165,7 +165,7 @@ if (a) {
     \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist    
     \item<1-> Syntax: \mintinline[style=friendly]{java}{while (Bedingung) { /* Code */ }}
     \item<2-> Beispiel:
-      \begin{minted}[style=friendly,fontsize=\small]{java}
+      \begin{minted}[fontsize=\small]{java}
 Scanner scanner = new Scanner(System.in);
 String eingabe = "";
 
@@ -175,7 +175,8 @@ while (!eingabe.equals("ok")) {
 }
       \end{minted}
       
-      \begin{minted}[style=friendly,fontsize=\small]{java}
+      \begin{minted}[style=paraiso-light
+,fontsize=\small]{java}
 // Ausgabe
 // Bitte 'ok' eingeben:
 // ...
@@ -185,11 +186,40 @@ while (!eingabe.equals("ok")) {
     
       \end{itemize}
 
-    %\only<3->{\mintinline[style=friendly]{java}{//Ausgabe:}}
-    %\only<3->{\mintinline[style=friendly]{java}{Bitte 'ok' eingeben:}}
+\end{frame}
 
 
 
+%BREAK
+\begin{frame}[fragile]
+  \frametitle{while-Schleife mit \texttt{break}}
+
+  \begin{itemize}
+    \item<1-> \texttt{break} beendet eine Schleife sofort
+\end{itemize}
+\begin{code}{java}
+Scanner scanner = new Scanner(System.in);
+
+String passwort = "diegrillung";
+String abbruch = "abbruch";
+String eingabe = "";
+
+while (true) {
+  System.out.println("Bitte Passwort eingeben:");
+  eingabe = scanner.nextLine();
+
+  if (eingabe.equals(passwort)) {
+    System.out.println("Zugriff erlaubt");
+    break;
+  }
+
+  if (eingabe.equals(abbruch)) {
+    System.out.println("Abbruch durch Benutzer");
+    break;
+  }
+}
+System.out.println("Programm beendet");
+\end{code}
   
 \end{frame}
 
