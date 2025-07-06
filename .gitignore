@@ -21,6 +21,7 @@
 *.tdo
 _minted-*/
 *.minted
+*.pyg
 
 //macOS 
 .DS_Store
