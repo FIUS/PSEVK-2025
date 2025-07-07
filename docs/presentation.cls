@@ -160,6 +160,27 @@ cross/.default={1pt}}
 \end{tcolorbox}
 }
 
+\newenvironment{ausgabe}
+{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=gray!3,
+    colframe=black!20,
+    boxrule=0.5pt,
+    arc=2mm,
+    left=1em, right=1em, top=0.6em, bottom=0.6em,
+    boxsep=0pt,
+    fontupper=\small\ttfamily\color{black}
+  ]
+}
+{%
+  \end{tcolorbox}
+}
+
+
+
+
+
 
 
 % Tikz Anchors inside text or code environments.
