@@ -12,6 +12,7 @@
 \usepackage{todonotes}
 \setuptodonotes{inline}
 
+
 \begin{document}
 
 \begin{frame}
@@ -37,16 +38,16 @@
 \end{frame}
 
 %BOOLEAN
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Boolean – Wahr oder Falsch}
   \begin{itemize}
     \item Datentyp mit zwei Werten: \texttt{true} und \texttt{false}
     \item Wird für Bedingungen verwendet
 
-    \item z.B: \mintinline[style=friendly]{java}{heuteDienstag = true;}\todo{mint style festlegen (z.B. friendly)}
-    \item \begin{code}{java}
+    \item z.B: \mintinline{java}{heuteDienstag = true;}
+    \begin{minted}{java}
 boolean heuteDienstag = true;
-    \end{code}
+    \end{minted}
     \item<2-> Wird oft in Bedingungen verwendet, z.B. in if-Anweis
    
     
@@ -62,22 +63,22 @@ boolean heuteDienstag = true;
   \only<1->{Wenn \texttt{a} und \texttt{b} Zahlen sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<1->[\textbullet] \texttt{a == b} \quad Wahr, wenn \texttt{a} gleich \texttt{b} ist
-    \begin{minted}[style=friendly]{java}
+    \item<1->\texttt{a == b} \quad Wahr, wenn \texttt{a} gleich \texttt{b} ist
+    \begin{minted}{java}
 boolean result = (a == b); // result true, wenn a gleich b
     \end{minted}
 
-    \item<2->[\textbullet] \texttt{a != b} \quad Wahr, wenn \texttt{a} ungleich \texttt{b} ist
-    \begin{minted}[style=friendly]{java}
+    \item<2->\texttt{a != b} \quad Wahr, wenn \texttt{a} ungleich \texttt{b} ist
+    \begin{minted}{java}
 boolean result = (a != b); // result true, wenn a ungleich b
     \end{minted}
 
-    \item<3->[\textbullet] \texttt{a < b} \quad Wahr, wenn \texttt{a} kleiner als \texttt{b} ist
-    \begin{minted}[style=friendly]{java}
+    \item<3->\texttt{a < b} \quad Wahr, wenn \texttt{a} kleiner als \texttt{b} ist
+    \begin{minted}{java}
 boolean result = (a < b); // result true, wenn a kleiner als b
     \end{minted}
 
-    \item<4->[\textbullet] analog bei \texttt{a > b}, \texttt{a <= b}, \texttt{a >= b} \quad
+    \item<4->analog bei \texttt{a > b}, \texttt{a <= b}, \texttt{a >= b} \quad
   \end{itemize}
 \end{frame}
 
@@ -94,8 +95,8 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 \quad
   \only<4->{Klammern priorisieren:}
     \begin{itemize}
-        \item<4-> \mintinline[style=friendly]{java}{true || false && false} \quad \textrightarrow \quad \only<5->{\mintinline[style=friendly]{java}{true}}
-        \item<6-> \mintinline[style=friendly]{java}{(true || false) && false} \quad \textrightarrow \quad \only<7->{\mintinline[style=friendly]{java}{false}}
+        \item<4-> \mintinline{java}{true || false && false} \quad \textrightarrow \quad \only<5->{\mintinline{java}{true}}
+        \item<6-> \mintinline{java}{(true || false) && false} \quad \textrightarrow \quad \only<7->{\mintinline{java}{false}}
     \end{itemize}
 \end{frame}
 
@@ -109,22 +110,21 @@ boolean result = (a < b); // result true, wenn a kleiner als b
     \item<1-> Boolescher Ausdruck entscheidet
     \item<1-> Ausführung nur wenn \texttt{true}
     \item<1-> Syntax:
-      \begin{minted}[style=friendly,fontsize=\small]{java}
+      \begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
   // Code bei true
 }
       \end{minted}
     \item<2-> Beispiel:
-      \begin{minted}[style=friendly,fontsize=\small]{java}
+      \begin{minted}[fontsize=\small]{java}
 boolean a = true;
 if (a) {
   System.out.println("a ist wahr");
 }
       \end{minted}
-      
-      \only<3->{\mintinline[style=friendly]{java}{//Ausgabe:}}
-      \only<3->{\mintinline[style=friendly]{java}{a ist wahr}}
-      
+      \begin{ausgabe}
+      a ist wahr
+      \end{ausgabe}     
   \end{itemize}
 \end{frame}
 
@@ -132,17 +132,16 @@ if (a) {
 
 %IF-ELSE-VERZWEIGUNG
 \begin{frame}[fragile]
-  \frametitle{if-else-Verzweigung}
 
   \begin{itemize}
     \item<1-> Erweiterung der if-Anweisung
     \item<1-> Ausführung bei \texttt{true} oder \texttt{false}
     \item<1-> Syntax:
-\begin{minted}[style=friendly,fontsize=\small]{java}
+\begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
-  // Code bei true
+  // Code bei Bedingnung true
 } else {
-  // Code bei false
+  // Code bei Bedingung false
 }
 \end{minted}
     \item<2-> Beispiel:
@@ -154,10 +153,31 @@ if (a) {
   System.out.println("a ist falsch");
 }
 \end{minted}
-\only<3->{\mintinline[style=friendly]{java}{//Ausgabe:}}
-\only<3->{\mintinline{java}{a ist falsch}}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{if-else-Verzweigung}
+    \begin{itemize}
+            \item<1-> Beispiel:
+\begin{minted}[fontsize=\small]{java}
+boolean a = false;
+if (a) {
+  System.out.println("a ist wahr");
+} else {
+  System.out.println("a ist falsch");
+}
+\end{minted}
+\only<1->{%
+\begin{ausgabe}
+a ist falsch
+\end{ausgabe}
+}
+    \end{itemize}
+
+\end{frame}
+
+
 
 
 
@@ -167,7 +187,7 @@ if (a) {
 
   \begin{itemize}
     \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist    
-    \item<1-> Syntax: \mintinline[style=friendly]{java}{while (Bedingung) { /* Code */ }}
+    \item<1-> Syntax: \mintinline{java}{while (Bedingung) { /* Code */ }}
     \item<2-> Beispiel:
       \begin{minted}[fontsize=\small]{java}
 Scanner scanner = new Scanner(System.in);
@@ -179,52 +199,101 @@ while (!eingabe.equals("ok")) {
 }
       \end{minted}
       
-      \begin{minted}[style=paraiso-light
-,fontsize=\small]{java}
-// Ausgabe
-// Bitte 'ok' eingeben:
-// ...
-// Bitte 'ok' eingeben:
-// (Benutzer tippt "ok") → Schleife endet
-      \end{minted}
+      \begin{ausgabe}
+Bitte 'ok' eingeben:
+
+...
+
+Bitte 'ok' eingeben:
+
+(Benutzer tippt "ok") → Schleife endet
+
+      \end{ausgabe}
     
       \end{itemize}
 
 \end{frame}
 
 
-
-%BREAK
+%WHILE MIT BREAK
 \begin{frame}[fragile]
-  \frametitle{while-Schleife mit \texttt{break}}
+  \frametitle{break}
 
   \begin{itemize}
-    \item<1-> \texttt{break} beendet eine Schleife sofort
+    \item Mit \texttt{break} kann man eine Schleife vorzeitig beenden.
+    \item Dies ist nützlich, wenn eine Abbruchbedingung innerhalb der Schleife erkannt wird.
 \end{itemize}
-\begin{code}{java}
+
+\begin{minted}[fontsize=\footnotesize, linenos]{java}
 Scanner scanner = new Scanner(System.in);
 
 String passwort = "diegrillung";
-String abbruch = "abbruch";
-String eingabe = "";
+String abbruchBedingung = "abbruch";
+String momentaneEingabe = "";
 
-while (true) {
-  System.out.println("Bitte Passwort eingeben:");
-  eingabe = scanner.nextLine();
+while (!momentaneEingabe.equals(passwort)) {
+    momentaneEingabe = scanner.nextLine();
 
-  if (eingabe.equals(passwort)) {
-    System.out.println("Zugriff erlaubt");
-    break;
-  }
-
-  if (eingabe.equals(abbruch)) {
-    System.out.println("Abbruch durch Benutzer");
-    break;
-  }
+    if (momentaneEingabe.equals(abbruchBedingung)) {
+        break;
+    }
 }
-System.out.println("Programm beendet");
-\end{code}
+System.out.println("I'm in");
+\end{minted}
+\end{frame}
+
+
+%CODE TOGHETER
+\begin{frame}[plain]
+    \centering
+    {\Huge\bfseries\textcolor{red}{WURST TOGETHER}}
+\end{frame}
+
+
+
+%FOR SCHLEIFE
+\begin{frame}[fragile]{Was ist eine \texttt{for}-Schleife?}
+
+  \begin{itemize}
+    \item Eine \texttt{for}-Schleife hilft dir, etwas \textbf{mehrmals} zu tun.
+    \item Syntax:
+      \begin{minted}[fontsize=\large]{java}
+for (Start; Bedingung; Schritt) {
+    // Schleifenrumpf
+}
+\end{minted}
+\item Ablauf:
+    \begin{enumerate}
+    \item Wo starten wir? (z.B. bei 0)
+    \item Bedingung noch erfüllt?
+    \item Falls ja, Code im Block ausführen
+    \item Zähler ändern i.d.R. einen hochzählen
+\end{enumerate}
+  \end{itemize}
+\todo{bessere Erklärung}
+\end{frame}
+
+
+
+%FOR BEISPIEL
+\begin{frame}[fragile]
+  Somit wird aus\dots
   
+  \begin{minted}{java}
+    int momentaneWurst = 4
+int letzteWurst = 8
+while (momentaneWurst <= letzteWurst) {
+	System.out.println("Schmeiß Wurst Nr." + momentaneWurst + "auf den Grill");
+	momentaneWurst++;
+}
+  \end{minted}
+  ganz simpel\dots
+  \begin{minted}{java}
+      for (int i = 4; i <= 8; i++) {
+	System.out.println("Schmeiß Wurst Nr." + i + "auf den Grill");
+}
+  \end{minted}
+
 \end{frame}
 
 \end{document}
