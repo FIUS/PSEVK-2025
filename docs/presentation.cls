@@ -204,3 +204,11 @@ cross/.default={1pt}}
 \setbeamertemplate{navigation symbols}{} % Hide navigation symbols at the bottom
 %% \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{footline}[frame number] % Show slide numbers in the footer
+
+
+\BeforeBeginEnvironment{minted}{
+  \begin{tcolorbox}[colback=gray!5, colframe=black!80, boxrule=0.5pt, arc=2mm]
+}
+\AfterEndEnvironment{minted}{
+  \end{tcolorbox}
+}
