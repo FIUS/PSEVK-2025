@@ -169,13 +169,13 @@
 \begin{frame}[fragile]
   \frametitle{Erste Java Klasse}
   Nun schreiben wir folgenen Code in die Main Klasse rein   
-  \begin{code}{java}
+  \begin{minted}{java}
     public class Main {
     public static void main(String[] args) {
 		
       }
     }
-  \end{code}
+  \end{minted}
   \achtung{} Was das alles bedeutet werden wir euch dann in den nächsten Tagen erklären!  
 \end{frame}
 
@@ -213,9 +213,9 @@
     \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
     \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
     \item Über den Namen kann später auf den gespeicherten Wert zugegriffen werden
-    \begin{code}{java}
+    \begin{minted}{java}
       int alter = 20;
-    \end{code}
+    \end{minted}
     \item Hier ist \texttt{alter} der Name der Variable, \texttt{int} der Datentyp (ganzzahlige Zahl) und \texttt{20} der gespeicherte Wert
     \end{itemize}
     \achtung{} Bezeichner müssen mit einem Buchstaben, Unterstrich (\_) oder Dollarzeichen (\$) beginnen.
@@ -224,7 +224,44 @@
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
-  test
+  \begin{itemize}
+    \item Deklaration \quad \textrightarrow \quad Variable wird angelegt/erstellt \textbf{OHNE} einen Wert zuzuweisen
+    \begin{minted}{java}
+      int zahl;
+    \end{minted}
+    \pause
+    \item Initialisierung \quad \textrightarrow \quad Variable wird sein \textbf{ERSTER} Wert zugewiesen
+    \begin{minted}{java}
+      zahl = 42;
+    \end{minted}
+    \pause
+  \end{itemize}
+  \begin{minted}{java}
+  //In der Regel Deklaration und Initialisierung gleichzeitig:
+  int zahl = 42;
+
+  //aber auch so möglich
+  int zahl;
+  zahl = 42;
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variablen}
+  \begin{itemize}
+    \item Variablen können auch später im Programm verändert werden
+    \begin{minted}{java}
+      int alter = 20;
+      alter = 21; // alter ist jetzt 21
+    \end{minted}
+    \item Variablen können auch mehrfach deklariert werden, aber nur einmal initialisiert
+    \begin{minted}{java}
+      int a = 5;
+      int b = 10;
+      int c = a + b; // c ist jetzt 15
+    \end{minted}
+  \end{itemize}
+  \achtung{} Variablen müssen vor ihrer Verwendung deklariert und initialisiert werden
 \end{frame}
 
 \end{document}
