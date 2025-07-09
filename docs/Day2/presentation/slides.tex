@@ -31,8 +31,9 @@
 %VERZWEIGUNGEN
 \begin{frame}
   \frametitle{Was sind Verzweigungen?}
+  \todo{steht so im Notion aber eigentlich weglassbar oder? und direkt mit boolean starten}
   \begin{itemize}
-    \item Programme müssen Entscheidungen treffen \todo{item oder bullet item?}
+    \item Programme müssen Entscheidungen treffen
     \item Beispiel: Links oder rechts gehen?
   \end{itemize}
 \end{frame}
@@ -41,17 +42,16 @@
 \begin{frame}[fragile]
   \frametitle{Boolean – Wahr oder Falsch}
   \begin{itemize}
-    \item Datentyp mit zwei Werten: \texttt{true} und \texttt{false}
-    \item Wird für Bedingungen verwendet
+    \item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
+    \item Wahrheitswerte speichern und verarbeiten
 
     \item z.B: \mintinline{java}{heuteDienstag = true;}
     \begin{minted}{java}
 boolean heuteDienstag = true;
     \end{minted}
-    \item<2-> Wird oft in Bedingungen verwendet, z.B. in if-Anweis
-   
-    
+ 
   \end{itemize}
+  \todo{alles einheitlich mit minted block oder auch inline?}
 \end{frame}
 
 
@@ -104,11 +104,10 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 
 %IF-VERZWEIGUNG
 \begin{frame}[fragile]
-  \frametitle{if-Verzweigung}
+  \frametitle{\texttt{if}-Verzweigung}
 
   \begin{itemize}
-    \item<1-> Boolescher Ausdruck entscheidet
-    \item<1-> Ausführung nur wenn \texttt{true}
+    \item<1-> Ausführung nur wenn Bedingnung \texttt{true}
     \item<1-> Syntax:
       \begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
@@ -117,13 +116,13 @@ if (Bedingung) {
       \end{minted}
     \item<2-> Beispiel:
       \begin{minted}[fontsize=\small]{java}
-boolean a = true;
-if (a) {
-  System.out.println("a ist wahr");
+boolean heuteDienstag = true;
+if (heuteDienstag) {
+  System.out.println("Crazyyy heute ist Dinestag");
 }
       \end{minted}
       \begin{ausgabe}
-      a ist wahr
+      Crazyyy heute ist Dinestag
       \end{ausgabe}     
   \end{itemize}
 \end{frame}
@@ -132,10 +131,11 @@ if (a) {
 
 %IF-ELSE-VERZWEIGUNG
 \begin{frame}[fragile]
+  \frametitle{\texttt{if}-\texttt{else}}
 
   \begin{itemize}
-    \item<1-> Erweiterung der if-Anweisung
-    \item<1-> Ausführung bei \texttt{true} oder \texttt{false}
+    \item<1-> erweitert die \texttt{if} Anweisung
+    \item<1-> "wenn \texttt{if} Bedingnung nicht erfüllt dann mach folgendes\dots"
     \item<1-> Syntax:
 \begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
@@ -146,44 +146,61 @@ if (Bedingung) {
 \end{minted}
     \item<2-> Beispiel:
 \begin{minted}[fontsize=\small]{java}
-boolean a = false;
-if (a) {
-  System.out.println("a ist wahr");
+boolean heuteDonnerstag = false;
+if (heuteDienstag) {
+  System.out.println("endlich Wochenende");
 } else {
-  System.out.println("a ist falsch");
+  System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{if-else-Verzweigung}
+    \frametitle{\texttt{if}-\texttt{else}}
     \begin{itemize}
             \item<1-> Beispiel:
 \begin{minted}[fontsize=\small]{java}
-boolean a = false;
-if (a) {
-  System.out.println("a ist wahr");
+boolean heuteDonnerstag = false;
+if (heuteDienstag) {
+  System.out.println("endlich Wochenende");
 } else {
-  System.out.println("a ist falsch");
+  System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
-\only<1->{%
+\only{
 \begin{ausgabe}
-a ist falsch
+:( bestimmt ist bald wieder Donnerstag
 \end{ausgabe}
 }
     \end{itemize}
-
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{\texttt{else if}}
+  \begin{itemize}
+    \item \texttt{else if} prüft mehrere Bedingungen
+    \item Beispiel:
+    \begin{minted}{java}
+      if (note == 1) {
+    System.out.println("Sehr gut");
+} else if (note == 2) {
+    System.out.println("Gut");
+} else if (note == 3) {
+    System.out.println("Befriedigend");
+} else {
+    System.out.println("Ausreichend oder schlechter");
+} 
+    \end{minted}
+  \end{itemize}
+\end{frame}
 
 
 
 
 %WHILE
 \begin{frame}[fragile]
-  \frametitle{while-Schleife}
+  \frametitle{\texttt{while}-Schleife}
 
   \begin{itemize}
     \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist    
@@ -217,11 +234,10 @@ Bitte 'ok' eingeben:
 
 %WHILE MIT BREAK
 \begin{frame}[fragile]
-  \frametitle{break}
+  \frametitle{\texttt{break}}
 
   \begin{itemize}
-    \item Mit \texttt{break} kann man eine Schleife vorzeitig beenden.
-    \item Dies ist nützlich, wenn eine Abbruchbedingung innerhalb der Schleife erkannt wird.
+    \item Mit \texttt{break} kann man eine Schleife vorzeitig beenden
 \end{itemize}
 
 \begin{minted}[fontsize=\footnotesize, linenos]{java}
@@ -255,7 +271,7 @@ System.out.println("I'm in");
 \begin{frame}[fragile]{Was ist eine \texttt{for}-Schleife?}
 
   \begin{itemize}
-    \item Eine \texttt{for}-Schleife hilft dir, etwas \textbf{mehrmals} zu tun.
+    \item Wiederholt Anweisungen eine festgelegte Anzahl von Malen
     \item Syntax:
       \begin{minted}[fontsize=\large]{java}
 for (Start; Bedingung; Schritt) {
