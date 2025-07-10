@@ -22,6 +22,11 @@
 _minted-*/
 *.minted
 *.pyg
+*.pdf
 
 //macOS 
 .DS_Store
+
+//IntelliJ
+.idea
+out

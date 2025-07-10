@@ -1,0 +1,267 @@
+\documentclass{../../presentation}
+
+\title{PSE - Vorkurs}
+\author{Tobias, Philipp, Linus, Tillmann}
+\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
+\date{\today}
+
+\makeatletter
+\renewcommand{\lecture@pathprefix}[1]{../../logos/}
+\makeatother
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \listoftodos
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[fragile]
+  \frametitle{WLAN}
+  Die Universität bietet ein Gast WLAN an jedoch wollen wir in das offizielle WLAN der Universität einsteigen.
+  \newline
+  \begin{itemize}
+    \item iOS und Android
+    \item Windows
+    \item MacOS
+    \item Linux
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{WLAN - iOS und Android}
+  \begin{itemize}
+    \item Im AppStore bzw. Playstore nach \enquote{geteduroam} suchen und die App installieren
+    \item Dann nach Universität Stuttgart suchen
+    \item Nun Student wählen und eure Daten eingeben
+    \item \texttt{stxxxxxx@stud.uni-stuttgart.de} - Benutzername
+    \item Und eurer Passwort eingeben
+    \item Nun auf Verbinden klicken und fertig
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{WLAN - Windows}
+  \begin{itemize}
+    \item Im Internet auf \href{https://geteduroam.app}{\enquote{geteduroam.app}} gehen und die Windows Version herunterladen
+    \item Dann nach Universität Stuttgart suchen
+    \item Nun Student wählen und eure Daten eingeben
+    \item Nun auf Verbinden klicken und fertig
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{WLAN - MacOS}
+  \begin{itemize}
+    \item Im Internet auf \href{http://uni-stuttgart.de/eduroam}{\enquote{uni-stuttgart.de/eduroam}} gehen
+    \item und als Gruppe \enquote{Student} wählen
+    \item Lädet das Konfigurationspaket herunter
+    \item In euren Systemeinstellungen auf \enquote{Geräteverwaltung} gehen
+    \item Nun über das Plus-Symbol das Konfigurationspaket hinzufügen
+    \item \texttt{stxxxxx} - Benutzername
+    \item Und euer Passwort eingeben
+    \item Nun auf Verbinden klicken und fertig
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{WLAN - Linux}
+  \begin{itemize}
+    \item Im Internet auf \href{http://uni-stuttgart.de/eduroam}{\enquote{uni-stuttgart.de/eduroam}} gehen
+    \item Als Benutzergruppe \enquote{Student} wählen
+    \item Unten links auf \enquote{einen anderen Installer auswählen} klicken
+    \item \enquote{Linux} auswählen
+    \item Über den Button das Pythonskript herunterladen
+    \item Im Terminal mit \texttt{\$ python3 [Dateipfad zum Pythonskript]} ausführen
+    \item Den Anweisungen folgen und Benutzername (\texttt{stxxxxxx@stud.uni-stuttgart.de}) sowie Passwort eingeben
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IntelliJ IDEA}
+  \textbf{\achtung{} Wir werden uns Lediglich auf IntelliJ IDEA konzentrieren, wenn ihr eine andere IDE nutzen wollt, können wir keinen Support garantieren. }
+  \newline
+  \begin{itemize}
+    \item Wir laden uns erst die JetBrains Toolbox herunter, um die IDE zu installieren
+    \item Dann installieren wir IntelliJ IDEA Community Edition
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \includegraphics[width=1\linewidth]{img/memeIDE.jpg}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IntelliJ IDEA - Installation}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.center), anchor=center, yshift=-2] {\includegraphics[width=1\linewidth]{img/toolBoxDownload.png}};
+    \node[at=(current page.north), anchor=north, align=center, yshift=-1.2cm] {Geht auf \href{https://www.jetbrains.com/de-de/toolbox-app/}{\texttt{\enquote{jetbrains.com/toolbox-app/}}} und ladet die Toolbox herunter.};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IntelliJ IDEA - Installation}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.east), anchor=east, yshift=-2] {\includegraphics[width=.35\linewidth]{img/IntelliJDownload.png}};
+    \node[at=(current page.west), anchor=west, align=center, yshift=0cm, xshift=2cm, text width=8cm] {Nach der Installation der Toolbox öffnet sich ein Fenster, in dem ihr die IDE auswählen könnt, die ihr installieren wollt. Wählt \enquote{IntelliJ IDEA Community Edition} aus und klickt auf \enquote{Install}. \newline \todo{Besser machen}};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \frametitle{JDK - Installation}
+  Wir benötigen ein JDK (Java Development Kit), um Java Programme zu schreiben und auszuführen.
+  \newline
+  \begin{itemize}
+    \item \achtung{} MacOS: auf File/ Datei gehen oben links in der Menüleiste
+    \item Nun auf \texttt{Project Structure} klicken
+    \item Dann auf \texttt{SDKs} klicken
+    \item Dann auf das Plus-Symbol klicken und auf \texttt{Download JDK} klicken
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{JDK - Installation}
+  \achtung{} Die Universität nutzt die OpenJDK Version 21, die wir auch verwenden werden.
+  \begin{itemize}
+    \item Dann Microsoft OpenJDK als Anbieter/ Vendor auswählen
+    \item Und nen geeigneten Speicher Ort auswählen, der Standart Pfad sollte aber ausreichen.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Projekt erstellen}
+  \begin{itemize}
+    \item In IntelliJ auf neues Projekt erstellen/ New Project klicken
+    \item Java auswählen und das Projekt firstProjekt nennen
+    \item Nun nen geeigneten Speicher Ort auswählen \achtung{} KEIN Git Reposotory erstellen
+    \item Als Build System IntelliJ verwenden und als JDK unsere derzeitig herruntergeladene 21 auswählen
+    \item Wir wollen keinen Sample Code
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Projekt erstellen}
+  Es sollte nun so bei euch aussehen:
+
+  \vspace{1cm}
+
+  \includegraphics[width=1\linewidth]{img/projektCreation.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Projekt erstellen}
+  \begin{itemize}
+    \item Nun auf \texttt{Create} klicken und das Projekt wird erstellt
+    \item Nun links in der Projektansicht auf \texttt{src} rechtsklicken und eine neue Java Klasse erstellen
+    \item Diese Klasse \texttt{Main} nennen und auf \texttt{Enter} drücken
+    \item Nun sollte sich eine neue Datei öffnen, in der wir unseren Code schreiben
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Erste Java Klasse}
+  Nun schreiben wir folgenen Code in die Main Klasse rein
+  \begin{minted}{java}
+    public class Main {
+    public static void main(String[] args) {
+		
+      }
+    }
+  \end{minted}
+  \achtung{} Was das alles bedeutet werden wir euch dann in den nächsten Tagen erklären!
+\end{frame}
+
+\begin{frame}
+  \frametitle{GitHub}
+  GitHub ist eine Plattform, auf der man Code online speichern, verwalten und mit anderen teilen kann. Es basiert auf Git, einem Versionskontrollsystem.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Typische Begriffe auf GitHub}
+  \todo{Neu machen ist ultra hässlich}
+  \begin{itemize}
+    \item \textbf{Repository (Repo):} Dein Projektordner auf GitHub.
+    \item \textbf{Commit:} Eine gespeicherte Änderung am Code.
+    \item \textbf{Push:} Hochladen deiner Änderungen auf GitHub.
+    \item \textbf{Pull:} Änderungen von GitHub herunterladen.
+    \item \textbf{Clone:} Ein Projekt von GitHub auf deinen Computer kopieren.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Warum GitHub für Java-Projekte?}
+  \todo{Neu machen ist ultra hässlich}
+  \begin{itemize}
+    \item \textbf{Sicherung:} Du kannst deinen Java-Code (Klassen, Methoden, Projekte) sicher speichern.
+    \item \textbf{Versionskontrolle:} Du siehst, was sich zwischen Versionen geändert hat – praktisch beim Lernen oder bei Fehlern.
+    \item \textbf{Zusammenarbeit:} Du kannst mit anderen zusammenarbeiten (Teamarbeit, Feedback).
+    \item \textbf{Überall verfügbar:} Zugriff von überall – egal ob Uni, zuhause oder unterwegs.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variablen}
+  \begin{itemize}
+    \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
+    \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
+    \item Über den Namen kann später auf den gespeicherten Wert zugegriffen werden
+          \begin{minted}{java}
+      int alter = 20;
+    \end{minted}
+    \item Hier ist \texttt{alter} der Name der Variable, \texttt{int} der Datentyp (ganzzahlige Zahl) und \texttt{20} der gespeicherte Wert
+  \end{itemize}
+  \achtung{} Bezeichner müssen mit einem Buchstaben, Unterstrich (\_) oder Dollarzeichen (\$) beginnen.
+  Danach dürfen beliebig viele Buchstaben, Ziffern, Unterstriche oder Dollarzeichen folgen -- aber keine Leerzeichen oder Sonderzeichen.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variablen}
+  \begin{itemize}
+    \item Deklaration \quad \textrightarrow \quad Variable wird angelegt/erstellt \textbf{OHNE} einen Wert zuzuweisen
+          \begin{minted}{java}
+      int zahl;
+    \end{minted}
+          \pause
+    \item Initialisierung \quad \textrightarrow \quad Variable wird sein \textbf{ERSTER} Wert zugewiesen
+          \begin{minted}{java}
+      zahl = 42;
+    \end{minted}
+          \pause
+  \end{itemize}
+  \begin{minted}{java}
+  //In der Regel Deklaration und Initialisierung gleichzeitig:
+  int zahl = 42;
+
+  //aber auch so möglich
+  int zahl;
+  zahl = 42;
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variablen}
+  \begin{itemize}
+    \item Variablen können auch später im Programm verändert werden
+          \begin{minted}{java}
+      int alter = 20;
+      alter = 21; // alter ist jetzt 21
+    \end{minted}
+    \item Variablen können auch mehrfach deklariert werden, aber nur einmal initialisiert
+          \begin{minted}{java}
+      int a = 5;
+      int b = 10;
+      int c = a + b; // c ist jetzt 15
+    \end{minted}
+  \end{itemize}
+  \achtung{} Variablen müssen vor ihrer Verwendung deklariert und initialisiert werden
+\end{frame}
+
+\end{document}
