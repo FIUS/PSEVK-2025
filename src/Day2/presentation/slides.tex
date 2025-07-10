@@ -28,15 +28,7 @@
   \todo{am Anfang immer Vortages recap?}
 \end{frame}
 
-%VERZWEIGUNGEN
-\begin{frame}
-  \frametitle{Was sind Verzweigungen?}
-  \todo{steht so im Notion aber eigentlich weglassbar oder? und direkt mit boolean starten}
-  \begin{itemize}
-    \item Programme müssen Entscheidungen treffen
-    \item Beispiel: Links oder rechts gehen?
-  \end{itemize}
-\end{frame}
+
 
 %BOOLEAN
 \begin{frame}[fragile]
@@ -87,18 +79,65 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 %BOOLEAN OPERATOREN
 \begin{frame}[fragile]
   \frametitle{Boolean Operatoren}
-  \begin{itemize}
-    \item<1-> \texttt{!a} \quad \textrightarrow \quad nicht a
-    \item<2-> \texttt{a \&\& b}	\quad \textrightarrow \quad a UND b
-    \item<3-> \texttt{a || b} \quad \textrightarrow \quad a ODER b
-  \end{itemize}
-\quad
-  \only<4->{Klammern priorisieren:}
-    \begin{itemize}
-        \item<4-> \mintinline{java}{true || false && false} \quad \textrightarrow \quad \only<5->{\mintinline{java}{true}}
-        \item<6-> \mintinline{java}{(true || false) && false} \quad \textrightarrow \quad \only<7->{\mintinline{java}{false}}
-    \end{itemize}
+
+  \begin{columns}
+    % Linke Spalte: Operatoren und Wahrheitstabellen
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item<1-> \texttt{!a} \quad \textrightarrow \quad nicht a
+
+        \item<2-> \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
+        \only<3->{
+          {\tiny
+          \begin{tabular}{|c|c|c|}
+            \hline
+            a & b & a \&\& b \\
+            \hline
+            \texttt{true} & \texttt{true} & \texttt{true} \\
+            \texttt{true} & \texttt{false} & \texttt{false} \\
+            \texttt{false} & \texttt{true} & \texttt{false} \\
+            \texttt{false} & \texttt{false} & \texttt{false} \\
+            \hline
+          \end{tabular}
+          }
+        }
+
+        \item<4-> \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
+        \only<5->{
+          {\tiny
+          \begin{tabular}{|c|c|c|}
+            \hline
+            a & b & a || b \\
+            \hline
+            \texttt{true} & \texttt{true} & \texttt{true} \\
+            \texttt{true} & \texttt{false} & \texttt{true} \\
+            \texttt{false} & \texttt{true} & \texttt{true} \\
+            \texttt{false} & \texttt{false} & \texttt{false} \\
+            \hline
+          \end{tabular}
+          }
+        }
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.4\textwidth}
+      \only<6->{
+        \textbf{Klammern priorisieren:}
+        \vspace{0.5em}
+
+        \begin{itemize}
+          \item \mintinline{java}{true || false && false} \\
+          \only<7->{\quad $\Rightarrow$ \mintinline{java}{true}}
+
+          \item \mintinline{java}{(true || false) && false} \\
+          \only<8->{\quad $\Rightarrow$ \mintinline{java}{false}}
+        \end{itemize}
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
+
+
 
 
 
@@ -123,6 +162,24 @@ if (heuteDienstag) {
       \end{minted}
       \begin{ausgabe}
       Crazyyy heute ist Dinestag
+      \end{ausgabe}     
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{if}-Verzweigung}
+
+  \begin{itemize}
+    \item<1-> geht genauso mit \texttt{int} etc.
+    \item<2-> Beispiel:
+      \begin{minted}[fontsize=\small]{java}
+int lieblingszahl  = 42;
+if (lieblingszahl == 42) {
+  System.out.println("Du bist ein Highperformer!");
+}
+      \end{minted}
+      \begin{ausgabe}
+      Du bist ein Highperformer!
       \end{ausgabe}     
   \end{itemize}
 \end{frame}
@@ -278,15 +335,7 @@ for (Start; Bedingung; Schritt) {
     // Schleifenrumpf
 }
 \end{minted}
-\item Ablauf:
-    \begin{enumerate}
-    \item Wo starten wir? (z.B. bei 0)
-    \item Bedingung noch erfüllt?
-    \item Falls ja, Code im Block ausführen
-    \item Zähler ändern i.d.R. einen hochzählen
-\end{enumerate}
   \end{itemize}
-\todo{bessere Erklärung}
 \end{frame}
 
 
