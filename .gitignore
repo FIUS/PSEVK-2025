@@ -22,7 +22,7 @@
 _minted-*/
 *.minted
 *.pyg
-*.pdf
+src/*.pdf
 
 //macOS 
 .DS_Store
