@@ -26,3 +26,7 @@ _minted-*/
 
 //macOS 
 .DS_Store
+
+//IntelliJ
+.idea
+out
