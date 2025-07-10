@@ -40,7 +40,7 @@
   \frametitle{WLAN - iOS und Android}
   \begin{itemize}
     \item Im AppStore bzw. Playstore nach \enquote{geteduroam} suchen und die App installieren
-    \item Dann nach Universität Stuttgart suchen 
+    \item Dann nach Universität Stuttgart suchen
     \item Nun Student wählen und eure Daten eingeben
     \item \texttt{stxxxxxx@stud.uni-stuttgart.de} - Benutzername
     \item Und eurer Passwort eingeben
@@ -51,8 +51,8 @@
 \begin{frame}[fragile]
   \frametitle{WLAN - Windows}
   \begin{itemize}
-    \item Im Internet auf \href{https://geteduroam.app}{\enquote{geteduroam.app}} gehen und die Windows Version herunterladen 
-    \item Dann nach Universität Stuttgart suchen 
+    \item Im Internet auf \href{https://geteduroam.app}{\enquote{geteduroam.app}} gehen und die Windows Version herunterladen
+    \item Dann nach Universität Stuttgart suchen
     \item Nun Student wählen und eure Daten eingeben
     \item Nun auf Verbinden klicken und fertig
   \end{itemize}
@@ -66,7 +66,7 @@
     \item Lädet das Konfigurationspaket herunter
     \item In euren Systemeinstellungen auf \enquote{Geräteverwaltung} gehen
     \item Nun über das Plus-Symbol das Konfigurationspaket hinzufügen
-    \item \texttt{stxxxxx} - Benutzername 
+    \item \texttt{stxxxxx} - Benutzername
     \item Und euer Passwort eingeben
     \item Nun auf Verbinden klicken und fertig
   \end{itemize}
@@ -88,7 +88,7 @@
 \begin{frame}
   \frametitle{IntelliJ IDEA}
   \textbf{\achtung{} Wir werden uns Lediglich auf IntelliJ IDEA konzentrieren, wenn ihr eine andere IDE nutzen wollt, können wir keinen Support garantieren. }
-  \newline  
+  \newline
   \begin{itemize}
     \item Wir laden uns erst die JetBrains Toolbox herunter, um die IDE zu installieren
     \item Dann installieren wir IntelliJ IDEA Community Edition
@@ -96,7 +96,7 @@
 \end{frame}
 
 \begin{frame}
-   \includegraphics[width=1\linewidth]{img/memeIDE.jpg}
+  \includegraphics[width=1\linewidth]{img/memeIDE.jpg}
 \end{frame}
 
 \begin{frame}
@@ -132,18 +132,18 @@
   \achtung{} Die Universität nutzt die OpenJDK Version 21, die wir auch verwenden werden.
   \begin{itemize}
     \item Dann Microsoft OpenJDK als Anbieter/ Vendor auswählen
-    \item Und nen geeigneten Speicher Ort auswählen, der Standart Pfad sollte aber ausreichen. 
+    \item Und nen geeigneten Speicher Ort auswählen, der Standart Pfad sollte aber ausreichen.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Projekt erstellen}
   \begin{itemize}
-    \item In IntelliJ auf neues Projekt erstellen/ New Project klicken 
-    \item Java auswählen und das Projekt firstProjekt nennen 
-    \item Nun nen geeigneten Speicher Ort auswählen \achtung{} KEIN Git Reposotory erstellen 
+    \item In IntelliJ auf neues Projekt erstellen/ New Project klicken
+    \item Java auswählen und das Projekt firstProjekt nennen
+    \item Nun nen geeigneten Speicher Ort auswählen \achtung{} KEIN Git Reposotory erstellen
     \item Als Build System IntelliJ verwenden und als JDK unsere derzeitig herruntergeladene 21 auswählen
-    \item Wir wollen keinen Sample Code 
+    \item Wir wollen keinen Sample Code
   \end{itemize}
 \end{frame}
 
@@ -168,7 +168,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Erste Java Klasse}
-  Nun schreiben wir folgenen Code in die Main Klasse rein   
+  Nun schreiben wir folgenen Code in die Main Klasse rein
   \begin{minted}{java}
     public class Main {
     public static void main(String[] args) {
@@ -176,7 +176,7 @@
       }
     }
   \end{minted}
-  \achtung{} Was das alles bedeutet werden wir euch dann in den nächsten Tagen erklären!  
+  \achtung{} Was das alles bedeutet werden wir euch dann in den nächsten Tagen erklären!
 \end{frame}
 
 \begin{frame}
@@ -213,28 +213,28 @@
     \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
     \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
     \item Über den Namen kann später auf den gespeicherten Wert zugegriffen werden
-    \begin{minted}{java}
+          \begin{minted}{java}
       int alter = 20;
     \end{minted}
     \item Hier ist \texttt{alter} der Name der Variable, \texttt{int} der Datentyp (ganzzahlige Zahl) und \texttt{20} der gespeicherte Wert
-    \end{itemize}
-    \achtung{} Bezeichner müssen mit einem Buchstaben, Unterstrich (\_) oder Dollarzeichen (\$) beginnen.
-    Danach dürfen beliebig viele Buchstaben, Ziffern, Unterstriche oder Dollarzeichen folgen -- aber keine Leerzeichen oder Sonderzeichen.
+  \end{itemize}
+  \achtung{} Bezeichner müssen mit einem Buchstaben, Unterstrich (\_) oder Dollarzeichen (\$) beginnen.
+  Danach dürfen beliebig viele Buchstaben, Ziffern, Unterstriche oder Dollarzeichen folgen -- aber keine Leerzeichen oder Sonderzeichen.
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
   \begin{itemize}
     \item Deklaration \quad \textrightarrow \quad Variable wird angelegt/erstellt \textbf{OHNE} einen Wert zuzuweisen
-    \begin{minted}{java}
+          \begin{minted}{java}
       int zahl;
     \end{minted}
-    \pause
+          \pause
     \item Initialisierung \quad \textrightarrow \quad Variable wird sein \textbf{ERSTER} Wert zugewiesen
-    \begin{minted}{java}
+          \begin{minted}{java}
       zahl = 42;
     \end{minted}
-    \pause
+          \pause
   \end{itemize}
   \begin{minted}{java}
   //In der Regel Deklaration und Initialisierung gleichzeitig:
@@ -250,12 +250,12 @@
   \frametitle{Variablen}
   \begin{itemize}
     \item Variablen können auch später im Programm verändert werden
-    \begin{minted}{java}
+          \begin{minted}{java}
       int alter = 20;
       alter = 21; // alter ist jetzt 21
     \end{minted}
     \item Variablen können auch mehrfach deklariert werden, aber nur einmal initialisiert
-    \begin{minted}{java}
+          \begin{minted}{java}
       int a = 5;
       int b = 10;
       int c = a + b; // c ist jetzt 15

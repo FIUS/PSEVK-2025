@@ -38,10 +38,10 @@
     \item Wahrheitswerte speichern und verarbeiten
 
     \item z.B: \mintinline{java}{heuteDienstag = true;}
-    \begin{minted}{java}
+          \begin{minted}{java}
 boolean heuteDienstag = true;
     \end{minted}
- 
+
   \end{itemize}
   \todo{alles einheitlich mit minted block oder auch inline?}
 \end{frame}
@@ -56,17 +56,17 @@ boolean heuteDienstag = true;
 
   \begin{itemize}
     \item<1->\texttt{a == b} \quad Wahr, wenn \texttt{a} gleich \texttt{b} ist
-    \begin{minted}{java}
+          \begin{minted}{java}
 boolean result = (a == b); // result true, wenn a gleich b
     \end{minted}
 
     \item<2->\texttt{a != b} \quad Wahr, wenn \texttt{a} ungleich \texttt{b} ist
-    \begin{minted}{java}
+          \begin{minted}{java}
 boolean result = (a != b); // result true, wenn a ungleich b
     \end{minted}
 
     \item<3->\texttt{a < b} \quad Wahr, wenn \texttt{a} kleiner als \texttt{b} ist
-    \begin{minted}{java}
+          \begin{minted}{java}
 boolean result = (a < b); // result true, wenn a kleiner als b
     \end{minted}
 
@@ -79,62 +79,17 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 %BOOLEAN OPERATOREN
 \begin{frame}[fragile]
   \frametitle{Boolean Operatoren}
-
-  \begin{columns}
-    % Linke Spalte: Operatoren und Wahrheitstabellen
-    \begin{column}{0.55\textwidth}
-      \begin{itemize}
-        \item<1-> \texttt{!a} \quad \textrightarrow \quad nicht a
-
-        \item<2-> \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
-        \only<3->{
-          {\tiny
-          \begin{tabular}{|c|c|c|}
-            \hline
-            a & b & a \&\& b \\
-            \hline
-            \texttt{true} & \texttt{true} & \texttt{true} \\
-            \texttt{true} & \texttt{false} & \texttt{false} \\
-            \texttt{false} & \texttt{true} & \texttt{false} \\
-            \texttt{false} & \texttt{false} & \texttt{false} \\
-            \hline
-          \end{tabular}
-          }
-        }
-
-        \item<4-> \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
-        \only<5->{
-          {\tiny
-          \begin{tabular}{|c|c|c|}
-            \hline
-            a & b & a || b \\
-            \hline
-            \texttt{true} & \texttt{true} & \texttt{true} \\
-            \texttt{true} & \texttt{false} & \texttt{true} \\
-            \texttt{false} & \texttt{true} & \texttt{true} \\
-            \texttt{false} & \texttt{false} & \texttt{false} \\
-            \hline
-          \end{tabular}
-          }
-        }
-      \end{itemize}
-    \end{column}
-
-    \begin{column}{0.4\textwidth}
-      \only<6->{
-        \textbf{Klammern priorisieren:}
-        \vspace{0.5em}
-
-        \begin{itemize}
-          \item \mintinline{java}{true || false && false} \\
-          \only<7->{\quad $\Rightarrow$ \mintinline{java}{true}}
-
-          \item \mintinline{java}{(true || false) && false} \\
-          \only<8->{\quad $\Rightarrow$ \mintinline{java}{false}}
-        \end{itemize}
-      }
-    \end{column}
-  \end{columns}
+  \begin{itemize}
+    \item<1-> \texttt{!a} \quad \textrightarrow \quad nicht a
+    \item<2-> \texttt{a \&\& b}	\quad \textrightarrow \quad a UND b
+    \item<3-> \texttt{a || b} \quad \textrightarrow \quad a ODER b
+  \end{itemize}
+  \quad
+  \only<4->{Klammern priorisieren:}
+  \begin{itemize}
+    \item<4-> \mintinline{java}{true || false && false} \quad \textrightarrow \quad \only<5->{\mintinline{java}{true}}
+    \item<6-> \mintinline{java}{(true || false) && false} \quad \textrightarrow \quad \only<7->{\mintinline{java}{false}}
+  \end{itemize}
 \end{frame}
 
 
@@ -148,21 +103,21 @@ boolean result = (a < b); // result true, wenn a kleiner als b
   \begin{itemize}
     \item<1-> Ausführung nur wenn Bedingnung \texttt{true}
     \item<1-> Syntax:
-      \begin{minted}[fontsize=\small]{java}
+          \begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
   // Code bei true
 }
       \end{minted}
     \item<2-> Beispiel:
-      \begin{minted}[fontsize=\small]{java}
+          \begin{minted}[fontsize=\small]{java}
 boolean heuteDienstag = true;
 if (heuteDienstag) {
   System.out.println("Crazyyy heute ist Dinestag");
 }
       \end{minted}
-      \begin{ausgabe}
-      Crazyyy heute ist Dinestag
-      \end{ausgabe}     
+          \begin{ausgabe}
+            Crazyyy heute ist Dinestag
+          \end{ausgabe}
   \end{itemize}
 \end{frame}
 
@@ -194,7 +149,7 @@ if (lieblingszahl == 42) {
     \item<1-> erweitert die \texttt{if} Anweisung
     \item<1-> "wenn \texttt{if} Bedingnung nicht erfüllt dann mach folgendes\dots"
     \item<1-> Syntax:
-\begin{minted}[fontsize=\small]{java}
+          \begin{minted}[fontsize=\small]{java}
 if (Bedingung) {
   // Code bei Bedingnung true
 } else {
@@ -202,7 +157,7 @@ if (Bedingung) {
 }
 \end{minted}
     \item<2-> Beispiel:
-\begin{minted}[fontsize=\small]{java}
+          \begin{minted}[fontsize=\small]{java}
 boolean heuteDonnerstag = false;
 if (heuteDienstag) {
   System.out.println("endlich Wochenende");
@@ -214,10 +169,10 @@ if (heuteDienstag) {
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{\texttt{if}-\texttt{else}}
-    \begin{itemize}
-            \item<1-> Beispiel:
-\begin{minted}[fontsize=\small]{java}
+  \frametitle{\texttt{if}-\texttt{else}}
+  \begin{itemize}
+    \item<1-> Beispiel:
+          \begin{minted}[fontsize=\small]{java}
 boolean heuteDonnerstag = false;
 if (heuteDienstag) {
   System.out.println("endlich Wochenende");
@@ -225,12 +180,12 @@ if (heuteDienstag) {
   System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
-\only{
-\begin{ausgabe}
-:( bestimmt ist bald wieder Donnerstag
-\end{ausgabe}
-}
-    \end{itemize}
+          \only{
+            \begin{ausgabe}
+              :( bestimmt ist bald wieder Donnerstag
+            \end{ausgabe}
+          }
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -238,7 +193,7 @@ if (heuteDienstag) {
   \begin{itemize}
     \item \texttt{else if} prüft mehrere Bedingungen
     \item Beispiel:
-    \begin{minted}{java}
+          \begin{minted}{java}
       if (note == 1) {
     System.out.println("Sehr gut");
 } else if (note == 2) {
@@ -260,10 +215,10 @@ if (heuteDienstag) {
   \frametitle{\texttt{while}-Schleife}
 
   \begin{itemize}
-    \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist    
+    \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist
     \item<1-> Syntax: \mintinline{java}{while (Bedingung) { /* Code */ }}
     \item<2-> Beispiel:
-      \begin{minted}[fontsize=\small]{java}
+          \begin{minted}[fontsize=\small]{java}
 Scanner scanner = new Scanner(System.in);
 String eingabe = "";
 
@@ -272,19 +227,19 @@ while (!eingabe.equals("ok")) {
   eingabe = scanner.nextLine();
 }
       \end{minted}
-      
-      \begin{ausgabe}
-Bitte 'ok' eingeben:
 
-...
+          \begin{ausgabe}
+            Bitte 'ok' eingeben:
 
-Bitte 'ok' eingeben:
+            ...
 
-(Benutzer tippt "ok") → Schleife endet
+            Bitte 'ok' eingeben:
 
-      \end{ausgabe}
-    
-      \end{itemize}
+            (Benutzer tippt "ok") → Schleife endet
+
+          \end{ausgabe}
+
+  \end{itemize}
 
 \end{frame}
 
@@ -295,9 +250,9 @@ Bitte 'ok' eingeben:
 
   \begin{itemize}
     \item Mit \texttt{break} kann man eine Schleife vorzeitig beenden
-\end{itemize}
+  \end{itemize}
 
-\begin{minted}[fontsize=\footnotesize, linenos]{java}
+  \begin{minted}[fontsize=\footnotesize, linenos]{java}
 Scanner scanner = new Scanner(System.in);
 
 String passwort = "diegrillung";
@@ -318,8 +273,8 @@ System.out.println("I'm in");
 
 %CODE TOGHETER
 \begin{frame}[plain]
-    \centering
-    {\Huge\bfseries\textcolor{red}{WURST TOGETHER}}
+  \centering
+  {\Huge\bfseries\textcolor{red}{WURST TOGETHER}}
 \end{frame}
 
 
@@ -330,12 +285,20 @@ System.out.println("I'm in");
   \begin{itemize}
     \item Wiederholt Anweisungen eine festgelegte Anzahl von Malen
     \item Syntax:
-      \begin{minted}[fontsize=\large]{java}
+          \begin{minted}[fontsize=\large]{java}
 for (Start; Bedingung; Schritt) {
     // Schleifenrumpf
 }
 \end{minted}
+    \item Ablauf:
+          \begin{enumerate}
+            \item Wo starten wir? (z.B. bei 0)
+            \item Bedingung noch erfüllt?
+            \item Falls ja, Code im Block ausführen
+            \item Zähler ändern i.d.R. einen hochzählen
+          \end{enumerate}
   \end{itemize}
+  \todo{bessere Erklärung}
 \end{frame}
 
 
@@ -343,7 +306,7 @@ for (Start; Bedingung; Schritt) {
 %FOR BEISPIEL
 \begin{frame}[fragile]
   Somit wird aus\dots
-  
+
   \begin{minted}{java}
     int momentaneWurst = 4
 int letzteWurst = 8
