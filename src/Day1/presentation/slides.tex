@@ -264,4 +264,169 @@
   \achtung{} Variablen müssen vor ihrer Verwendung deklariert und initialisiert werden
 \end{frame}
 
+% Farben für Tabellenzeilen
+\definecolor{tablehead}{RGB}{200,200,255}
+\definecolor{tablerow}{RGB}{240,240,255}
+
+\begin{frame}
+  \frametitle{Primitive Datentypen in Java}
+  \centering
+  \rowcolors{2}{tablerow}{white}
+  \begin{tabular}{>{\bfseries}l l}
+    \rowcolor{tablehead}
+    Typ     & Beschreibung                   \\
+    int     & Ganzzahlen (z.\,B. 1, 2, 3)    \\
+    float   & Kommazahlen (weniger genau)    \\
+    double  & Kommazahlen (hohe Genauigkeit) \\
+    char    & Einzelnes Zeichen (z.\,B. 'a') \\
+    short   & Kleine Ganzzahlen              \\
+    long    & Große Ganzzahlen               \\
+    boolean & Wahrheitswert (true / false)   \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Referenztypen in Java}
+  \centering
+  \rowcolors{2}{tablerow}{white}
+  \begin{tabular}{>{\bfseries}l l}
+    \rowcolor{tablehead}
+    Typ    & Beschreibung                \\
+    String & Text (z.\,B. "Hallo")       \\
+    Array  & Liste von Werten eines Typs \\
+    Object & Allgemeiner Objekttyp       \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Operatoren in Java}
+  \centering
+  \rowcolors{2}{tablerow}{white}
+  \begin{tabular}{>{\bfseries}l l l}
+    \rowcolor{tablehead}
+    Operator & Bedeutung             & Gültige Typen   \\
+    +        & Addition / Verkettung & Zahlen, String  \\
+    -        & Subtraktion           & Zahlen          \\
+    *        & Multiplikation        & Zahlen          \\
+    /        & Division              & Zahlen          \\
+    \%       & Modulo (Rest)         & int, long, etc. \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Beispiel: String + Zahl}
+  \begin{minted}{java}
+String s = "Ergebnis: ";
+int zahl = 5;
+System.out.println(s + zahl);
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Ergebnis: 5
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fehlertypen in Java}
+  \begin{itemize}
+    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
+    \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
+    \item \textbf{Logikfehler:} Programm läuft, aber liefert falsche Ergebnisse
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxfehler – Beispiele}
+  \begin{minted}{java}
+// Fehlendes Semikolon
+System.out.println("Hallo")
+
+// Falsches Schlüsselwort
+publik class Test {}
+
+// Variable nicht deklariert
+x = 5;
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Laufzeitfehler – Beispiele}
+  \begin{minted}{java}
+String s = null;
+s.length(); // NullPointerException
+
+int x = 5 / 0; // ArithmeticException
+
+int[] a = {1, 2};
+a[3]; // ArrayIndexOutOfBoundsException
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Logikfehler – Beispiel}
+  \begin{minted}{java}
+public int add(int x, int y) {
+  return x - y; // Falsche Operation!
+}
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Kommentare in Java}
+  \begin{itemize}
+    \item \texttt{// Einzeilige Kommentare}
+    \item \texttt{/* Mehrzeilige Kommentare */}
+  \end{itemize}
+
+  \vspace{1em}
+  \begin{minted}{java}
+float gewicht = 23.4; // Gewicht in kg
+
+/*
+Berechnet die Summe
+zweier Zahlen
+*/
+int summe = x + y;
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Textausgabe in Java}
+  \begin{minted}{java}
+System.out.print("Hallo ");
+System.out.println("Welt!");
+  \end{minted}
+  \begin{ausgabe}
+    Hallo Welt!
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ausgabe mit Variablen}
+  \begin{minted}{java}
+int number = 42;
+System.out.println("Lieblingszahl: " + number);
+  \end{minted}
+  \begin{ausgabe}
+    Lieblingszahl: 42
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Eingabe mit Scanner}
+  \begin{minted}{java}
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int x = scanner.nextInt();
+    int y = scanner.nextInt();
+    System.out.println(x + y);
+  }
+}
+  \end{minted}
+  \textbf{Hinweis:} \texttt{scanner.nextInt()} liest eine Ganzzahl von der Konsole.
+\end{frame}
+
 \end{document}
