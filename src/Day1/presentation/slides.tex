@@ -1,6 +1,6 @@
 \documentclass{../../presentation}
 
-\title{PSE - Vorkurs}
+\title{PSE - Vorkurs Tag 1}
 \author{Tobias, Philipp, Linus, Tillmann}
 \institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
 \date{\today}
@@ -23,6 +23,10 @@
 \end{frame}
 
 \section{Introduction}
+
+\begin{frame}
+  \todo{Neu machen kommt auf aufgaben Blatt}
+\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{WLAN}
@@ -171,8 +175,8 @@
   Nun schreiben wir folgenen Code in die Main Klasse rein
   \begin{minted}{java}
     public class Main {
-    public static void main(String[] args) {
-		
+      public static void main(String[] args) {
+        System.out.println("Hallo Welt!");
       }
     }
   \end{minted}
@@ -182,18 +186,6 @@
 \begin{frame}
   \frametitle{GitHub}
   GitHub ist eine Plattform, auf der man Code online speichern, verwalten und mit anderen teilen kann. Es basiert auf Git, einem Versionskontrollsystem.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Typische Begriffe auf GitHub}
-  \todo{Neu machen ist ultra hässlich}
-  \begin{itemize}
-    \item \textbf{Repository (Repo):} Dein Projektordner auf GitHub.
-    \item \textbf{Commit:} Eine gespeicherte Änderung am Code.
-    \item \textbf{Push:} Hochladen deiner Änderungen auf GitHub.
-    \item \textbf{Pull:} Änderungen von GitHub herunterladen.
-    \item \textbf{Clone:} Ein Projekt von GitHub auf deinen Computer kopieren.
-  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -209,6 +201,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
+  \todo{null erklären}
   \begin{itemize}
     \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
     \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
@@ -254,14 +247,7 @@
       int alter = 20;
       alter = 21; // alter ist jetzt 21
     \end{minted}
-    \item Variablen können auch mehrfach deklariert werden, aber nur einmal initialisiert
-          \begin{minted}{java}
-      int a = 5;
-      int b = 10;
-      int c = a + b; // c ist jetzt 15
-    \end{minted}
   \end{itemize}
-  \achtung{} Variablen müssen vor ihrer Verwendung deklariert und initialisiert werden
 \end{frame}
 
 % Farben für Tabellenzeilen
@@ -269,34 +255,23 @@
 \definecolor{tablerow}{RGB}{240,240,255}
 
 \begin{frame}
-  \frametitle{Primitive Datentypen in Java}
+  \frametitle{Datentypen in Java}
   \centering
   \rowcolors{2}{tablerow}{white}
   \begin{tabular}{>{\bfseries}l l}
     \rowcolor{tablehead}
-    Typ     & Beschreibung                   \\
-    int     & Ganzzahlen (z.\,B. 1, 2, 3)    \\
-    float   & Kommazahlen (weniger genau)    \\
-    double  & Kommazahlen (hohe Genauigkeit) \\
-    char    & Einzelnes Zeichen (z.\,B. 'a') \\
-    short   & Kleine Ganzzahlen              \\
-    long    & Große Ganzzahlen               \\
-    boolean & Wahrheitswert (true / false)   \\
+    Typ     & \textbf{Beschreibung}                         \\
+    int     & Ganzzahlen (z.\,B. 1, 2, 3)                   \\
+    float   & Kommazahlen (weniger genau)                   \\
+    double  & Kommazahlen (hohe Genauigkeit)                \\
+    char    & Einzelnes Zeichen (z.\,B. 'a')                \\
+    short   & Kleine Ganzzahlen                             \\
+    long    & Große Ganzzahlen                              \\
+    boolean & Wahrheitswert (\texttt{true} / texttt{false}) \\
+    String  & Text (z.\,B. "Hallo")                         \\
   \end{tabular}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Referenztypen in Java}
-  \centering
-  \rowcolors{2}{tablerow}{white}
-  \begin{tabular}{>{\bfseries}l l}
-    \rowcolor{tablehead}
-    Typ    & Beschreibung                \\
-    String & Text (z.\,B. "Hallo")       \\
-    Array  & Liste von Werten eines Typs \\
-    Object & Allgemeiner Objekttyp       \\
-  \end{tabular}
-\end{frame}
 
 \begin{frame}
   \frametitle{Operatoren in Java}
@@ -304,12 +279,12 @@
   \rowcolors{2}{tablerow}{white}
   \begin{tabular}{>{\bfseries}l l l}
     \rowcolor{tablehead}
-    Operator & Bedeutung             & Gültige Typen   \\
-    +        & Addition / Verkettung & Zahlen, String  \\
-    -        & Subtraktion           & Zahlen          \\
-    *        & Multiplikation        & Zahlen          \\
-    /        & Division              & Zahlen          \\
-    \%       & Modulo (Rest)         & int, long, etc. \\
+    Operator & \textbf{Bedeutung}    & \textbf{Gültige Typen} \\
+    +        & Addition / Verkettung & Zahlen, String         \\
+    -        & Subtraktion           & Zahlen                 \\
+    *        & Multiplikation        & Zahlen                 \\
+    /        & Division              & Zahlen                 \\
+    \%       & Modulo (Rest)         & int, long, etc.        \\
   \end{tabular}
 \end{frame}
 
@@ -323,77 +298,6 @@ System.out.println(s + zahl);
   \pause
   \begin{ausgabe}
     Ergebnis: 5
-  \end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Syntaxfehler – Beispiele}
-  \begin{itemize}
-    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
-  \end{itemize}
-  \begin{minted}{java}
-// Fehlendes Semikolon
-System.out.println("Hallo")
-
-// Falsches Schlüsselwort
-publik class Test {}
-
-// Variable nicht deklariert
-x = 5;
-  \end{minted}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Laufzeitfehler – Beispiele}
-  \begin{itemize}
-    \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
-  \end{itemize}
-  \begin{minted}{java}
-String s = null;
-s.length(); // NullPointerException
-
-int x = 5 / 0; // ArithmeticException
-
-int[] a = {1, 2};
-a[3]; // ArrayIndexOutOfBoundsException
-  \end{minted}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Logikfehler – Beispiel}
-  \begin{itemize}
-    \item \textbf{Logikfehler:} Programm läuft, aber Ergebnis ist falsch (z.\,B. falsche Berechnung)
-  \end{itemize}
-  \begin{minted}{java}
-public int add(int x, int y) {
-  return x - y; // Falsche Operation!
-}
-  \end{minted}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Hinweise zum Programmieren}
-  \begin{itemize}
-    \item Achte auf korrekte Syntax (Semikolons, Klammern, etc.)
-    \item Verwende sprechende Variablennamen (z.\,B. \texttt{alter} statt \texttt{x})
-    \item Teste deinen Code regelmäßig, um Fehler frühzeitig zu finden
-  \end{itemize}
-  \achtung{} Eure IDE zeigt euch oft Fehler an, die ihr beheben solltet.
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Fehler suche IDE}
-  \begin{itemize}
-    \item IntelliJ IDEA bietet viele Tools zur Fehlersuche
-    \item Fehler werden rot unterstrichen und in der rechten Leiste angezeigt
-    \item Wenn ihr über den Fehler hovert, seht ihr eine Beschreibung des Problems
-    \item Nutze die integrierte Konsole, um Ausgaben und Fehler zu sehen \newline
-  \end{itemize}
-  \begin{minted}{java}
-  System.out.println("Debugging-Ausgabe")
-  \end{minted}
-  \begin{ausgabe}
-    java: ';' expected
   \end{ausgabe}
 \end{frame}
 
@@ -425,6 +329,16 @@ System.out.println("Welt!");
   \begin{ausgabe}
     Hallo Welt!
   \end{ausgabe}
+  \vspace{0.5cm}
+  \pause
+  \begin{minted}{java}
+System.out.println("Hallo");
+System.out.println("Welt!");
+  \end{minted}
+  \begin{ausgabe}
+    Hallo \newline
+    Welt!
+  \end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -453,6 +367,75 @@ public class Main {
 }
   \end{minted}
   \achtung{} \texttt{scanner.nextInt()} liest eine Ganzzahl von der Konsole.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxfehler – Beispiele}
+  \begin{itemize}
+    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
+  \end{itemize}
+  \begin{minted}{java}
+// Fehlendes Semikolon
+System.out.println("Hallo")
+
+// Variable nicht deklariert
+x = 5;
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Laufzeitfehler – Beispiele}
+  \begin{itemize}
+    \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
+  \end{itemize}
+  \begin{minted}{java}
+String s = null;
+s.length(); // NullPointerException
+
+int x = 5 / 0; // ArithmeticException
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \todo{Logikfehler in Tag 3}
+  \frametitle{Logikfehler – Beispiel}
+  \begin{itemize}
+    \item \textbf{Logikfehler:} Programm läuft, aber Ergebnis ist falsch (z.\,B. falsche Berechnung)
+  \end{itemize}
+  \begin{minted}{java}
+public int add(int x, int y) {
+  return x - y; // Falsche Operation!
+}
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Fehler suche IDE}
+  \begin{itemize}
+    \item IntelliJ IDEA bietet viele Tools zur Fehlersuche
+    \item Fehler werden rot unterstrichen und in der rechten Leiste angezeigt
+    \item Wenn ihr über den Fehler hovert, seht ihr eine Beschreibung des Problems
+    \item Nutze die integrierte Konsole, um Ausgaben und Fehler zu sehen \newline
+  \end{itemize}
+  \begin{minted}{java}
+  System.out.println("Lecker Grillerei!");
+  \end{minted}
+  \begin{ausgabe}
+    java: ';' expected
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hinweise zum Programmieren}
+  \begin{itemize}
+    \item Achte auf korrekte Syntax (Semikolons, Klammern, etc.)
+    \item Verwende sprechende Variablennamen (z.\,B. \texttt{alter} statt \texttt{x})
+    \item Teste deinen Code regelmäßig, um Fehler frühzeitig zu finden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \todo{Autoformatter erklären}
 \end{frame}
 
 \end{document}
