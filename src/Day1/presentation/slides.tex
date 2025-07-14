@@ -326,17 +326,11 @@ System.out.println(s + zahl);
   \end{ausgabe}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Fehlertypen in Java}
-  \begin{itemize}
-    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
-    \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
-    \item \textbf{Logikfehler:} Programm läuft, aber liefert falsche Ergebnisse
-  \end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]
   \frametitle{Syntaxfehler – Beispiele}
+  \begin{itemize}
+    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
+  \end{itemize}
   \begin{minted}{java}
 // Fehlendes Semikolon
 System.out.println("Hallo")
@@ -351,6 +345,9 @@ x = 5;
 
 \begin{frame}[fragile]
   \frametitle{Laufzeitfehler – Beispiele}
+  \begin{itemize}
+    \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
+  \end{itemize}
   \begin{minted}{java}
 String s = null;
 s.length(); // NullPointerException
@@ -364,11 +361,40 @@ a[3]; // ArrayIndexOutOfBoundsException
 
 \begin{frame}[fragile]
   \frametitle{Logikfehler – Beispiel}
+  \begin{itemize}
+    \item \textbf{Logikfehler:} Programm läuft, aber Ergebnis ist falsch (z.\,B. falsche Berechnung)
+  \end{itemize}
   \begin{minted}{java}
 public int add(int x, int y) {
   return x - y; // Falsche Operation!
 }
   \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hinweise zum Programmieren}
+  \begin{itemize}
+    \item Achte auf korrekte Syntax (Semikolons, Klammern, etc.)
+    \item Verwende sprechende Variablennamen (z.\,B. \texttt{alter} statt \texttt{x})
+    \item Teste deinen Code regelmäßig, um Fehler frühzeitig zu finden
+  \end{itemize}
+  \achtung{} Eure IDE zeigt euch oft Fehler an, die ihr beheben solltet.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Fehler suche IDE}
+  \begin{itemize}
+    \item IntelliJ IDEA bietet viele Tools zur Fehlersuche
+    \item Fehler werden rot unterstrichen und in der rechten Leiste angezeigt
+    \item Wenn ihr über den Fehler hovert, seht ihr eine Beschreibung des Problems
+    \item Nutze die integrierte Konsole, um Ausgaben und Fehler zu sehen \newline
+  \end{itemize}
+  \begin{minted}{java}
+  System.out.println("Debugging-Ausgabe")
+  \end{minted}
+  \begin{ausgabe}
+    java: ';' expected
+  \end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -426,7 +452,7 @@ public class Main {
   }
 }
   \end{minted}
-  \textbf{Hinweis:} \texttt{scanner.nextInt()} liest eine Ganzzahl von der Konsole.
+  \achtung{} \texttt{scanner.nextInt()} liest eine Ganzzahl von der Konsole.
 \end{frame}
 
 \end{document}
