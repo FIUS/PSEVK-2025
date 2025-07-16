@@ -1,0 +1,99 @@
+\documentclass{../../presentation}
+
+\title{PSE – Vorkurs Tag 2}
+\author{Tobias, Philipp, Linus, Tillmann}
+\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
+\date{\today}
+
+\makeatletter
+\renewcommand{\lecture@pathprefix}[1]{../../logos/}
+\makeatother
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \listoftodos
+\end{frame}
+
+\begin{frame}
+    \frametitle{Recap Tag 2}
+    \todo{am Anfang immer Vortages recap?}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Funktionen}
+    \begin{itemize}
+        \item Beim Programmieren benötigt man oft die gleiche Funktionalität an mehreren Stellen.
+        \item Bisher musste man dafür den gleichen Code mehrfach schreiben.
+        \item Das führt zu:
+              \begin{itemize}
+                  \item Viel Schreibarbeit
+                  \item Fehleranfälligkeit (z.B. Tippfehler, unterschiedliche Änderungen)
+                  \item Schwerer wartbarer Code
+              \end{itemize}
+        \item \textbf{Lösung:} Funktionen ermöglichen Wiederverwendung von Code!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Funktionen}
+    \begin{itemize}
+        \item Funktionen sind benannte Codeblöcke, die eine bestimmte Aufgabe erfüllen.
+        \item Sie können Parameter entgegennehmen und einen Wert zurückgeben.
+        \item Beispiel: Die PSE-Vorkurs Orgas haben sich ordentlich einen hinter die Rüstung gerömert und wollen jeweils wissen, wie viel Promille sie haben.
+    \end{itemize}
+    \begin{block}{Promille-Berechnung}
+        \[
+            \text{Promille} \approx \frac{\text{Alkohol in Gramm}}{\text{Körpergewicht in kg} \times 0{,}65}
+        \]
+        \[
+            \text{Alkohol in Gramm} = \text{Getränkemenge in Liter} \times \text{Vol\%} \times 8
+        \]
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Funktionen}
+    Mithilfe von Funktionen können wir eine oder mehrere Codezeilen auslagern und an verschiedenen Stellen im Code aufrufen.
+    \begin{itemize}
+        \item Funktionen haben \textbf{Parameter} (= Werte, die der Funktion übergeben werden).
+        \item Funktionen besitzen einen \textbf{Rückgabewert}, ähnlich wie mathematische Funktionen, z.\,B.\ $f(x) = x^2$.
+        \item Der Rückgabewert wird mit \texttt{return} zurückgegeben; danach wird die Funktion abgebrochen.
+    \end{itemize}
+    \begin{minted}{java}
+Rückgabedatentyp Funktionsbezeichner (Datentyp1 Parametername1, ...) {
+    ...
+    return Rückgabewert;
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Funktionen}
+    \begin{itemize}
+        \item man kann so viele Parameter angeben, wie man will
+        \item Parameter können verschiedene Datentypen haben
+        \item Rückgabewert kann auch \texttt{void} sein, wenn die Funktion keinen Wert zurückgibt
+    \end{itemize}
+    \begin{minted}{java}
+    void begruessen(String name) {
+        System.out.println("Hallo, " + name + "!");
+    }
+    \end{minted}
+
+\end{frame}
+
+\begin{frame}[plain]
+    \centering
+    {\Huge\bfseries{Code together}}
+\end{frame}
+
+\end{document}
