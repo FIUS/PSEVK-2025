@@ -190,7 +190,6 @@
 
 \begin{frame}
   \frametitle{Warum GitHub für Java-Projekte?}
-  \todo{Neu machen ist ultra hässlich}
   \begin{itemize}
     \item \textbf{Sicherung:} Du kannst deinen Java-Code (Klassen, Methoden, Projekte) sicher speichern.
     \item \textbf{Versionskontrolle:} Du siehst, was sich zwischen Versionen geändert hat – praktisch beim Lernen oder bei Fehlern.
@@ -201,7 +200,6 @@
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
-  \todo{null erklären}
   \begin{itemize}
     \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
     \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
@@ -211,8 +209,19 @@
     \end{minted}
     \item Hier ist \texttt{alter} der Name der Variable, \texttt{int} der Datentyp (ganzzahlige Zahl) und \texttt{20} der gespeicherte Wert
   \end{itemize}
-  \achtung{} Bezeichner müssen mit einem Buchstaben, Unterstrich (\_) oder Dollarzeichen (\$) beginnen.
-  Danach dürfen beliebig viele Buchstaben, Ziffern, Unterstriche oder Dollarzeichen folgen -- aber keine Leerzeichen oder Sonderzeichen.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Konzept Null}
+  \begin{itemize}
+    \item \texttt{null} steht für „kein Wert“ oder „keine Referenz“.
+    \item Wird verwendet, wenn eine Variable auf kein Objekt zeigt.
+          \begin{minted}{java}
+      String name = null; // name zeigt auf nichts
+      \end{minted}
+    \item Zugriff auf Methoden oder Eigenschaften einer \texttt{null}-Referenz führt zu einem Fehler (\texttt{NullPointerException}).
+  \end{itemize}
+  \achtung{} \texttt{null} ist nicht dasselbe wie eine leere Zeichenkette (\texttt{""}) oder die Zahl 0.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -435,7 +444,14 @@ public int add(int x, int y) {
 \end{frame}
 
 \begin{frame}
-  \todo{Autoformatter erklären}
+  \frametitle{Autoformatter in IntelliJ IDEA}
+  \begin{itemize}
+    \todo{bitte Tastenkombinationen checken und ggf. anpassen}
+    \item Der Autoformatter hilft, den Code automatisch übersichtlich und einheitlich zu formatieren.
+    \item Nutze die Tastenkombination \texttt{Strg + Alt + L} (Windows/Linux) oder \texttt{Cmd + Alt + L} (Mac), um den aktuellen Code zu formatieren.
+    \item Der Formatter achtet auf Einrückungen, Abstände und Zeilenumbrüche.
+    \item Gut formatierter Code ist leichter zu lesen und zu verstehen.
+    \item Tipp: Formatiere deinen Code regelmäßig, besonders vor dem Speichern oder Teilen.
+  \end{itemize}
 \end{frame}
-
 \end{document}
