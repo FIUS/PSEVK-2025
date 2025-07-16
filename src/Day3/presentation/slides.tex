@@ -88,7 +88,6 @@ Rückgabedatentyp Funktionsbezeichner (Datentyp1 Parametername1, ...) {
         System.out.println("Hallo, " + name + "!");
     }
     \end{minted}
-
 \end{frame}
 
 \begin{frame}[plain]
@@ -96,4 +95,33 @@ Rückgabedatentyp Funktionsbezeichner (Datentyp1 Parametername1, ...) {
     {\Huge\bfseries{Code together}}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Main-Methode}
+    \begin{itemize}
+        \item Die \texttt{main}-Methode ist der Einstiegspunkt für jedes Java-Programm.
+        \item Sie wird automatisch aufgerufen, wenn das Programm gestartet wird.
+        \item Die \texttt{main}-Methode muss immer so aussehen:
+              \begin{minted}{java}
+public static void main(String[] args) {
+// Hier beginnt das Programm
+}
+\end{minted}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Basic Scopes}
+    \begin{itemize}
+        \item Variablen, die \textbf{in einer Funktion} definiert sind, können nur in dieser Funktion verwendet werden.
+        \item Variablen, die \textbf{außerhalb einer Funktion} definiert sind, können auch in der Funktion verwendet werden.
+        \item Bei korrekter Einrückung gilt: Variablen sind in den \textbf{kleineren Ebenen} sichtbar, aber nicht in den darüberliegenden.
+        \item Das gilt auch für Schleifen, \texttt{if}-Blöcke usw.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Basic Scopes}
+    \todo{find landscape meme}
+    \includegraphics[height=0.5\linewidth]{img/scopes.jpeg}
+\end{frame}
 \end{document}
