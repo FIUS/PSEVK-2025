@@ -1,6 +1,6 @@
 \documentclass{../../presentation}
 
-\title{PSE – Vorkurs Tag 2}
+\title{PSE – Vorkurs Tag 4}
 \author{Tobias, Philipp, Linus, Tillmann}
 \institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
 \date{\today}
@@ -16,17 +16,167 @@
 \begin{document}
 
 \begin{frame}
-  \titlepage
+	\titlepage
 \end{frame}
 
 \begin{frame}
-  \listoftodos
+	\listoftodos
 \end{frame}
 
 \begin{frame}
-  \frametitle{Recap Tag 1}
-  \todo{am Anfang immer Vortages recap?}
+	\frametitle{Recap Tag 3}
+	\todo{am Anfang immer Vortages recap?}
 \end{frame}
 
+
+\begin{frame}{Angenommen \dots}
+	\begin{itemize}
+		\item Wir wollen Informationen über Studierende speichern
+		      \begin{itemize}
+			      \item[\textbullet] Name
+			      \item[\textbullet] Matrikelnummer
+			      \item[\textbullet] Punkte in einer Prüfung
+			      \item[\textbullet] \dots
+		      \end{itemize}
+		\item Informationen verarbeiten
+		      \begin{itemize}
+			      \item[\textbullet] testen ob Prüfung bestanden
+			      \item[\textbullet] \dots
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Direkt umgesetzt}
+	\begin{minted}{java}
+  String name1 = "Melanie";
+  int matrikel1 = 12345;
+
+  String name2 = "Paul";
+  int matrikel2 = 54321;
+
+  lernen(name2);
+
+  public static void lernen(String name) {
+    System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
+}
+
+\end{minted}
+\begin{ausgabe}
+  Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+\end{ausgabe}
+\end{frame}
+
+
+\begin{frame}[fragile]{Warum so nicht?!}
+	\begin{itemize}
+		\item \textbf{Zusammengehörige Daten sind getrennt} \\
+		      \texttt{name1}, \texttt{matrikel1}, \texttt{punkte1}
+		\item \textbf{Redundanz} \\
+		      Immer wieder dieselben drei Variablen – für jede Person
+		\item \textbf{Kaum skalierbar} \\
+		      Für 2 Studenten okay – aber bei 200? 20.000?
+		\item \textbf{Keine klare Struktur} \\
+		      Was genau ist ein Studierender im Code?
+	\end{itemize}
+	\only<2->{
+		\vspace{2em}
+		\centering
+		{\Huge $\displaystyle \rightarrow$} {\Large Klassen schaffen Ordnung im Chaos.}
+	}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Was sind eigentlich Klassen?}
+	\begin{itemize}
+    \item eine Klasse ist ein \textbf{Bauplan} für Objekte
+		\item Eine Klasse definiert:
+		      \begin{itemize}
+			      \item[\textbullet] welche Daten ein Student hat (Attribute)
+			      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
+		      \end{itemize}
+	\end{itemize}
+  
+  \begin{minted}{java}
+    public class Student{
+    // Eigenschaften (Attribute)
+    String name;
+    int matrikelnummer;
+
+    // Verhalten (Methoden)
+    void lernen() {
+        System.out.println("Grrrr");
+    }
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Klasse(n): Objekte}
+  \begin{itemize}
+    \item ein Objekt ist eine Instanz einer Klasse
+      \begin{itemize}
+        \item[\textbullet] z.B. Paul ist ein Objekt der Klasse Student
+      \end{itemize}
+    \item Objekte werden mit einem \textbf{Konstruktor} erzeugt 
+    \item das ist der Konstruktor von \texttt{Student}:
+      \begin{minted}{java}
+      public Student(String name, int matrikelnummer) {
+		    name = name;
+		    matrikelnummer = matrikelnummer;
+		}
+      \end{minted}
+      \begin{itemize}
+        \item[\textbullet]dieser gibt vor wie das neue Objekt initialisiert wird 
+        \item[\textbullet]hat keinen Rückgabewert 
+        \item[\textbullet]heißt wie die Klasse
+      \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Let\textquotesingle s build \texttt{Paul}}
+  Klasse inklusive Konstruktor:
+  \begin{minted}{java}
+public class Student{
+  String name;
+  int matrikelnummer;
+    
+  public Student(String name, int matrikelnummer) {
+    name = name;
+    matrikelnummer = matrikelnummer;
+  }
+
+  void lernen() {
+    System.out.println("Grrrr");
+  }
+}
+  \end{minted}
+  \texttt{new Student(\dots)} ruft den oben erstellten Konstruktor auf:
+  \begin{minted}{java}
+    Student paul = new Student("Paul", 12345);
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{Paul} ein Highperformer}
+  \begin{minted}{java}
+// Objekt erzeugen
+Student paul = new Student("Paul", 12345);
+
+// Attribute auslesen
+System.out.println(paul.name);
+System.out.println(paul.matrikelnummer);
+
+// Methode aufrufen
+paul.lernen();
+\end{minted}
+
+\begin{ausgabe}
+  Paul
+
+  12345
+
+  Grrrr
+\end{ausgabe}
+\end{frame}
 
 \end{document}
