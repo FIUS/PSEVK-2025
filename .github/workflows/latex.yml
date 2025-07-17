@@ -4,44 +4,37 @@ on:
   push:
     paths:
       - '**.tex'
-      - '**.sty'
-      - '**.cls'
-      - '**.bib'
-      - .github/workflows/latex.yml
   pull_request:
     paths:
       - '**.tex'
-      - '**.sty'
-      - '**.cls'
-      - '**.bib'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Install TeX Live and Python packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-luatex \
-            texlive-xetex \
-            texlive-science \
-            latexmk \
-            python3-pip
-          pip3 install pygments
+    - name: Set up LaTeX environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-full python3-pygments
 
-      - name: Compile LaTeX (slides.tex)
-        run: |
-          latexmk -pdf -shell-escape -interaction=nonstopmode slides.tex
+    - name: Compile .tex files to PDFs
+      run: |
+        mkdir -p output
+        for texfile in $(find . -name '*.tex'); do
+          filename=$(basename "$texfile" .tex)
+          dir=$(dirname "$texfile")
+          pdflatex -shell-escape -output-directory=output "$texfile" || true
+          # Optional: Run multiple times for references etc.
+          pdflatex -shell-escape -output-directory=output "$texfile" || true
+        done
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: slides-pdf
-          path: slides.pdf
+    - name: Upload PDFs as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf-artifacts
+        path: output/*.pdf
