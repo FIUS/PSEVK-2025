@@ -139,7 +139,7 @@
   \fancyhf{}
   \fancyhead[L]{\includegraphics[height=1.5em]{\logopath logo-uni.pdf}}
   \fancyhead[R]{\includegraphics[height=1.8em]{\logopath fius-logo-neu.png}}
-  \fancyhead[C]{\textbf{\@title}}  % ← Ändere "2" je nach Tag!
+  \fancyhead[C]{\@title}  % ← Ändere "2" je nach Tag!
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
