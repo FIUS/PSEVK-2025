@@ -32,3 +32,6 @@ _minted-*/
 //IntelliJ
 .idea
 out
+
+//VS Code workspace
+vscode/
