@@ -24,6 +24,7 @@ _minted-*/
 *.pyg
 *.pygtex
 *.pdf
+*.json
 !logos/*.pdf
 
 //macOS 
