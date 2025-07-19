@@ -29,114 +29,184 @@
 \end{frame}
 
 
+
 \begin{frame}{Angenommen \dots}
 	\begin{itemize}
 		\item Wir wollen Informationen über Studierende speichern
 		      \begin{itemize}
-			      \item[\textbullet] Name
-			      \item[\textbullet] Matrikelnummer
-			      \item[\textbullet] Punkte in einer Prüfung
-			      \item[\textbullet] \dots
+			      \item<2->[\textbullet] Name
+			      \item<3->[\textbullet] Matrikelnummer
+			      \item<4->[\textbullet] \dots
 		      \end{itemize}
-		\item Informationen verarbeiten
+		\item<5-> Informationen verarbeiten
 		      \begin{itemize}
-			      \item[\textbullet] testen ob Prüfung bestanden
-			      \item[\textbullet] \dots
+			      \item<6->[\textbullet] testen ob Prüfung bestanden
+			      \item<7->[\textbullet] \dots
 		      \end{itemize}
 	\end{itemize}
 \end{frame}
 
 
-\begin{frame}[fragile]{Direkt umgesetzt}
-	\begin{minted}{java}
-  String name1 = "Melanie";
-  int matrikel1 = 12345;
 
-  String name2 = "Paul";
-  int matrikel2 = 54321;
-
-  lernen(name2);
-
-  public static void lernen(String name) {
-    System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
-}
-
+% Melanie
+\begin{frame}[fragile,t]{Direkt umgesetzt}
+	\vspace{2.0em}
+	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
+		\begin{minted}{java}
+String name1 = "Melanie";
+int matrikel1 = 12345;
 \end{minted}
-\begin{ausgabe}
-  Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-\end{ausgabe}
+	\end{minipage}
 \end{frame}
+
+
+
+% Melanie + Paul
+\begin{frame}[fragile,t]{Direkt umgesetzt}
+	\vspace{2.0em}
+	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
+		\begin{minted}{java}
+String name1 = "Melanie";
+int matrikel1 = 12345;
+
+String name2 = "Paul";
+int matrikel2 = 54321;
+\end{minted}
+	\end{minipage}
+\end{frame}
+
+
+
+% komplett
+\begin{frame}[fragile,t]{Direkt umgesetzt}
+	\vspace{2.0em}
+	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
+		\begin{minted}{java}
+String name1 = "Melanie";
+int matrikel1 = 12345;
+
+String name2 = "Paul";
+int matrikel2 = 54321;
+
+lernen(name2);
+
+public static void lernen(String name) {
+    System.out.println(name + \" sagt: "Ich hasse mein Leben\"");
+}
+\end{minted}
+	\end{minipage}
+
+	\vspace{-4.0em}
+
+	\only<2->{\begin{ausgabe}
+			Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+		\end{ausgabe}}
+\end{frame}
+
 
 
 \begin{frame}[fragile]{Warum so nicht?!}
 	\begin{itemize}
-		\item \textbf{Zusammengehörige Daten sind getrennt} \\
+		\item<2-> \textbf{Zusammengehörige Daten sind getrennt} \\
 		      \texttt{name1}, \texttt{matrikel1}, \texttt{punkte1}
-		\item \textbf{Redundanz} \\
+		\item<3-> \textbf{Redundanz} \\
 		      Immer wieder dieselben drei Variablen – für jede Person
-		\item \textbf{Kaum skalierbar} \\
+		\item<4-> \textbf{Kaum skalierbar} \\
 		      Für 2 Studenten okay – aber bei 200? 20.000?
-		\item \textbf{Keine klare Struktur} \\
+		\item<5-> \textbf{Keine klare Struktur} \\
 		      Was genau ist ein Studierender im Code?
 	\end{itemize}
-	\only<2->{
-		\vspace{2em}
+
+	\vspace{2em}
+	\centering
+	\begin{minipage}{\textwidth}
 		\centering
-		{\Huge $\displaystyle \rightarrow$} {\Large Klassen schaffen Ordnung im Chaos.}
-	}
+		\onslide<6->{\Huge $\rightarrow$~}%
+		\onslide<6->{\Large Klassen schaffen Ordnung im Chaos}
+	\end{minipage}
 \end{frame}
 
 
 
+% Teil-Folie
+\begin{frame}[fragile,t]{Was sind eigentlich Klassen?}
 
-\begin{frame}[fragile]{Was sind eigentlich Klassen?}
-	\begin{itemize}
-    \item eine Klasse ist ein \textbf{Bauplan} für Objekte
-		\item Eine Klasse definiert:
-		      \begin{itemize}
-			      \item[\textbullet] welche Daten ein Student hat (Attribute)
-			      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
-		      \end{itemize}
-	\end{itemize}
-  
-  \begin{minted}{java}
-    public class Student{
+	\begin{minipage}[t][0.9\textheight][t]{\textwidth}
+		\begin{itemize}
+			\item eine Klasse ist ein \textbf{Bauplan} für Objekte
+			\item<2->Eine Klasse definiert:
+			      \begin{itemize}
+		\item[\textbullet] welche Daten ein Student hat (Attribute)
+				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
+			      \end{itemize}
+		\end{itemize}
+
+		\vspace{3.5cm}
+	\end{minipage}
+
+\end{frame}
+
+
+
+% Volle Folie
+\begin{frame}[fragile,t]{Was sind eigentlich Klassen?}
+
+	\begin{minipage}[t][0.9\textheight][t]{\textwidth}
+		\begin{itemize}
+			\item eine Klasse ist ein \textbf{Bauplan} für Objekte
+			\item Eine Klasse definiert:
+			      \begin{itemize}
+				      \item[\textbullet] welche Daten ein Student hat (Attribute)
+				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
+			      \end{itemize}
+		\end{itemize}
+
+		\begin{minted}{java}
+public class Student {
     // Eigenschaften (Attribute)
     String name;
     int matrikelnummer;
 
     // Verhalten (Methoden)
     void lernen() {
-        System.out.println("Grrrr");
+        System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
     }
-  \end{minted}
+}
+\end{minted}
+	\end{minipage}
 \end{frame}
 
+
+
 \begin{frame}[fragile]{Klasse(n): Objekte}
-  \begin{itemize}
-    \item ein Objekt ist eine Instanz einer Klasse
-      \begin{itemize}
-        \item[\textbullet] z.B. Paul ist ein Objekt der Klasse Student
-      \end{itemize}
-    \item Objekte werden mit einem \textbf{Konstruktor} erzeugt 
-    \item das ist der Konstruktor von \texttt{Student}:
-      \begin{minted}{java}
+	\begin{itemize}
+		\item ein Objekt ist eine Instanz einer Klasse
+		      \begin{itemize}
+			      \item[\textbullet] z.B. Paul ist ein Objekt der Klasse Student
+		      \end{itemize}
+		\item<2-> Objekte werden mit einem \textbf{Konstruktor} erzeugt
+		\item<3-> das ist der Konstruktor von \texttt{Student}:
+		      \begin{minted}{java}
       public Student(String name, int matrikelnummer) {
 		    name = name;
 		    matrikelnummer = matrikelnummer;
 		}
       \end{minted}
-      \begin{itemize}
-        \item[\textbullet]dieser gibt vor wie das neue Objekt initialisiert wird 
-        \item[\textbullet]hat keinen Rückgabewert 
-        \item[\textbullet]heißt wie die Klasse
-      \end{itemize}
-\end{itemize}
+		      \begin{itemize}
+			      \item<4->[\textbullet]dieser gibt vor wie das neue Objekt initialisiert wird
+			      \item<5->[\textbullet]hat keinen Rückgabewert
+			      \item<6->[\textbullet]heißt wie die Klasse
+		      \end{itemize}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Let\textquotesingle s build \texttt{Paul}}
-  Klasse inklusive Konstruktor:
-  \begin{minted}{java}
+
+
+\begin{frame}[fragile]{Let\textquotesingle s build \texttt{paul}}
+	\begin{itemize}
+
+		\item Klasse inklusive Konstruktor:
+		      \begin{minted}{java}
 public class Student{
   String name;
   int matrikelnummer;
@@ -147,18 +217,21 @@ public class Student{
   }
 
   void lernen() {
-    System.out.println("Grrrr");
+    System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
   }
 }
   \end{minted}
-  \texttt{new Student(\dots)} ruft den oben erstellten Konstruktor auf:
-  \begin{minted}{java}
+		\item<2->\texttt{new Student(\dots)} ruft den oben erstellten Konstruktor auf:
+		      \begin{minted}{java}
     Student paul = new Student("Paul", 12345);
   \end{minted}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{Paul} ein Highperformer}
-  \begin{minted}{java}
+
+
+\begin{frame}[fragile]{\texttt{paul} ein Highperformer}
+	\begin{minted}{java}
 // Objekt erzeugen
 Student paul = new Student("Paul", 12345);
 
@@ -170,13 +243,15 @@ System.out.println(paul.matrikelnummer);
 paul.lernen();
 \end{minted}
 
-\begin{ausgabe}
-  Paul
+	\begin{ausgabe}
+		Paul
 
-  12345
+		12345
 
-  Grrrr
-\end{ausgabe}
+		Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+	\end{ausgabe}
 \end{frame}
+
+
 
 \end{document}
