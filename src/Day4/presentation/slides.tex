@@ -32,7 +32,7 @@
 
 \begin{frame}{Angenommen \dots}
 	\begin{itemize}
-		\item Wir wollen Informationen über Studierende speichern
+		\item Wir wollen z.B. Informationen über Studierende speichern
 		      \begin{itemize}
 			      \item<2->[\textbullet] Name
 			      \item<3->[\textbullet] Matrikelnummer
@@ -54,7 +54,7 @@
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
 String name1 = "Melanie";
-int matrikel1 = 12345;
+int matrikelnummer1 = 12345;
 \end{minted}
 	\end{minipage}
 \end{frame}
@@ -67,10 +67,10 @@ int matrikel1 = 12345;
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
 String name1 = "Melanie";
-int matrikel1 = 12345;
+int matrikelnummer1 = 12345;
 
 String name2 = "Paul";
-int matrikel2 = 54321;
+int matrikelnummer2 = 54321;
 \end{minted}
 	\end{minipage}
 \end{frame}
@@ -83,10 +83,10 @@ int matrikel2 = 54321;
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
 String name1 = "Melanie";
-int matrikel1 = 12345;
+int matrikelnummer1 = 12345;
 
 String name2 = "Paul";
-int matrikel2 = 54321;
+int matrikelnummer2 = 54321;
 
 lernen(name2);
 
@@ -108,7 +108,7 @@ public static void lernen(String name) {
 \begin{frame}[fragile]{Warum so nicht?!}
 	\begin{itemize}
 		\item<2-> \textbf{Zusammengehörige Daten sind getrennt} \\
-		      \texttt{name1}, \texttt{matrikel1}, \texttt{punkte1}
+		      \texttt{name1}, \texttt{matriklenummer1}, \texttt{punkte1}
 		\item<3-> \textbf{Redundanz} \\
 		      Immer wieder dieselben drei Variablen – für jede Person
 		\item<4-> \textbf{Kaum skalierbar} \\
@@ -188,8 +188,8 @@ public class Student {
 		\item<3-> das ist der Konstruktor von \texttt{Student}:
 		      \begin{minted}{java}
       public Student(String name, int matrikelnummer) {
-		    name = name;
-		    matrikelnummer = matrikelnummer;
+		    this.name = name;
+		    this.matrikelnummer = matrikelnummer;
 		}
       \end{minted}
 		      \begin{itemize}
@@ -212,8 +212,8 @@ public class Student{
   int matrikelnummer;
     
   public Student(String name, int matrikelnummer) {
-    name = name;
-    matrikelnummer = matrikelnummer;
+    this.name = name;
+    this.matrikelnummer = matrikelnummer;
   }
 
   void lernen() {
@@ -252,6 +252,146 @@ paul.lernen();
 	\end{ausgabe}
 \end{frame}
 
+
+
+\begin{frame}[fragile]{Sichtbarkeit in Klassen}
+
+\begin{itemize}
+	\item<2-> \texttt{private}: nur innerhalb der Klasse sichtbar
+	\item<3-> \texttt{public}: überall sichtbar (auch von außen)
+	\begin{minted}{java}
+public class Student {
+    private String name;         
+    public int matrikelnummer;   
+
+    public void lernen() {
+        System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
+    }
+}
+\end{minted}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Sichtbarkeit in Klassen}
+
+\begin{itemize}
+
+  \item<2-> \texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
+  \begin{minted}{java}
+    Student paul = new Student("Paul", 12345);
+
+    System.out.println(paul.matrikelnummer);
+    paul.lernen();
+  \end{minted}
+  \only<3->{\begin{ausgabe}
+    12345
+
+
+    Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+  \end{ausgabe}}
+	\item<4-> \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
+	\begin{minted}{java}
+    Student paul = new Student("Paul", 12345);
+
+    System.out.println(paul.name);
+  \end{minted}
+  \only<5->{\begin{ausgabe}
+    \alert{java: name hat private-Zugriff in Student}
+  \end{ausgabe}}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Attribute können auch \texttt{final} sein}
+
+\begin{itemize}
+  \item<2-> mit \texttt{final} kann Attribut nach Initialisierung nicht mehr geändert werden
+  \item<3-> Syntax: \texttt{<Sichtbarkeit> final <Datentyp> <Name> = <Wert>;}
+  \item<4-> Beispiel:
+\begin{minted}{java}
+public class Student {
+    private final String name;
+    public int matrikelnummer;
+    
+  public Student(String name, int matrikelnummer) {
+    this.name = name; //kann jetzt nie wieder geändert werde
+    this.matrikelnummer = matrikelnummer; //kann belibig oft geändert werden
+  }
+}
+\end{minted}
+
+  \item<5-> Wird versucht \texttt{name} später zu ändern → \alert{Fehler}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Klassen sind Highperformer\textsuperscript{²}}
+
+\begin{itemize}
+  \item<2-> Klassen können auch andere Objekte enthalten
+  \item<3-> Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
+\begin{minted}{java}
+public class Universitaet {
+    Student[] alleStudis;
+
+    public Universitaet(int anzahl) {
+        alleStudis = new Student[anzahl];
+        for (int i = 0; i < anzahl; i++) {
+            alleStudis[i] = new Student("Paul", i);
+        }
+    }
+}
+\end{minted}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Och nöö Prüfungsphase}
+
+\begin{itemize}
+  \item<2-> neue Methode der \texttt{Universitaet} Klasse
+\begin{minted}{java}
+public void pruefungsvorbereitung() {
+    for (Student s : alleStudis) {
+        s.lernen();
+    }
+}
+\end{minted}
+  \item<3-> \texttt{pruefungsvorbereitung} bringt alle Studenten einer Universität zum lernen
+\end{itemize}
+\end{frame}
+
+% Folie 3
+\begin{frame}[fragile]{so schnell kanns gehen}
+
+\begin{itemize}
+  \item<2-> Was passier hier?
+\begin{minted}{java}
+public class Main {
+        Universitaet uniStuttgart = new Universitaet(3);
+        uniStuttgart.pruefungsvorbereitung();
+    }
+\end{minted}
+  \begin{itemize}
+		\item<4->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt 
+		\item<5->[\textbullet]der \texttt{Universitaet} Konstruktor erstellt 3 Studenten
+		\item<6->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
+	\end{itemize}
+  \only<7->{
+\begin{ausgabe}
+Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+
+Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+
+Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+\end{ausgabe}}
+\end{itemize}
+\end{frame}
 
 
 \end{document}
