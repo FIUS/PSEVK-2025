@@ -6,18 +6,104 @@
 \begin{document}
 \maketitle
 
-Was gibt der folgende Code aus?
-\begin{minted}{java}
-x = 5
-if x > 3:
-    print("Größer als 3")
-\end{minted}
+Wir sind so back.\\
 
-\begin{ausgabe}
-    Größer als 3
-\end{ausgabe}
+\textbf{Hilfe suchen und finden}\\
+Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die Offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}. 
 
 \newpage
-\aufgabe{Aufgabe 1: Ein Beispiel}
+\aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
+\begin{enumerate}
+    \item Schreibe für die UNO diesen Freitag (Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
+    \item Füge dem Programm ein Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: boolean Wert). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
+    \item Jetzt fehlen nur noch drinks, Frag ab wie viel Geld die Person dabei hat und jeweils wieviele Shots (2 Euro), Longdrinks (3 Euro), Cocktails (4 Euro) und Biere (2 Euro) die Person will. Gib am Ende aus ob das Geld ausreicht. 
+    TODO passen die Preise ich hab gar kein Plan?
+\end{enumerate}
 
+\newpage
+\aufgabe{Aufgabe 2: Schleifen}
+\begin{enumerate}
+    \item Wir arbeiten weiter mit dem UNO Programm. Implementier mithilfe von for-Schleifen das jedes Getränk Nummeriert ausgegeben wird, das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann: 
+    \begin{ausgabe}
+Shot 1 ist  eingeschenkt\\
+Shot 2 ist  eingeschenkt\\
+Shot 3 ist  eingeschenkt\\
+Cocktail 1 ist  Gemixt\\
+Bier 1 ist geöffnet\\
+Bier 2 ist geöffnet
+    \end{ausgabe}
+    \item Da Studis ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich die Bestellung leisten kann. 
+\end{enumerate}
+
+\newpage
+\aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
+In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Wir definieren eine Formel einfach als Boole'schen Ausdruck. Wenn es mit irgendeiner Belegung der Variablen möglich ist, dass die Formel insgesamt \texttt{true} wird, dann ist die Formel erfüllbar. Zusätzlich gibt es noch Formeln die immer Wahr (Tautologien) oder immer Falsch sind (Unerfüllbar):\\
+\texttt{((a \&\& c) || b)} ist erfüllbar, z.b. wenn b \texttt{true} ist.\\
+\texttt{(a \&\& !b \&\& !a \&\& c)} ist unerfüllbar, da a zugleich wahr und falsch sein müsste\\
+\texttt{(!(a \&\& b) == !a || !b)} ist eine Tautologie, da die linke Seite nur \texttt{false} ist, wenn a und b beide \texttt{true} sind, für die Rechte seite gilt genau das gleiche. Deswegen ist sind die beiden Seiten immer gleich. 
+\begin{enumerate}
+    \item Prüfe folgende Boole'sche Ausdrücke Systematisch mit einem Programm auf ihre Erfüllbarkeit und gib dann erfüllbar, unerfüllbar oder Tautologie aus. 
+    \begin{enumerate}
+        \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
+        \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar
+        \item \begin{ausgabe} \texttt{((a \&\& !b \&\& !c) || (!a \&\& b \&\& d)) \&\& (e || f)} \end{ausgabe} %Erfüllbar 3/16
+        \item \begin{ausgabe} \texttt{((a \&\& b) || (!a || b) || (!b)) \&\&
+            ((c \&\& d) || (!c || d) || (!d)) \&\&
+            ((e \&\& f) || (!e || f) || (!f)) \&\&
+            ((g \&\& h) || (!g || h) || (!h))} 
+        \end{ausgabe} %Tautologie
+        \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c) \&\& (!a || !b || c)) \&\&
+            ((d \&\& !e \&\& f) \&\& (!d || e || !f)) \&\&
+            ((g \&\& h) \&\& (!g \&\& !h))} 
+        \end{ausgabe} %Unerfüllbar
+        \item \begin{ausgabe} \texttt{(!(a \&\& b \&\& c) || (a \&\& (b || c))) || (d || !d)} \end{ausgabe} %Tautologie
+        \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c \&\& !d \&\& !e) ||
+            (!a \&\& c \&\& d \&\& !b \&\& !e) ||
+            (!b \&\& !c \&\& !d \&\& e \&\& f)) \&\& (!g || h)} 
+        \end{ausgabe} %Erfüllbar 9/128
+        \item \begin{ausgabe} \texttt{(!w || x) \&\&
+            (k || !j) \&\&
+            (!z || !a) \&\&
+            (!q || r) \&\&
+            (!k || l) \&\&\\
+            (!v || a) \&\&
+            (!g || h) \&\&
+            (!h || i) \&\&
+            (!u || v) \&\&
+            (!a || b) \&\&\\
+            (j || !k) \&\&
+            (!l || m) \&\&
+            (!n || o) \&\&
+            (!c || d) \&\&
+            (!x || y) \&\&\\
+            (b || f) \&\&
+            (!b || c) \&\&
+            (y || !z) \&\&
+            (!t || u) \&\&
+            (!m || n) \&\&\\
+            (!o || p) \&\&
+            (!r || s) \&\&
+            (!j || k) \&\&
+            (!s || t) \&\&
+            (!i || j) \&\&\\
+            (d || e) \&\&
+            (!d || e) \&\&
+            (z || a) \&\&
+            (!f || g) \&\&
+            (!e || f) \&\&\\
+            (a || !b) \&\&
+            (c || !d) \&\&
+            (!p || q) \&\&
+            (!x || d) \&\&
+            (!w || x) \&\&\\
+            (h || !e) \&\&
+            (!n || q) \&\&
+            (!v || a) \&\&
+            (!s || h) \&\&\\
+            (u || !t) \&\&
+            (!g || h)} 
+    \end{ausgabe} %Unerfüllbar
+    Tipp: Da wegen den und's alle Klammern wahr werden müssen, kann man z.b. aus \texttt{(a || b)} schließen: Wenn \texttt{a = false}, dann muss \texttt{b = true} sein und andersrum.
+    \end{enumerate}
+\end{enumerate}
 \end{document}
