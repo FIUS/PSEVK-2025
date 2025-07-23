@@ -14,6 +14,7 @@
 \RequirePackage{minted}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}
+\RequirePackage{hyperref}
 
 % Farben
 \definecolor{accent}{RGB}{80, 85, 124}
