@@ -90,10 +90,10 @@ Rückgabedatentyp Funktionsbezeichner (Datentyp1 Parametername1, ...) {
     \end{minted}
 \end{frame}
 
-\begin{frame}[plain]
-    \centering
-    {\Huge\bfseries{Code together}}
-\end{frame}
+% \begin{frame}[plain]
+%     \centering
+%     {\Huge\bfseries{Code together}}
+% \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Main-Methode}
@@ -123,10 +123,69 @@ public static void main(String[] args) {
     \frametitle{Basic Scopes}
     \includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
-\end{document}
 
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Arrays}
-    TODO: bitte arr.length einführen
+    Mit \textbf{Arrays} kann eine Sammlung von Werten des gleichen Datentyps gespeichert werden.
+    \begin{itemize}
+        \item Alle Elemente in einem Array müssen den gleichen Datentyp haben (z.\,B.\ \texttt{int}, \texttt{double}, \texttt{String}).
+        \item Ein Array hat eine feste Länge, die beim Erstellen festgelegt wird.
+        \item Die Elemente im Array sind geordnet und über einen \textbf{Index} erreichbar.
+    \end{itemize}
+    \begin{minted}{java}
+        <Datentyp>[] <Bezeichner> = new <Datentyp>[<Expression>];
+    \end{minted}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Zugriff auf Elemente eines Arrays}
+    \begin{itemize}
+        \item Jedes Element hat eine Nummer (index)
+        \item Wir können über den Index auf die Elemente zugreifen
+    \end{itemize}
+    \begin{columns}
+        \column{0.5\linewidth}
+        \begin{minted}{java}
+            int[] array = new int[5];
+            array[0] = 6;
+            array[2] = 9;
+        \end{minted}
+
+        \column{0.5\linewidth}
+        \begin{center}
+            \begin{tikzpicture}
+                \foreach \x in {0,1,...,4} {
+                        \draw (\x,0) rectangle coordinate(c\x) (\x+1, 1);
+                        \node[below] at (\x+0.5, 0) {\x};
+                    }
+                \node at (c0) {\bf 6};
+                \node at (c2) {\bf 9};
+            \end{tikzpicture}
+        \end{center}
+    \end{columns}
+
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        \item Die Array-Variable speichert die Länge das arrays: \mintinline{java}{array.length}
+        \item Der höchste Index ist immer \mintinline{java}{array.length - 1}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Arrays}
+    Wir können Arrays auch direkt mit Werten initialisieren
+    \begin{minted}{java}
+    String[] grillSachen = {"würstchen", "steak", "grillkäse", "maiskolben"};
+    \end{minted}
+    Und wir können sie auch mit einer Schleife durchlaufen:
+    \begin{minted}{java}
+    System.out.println(grillSachen[1]);
+    for (int i = 0; i < grillSachen.length; i++) {
+            System.out.println(grillSachen[i]);
+        }
+    \end{minted}
+\end{frame}
+
+\end{document}
