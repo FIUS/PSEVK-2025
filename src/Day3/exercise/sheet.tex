@@ -16,13 +16,13 @@ Wir sind so back.
     \begin{ausgabe}
 Es ist Grillereizeit meine Freunde!
     \end{ausgabe}
-    Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, du musst sie erstellen und auch dann in der main ausführen.
-    \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als String zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe oben zu erstellen. Versuch außerdem die Aufgabe ohne Variable zu lösen.
+    Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, sie muss in der main aufgerufen werden.
+    \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als String zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe wie oben in Aufgabe 1 zu erstellen. Zusätzlich kannst du versuchen die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter annimmt und die Person herzlich zur Grillerei einläd:
     \begin{ausgabe}
 Komm ran Melanie, es gibt Grillung!
     \end{ausgabe}
-    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ operator verwenden darf (also kein + - * / etc.). 
+    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ operator verwenden darf (also kein + - * / etc.). Der ++ Operator funktioniert so:
     \begin{minted}{java}
 int a = 3;
 a++;
@@ -32,7 +32,8 @@ System.out.println(a);
         4
     \end{ausgabe}
     \item Nutze die Additionsfunktion um eine neue Funktion zu erstellen, die zwei Zahlen multipliziert, im Körper dieser Funktion dürfen keine Mathematischen Operatoren vorkommen.
-    \item Nutze die Multiplikationsfunktion um Fakültät (Fakültät von 6 schreibt man als: 6! = 6*5*4*3*2*1) zu implementieren.
+    \item Nutze die Multiplikationsfunktion um Fakültät zu implementieren.\\
+    Hinweis: Beispielsweise schreibt man Fakültät von 6 so: 6! = 6*5*4*3*2*1
 \end{enumerate}
 
 \newpage
@@ -44,7 +45,31 @@ System.out.println(a);
     \item Das scheint nicht zu klappen, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich printed.\\
     Hinweis: Erinner dich an Array.length aus der Präsi.
     \item Programmiere eine neue print Funktion, die 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt. 
-    \item Programmiere eine Funktion, die eine Zahl n entgegennimmt und die ersten n Zahlen der Fibonacci-Reihe zurückgibt.\\
+    \item Programmiere eine Funktion, die eine Seitenlänge entgegennimmt und daraus ein 2-D Array aus Einsen mit einem diagonalen Streifen aus Nullen zurückgibt (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 2 programmiert hast.\\
+    Seitenlänge 6:
+    \begin{ausgabe}
+0 0 0 1 1 1\\
+0 0 0 0 1 1\\ 
+0 0 0 0 0 1\\ 
+1 0 0 0 0 0\\ 
+1 1 0 0 0 0\\ 
+1 1 1 0 0 0
+    \end{ausgabe}
+    Seitenlänge 10:
+    \begin{ausgabe}
+0 0 0 1 1 1 1 1 1 1 \\
+0 0 0 0 1 1 1 1 1 1 \\
+0 0 0 0 0 1 1 1 1 1 \\
+1 0 0 0 0 0 1 1 1 1 \\
+1 1 0 0 0 0 0 1 1 1 \\
+1 1 1 0 0 0 0 0 1 1 \\
+1 1 1 1 0 0 0 0 0 1 \\
+1 1 1 1 1 0 0 0 0 0 \\
+1 1 1 1 1 1 0 0 0 0 \\
+1 1 1 1 1 1 1 0 0 0
+    \end{ausgabe}
+    Wenn du an dieser Aufgabe Spaß hattest gibt es im Codeanhang noch mehr Muster die du versuchen kannst zu generieren.
+    \item Programmiere eine Funktion, die eine Zahl n entgegennimmt und ein Array mit den ersten n Zahlen der Fibonacci-Reihe zurückgibt. Teste dein Programm mit der Array-Printfunktion die du oben Programmiert hast.\\
     Hinweis: Die Fibonacci Reihe fängt mit 1, 1 an und jedes darauffolgende Element ist die Summe der Beiden vorigen Elemente: 1, 1, 2, 3, 5, 8, 13, ...
 
 \end{enumerate}
@@ -54,18 +79,68 @@ System.out.println(a);
 Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} gibt die Java-interne Zeitmessung in Nanosekunden ($10^{-9}$ Sekunden) aus. 
 \begin{enumerate}
     \item Miss die durchschnittliche Laufzeit eines prints.
-    \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
-    \item Baue eine Funktion, die das Array als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Der Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
-    Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten eine Laufzeitanalyse oft durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
+    \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. \\ 
+    Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
+    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
+    Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten bei einer Laufzeitanalyse die Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
     \item Versuche deine Funktion zu Optimieren und somit schneller zu machen. \\
-    Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo am meisten Zeit rauszuholen ist. 
+    Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann. 
     \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen oder zwei die dir gefallen zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
     \item MAYBE hier noch schrittzahlanalyse machen
 \end{enumerate}
 
 \newpage
 \aufgabe{Codeanhang}
-Higherforme-Aufgabe 3:
+Aufgabe 2: Arrays:\\
+4. Alle mit Seitenlänge 13
+\begin{ausgabe}
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1 \\
+0 1 0 1 0 1 0 1 0 1 0 1 0 \\
+1 0 1 0 1 0 1 0 1 0 1 0 1
+\end{ausgabe}
+\begin{ausgabe}
+1 1 1 1 1 1 0 1 1 1 1 1 1 \\
+1 1 1 1 1 0 0 0 1 1 1 1 1 \\
+1 1 1 1 0 0 0 0 0 1 1 1 1 \\
+1 1 1 0 0 0 0 0 0 0 1 1 1 \\
+1 1 0 0 0 0 0 0 0 0 0 1 1 \\
+1 0 0 0 0 0 0 0 0 0 0 0 1 \\
+0 0 0 0 0 0 0 0 0 0 0 0 0 \\
+1 0 0 0 0 0 0 0 0 0 0 0 1 \\
+1 1 0 0 0 0 0 0 0 0 0 1 1 \\
+1 1 1 0 0 0 0 0 0 0 1 1 1 \\
+1 1 1 1 0 0 0 0 0 1 1 1 1 \\
+1 1 1 1 1 0 0 0 1 1 1 1 1 \\
+1 1 1 1 1 1 0 1 1 1 1 1 1
+\end{ausgabe}
+\begin{ausgabe}
+1 1 1 1 1 1 1 1 1 1 1 1 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 0 0 0 1 0 0 0 1 0 0 0 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 1 1 1 1 1 1 1 1 1 1 1 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 0 0 0 1 0 0 0 1 0 0 0 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 1 1 1 1 1 1 1 1 1 1 1 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 0 0 0 1 0 0 0 1 0 0 0 1 \\
+1 1 0 1 1 1 0 1 1 1 0 1 1 \\
+1 1 1 1 1 1 1 1 1 1 1 1 1
+\end{ausgabe}
+
+Higherformer-Aufgabe:\\
+3.
 \begin{minted}{java}
 public int[] quicksort(int[]){
     //TODO
