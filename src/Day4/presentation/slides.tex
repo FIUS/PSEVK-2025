@@ -136,7 +136,7 @@ public static void lernen(String name) {
 			\item eine Klasse ist ein \textbf{Bauplan} für Objekte
 			\item<2->Eine Klasse definiert:
 			      \begin{itemize}
-		\item[\textbullet] welche Daten ein Student hat (Attribute)
+				      \item[\textbullet] welche Daten ein Student hat (Attribute)
 				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
 			      \end{itemize}
 		\end{itemize}
@@ -256,10 +256,10 @@ paul.lernen();
 
 \begin{frame}[fragile]{Sichtbarkeit in Klassen}
 
-\begin{itemize}
-	\item<2-> \texttt{private}: nur innerhalb der Klasse sichtbar
-	\item<3-> \texttt{public}: überall sichtbar (auch von außen)
-	\begin{minted}{java}
+	\begin{itemize}
+		\item<2-> \texttt{private}: nur innerhalb der Klasse sichtbar
+		\item<3-> \texttt{public}: überall sichtbar (auch von außen)
+		      \begin{minted}{java}
 public class Student {
     private String name;         
     public int matrikelnummer;   
@@ -269,48 +269,48 @@ public class Student {
     }
 }
 \end{minted}
-\end{itemize}
+	\end{itemize}
 \end{frame}
 
 
 
 \begin{frame}[fragile]{Sichtbarkeit in Klassen}
 
-\begin{itemize}
+	\begin{itemize}
 
-  \item<2-> \texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
-  \begin{minted}{java}
+		\item<2-> \texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
+		      \begin{minted}{java}
     Student paul = new Student("Paul", 12345);
 
     System.out.println(paul.matrikelnummer);
     paul.lernen();
   \end{minted}
-  \only<3->{\begin{ausgabe}
-    12345
+		      \only<3->{\begin{ausgabe}
+				      12345
 
 
-    Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-  \end{ausgabe}}
-	\item<4-> \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
-	\begin{minted}{java}
+				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+			      \end{ausgabe}}
+		\item<4-> \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
+		      \begin{minted}{java}
     Student paul = new Student("Paul", 12345);
 
     System.out.println(paul.name);
   \end{minted}
-  \only<5->{\begin{ausgabe}
-    \alert{java: name hat private-Zugriff in Student}
-  \end{ausgabe}}
-\end{itemize}
+		      \only<5->{\begin{ausgabe}
+				      \alert{java: name hat private-Zugriff in Student}
+			      \end{ausgabe}}
+	\end{itemize}
 \end{frame}
 
 
 \begin{frame}[fragile]{Attribute können auch \texttt{final} sein}
 
-\begin{itemize}
-  \item<2-> mit \texttt{final} kann Attribut nach Initialisierung nicht mehr geändert werden
-  \item<3-> Syntax: \texttt{<Sichtbarkeit> final <Datentyp> <Name> = <Wert>;}
-  \item<4-> Beispiel:
-\begin{minted}{java}
+	\begin{itemize}
+		\item<2-> mit \texttt{final} kann Attribut nach Initialisierung nicht mehr geändert werden
+		\item<3-> Syntax: \texttt{<Sichtbarkeit> final <Datentyp> <Name> = <Wert>;}
+		\item<4-> Beispiel:
+		      \begin{minted}{java}
 public class Student {
     private final String name;
     public int matrikelnummer;
@@ -322,8 +322,8 @@ public class Student {
 }
 \end{minted}
 
-  \item<5-> Wird versucht \texttt{name} später zu ändern → \alert{Fehler}
-\end{itemize}
+		\item<5-> Wird versucht \texttt{name} später zu ändern → \alert{Fehler}
+	\end{itemize}
 
 \end{frame}
 
@@ -332,10 +332,10 @@ public class Student {
 
 \begin{frame}[fragile]{Klassen sind Highperformer\textsuperscript{²}}
 
-\begin{itemize}
-  \item<2-> Klassen können auch andere Objekte enthalten
-  \item<3-> Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
-\begin{minted}{java}
+	\begin{itemize}
+		\item<2-> Klassen können auch andere Objekte enthalten
+		\item<3-> Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
+		      \begin{minted}{java}
 public class Universitaet {
     Student[] alleStudis;
 
@@ -347,50 +347,50 @@ public class Universitaet {
     }
 }
 \end{minted}
-\end{itemize}
+	\end{itemize}
 \end{frame}
 
 
 \begin{frame}[fragile]{Och nöö Prüfungsphase}
 
-\begin{itemize}
-  \item<2-> neue Methode der \texttt{Universitaet} Klasse
-\begin{minted}{java}
+	\begin{itemize}
+		\item<2-> neue Methode der \texttt{Universitaet} Klasse
+		      \begin{minted}{java}
 public void pruefungsvorbereitung() {
     for (Student s : alleStudis) {
         s.lernen();
     }
 }
 \end{minted}
-  \item<3-> \texttt{pruefungsvorbereitung} bringt alle Studenten einer Universität zum lernen
-\end{itemize}
+		\item<3-> \texttt{pruefungsvorbereitung} bringt alle Studenten einer Universität zum lernen
+	\end{itemize}
 \end{frame}
 
 % Folie 3
 \begin{frame}[fragile]{so schnell kanns gehen}
 
-\begin{itemize}
-  \item<2-> Was passiert hier?
-\begin{minted}{java}
+	\begin{itemize}
+		\item<2-> Was passiert hier?
+		      \begin{minted}{java}
 public class Main {
         Universitaet uniStuttgart = new Universitaet(3);
         uniStuttgart.pruefungsvorbereitung();
     }
 \end{minted}
-  \begin{itemize}
-		\item<4->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt 
-		\item<5->[\textbullet]der \texttt{Universitaet} Konstruktor erstellt 3 Studenten
-		\item<6->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
+		      \begin{itemize}
+			      \item<4->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt
+			      \item<5->[\textbullet]der \texttt{Universitaet} Konstruktor erstellt 3 Studenten
+			      \item<6->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
+		      \end{itemize}
+		      \only<7->{
+			      \begin{ausgabe}
+				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+
+				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+
+				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+			      \end{ausgabe}}
 	\end{itemize}
-  \only<7->{
-\begin{ausgabe}
-Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-
-Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-
-Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-\end{ausgabe}}
-\end{itemize}
 \end{frame}
 
 
