@@ -9,19 +9,19 @@ Wir sind so back.
 
 \newpage
 
-\aufgabe{Aufgabe 1: Funktionen Erstellen}
+\aufgabe{Aufgabe 1: Einfache Funktionen Erstellen}
 
 \begin{enumerate}
     \item Erstelle eine Funktion ohne Parameter und ohne Rückgabewert, die den Anfang der Grillung ankündigt:
     \begin{ausgabe}
 Es ist Grillereizeit meine Freunde!
     \end{ausgabe}
+    Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, du musst sie erstellen und auch dann in der main ausführen.
     \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als String zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe oben zu erstellen. Versuch außerdem die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter annimmt und die Person herzlich zur Grillerei einläd:
     \begin{ausgabe}
 Komm ran Melanie, es gibt Grillung!
     \end{ausgabe}
-    \item Erstelle eine Funktion, die prüft ob eine als Parameter übergebene Zahl eine Primzahl ist
     \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ operator verwenden darf (also kein + - * / etc.). 
     \begin{minted}{java}
 int a = 3;
@@ -32,7 +32,43 @@ System.out.println(a);
         4
     \end{ausgabe}
     \item Nutze die Additionsfunktion um eine neue Funktion zu erstellen, die zwei Zahlen multipliziert, im Körper dieser Funktion dürfen keine Mathematischen Operatoren vorkommen.
-    \item Nutze die Multiplikationsfunktion um Fakültät (Fakültät von 5 schreibt man als: 5! = 5*4*3*2*1) zu implementieren.
+    \item Nutze die Multiplikationsfunktion um Fakültät (Fakültät von 6 schreibt man als: 6! = 6*5*4*3*2*1) zu implementieren.
 \end{enumerate}
 
+\newpage
+\aufgabe{Aufgabe 2: Arrays}
+
+
+\begin{enumerate}
+    \item Versuche ein Array zu Printen
+    \item Das scheint nicht zu klappen, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich printed.\\
+    Hinweis: Erinner dich an Array.length aus der Präsi.
+    \item Programmiere eine neue print Funktion, die 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt. 
+    \item Programmiere eine Funktion, die eine Zahl n entgegennimmt und die ersten n Zahlen der Fibonacci-Reihe zurückgibt.\\
+    Hinweis: Die Fibonacci Reihe fängt mit 1, 1 an und jedes darauffolgende Element ist die Summe der Beiden vorigen Elemente: 1, 1, 2, 3, 5, 8, 13, ...
+
+\end{enumerate}
+
+\newpage
+\aufgabe{HIGHPERFORMER-Aufgabe: Sortieren und Performance-Analyse}
+Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} gibt die Java-interne Zeitmessung in Nanosekunden ($10^{-9}$ Sekunden) aus. 
+\begin{enumerate}
+    \item Miss die durchschnittliche Laufzeit eines prints.
+    \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
+    \item Baue eine Funktion, die das Array als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Der Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
+    Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten eine Laufzeitanalyse oft durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
+    \item Versuche deine Funktion zu Optimieren und somit schneller zu machen. \\
+    Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo am meisten Zeit rauszuholen ist. 
+    \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen oder zwei die dir gefallen zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
+    \item MAYBE hier noch schrittzahlanalyse machen
+\end{enumerate}
+
+\newpage
+\aufgabe{Codeanhang}
+Higherforme-Aufgabe 3:
+\begin{minted}{java}
+public int[] quicksort(int[]){
+    //TODO
+}
+\end{minted}
 \end{document}

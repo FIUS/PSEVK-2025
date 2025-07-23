@@ -113,7 +113,7 @@ int zufallsInt = rndGenerator.nextInt(10);
 
 \begin{enumerate}
     \item Modifiziere deinen Modulotrainer sodass man die beiden Zahlen nicht mehr selbst eingibt (war auch wirklich zu leicht so), sondern so, dass diese zufällig generiert werden. 
-    \item In folgendem code bekommt ihr einen sogenannten Seed (5-Stellig) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl. Wir (die PSE-Vorkurs Hauptorgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen.
+    \item Kopiert das Programm aus Codeanhang 1. Dort bekommt ihr einen sogenannten Seed (5-Stellig) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl. Wir (die PSE-Vorkurs Hauptorgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen.
     
     \begin{minted}{java}
 public int zufallsZahl(int seed) {
@@ -130,4 +130,39 @@ public int zufallsZahl(int seed) {
     \end{minted}
 \end{enumerate}
 
+\newpage
+\aufgabe{Codeanhang}
+Highperformer Aufgabe 2:
+\begin{minted}{java}
+public class main{
+    public int zufallsZahl(int seed) {
+        //seed ist die ursprüngliche 5-stellige Zahl mit der ihr rechnen könnt
+        int rueckgabeZahl;
+
+        // Schreibt euren code, der am ende eure neue zehnstellige Zahl
+        // der Variable rueckgabeZahl zuweisen soll zwischen hier...
+
+
+        // ... und hier
+        return rueckgabeZahl
+    }
+
+    public static void main(string[] args){
+        int anzahlTestZahlen = 100;
+        int[] zahlen = new int[anzahlTestZahlen];
+        Random rnd = new Random()
+
+        for (int i = 0; i < anzahlTestZahlen; i++) {
+            int seed = rnd.nextInt(100000)
+            zahlen[i] = zufallsZahl(seed)
+        }
+
+        analyse(zahlen);
+    }
+
+    public void analyse(int[] zufallsZahlen) {
+        //TODO
+    }
+}
+\end{minted}
 \end{document}
