@@ -16,13 +16,13 @@ Wir sind so back.
           \begin{ausgabe}
               Es ist Grillereizeit meine Freunde!
           \end{ausgabe}
-          Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, sie muss in der main aufgerufen werden.
+          Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, sie muss zusätzlich in der main aufgerufen werden.
     \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als String zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe wie oben in Aufgabe 1 zu erstellen. Zusätzlich kannst du versuchen die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter annimmt und die Person herzlich zur Grillerei einläd:
           \begin{ausgabe}
               Komm ran Melanie, es gibt Grillung!
           \end{ausgabe}
-    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ operator verwenden darf (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
+    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
           \begin{minted}{java}
 int a = 3;
 a++;
@@ -44,8 +44,17 @@ System.out.println(a);
     \item Versuche ein Array zu Printen
     \item Das scheint nicht zu klappen, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich printed.\\
           Hinweis: Erinner dich an Array.length aus der Präsi.
-    \item Programmiere eine neue print Funktion, die 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.
-    \item Programmiere eine Funktion, die eine Seitenlänge entgegennimmt und daraus ein 2-D Array aus Einsen mit einem diagonalen Streifen aus Nullen zurückgibt (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 2 programmiert hast.\\
+    \item Programmiere eine neue print Funktion, die statt den normalen Listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.\\
+    Hinweis: Ein zweidimensionales Array ist ein Array von Arrays:
+    \begin{minted}{java}
+int[][] einArray = new int[3][3]; //ein zweidimensionales Array der Größe 3x3
+einArray[0][2] = 3;
+System.out.println(einArray[0][2]);
+    \end{minted}
+    \begin{ausgabe}
+        3
+    \end{ausgabe}
+    \item Programmiere eine Funktion, die eine Seitenlänge entgegennimmt und daraus ein 2-D Array aus Einsen mit einem diagonalen Streifen aus Nullen zurückgibt (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
           Seitenlänge 6:
           \begin{ausgabe}
               0 0 0 1 1 1\\
@@ -81,7 +90,7 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
     \item Miss die durchschnittliche Laufzeit eines prints.
     \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. \\
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
-    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
+    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
           Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten bei einer Laufzeitanalyse die Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
     \item Versuche deine Funktion zu Optimieren und somit schneller zu machen. \\
           Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann.
@@ -92,7 +101,7 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
 \newpage
 \aufgabe{Codeanhang}
 Aufgabe 2: Arrays:\\
-4. Alle mit Seitenlänge 13, aber deine Funktion sollte die Arrays je nach Eingabegröße generieren.
+4. Alle mit Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
 \begin{ausgabe}
     1 0 1 0 1 0 1 0 1 0 1 0 1 \\
     0 1 0 1 0 1 0 1 0 1 0 1 0 \\
