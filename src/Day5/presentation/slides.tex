@@ -1,6 +1,6 @@
 \documentclass{../../presentation}
 
-\title{PSE – Vorkurs Tag 5}
+\title{PSE - Vorkurs Tag 5}
 \author{Tobias, Philipp, Linus, Tillmann}
 \institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
 \date{\today}
@@ -29,12 +29,62 @@
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Map (Dictionary)}
-\begin{itemize}
-	\item Eine Map (oder ein Dictionary) ist eine Datenstruktur, die Schlüssel-Wert-Paare speichert.
-	\item Jeder Schlüssel ist eindeutig und wird verwendet, um den entsprechenden Wert zu finden.
-	\item Maps sind nützlich, um Daten zu organisieren und schnell auf sie zuzugreifen.
-\end{itemize}
+	\frametitle{Map (Dictionary)}
+	\begin{itemize}
+		\item Eine Map (oder ein Dictionary) ist eine Datenstruktur, die Schlüssel-Wert-Paare speichert.
+		\item Jeder Schlüssel ist eindeutig und wird verwendet, um den entsprechenden Wert zu finden.
+		\item Maps sind nützlich, um Daten zu organisieren und schnell auf sie zuzugreifen.
+	\end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Map (Dictionary)}
+	\begin{itemize}
+		\item Wir wollen Werte mit einem \texttt{Schlüssel} verbinden → z. B. “Name” → Handynummer
+		\item Dafür gibt es in Java Map-Strukturen - der Standard: HashMap
+	\end{itemize}
+	\begin{minted}{java}
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, Integer> phonebook = new HashMap<>();
+        phonebook.put("Anna", 01711234567);
+        phonebook.put("Ben", 01517654321);
+
+        System.out.println(phonebook.get("Anna"));
+    }
+}
+\end{minted}
+	\begin{ausgabe}
+		01711234567
+	\end{ausgabe}
+\end{frame}
+
+% Farben für Tabellenzeilen
+\definecolor{tablehead}{RGB}{200,200,255}
+\definecolor{tablerow}{RGB}{240,240,255}
+
+\begin{frame}
+	\frametitle{Map - Methoden}
+	\begin{table}[h]
+		\centering
+		\rowcolors{2}{tablerow}{white}
+		\begin{tabular}{l l}
+			\rowcolor{tablehead}
+			\textbf{Methode}        & \textbf{Beschreibung}                    \\
+			\hline
+			\texttt{put(k, v)}      & Fügt einen neuen Schlüssel-Wert-Paar ein \\
+			\texttt{get(k)}         & Gibt den Wert zu einem Schlüssel zurück  \\
+			\texttt{remove(k)}      & Entfernt einen Eintrag                   \\
+			\texttt{containsKey(k)} & Prüft, ob Schlüssel existiert            \\
+			\texttt{keySet()}       & Gibt alle Schlüssel zurück               \\
+			\texttt{values()}       & Gibt alle Werte zurück                   \\
+			\texttt{size()}         & Gibt die Anzahl der Einträge zurück      \\
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
 
 \end{document}
