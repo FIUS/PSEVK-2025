@@ -16,3 +16,9 @@ Das wird benötigt, damit `minted` beim Erstellen des PDFs auf Python zugreifen 
 ```bash
 latexmk -pdf -pvc -shell-escape slides.tex
 ```
+
+Autoformatter, um ein einheitliches Code lesen zu gewährleisten wird latexindent verwenden in kombination mit latexworkshop -> VSCode Extension
+```bash
+brew install latexindent
+```
+
