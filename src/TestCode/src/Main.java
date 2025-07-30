@@ -20,11 +20,11 @@ public class Main {
         eval(results);
     }
 
-    public static long randomize(long seed) {
+    public static long randomize(long seed){
         return seed * 100000 + seed;
     }
 
-    public static void eval(ArrayList<Long> results) {
+    public static void eval(ArrayList<Long> results){
         long start = System.nanoTime();
 
         String resultString = results.stream()
@@ -38,12 +38,12 @@ public class Main {
         System.out.println("Die Ziffernverteilung von deinem Zufallsgenerator");
 
         DecimalFormat df = new DecimalFormat("###.#");
-        countMap.forEach((k, v) -> System.out.println(k + " : " + df.format((double) v / seedBound * 10) + " % = " + v));
+        countMap.forEach((k, v) -> System.out.println(k + " : " + df.format((double)v/seedBound*10) + " % = " + v));
 
 
-        for (long v : countMap.values()) {
-            if (v > seedBound * (1 + offsetTolerance)) {
-                return;//TODO
+        for(long v :countMap.values()){
+            if (v > seedBound * (1 + offsetTolerance)){
+                zu viel
             }
         }
     }
