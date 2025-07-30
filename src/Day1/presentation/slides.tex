@@ -214,8 +214,7 @@
 \begin{frame}[fragile]
   \frametitle{Konzept Null}
   \begin{itemize}
-    \item \texttt{null} steht für „kein Wert“ oder „keine Referenz“.
-    \item Wird verwendet, wenn eine Variable auf kein Objekt zeigt.
+    \item \texttt{null} steht für „kein Wert“
           \begin{minted}{java}
       String name = null; // name zeigt auf nichts
       \end{minted}
@@ -227,7 +226,7 @@
 \begin{frame}[fragile]
   \frametitle{Variablen}
   \begin{itemize}
-    \item Deklaration \quad \textrightarrow \quad Variable wird angelegt/erstellt \textbf{OHNE} einen Wert zuzuweisen
+    \item Deklaration \quad \textrightarrow \quad Variable wird erstellt \textbf{OHNE} einen Wert zuzuweisen
           \begin{minted}{java}
       int zahl;
     \end{minted}
@@ -239,11 +238,12 @@
           \pause
   \end{itemize}
   \begin{minted}{java}
-  //In der Regel Deklaration und Initialisierung gleichzeitig:
+  //In der Regel Deklaration und Initialisierung gleichzeitig
   int zahl = 42;
 
   //aber auch so möglich
   int zahl;
+  // ...
   zahl = 42;
   \end{minted}
 \end{frame}
@@ -293,16 +293,16 @@
     -        & Subtraktion           & Zahlen                 \\
     *        & Multiplikation        & Zahlen                 \\
     /        & Division              & Zahlen                 \\
-    \%       & Modulo (Rest)         & int, long, etc.        \\
+    \%       & Modulo (Rest)         & Ganzzahlen             \\
   \end{tabular}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Beispiel: String + Zahl}
   \begin{minted}{java}
-String s = "Ergebnis: ";
+String text = "Ergebnis: ";
 int zahl = 5;
-System.out.println(s + zahl);
+System.out.println(text + zahl);
   \end{minted}
   \pause
   \begin{ausgabe}
@@ -332,11 +332,11 @@ int summe = x + y;
 \begin{frame}[fragile]
   \frametitle{Textausgabe in Java}
   \begin{minted}{java}
-System.out.print("Hallo ");
-System.out.println("Welt!");
+System.out.print("Hallo");
+System.out.print("Welt!");
   \end{minted}
   \begin{ausgabe}
-    Hallo Welt!
+    HalloWelt!
   \end{ausgabe}
   \vspace{0.5cm}
   \pause
@@ -388,7 +388,7 @@ public class Main {
 System.out.println("Hallo")
 
 // Variable nicht deklariert
-x = 5;
+zahl = 5;
   \end{minted}
 \end{frame}
 
@@ -398,10 +398,10 @@ x = 5;
     \item \textbf{Laufzeitfehler:} Fehler während der Ausführung (z.\,B. Division durch 0)
   \end{itemize}
   \begin{minted}{java}
-String s = null;
-s.length(); // NullPointerException
+String text = null;
+text.length(); // NullPointerException
 
-int x = 5 / 0; // ArithmeticException
+int zahl = 5 / 0; // ArithmeticException
   \end{minted}
 \end{frame}
 

@@ -50,7 +50,7 @@ boolean heuteDienstag = true;
 
 %ARITHMETRISCH BOOLEAN
 \begin{frame}[fragile]
-  \frametitle{Arithmetische Boolean Operatoren}
+  \frametitle{Boolean Operatoren}
 
   \only<1->{Wenn \texttt{a} und \texttt{b} Zahlen sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
@@ -146,22 +146,22 @@ boolean result = (a < b); // result true, wenn a kleiner als b
   \frametitle{\texttt{if}-Verzweigung}
 
   \begin{itemize}
-    \item<1-> Ausführung nur wenn Bedingnung \texttt{true}
+    \item<1-> Ausführung nur wenn Bedingung \texttt{true}
     \item<1-> Syntax:
-          \begin{minted}[fontsize=\small]{java}
+          \begin{minted}{java}
 if (Bedingung) {
   // Code bei true
 }
       \end{minted}
     \item<2-> Beispiel:
-          \begin{minted}[fontsize=\small]{java}
+          \begin{minted}{java}
 boolean heuteDienstag = true;
 if (heuteDienstag) {
-  System.out.println("Crazyyy heute ist Dinestag");
+  System.out.println("Crazyyy heute ist Dienstag");
 }
       \end{minted}
           \begin{ausgabe}
-            Crazyyy heute ist Dinestag
+            Crazyyy heute ist Dienstag
           \end{ausgabe}
   \end{itemize}
 \end{frame}
@@ -172,8 +172,8 @@ if (heuteDienstag) {
   \begin{itemize}
     \item<1-> geht genauso mit \texttt{int} etc.
     \item<2-> Beispiel:
-          \begin{minted}[fontsize=\small]{java}
-int lieblingszahl  = 42;
+          \begin{minted}{java}
+int lieblingszahl = 42;
 if (lieblingszahl == 42) {
   System.out.println("Du bist ein Highperformer!");
 }
@@ -192,22 +192,13 @@ if (lieblingszahl == 42) {
 
   \begin{itemize}
     \item<1-> erweitert die \texttt{if} Anweisung
-    \item<1-> "wenn \texttt{if} Bedingnung nicht erfüllt dann mach folgendes\dots"
+    \item<1-> "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
     \item<1-> Syntax:
-          \begin{minted}[fontsize=\small]{java}
+          \begin{minted}{java}
 if (Bedingung) {
-  // Code bei Bedingnung true
+  // Code bei Bedingung true
 } else {
   // Code bei Bedingung false
-}
-\end{minted}
-    \item<2-> Beispiel:
-          \begin{minted}[fontsize=\small]{java}
-boolean heuteDonnerstag = false;
-if (heuteDienstag) {
-  System.out.println("endlich Wochenende");
-} else {
-  System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
   \end{itemize}
@@ -217,7 +208,7 @@ if (heuteDienstag) {
   \frametitle{\texttt{if}-\texttt{else}}
   \begin{itemize}
     \item<1-> Beispiel:
-          \begin{minted}[fontsize=\small]{java}
+          \begin{minted}{java}
 boolean heuteDonnerstag = false;
 if (heuteDienstag) {
   System.out.println("endlich Wochenende");
@@ -239,7 +230,7 @@ if (heuteDienstag) {
     \item \texttt{else if} prüft mehrere Bedingungen
     \item Beispiel:
           \begin{minted}{java}
-      if (note == 1) {
+if (note == 1) {
     System.out.println("Sehr gut");
 } else if (note == 2) {
     System.out.println("Gut");
@@ -263,7 +254,7 @@ if (heuteDienstag) {
     \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist
     \item<1-> Syntax: \mintinline{java}{while (Bedingung) { /* Code */ }}
     \item<2-> Beispiel:
-          \begin{minted}[fontsize=\small]{java}
+          \begin{minted}{java}
 Scanner scanner = new Scanner(System.in);
 String eingabe = "";
 

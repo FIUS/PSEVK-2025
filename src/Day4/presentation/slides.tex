@@ -107,7 +107,7 @@ public static void lernen(String name) {
 
 \begin{frame}[fragile]{Warum so nicht?!}
 	\begin{itemize}
-		\item<2-> \textbf{Zusammengehörige Daten sind getrennt} \\
+		\item<2-> \textbf{Zusammengehörige Eigenschaften sind getrennt} \\
 		      \texttt{name1}, \texttt{matriklenummer1}, \texttt{punkte1}
 		\item<3-> \textbf{Redundanz} \\
 		      Immer wieder dieselben drei Variablen – für jede Person
@@ -136,8 +136,8 @@ public static void lernen(String name) {
 			\item eine Klasse ist ein \textbf{Bauplan} für Objekte
 			\item<2->Eine Klasse definiert:
 			      \begin{itemize}
-				      \item[\textbullet] welche Daten ein Student hat (Attribute)
-				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
+				      \item[\textbullet] welche Eigenschaften ein Student hat (Attribute)
+				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Funktionen)
 			      \end{itemize}
 		\end{itemize}
 
@@ -156,8 +156,8 @@ public static void lernen(String name) {
 			\item eine Klasse ist ein \textbf{Bauplan} für Objekte
 			\item Eine Klasse definiert:
 			      \begin{itemize}
-				      \item[\textbullet] welche Daten ein Student hat (Attribute)
-				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Methoden)
+				      \item[\textbullet] welche Eigenschaften ein Student hat (Attribute)
+				      \item[\textbullet] was ein Student \texttt{"}kann\texttt{"} (Funktionen)
 			      \end{itemize}
 		\end{itemize}
 
@@ -167,7 +167,7 @@ public class Student {
     String name;
     int matrikelnummer;
 
-    // Verhalten (Methoden)
+    // Verhalten (Funktionen)
     void lernen() {
         System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
     }
@@ -239,7 +239,7 @@ Student paul = new Student("Paul", 12345);
 System.out.println(paul.name);
 System.out.println(paul.matrikelnummer);
 
-// Methode aufrufen
+// Funktion aufrufen
 paul.lernen();
 \end{minted}
 
@@ -316,8 +316,8 @@ public class Student {
     public int matrikelnummer;
     
   public Student(String name, int matrikelnummer) {
-    this.name = name; //kann jetzt nie wieder geändert werde
-    this.matrikelnummer = matrikelnummer; //kann belibig oft geändert werden
+    this.name = name; //kann jetzt nie wieder geändert werden
+    this.matrikelnummer = matrikelnummer; //kann beliebig oft geändert werden
   }
 }
 \end{minted}
@@ -354,7 +354,7 @@ public class Universitaet {
 \begin{frame}[fragile]{Och nöö Prüfungsphase}
 
 	\begin{itemize}
-		\item<2-> neue Methode der \texttt{Universitaet} Klasse
+		\item<2-> neue Funktion der \texttt{Universitaet} Klasse
 		      \begin{minted}{java}
 public void pruefungsvorbereitung() {
     for (Student s : alleStudis) {
@@ -373,9 +373,9 @@ public void pruefungsvorbereitung() {
 		\item<2-> Was passiert hier?
 		      \begin{minted}{java}
 public class Main {
-        Universitaet uniStuttgart = new Universitaet(3);
-        uniStuttgart.pruefungsvorbereitung();
-    }
+    Universitaet uniStuttgart = new Universitaet(3);
+	uniStuttgart.pruefungsvorbereitung();
+}
 \end{minted}
 		      \begin{itemize}
 			      \item<4->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt
