@@ -75,7 +75,7 @@
 \usemintedstyle{paraiso-light}
 
 \setminted{
-  fontsize=\scriptsize,
+  fontsize=\small,
   linenos=true,
   stripall=true,
   breaklines=true,
