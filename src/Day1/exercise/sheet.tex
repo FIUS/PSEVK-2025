@@ -73,28 +73,28 @@ Gibt folgendes aus:
 
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
-Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner Objekt. Mit scannerObjekt.next() wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
+Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
 \begin{minted}{java}
 Scanner derScanner = new Scanner(System.in);
-System.out.println("Gib deinen Namen ein:");
+System.out.println("Gib deinen Namen ein: ");
 String deinName = derScanner.next();
 System.out.println("Du heißt: " + deinName);
 \end{minted}
 
 \begin{enumerate}
-    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Etwas funktioniert nicht, überlegt mal warum (Auflösung in der Fußnote
+    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Etwas funktioniert nicht, überlegt mal warum (Tipp in der Fußnote
           \footnote{
               next() gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Dafür besitzt Scanner die nextInt() Funktion.
           }
           )?
-    \item Programmiere ein Modulo Trainer, bei dem man zwei Zahlen eingibt, dann das Ergebnis von zahl1 \% zahl2 eingeben soll und dann am Ende das korrekte Ergebnis ausgegeben wird.
+    \item Programmiere ein Modulo Trainer, bei dem man zwei Zahlen mit dem Scanner eingibt, dann das Ergebnis von \texttt{zahl1 \% zahl2} eingeben soll und dann am Ende das korrekte Ergebnis ausgegeben wird.
     \item Schreibe eine kurze Geschichte (oder such dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: \textquotesingle\textquotesingle\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}\textquotesingle\textquotesingle \space zu:
           \begin{ausgabe}
               Gib ein Thema ein: Backen\\
               Gib ein Verb ein: Ofen sprengen\\
-              Die Backen-Vorkurs Hauptorgas lieben Backpulver vergessen.
+              Die Backen-Vorkurs Hauptorgas lieben Ofen sprengen.
           \end{ausgabe}
-          Lass deine Sitznachbarn und/oder die Helfer den dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt. TODO überlegen ob man die irgendwo sammelt und mby eine witzigste Text competition macht
+          Lass deine Sitznachbarn und/oder die Helfer den dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt.
 \end{enumerate}
 
 \newpage
@@ -119,7 +119,7 @@ int zufallsInt = rndGenerator.nextInt(10);
 \newpage
 \aufgabe{Codeanhang}
 Highperformer Aufgabe 2:
-\begin{minted}{java}
+\begin{minted}[linenos=false]{java}
 public class main{
     public int zufallsZahl(int seed) {
         //seed ist die ursprüngliche 5-stellige Zahl mit der ihr rechnen könnt
