@@ -37,7 +37,6 @@
               \begin{itemize}
                   \item Viel Schreibarbeit
                   \item Fehleranfälligkeit (z.B. Tippfehler, unterschiedliche Änderungen)
-                  \item Schwerer wartbarer Code
               \end{itemize}
         \item \textbf{Lösung:} Funktionen ermöglichen Wiederverwendung von Code!
     \end{itemize}
@@ -96,14 +95,14 @@ Rückgabedatentyp Funktionsbezeichner (Datentyp1 Parametername1, ...) {
 % \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Main-Methode}
+    \frametitle{Main-Funktion}
     \begin{itemize}
-        \item Die \texttt{main}-Methode ist der Einstiegspunkt für jedes Java-Programm.
+        \item Die \texttt{main}-Funktion ist der Einstiegspunkt für jedes Java-Programm.
         \item Sie wird automatisch aufgerufen, wenn das Programm gestartet wird.
-        \item Die \texttt{main}-Methode muss immer so aussehen:
+        \item Die \texttt{main}-Funktion muss immer so aussehen:
               \begin{minted}{java}
 public static void main(String[] args) {
-// Hier beginnt das Programm
+    // Hier beginnt das Programm
 }
 \end{minted}
     \end{itemize}
@@ -134,7 +133,7 @@ public static void main(String[] args) {
         \item Die Elemente im Array sind geordnet und über einen \textbf{Index} erreichbar.
     \end{itemize}
     \begin{minted}{java}
-        <Datentyp>[] <Bezeichner> = new <Datentyp>[<Expression>];
+        Datentyp[] Bezeichner = new Datentyp[ArrayLänge];
     \end{minted}
 \end{frame}
 
@@ -160,7 +159,10 @@ public static void main(String[] args) {
                         \node[below] at (\x+0.5, 0) {\x};
                     }
                 \node at (c0) {\bf 6};
+                \node at (c1) {\bf null};
                 \node at (c2) {\bf 9};
+                \node at (c3) {\bf null};
+                \node at (c4) {\bf null};
             \end{tikzpicture}
         \end{center}
     \end{columns}
@@ -183,8 +185,8 @@ public static void main(String[] args) {
     \begin{minted}{java}
     System.out.println(grillSachen[1]);
     for (int i = 0; i < grillSachen.length; i++) {
-            System.out.println(grillSachen[i]);
-        }
+        System.out.println(grillSachen[i]);
+    }
     \end{minted}
 \end{frame}
 

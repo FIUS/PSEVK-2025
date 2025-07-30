@@ -93,7 +93,7 @@ cross/.default={1pt}}
 
 \usepackage{minted}
 \setminted{
-  fontsize={\scriptsize},
+  fontsize={\small},
   linenos=true,
   stripall=true,
   breaklines=true,
