@@ -1,4 +1,4 @@
-name: Build with make
+name: Build sheets with make
 on: [push,pull_request]
 jobs:
   build_latex:
@@ -13,8 +13,8 @@ jobs:
           run: |
             apk add make
             make build-exercise
-      - name: zip exams
+      - name: zip files
         uses: actions/upload-artifact@v4
         with:
           name: sheets
-          path: 'src/Day*/sheets/Day*.pdf'
+          path: 'src/Day*/exercise/Day*.pdf'
