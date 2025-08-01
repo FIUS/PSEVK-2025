@@ -1,4 +1,4 @@
-name: Build with make
+name: Build slides without stopping
 on: [push,pull_request]
 jobs:
   build_latex:

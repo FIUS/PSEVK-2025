@@ -34,7 +34,6 @@ cleanall: clean
 
 
 %presentation/slides.pdf: $$(@D)/*.tex $(TEX_DEPS_COMMON)
-	echo cd $(@D)  latexmk -pdf -shell-escape -jobname=$(subst /presentation/slides.pdf,,$(subst src/,,$(@)))-slides slides.tex
 	cd $(@D) && latexmk -pdf -shell-escape -jobname=$(subst /presentation/slides.pdf,,$(subst src/,,$(@)))-slides slides.tex
 
 Day%:
