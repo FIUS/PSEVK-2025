@@ -12,9 +12,9 @@ jobs:
           scheme: full
           run: |
             apk add make
-            make build-exercise
+            make rushb
       - name: zip exams
         uses: actions/upload-artifact@v4
         with:
           name: examprotocols
-          path: 'src/Day*/sheets/Day*.pdf'
+          path: 'src/Day*/presentation/Day*.pdf'
