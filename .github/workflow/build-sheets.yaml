@@ -1,0 +1,20 @@
+name: Build with make
+on: [push,pull_request]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intialize CI/CD
+        uses: actions/checkout@v4
+      - name: Compile Documents
+        uses: xu-cheng/texlive-action@v2
+        with:
+          scheme: full
+          run: |
+            apk add make
+            make build-shee
+      - name: zip exams
+        uses: actions/upload-artifact@v4
+        with:
+          name: examprotocols
+          path: 'src/Day*/*/Day*.pdf'
