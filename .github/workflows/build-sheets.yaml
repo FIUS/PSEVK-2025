@@ -16,5 +16,5 @@ jobs:
       - name: zip exams
         uses: actions/upload-artifact@v4
         with:
-          name: examprotocols
+          name: sheets
           path: 'src/Day*/sheets/Day*.pdf'
