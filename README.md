@@ -54,7 +54,7 @@ mit
 ```bash
 make (exercise|presentation)/DayX 
 ``` 
-wird das Arbeitsblatt/ die Präsentation des spezifischen Tage kompiliert.
+wird das Arbeitsblatt/ die Präsentation des spezifischen Tag kompiliert.
 ## Lokal (mit Syntax Highlighting)
 
 
