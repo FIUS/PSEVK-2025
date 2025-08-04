@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {;
-    static int evalCycles = 1000000;
+    static int evalCycles = 10000000;
     static int seedBound = 100000;
     static int resultDigits = 10;
     static long resultBound = (long) Math.pow(10, resultDigits);
@@ -24,7 +24,58 @@ public class Main {;
     }
 
     public static long randomize(long seed) {
-        return seed * 100000;// + seed;
+        return seed * 100000 + seed;
+    }
+
+    public static void eval(ArrayList<Long> results) {
+        long start = System.nanoTime();
+
+        System.out.println("-------------------------------");
+        System.out.println("Ziffernanalyse:");
+        numberOccurenceAnalysis(results);
+        System.out.println("-------------------------------");
+        System.out.println("Levenshteinanalyse:");
+        levenshteinDistanceAnalysis(results);
+        System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
+    }
+
+    public static String addLeadingZeros(long number, int numDigits) {
+        return String.format("%0"+numDigits+"d", number);
+    }
+
+    public static void predictionAnalysis(ArrayList<Long> results) {
+        
+    }
+
+    public static void numberOccurenceAnalysis (ArrayList<Long> results) {
+        Map<Character, Integer> countMap = new HashMap<>();
+
+        for (Integer i = 0; i < 10; i++) {
+            countMap.put(i.toString().charAt(0), 0);
+        }
+
+        for (Long result: results){
+            String resultString = addLeadingZeros(result, resultDigits);
+            for (char c: resultString.toCharArray()) {
+                countMap.put(c, countMap.get(c) + 1);
+            }
+        }
+
+
+        System.out.println("Die Ziffernverteilung von deinem Zufallsgenerator");
+        DecimalFormat df = new DecimalFormat("###.#");
+
+        countMap.forEach((k, v) -> System.out.println(k + " : " + df.format((double) v / evalCycles * 10) + " % = " + v));
+
+
+        for (Character number : countMap.keySet()) {
+            if (countMap.get(number) > evalCycles * (1 + offsetTolerance)) {
+                System.out.println("Es sind tendenziell zu viele " + number + " in deinen Zufallszahlen Vorhanden.");
+            }
+            if (countMap.get(number) < evalCycles * (1 - offsetTolerance)) {
+                System.out.println("Es sind tendenziell zu wenige " + number + " in deinen Zufallszahlen Vorhanden.");
+            }
+        }
     }
 
     public static void levenshteinDistanceAnalysis(ArrayList<Long> results) {
@@ -76,53 +127,6 @@ public class Main {;
             }
             if ((double) allDistances.get(position) / evalCycles > (double) expectedDist / 10 * (1 + levenshteinTolerance)) {
                 System.out.println("Es ist tendenziell zu viel Variation an der " + position + ". Stelle deiner Zufallszahlen Vorhanden.");
-            }
-        }
-    }
-
-    public static void eval(ArrayList<Long> results) {
-        long start = System.nanoTime();
-
-        System.out.println("-------------------------------");
-        System.out.println("Ziffernanalyse:");
-        numberOccurenceAnalysis(results);
-        System.out.println("-------------------------------");
-        System.out.println("Levenshteinanalyse:");
-        levenshteinDistanceAnalysis(results);
-        System.out.println((System.nanoTime() - start) / 10000000);
-    }
-
-    public static String addLeadingZeros(long number, int numDigits) {
-        return String.format("%0"+numDigits+"d", number);
-    }
-
-    public static void numberOccurenceAnalysis (ArrayList<Long> results) {
-        Map<Character, Integer> countMap = new HashMap<>();
-
-        for (Integer i = 0; i < 10; i++) {
-            countMap.put(i.toString().charAt(0), 0);
-        }
-
-        for (Long result: results){
-            String resultString = addLeadingZeros(result, resultDigits);
-            for (char c: resultString.toCharArray()) {
-                countMap.put(c, countMap.get(c) + 1);
-            }
-        }
-
-
-        System.out.println("Die Ziffernverteilung von deinem Zufallsgenerator");
-        DecimalFormat df = new DecimalFormat("###.#");
-
-        countMap.forEach((k, v) -> System.out.println(k + " : " + df.format((double) v / evalCycles * 10) + " % = " + v));
-
-
-        for (Character number : countMap.keySet()) {
-            if (countMap.get(number) > evalCycles * (1 + offsetTolerance)) {
-                System.out.println("Es sind tendenziell zu viele " + number + " in deinen Zufallszahlen Vorhanden.");
-            }
-            if (countMap.get(number) < evalCycles * (1 - offsetTolerance)) {
-                System.out.println("Es sind tendenziell zu wenige " + number + " in deinen Zufallszahlen Vorhanden.");
             }
         }
     }
