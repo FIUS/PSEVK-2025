@@ -11,6 +11,10 @@
 \definecolor{dark}{RGB}{36, 36, 36}
 \definecolor{green}{rgb}{0.0, 0.7, 0.0} % use a darker shade of green
 
+% Farben für Tabellenzeilen
+\definecolor{tablehead}{RGB}{216,232,237}
+\definecolor{tablerow}{RGB}{240,240,240}
+
 \usepackage[scaled]{helvet}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
