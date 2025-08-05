@@ -1,9 +1,9 @@
 \documentclass{../../presentation}
 
 \title{PSE - Vorkurs Tag 1}
-\author{Tobias, Philipp, Linus, Tillmann}
+\author{Linus, Philipp, Tillmann, Tobias}
 \institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
-\date{\today}
+\date{06.09.2025}
 
 \makeatletter
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
@@ -184,26 +184,42 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Erste Java Klasse}
+  \begin{itemize}
+    \item Das Programm soll nun bei allen von euch gestartet werden
+    \item Dazu klickt auf das grüne Dreieck oben rechts in der IDE
+    \item Wenn alles korrekt eingerichtet ist, sollte die Ausgabe "Hallo Welt!" erscheinen.
+          \achtung{} Wenn eine Fehlermeldung erscheint, überprüft bitte den Code ansonsten fragt einen Tutor.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{GitHub}
   GitHub ist eine Plattform, auf der man Code online speichern, verwalten und mit anderen teilen kann. Es basiert auf Git, einem Versionskontrollsystem.
 \end{frame}
 
 \begin{frame}
   \frametitle{Warum GitHub für Java-Projekte?}
+  \pause
   \begin{itemize}
-    \item \textbf{Sicherung:} Du kannst deinen Java-Code (Klassen, Methoden, Projekte) sicher speichern.
-    \item \textbf{Versionskontrolle:} Du siehst, was sich zwischen Versionen geändert hat – praktisch beim Lernen oder bei Fehlern.
-    \item \textbf{Zusammenarbeit:} Du kannst mit anderen zusammenarbeiten (Teamarbeit, Feedback).
-    \item \textbf{Überall verfügbar:} Zugriff von überall – egal ob Uni, zuhause oder unterwegs.
+    \item \textbf{Sicherung:} Java-Code (Klassen, Methoden, Projekte) kann sicher gespeichert werden.
+          \pause
+    \item \textbf{Versionskontrolle:} Änderungen zwischen Versionen sind nachvollziehbar – praktisch beim Lernen oder bei Fehlern.
+          \pause
+    \item \textbf{Zusammenarbeit:} Gemeinsames Arbeiten an Projekten und Feedback sind möglich.
+          \pause
+    \item \textbf{Überall verfügbar:} Zugriff von verschiedenen Orten – beispielsweise an der Uni, zuhause oder unterwegs.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
+  \pause
   \begin{itemize}
-    \item Wir benötigen Variablen um Werte im Programm zwischenzuspeichern
+    \item Variablen werden benötigt, um Werte im Programm zwischenzuspeichern
     \item Variablen haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
     \item Über den Namen kann später auf den gespeicherten Wert zugegriffen werden
+          \pause
           \begin{minted}{java}
       int alter = 20;
     \end{minted}
@@ -213,18 +229,22 @@
 
 \begin{frame}[fragile]
   \frametitle{Konzept Null}
+  \pause
   \begin{itemize}
     \item \texttt{null} steht für „kein Wert“
           \begin{minted}{java}
       String name = null; // name zeigt auf nichts
       \end{minted}
-    \item Zugriff auf Methoden oder Eigenschaften einer \texttt{null}-Referenz führt zu einem Fehler (\texttt{NullPointerException}).
+          \pause
+    \item Zugriff auf Methoden oder Eigenschaften einer \texttt{null}-Referenz führt zu einem Fehler (\color{red}\texttt{NullPointerException}).
   \end{itemize}
+  \pause
   \achtung{} \texttt{null} ist nicht dasselbe wie eine leere Zeichenkette (\texttt{""}) oder die Zahl 0.
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
+  \pause
   \begin{itemize}
     \item Deklaration \quad \textrightarrow \quad Variable wird erstellt \textbf{OHNE} einen Wert zuzuweisen
           \begin{minted}{java}
@@ -250,6 +270,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Variablen}
+  \pause
   \begin{itemize}
     \item Variablen können auch später im Programm verändert werden
           \begin{minted}{java}
@@ -259,46 +280,45 @@
   \end{itemize}
 \end{frame}
 
-% Farben für Tabellenzeilen
-\definecolor{tablehead}{RGB}{200,200,255}
-\definecolor{tablerow}{RGB}{240,240,255}
-
 \begin{frame}
   \frametitle{Datentypen in Java}
+  \pause
   \centering
   \rowcolors{2}{tablerow}{white}
-  \begin{tabular}{>{\bfseries}l l}
+  \begin{tabular}{l l}
     \rowcolor{tablehead}
-    Typ     & \textbf{Beschreibung}                          \\
-    int     & Ganzzahlen (z.\,B. 1, 2, 3)                    \\
-    float   & Kommazahlen (weniger genau)                    \\
-    double  & Kommazahlen (hohe Genauigkeit)                 \\
-    char    & Einzelnes Zeichen (z.\,B. 'a')                 \\
-    short   & Kleine Ganzzahlen                              \\
-    long    & Große Ganzzahlen                               \\
-    boolean & Wahrheitswert (\texttt{true} / \texttt{false}) \\
-    String  & Text (z.\,B. "Hallo")                          \\
+    \textbf{Typ} & \textbf{Beschreibung}                          \\
+    int          & Ganzzahlen (z.\,B. 1, 2, 3)                    \\
+    float        & Kommazahlen (weniger genau)                    \\
+    double       & Kommazahlen (hohe Genauigkeit)                 \\
+    char         & Einzelnes Zeichen (z.\,B. 'a')                 \\
+    short        & Kleine Ganzzahlen                              \\
+    long         & Große Ganzzahlen                               \\
+    boolean      & Wahrheitswert (\texttt{true} / \texttt{false}) \\
+    String       & Text (z.\,B. "Hallo")                          \\
   \end{tabular}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Operatoren in Java}
+  \pause
   \centering
   \rowcolors{2}{tablerow}{white}
-  \begin{tabular}{>{\bfseries}l l l}
+  \begin{tabular}{l l l}
     \rowcolor{tablehead}
-    Operator & \textbf{Bedeutung}    & \textbf{Gültige Typen} \\
-    +        & Addition / Verkettung & Zahlen, String         \\
-    -        & Subtraktion           & Zahlen                 \\
-    *        & Multiplikation        & Zahlen                 \\
-    /        & Division              & Zahlen                 \\
-    \%       & Modulo (Rest)         & Ganzzahlen             \\
+    \textbf{Operator} & \textbf{Bedeutung}    & \textbf{Gültige Typen} \\
+    +                 & Addition / Verkettung & Zahlen, String         \\
+    -                 & Subtraktion           & Zahlen                 \\
+    *                 & Multiplikation        & Zahlen                 \\
+    /                 & Division              & Zahlen                 \\
+    \%                & Modulo (Rest)         & Ganzzahlen             \\
   \end{tabular}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Beispiel: String + Zahl}
+  \pause
   \begin{minted}{java}
 String text = "Ergebnis: ";
 int zahl = 5;
@@ -312,11 +332,12 @@ System.out.println(text + zahl);
 
 \begin{frame}[fragile]
   \frametitle{Kommentare in Java}
+  \pause
   \begin{itemize}
     \item \texttt{// Einzeilige Kommentare}
     \item \texttt{/* Mehrzeilige Kommentare */}
   \end{itemize}
-
+  \pause
   \vspace{1em}
   \begin{minted}{java}
 float gewicht = 23.4; // Gewicht in kg
@@ -331,51 +352,94 @@ int summe = x + y;
 
 \begin{frame}[fragile]
   \frametitle{Textausgabe in Java}
+  \pause
+  Problem: Wir wollen irgendwas in der Konsole ausgeben
+  \pause
+  \vspace{0.5em}
   \begin{minted}{java}
-System.out.print("Hallo");
-System.out.print("Welt!");
+System.out.print("Das ist eine Konsolen Ausgabe");
   \end{minted}
   \begin{ausgabe}
-    HalloWelt!
+    Das ist eine Konsolen Ausgabe
   \end{ausgabe}
-  \vspace{0.5cm}
   \pause
   \begin{minted}{java}
-System.out.println("Hallo");
-System.out.println("Welt!");
+System.out.print("Das ist eine Konsolen Ausgabe");
+System.out.print("Das ist noch eine Ausgabe");
   \end{minted}
+  \pause
   \begin{ausgabe}
-    Hallo \newline
-    Welt!
+    Das ist eine Konsolen AusgabeDas ist noch eine Ausgabe
   \end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Ausgabe mit Variablen}
+  \frametitle{Zeilenumbruch: println und \textbackslash n}
+  \pause
+  \begin{minted}{java}
+System.out.println("1. Ausgabe");
+System.out.println("2. Ausgabe");
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    1. Ausgabe \newline
+    2. Ausgabe
+  \end{ausgabe}
+  \pause
+  \begin{minted}{java}
+System.out.print("1. Ausgabe\n");
+System.out.print("2. Ausgabe");
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    1. Ausgabe \newline
+    2. Ausgabe
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ausgabe von Variablen}
+  \pause
+  Man kann nicht nur Text, sondern auch Variablen ausgeben:
+  \pause
   \begin{minted}{java}
 int number = 42;
-System.out.println("Lieblingszahl: " + number);
+System.out.println(number);
   \end{minted}
   \begin{ausgabe}
-    Lieblingszahl: 42
+    42
+  \end{ausgabe}
+  \pause
+  Oder beides kombiniert:
+  \begin{minted}{java}
+int number = 42;
+System.out.println("Meine Lieblingszahl ist " + number + "!");
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Meine Lieblingszahl ist 42!
   \end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Eingabe mit Scanner}
+  \pause
+  Um Benutzereingaben zu lesen, wird die Klasse \texttt{Scanner} verwendet.
+  \begin{itemize}
+    \item Mit \texttt{Scanner} kann man Benutzereingaben aus der Konsole einlesen.
+    \item Dafür muss die Klasse \texttt{Scanner} aus dem Paket \texttt{java.util} importiert werden.
+    \item Imports steht ganz oben im Java-Quelltext
+  \end{itemize}
+  \pause
   \begin{minted}{java}
 import java.util.Scanner;
-
-public class Main {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int x = scanner.nextInt();
-    int y = scanner.nextInt();
-    System.out.println(x + y);
-  }
-}
+\end{minted}
+  \pause
+  \begin{minted}{java}
+Scanner scanner = new Scanner(System.in);
+String name = scanner.nextLine();
+System.out.println(name);
   \end{minted}
-  \achtung{} \texttt{scanner.nextInt()} liest eine Ganzzahl von der Konsole.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -430,7 +494,7 @@ public int add(int x, int y) {
   System.out.println("Lecker Grillerei!");
   \end{minted}
   \begin{ausgabe}
-    java: ';' expected
+    \color{red}java: ';' expected
   \end{ausgabe}
 \end{frame}
 
