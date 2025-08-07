@@ -1,7 +1,6 @@
-import javax.swing.plaf.IconUIResource;
 import java.text.DecimalFormat;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {;
     static int evalCycles = 10000000;
@@ -10,32 +9,41 @@ public class Main {;
     static long resultBound = (long) Math.pow(10, resultDigits);
     static double offsetTolerance = 0.1;
     static double levenshteinTolerance = 0.05;
+    static double predictionTolerance = 0.1;
 
     public static void main(String[] args) {
         Random rnd = new Random();
-        ArrayList<Long> results = new ArrayList<>(evalCycles);
-
+        long[] results = new long[evalCycles];
 
         for (int i = 0; i < evalCycles; i++) {
             int seed = rnd.nextInt(seedBound);
-            results.add(randomize(seed));
+            results[i] = randomize(seed);
         }
         eval(results);
     }
 
     public static long randomize(long seed) {
-        return seed * 100000 + seed;
+        Random rnd = new Random();
+        //return seed * 100000 + seed;
+        //return seed * 100000;
+        return rnd.nextLong(resultBound);
     }
 
-    public static void eval(ArrayList<Long> results) {
+    public static void eval(long[] results) {
         long start = System.nanoTime();
 
         System.out.println("-------------------------------");
         System.out.println("Ziffernanalyse:");
         numberOccurenceAnalysis(results);
+        System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
+        start = System.nanoTime();
         System.out.println("-------------------------------");
-        System.out.println("Levenshteinanalyse:");
+        System.out.println("Levenshteinanalyse (https://de.wikipedia.org/wiki/Levenshtein-Distanz):");
         levenshteinDistanceAnalysis(results);
+        System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
+        System.out.println("-------------------------------");
+        System.out.println("Ziffernkorrelationsanalyse:");
+        predictionAnalysis(results);
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
     }
 
@@ -43,69 +51,116 @@ public class Main {;
         return String.format("%0"+numDigits+"d", number);
     }
 
-    public static void predictionAnalysis(ArrayList<Long> results) {
-        
-    }
+    public static void predictionAnalysis(long[] results) {
+        long[][] occurrence = new long[resultDigits][10];
+        long[][][][] prediction = new long[resultDigits][10][resultDigits][10];
 
-    public static void numberOccurenceAnalysis (ArrayList<Long> results) {
-        Map<Character, Integer> countMap = new HashMap<>();
+        for (int i = 0; i < results.length; i++) {
+            char[] digits = addLeadingZeros(results[i], resultDigits).toCharArray();
 
-        for (Integer i = 0; i < 10; i++) {
-            countMap.put(i.toString().charAt(0), 0);
-        }
+            for (int digitPos = 0; digitPos < resultDigits; digitPos++) {
+                int digit = digits[digitPos] - '0';
+                occurrence[digitPos][digit]++;
 
-        for (Long result: results){
-            String resultString = addLeadingZeros(result, resultDigits);
-            for (char c: resultString.toCharArray()) {
-                countMap.put(c, countMap.get(c) + 1);
+                for (int predictedPos = 0; predictedPos < resultDigits; predictedPos++) {
+                    int predicted = digits[predictedPos] - '0';
+                    prediction[digitPos][digit][predictedPos][predicted]++;
+                }
             }
         }
 
+        double expectedProbability = 0.1;
+        int maxOutputLines = 10;
+        int outputLines = 0;
+        boolean komprimiert = false;
+        Scanner sc = new Scanner(System.in);
+
+        for (int predictorPos = 0; predictorPos < resultDigits; predictorPos++) {
+            for (int digit = 0; digit < resultDigits; digit++) {
+                long predictorOccurences = occurrence[predictorPos][digit];
+
+                for (int predictedPos = 0; predictedPos < resultDigits; predictedPos++) {
+                    for (int predictedDigit = 0; predictedDigit < resultDigits; predictedDigit++) {
+                        double predictionProbability = (double) prediction[predictorPos][digit][predictedPos][predictedDigit] / (double) occurrence[predictorPos][digit];
+
+                        if ((predictionProbability > expectedProbability + expectedProbability * predictionTolerance || predictionProbability < expectedProbability - expectedProbability * predictionTolerance) && outputLines <= maxOutputLines && predictorPos != predictedPos) {
+                            if (!komprimiert) {
+                                System.out.println("Wenn eine " + digit + " an Stelle " + predictorPos + " steht, dann ist die Wahrscheinlichkeit, dass eine " + predictedDigit + " an Stelle " + predictedPos + " steht " + predictionProbability * 100 + "%, der Erwartungswert ist 10%");
+                            } else {
+                                System.out.println(digit + " bei " + predictorPos + " =" + predictionProbability * 100 + "%=> " + predictedDigit +  " bei " + predictedPos);
+                            }
+                            outputLines++;
+                        } else if (outputLines >= maxOutputLines) {
+
+                            System.out.println("Es gibt noch mehr über- oder unterdurchschnittliche Korrelationen, die hier aus Platzgründen nicht ausgegeben werden.");
+                            System.out.print("Hättest du gerne alle Korrelationen in komprimierter Form ausgegegeben? (gib j oder n für ja oder nein ein):");
+                            String doAusfuehrlich = sc.next();
+
+                            if (doAusfuehrlich.equals("j")) {
+                                maxOutputLines = Integer.MAX_VALUE;
+                                komprimiert = true;
+                                System.out.println();
+                            } else {
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (outputLines == 0) {
+            System.out.println("Keine außerordentlichen Korrelationen entdeckt :)");
+        }
+    }
+
+    public static void numberOccurenceAnalysis (long[] results) {
+        long[] digitCounter = new long[resultDigits];
+
+        for (long result: results){
+            String resultString = addLeadingZeros(result, resultDigits);
+            for (Character c: resultString.toCharArray()) {
+                digitCounter[c - '0']++;
+            }
+        }
 
         System.out.println("Die Ziffernverteilung von deinem Zufallsgenerator");
         DecimalFormat df = new DecimalFormat("###.#");
 
-        countMap.forEach((k, v) -> System.out.println(k + " : " + df.format((double) v / evalCycles * 10) + " % = " + v));
+        for (int digit = 0; digit < digitCounter.length; digit++) {
+            System.out.println(digit + " : " + df.format( (double) digitCounter[digit] / evalCycles * 10) + " % = " + digitCounter[digit]);
+        }
 
-
-        for (Character number : countMap.keySet()) {
-            if (countMap.get(number) > evalCycles * (1 + offsetTolerance)) {
-                System.out.println("Es sind tendenziell zu viele " + number + " in deinen Zufallszahlen Vorhanden.");
+        for (int digit = 0; digit < digitCounter.length; digit++) {
+            if (digitCounter[digit] > evalCycles * (1 + offsetTolerance)) {
+                System.out.println("Es sind tendenziell zu viele " + digit + " in deinen Zufallszahlen Vorhanden.");
             }
-            if (countMap.get(number) < evalCycles * (1 - offsetTolerance)) {
-                System.out.println("Es sind tendenziell zu wenige " + number + " in deinen Zufallszahlen Vorhanden.");
+            if (digitCounter[digit] < evalCycles * (1 - offsetTolerance)) {
+                System.out.println("Es sind tendenziell zu wenige " + digit + " in deinen Zufallszahlen Vorhanden.");
             }
         }
     }
 
-    public static void levenshteinDistanceAnalysis(ArrayList<Long> results) {
-        String curString = "";
-        String prevString = addLeadingZeros(results.getFirst(), resultDigits);
+
+    public static void levenshteinDistanceAnalysis(long[] results) {
         long totalDistance = 0;
-        Map<Integer, Long> allDistances = new HashMap<>();
-        for (Integer i = 0; i < resultDigits; i++) {
-            allDistances.put(i, 0L);
-        }
+        String prevString = addLeadingZeros(results[0], resultDigits);
 
-        for (int i = 1; i < results.size(); i++) {
-            curString = addLeadingZeros(results.get(i), resultDigits);
+        long[] digitDistances = new long[resultDigits];
+        for (int i = 1; i < results.length; i++) {
+            String curString = addLeadingZeros(results[i], resultDigits);
 
-            for (int j = 0; j < curString.length(); j++) {
-                try {
-                    if (curString.charAt(j) != prevString.charAt(j)) {
-                        totalDistance++;
-                        allDistances.put(j, allDistances.get(j) + 1);
-                    }
-                } catch (Exception e) {
-                    System.out.println(curString);
-                    System.out.println(prevString);
-                    throw e;
+            // Compare characters position by position
+            for (int j = 0; j < resultDigits; j++) {
+                if (curString.charAt(j) != prevString.charAt(j)) {
+                    totalDistance++;
+                    digitDistances[j]++;
                 }
             }
             prevString = curString;
         }
 
-        double avgDistance = (double) totalDistance / (results.size() - 1);
+        double avgDistance = (double) totalDistance / (results.length - 1);
 
         long expectedDist = Math.round(Math.log10(resultBound) - 1);
 
@@ -119,14 +174,18 @@ public class Main {;
         System.out.println("Die Levenshtein Distanz, nach den Stellen in der Ergebniszahl aufgeschlüsselt sieht so aus:");
         System.out.println("Der Erwartungswert für jede einzelne Stelle ist 0,9");
 
-        allDistances.forEach((k, v) -> System.out.println(k + " : " + df.format((double) v / evalCycles)));
 
-        for (Integer position : allDistances.keySet()){
-            if ((double) allDistances.get(position) / evalCycles < (double) expectedDist / 10 * (1 - levenshteinTolerance)) {
-                System.out.println("Es ist tendenziell zu wenig Variation an der " + position + ". Stelle deiner Zufallszahlen Vorhanden.");
+        for (int i = 0; i < resultDigits; i++) {
+            double digitAvg = (double) digitDistances[i] / (results.length - 1);
+            System.out.println(i + " : " + df.format(digitAvg));
+        }
+
+        for (int i = 0; i < resultDigits; i++) {
+            if ((double) digitDistances[i] / evalCycles < (double) expectedDist / 10 * (1 - levenshteinTolerance)) {
+                System.out.println("Es ist tendenziell zu wenig Variation an der " + i + ". Stelle deiner Zufallszahlen Vorhanden.");
             }
-            if ((double) allDistances.get(position) / evalCycles > (double) expectedDist / 10 * (1 + levenshteinTolerance)) {
-                System.out.println("Es ist tendenziell zu viel Variation an der " + position + ". Stelle deiner Zufallszahlen Vorhanden.");
+            if ((double) digitDistances[i] / evalCycles > (double) expectedDist / 10 * (1 + levenshteinTolerance)) {
+                System.out.println("Es ist tendenziell zu viel Variation an der " + i + ". Stelle deiner Zufallszahlen Vorhanden.");
             }
         }
     }
