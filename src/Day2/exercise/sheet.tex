@@ -60,14 +60,16 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
         Wie viele Shots hättest du gerne? 1\\
         ...
     \end{ausgabe}
-    \item 
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze keine String Variablen.\\
+    Hinweis: Es kann Sinnvoll sein Methoden aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)}. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich, z.b.: 4165614 oder 829928). Nutze natürlich wieder keine String Variablen.
 \end{enumerate}
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
-In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck. Wenn es mit irgendeiner Belegung der Variablen möglich ist, dass die Formel insgesamt \texttt{true} wird, dann ist die Formel erfüllbar.
+In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck. 
 \\\\
-Man unterteilt Formen in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder manchmal Wahr und manchmal Falsch (Erfüllbar):
+Man unterteilt Formen in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder je nach den Werten der Variablen manchmal Wahr und manchmal Falsch (Erfüllbar):
 \\\\
 \textbf{Erfüllbar: } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
 \textbf{Unerfüllbar: } \texttt{(a \&\& !b \&\& !a \&\& c)}, da a zugleich wahr und falsch sein müsste\\
