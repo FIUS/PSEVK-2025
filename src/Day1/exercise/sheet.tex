@@ -29,7 +29,8 @@ Gibt folgendes aus:
 \end{ausgabe}
 
 \begin{enumerate}
-    \item Kopiere folgenden Grill und nutze print(s) um ihn in der Konsole auszugeben.
+    \item Kopiert folgenden Grill und nutzt print(s) um ihn in der Konsole auszugeben.\\
+    Hinweis: Kopiert den Grill direkt zwischen die Gänsefüsschen in euer \texttt{System.out.println('''')},  
           \begin{ausgabe}
               .............................................................................
               .............................................................................
@@ -66,7 +67,7 @@ Gibt folgendes aus:
               .....................@@@@@@@@...................@@@..........................
               .............................................................................
           \end{ausgabe}
-    \item Erstelle eine Variable mit beliebigem Wert und gib sie aus, ändere den Wert und gib dieselbe Variable nochmal aus. Das soll alles in einem Programmdurchlauf geschehen.
+    \item Erstelle eine Variable mit beliebigem Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert und gib dieselbe Variable nochmal aus.
     \item Erstelle zwei int Variablen und gib die Summe und das Produkt aus.
     \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print, das dich mit deinem Namen begrüßt.
 \end{enumerate}
@@ -83,12 +84,23 @@ System.out.println("Du heißt: " + deinName);
 
 \begin{enumerate}
     \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Etwas funktioniert nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
-    \item Programmiere eine Modulo Übungshilfe, bei dem man zwei Zahlen mit dem Scanner eingibt, dann das Ergebnis von \texttt{zahl1 \% zahl2} eingeben soll und dann am Ende das korrekte Ergebnis ausgegeben wird.
-    \item Schreibe eine kurze Geschichte (oder such dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
+\begin{ausgabe}
+Gib eine Zahl ein: 12\\
+Gib noch eine Zahl ein: 3\\
+Die Summe ist: 15
+\end{ausgabe}
+    \item Programmiere ein Modulo Übungsprogramm, bei dem man zwei Zahlen mit dem Scanner eingibt, dann das Ergebnis von \texttt{zahl1 \% zahl2} eingeben soll und dann am Ende das korrekte Ergebnis ausgegeben wird.
+\begin{ausgabe}
+Gib eine Zahl ein: 14\\
+Gib noch eine Zahl ein: 3\\
+Gib dein Ergebnis ein: 6\\
+Das richtige Ergebnis von 14 \% 3 ist: 2
+\end{ausgabe}
+    \item Schreibe eine kurze Geschichte (oder such dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: \textquotesingle\textquotesingle\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}\textquotesingle\textquotesingle \space zu:
           \begin{ausgabe}
-              Gib ein Thema ein: Backen\\
+              Gib ein Thema ein: backen\\
               Gib ein Verb ein: Ofen sprengen\\
-              Die Backen-Vorkurs Hauptorgas lieben Ofen sprengen.
+              Die backen-Vorkurs Hauptorgas lieben Ofen sprengen.
           \end{ausgabe}
           Lass deine Sitznachbarn und/oder die Helfer dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt.
 \end{enumerate}
@@ -106,10 +118,11 @@ float zufallsFloat = rndGenerator.nextFloat();
 //gibt ein zufälligen int zwischen 0 und 9 zurück (10 wird als Obergrenze ausgeschlossen)
 int zufallsInt = rndGenerator.nextInt(10);
 \end{minted}
+Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
 
 \begin{enumerate}
-    \item Modifiziere deinen Modulotrainer sodass man die beiden Zahlen nicht mehr selbst eingibt (war auch wirklich zu leicht so), sondern so, dass diese zufällig generiert werden.
-    \item Kopiert das Programm aus \hyperlink{Aufgabe_2.1}{Codeanhang}. Dort bekommt ihr einen sogenannten Seed (5-Stellig) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl. Wir (die PSE-Vorkurs Hauptorgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen.
+    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Zahlen nicht mehr selbst eingibt (war auch wirklich zu leicht so), sondern so, dass diese zufällig generiert werden.
+    \item Kopiert das Programm aus dem \hyperlink{Aufgabe_2.2}{Codeanhang}. Dort bekommt ihr einen sogenannten Seed (5-Stellig) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl. Wir (die PSE-Vorkurs Hauptorgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen.
 \end{enumerate}
 
 \newpage
@@ -117,12 +130,13 @@ int zufallsInt = rndGenerator.nextInt(10);
 \hypertarget{Aufgabe_2.1}{}
 \textbf{Aufgabe 2.1}\\
 \texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.\\
-\hypertarget{Aufgabe_2.2}{}
 \textbf{Highperformer Aufgabe 2:}
+\hypertarget{Aufgabe_2.2}{}
 \begin{minted}[linenos=false]{java}
 public class main{
     public int zufallsZahl(int seed) {
         //seed ist die ursprüngliche 5-stellige Zahl mit der ihr rechnen könnt
+        System.out.println(seed);
         int rueckgabeZahl;
 
         // Schreibt euren code, der am ende eure neue zehnstellige Zahl

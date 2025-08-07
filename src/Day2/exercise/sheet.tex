@@ -13,8 +13,26 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}
     \item Schreibe für die UNO diesen Freitag (Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
+    \begin{ausgabe}
+        Wie alt bist du: 17\\
+        Sorry, du darfst noch nicht rein :/
+    \end{ausgabe}
     \item Füge dem Programm ein Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: lies einen boolean Wert ein). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
+    \begin{ausgabe}
+        Bist du ein Ersti? true\\
+        Für dich sinds 3 Euro
+    \end{ausgabe}
     \item Jetzt fehlen nur noch Drinks, frage ab wie viel Geld die Person dabei hat und jeweils wieviele Shots (1 Euro), Longdrinks (3 Euro), Softdrinks (2 Euro), Cocktails (3 Euro) und Biere (2 Euro) die Person will. Gib am Ende aus ob das Geld ausreicht.
+    \begin{ausgabe}
+        Wie viel Geld hast du? 23\\
+        Wie viele Shots hättest du gerne? 1\\
+        Wie viele Longdrinks hättest du gerne? 3\\
+        Wie viele Softdrinks hättest du gerne? 6\\
+        Wie viele Cocktails hättest du gerne? 3\\
+        Wie viele Biere hättest du gerne? 4\\
+        Das sind insgesamt 38 Euro\\
+        Du hast zu wenig Geld
+    \end{ausgabe}
 \end{enumerate}
 
 \newpage
@@ -30,14 +48,30 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
               Bier 2 ist geöffnet
           \end{ausgabe}
     \item Da Studis ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann.
+    \begin{ausgabe}
+        Wie viel Geld hast du? 23\\
+        Wie viele Shots hättest du gerne? 1\\
+        Wie viele Longdrinks hättest du gerne? 3\\
+        Wie viele Softdrinks hättest du gerne? 6\\
+        Wie viele Cocktails hättest du gerne? 3\\
+        Wie viele Biere hättest du gerne? 4\\
+        Das sind insgesamt 38 Euro\\
+        Du hast zu wenig Geld, probier eine andere Bestellung\\
+        Wie viele Shots hättest du gerne? 1\\
+        ...
+    \end{ausgabe}
+    \item 
 \end{enumerate}
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
-In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Wir definieren eine Formel einfach als Boole'schen Ausdruck. Wenn es mit irgendeiner Belegung der Variablen möglich ist, dass die Formel insgesamt \texttt{true} wird, dann ist die Formel erfüllbar. Zusätzlich gibt es noch Formeln die immer Wahr (Tautologien) oder immer Falsch sind (Unerfüllbar):\\
-\texttt{((a \&\& c) || b)} ist erfüllbar, z.b. wenn b = \texttt{true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit a = \texttt{false}, c = \texttt{true} und b = \texttt{false}\\
-\texttt{(a \&\& !b \&\& !a \&\& c)} ist unerfüllbar, da a zugleich wahr und falsch sein müsste\\
-\texttt{(!(a \&\& b) == !a || !b)} ist eine Tautologie, da die linke Seite nur \texttt{false} ist, wenn a und b beide \texttt{true} sind, für die Rechte seite gilt genau das gleiche. Deswegen ist sind die beiden Seiten immer gleich.
+In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck. Wenn es mit irgendeiner Belegung der Variablen möglich ist, dass die Formel insgesamt \texttt{true} wird, dann ist die Formel erfüllbar.
+\\\\
+Man unterteilt Formen in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder manchmal Wahr und manchmal Falsch (Erfüllbar):
+\\\\
+\textbf{Erfüllbar: } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
+\textbf{Unerfüllbar: } \texttt{(a \&\& !b \&\& !a \&\& c)}, da a zugleich wahr und falsch sein müsste\\
+\textbf{Tautologie: } \texttt{(!(a \&\& b) == !a || !b)}, da die linke Seite nur \texttt{false} ist, wenn a und b beide \texttt{true} sind, für die Rechte seite gilt genau das gleiche. Deswegen ist sind die beiden Seiten immer gleich.
 \begin{enumerate}
     \item Prüfe folgende Boole'sche Ausdrücke Systematisch mit einem Programm auf ihre Erfüllbarkeit und gib dann erfüllbar, unerfüllbar oder Tautologie aus.
           \begin{enumerate}
