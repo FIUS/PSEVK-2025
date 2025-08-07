@@ -1,4 +1,4 @@
-# JVK-2025
+# PSEVK-2025
 Sheets and project for the annual Java-Vorkurs of the Fachgruppe Informatik der Universität Stuttgart.
 
 ## Kompilation 
@@ -55,11 +55,9 @@ mit
 make (exercise|presentation)/DayX 
 ``` 
 wird das Arbeitsblatt/ die Präsentation des spezifischen Tag kompiliert.
-## Lokal (mit Syntax Highlighting)
 
-
-
-Autoformatter, um ein einheitliches Code lesen zu gewährleisten wird latexindent verwenden in kombination mit latexworkshop -> VSCode Extension
+### Autoformatter
+um ein einheitliches Code lesen zu gewährleisten wird latexindent verwenden in kombination mit latexworkshop -> VSCode Extension
 ```bash
 brew install latexindent
 ```
