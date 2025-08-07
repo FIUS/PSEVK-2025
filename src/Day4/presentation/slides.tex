@@ -12,7 +12,6 @@
 \usepackage{todonotes}
 \setuptodonotes{inline}
 
-
 \begin{document}
 
 \begin{frame}
@@ -29,8 +28,8 @@
 \end{frame}
 
 
-
-\begin{frame}{Angenommen \dots}
+\begin{frame}
+	\frametitle{Angenommen \dots}
 	\begin{itemize}
 		\item Wir wollen z.B. Informationen über Studierende speichern
 		      \begin{itemize}
@@ -49,7 +48,8 @@
 
 
 % Melanie
-\begin{frame}[fragile,t]{Direkt umgesetzt}
+\begin{frame}[fragile,t]
+	\frametitle{Direkt umgesetzt}
 	\vspace{2.0em}
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
@@ -62,7 +62,8 @@ int matrikelnummer1 = 12345;
 
 
 % Melanie + Paul
-\begin{frame}[fragile,t]{Direkt umgesetzt}
+\begin{frame}[fragile,t]
+	\frametitle{Direkt umgesetzt}
 	\vspace{2.0em}
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
@@ -78,7 +79,8 @@ int matrikelnummer2 = 54321;
 
 
 % komplett
-\begin{frame}[fragile,t]{Direkt umgesetzt}
+\begin{frame}[fragile,t]
+	\frametitle{Direkt umgesetzt}
 	\vspace{2.0em}
 	\begin{minipage}[t][0.6\textheight][t]{\textwidth}
 		\begin{minted}{java}
@@ -88,31 +90,31 @@ int matrikelnummer1 = 12345;
 String name2 = "Paul";
 int matrikelnummer2 = 54321;
 
+lernen(name1);
 lernen(name2);
 
 public static void lernen(String name) {
-    System.out.println(name + \" sagt: "Ich hasse mein Leben\"");
+    System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
 }
 \end{minted}
 	\end{minipage}
-
-	\vspace{-4.0em}
-
 	\only<2->{\begin{ausgabe}
+			Melanie sagt: \texttt{"}Ich hasse mein Leben\texttt{"} \newline
 			Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 		\end{ausgabe}}
 \end{frame}
 
 
 
-\begin{frame}[fragile]{Warum so nicht?!}
+\begin{frame}[fragile]
+	\frametitle{Warum so nicht?!}
 	\begin{itemize}
 		\item<2-> \textbf{Zusammengehörige Eigenschaften sind getrennt} \\
-		      \texttt{name1}, \texttt{matriklenummer1}, \texttt{punkte1}
+		      \texttt{name1}, \texttt{matriklenummer1}
 		\item<3-> \textbf{Redundanz} \\
-		      Immer wieder dieselben drei Variablen – für jede Person
+		      Immer wieder dieselben zwei Variablen - für jede Person
 		\item<4-> \textbf{Kaum skalierbar} \\
-		      Für 2 Studenten okay – aber bei 200? 20.000?
+		      Für 2 Studenten okay - aber bei 200? 20.000?
 		\item<5-> \textbf{Keine klare Struktur} \\
 		      Was genau ist ein Studierender im Code?
 	\end{itemize}
@@ -129,7 +131,8 @@ public static void lernen(String name) {
 
 
 % Teil-Folie
-\begin{frame}[fragile,t]{Was sind eigentlich Klassen?}
+\begin{frame}[fragile,t]
+	\frametitle{Was sind eigentlich Klassen?}
 
 	\begin{minipage}[t][0.9\textheight][t]{\textwidth}
 		\begin{itemize}
@@ -149,7 +152,8 @@ public static void lernen(String name) {
 
 
 % Volle Folie
-\begin{frame}[fragile,t]{Was sind eigentlich Klassen?}
+\begin{frame}[fragile,t]
+	\frametitle{Was sind eigentlich Klassen?}
 
 	\begin{minipage}[t][0.9\textheight][t]{\textwidth}
 		\begin{itemize}
@@ -177,8 +181,8 @@ public class Student {
 \end{frame}
 
 
-
-\begin{frame}[fragile]{Klasse(n): Objekte}
+\begin{frame}[fragile]
+	\frametitle{Klasse(n): Objekte}
 	\begin{itemize}
 		\item ein Objekt ist eine Instanz einer Klasse
 		      \begin{itemize}
@@ -187,10 +191,10 @@ public class Student {
 		\item<2-> Objekte werden mit einem \textbf{Konstruktor} erzeugt
 		\item<3-> das ist der Konstruktor von \texttt{Student}:
 		      \begin{minted}{java}
-      public Student(String name, int matrikelnummer) {
-		    this.name = name;
-		    this.matrikelnummer = matrikelnummer;
-		}
+public Student(String name, int matrikelnummer) {
+	this.name = name;
+	this.matrikelnummer = matrikelnummer;
+}
       \end{minted}
 		      \begin{itemize}
 			      \item<4->[\textbullet]dieser gibt vor wie das neue Objekt initialisiert wird
@@ -200,17 +204,15 @@ public class Student {
 	\end{itemize}
 \end{frame}
 
-
-
 \begin{frame}[fragile]{Let\textquotesingle s build \texttt{paul}}
 	\begin{itemize}
-
 		\item Klasse inklusive Konstruktor:
+
 		      \begin{minted}{java}
 public class Student{
   String name;
   int matrikelnummer;
-    
+
   public Student(String name, int matrikelnummer) {
     this.name = name;
     this.matrikelnummer = matrikelnummer;
@@ -221,16 +223,31 @@ public class Student{
   }
 }
   \end{minted}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Let\textquotesingle s build \texttt{paul}}
+	\begin{itemize}
+		\item Klasse mit Konstruktor (gekürzt, nicht kompilierbar):
+		      \begin{minted}{java}
+// ... Attribute 
+public Student(String name, int matrikelnummer) {
+  this.name = name;
+  this.matrikelnummer = matrikelnummer;
+}
+// ... Funktionen
+			  \end{minted}
 		\item<2->\texttt{new Student(\dots)} ruft den oben erstellten Konstruktor auf:
 		      \begin{minted}{java}
-    Student paul = new Student("Paul", 12345);
-  \end{minted}
+Student paul = new Student("Paul", 12345);
+			  \end{minted}
 	\end{itemize}
 \end{frame}
 
 
-
-\begin{frame}[fragile]{\texttt{paul} ein Highperformer}
+\begin{frame}[fragile]
+	\frametitle{\texttt{paul} ein Highperformer}
 	\begin{minted}{java}
 // Objekt erzeugen
 Student paul = new Student("Paul", 12345);
@@ -254,11 +271,14 @@ paul.lernen();
 
 
 
-\begin{frame}[fragile]{Sichtbarkeit in Klassen}
-
+\begin{frame}[fragile]
+	\frametitle{Sichtbarkeit in Klassen}
+	\pause
 	\begin{itemize}
-		\item<2-> \texttt{private}: nur innerhalb der Klasse sichtbar
-		\item<3-> \texttt{public}: überall sichtbar (auch von außen)
+		\item \texttt{private}: nur innerhalb der Klasse sichtbar
+		      \pause
+		\item \texttt{public}: überall sichtbar (auch von außen)
+		      \pause
 		      \begin{minted}{java}
 public class Student {
     private String name;         
@@ -268,22 +288,23 @@ public class Student {
         System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
     }
 }
-\end{minted}
+	\end{minted}
 	\end{itemize}
 \end{frame}
 
 
 
-\begin{frame}[fragile]{Sichtbarkeit in Klassen}
+\begin{frame}[fragile]
+	\frametitle{Sichtbarkeit in Klassen}
 
 	\begin{itemize}
 
 		\item<2-> \texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
 		      \begin{minted}{java}
-    Student paul = new Student("Paul", 12345);
+Student paul = new Student("Paul", 12345);
 
-    System.out.println(paul.matrikelnummer);
-    paul.lernen();
+System.out.println(paul.matrikelnummer);
+paul.lernen();
   \end{minted}
 		      \only<3->{\begin{ausgabe}
 				      12345
@@ -293,9 +314,9 @@ public class Student {
 			      \end{ausgabe}}
 		\item<4-> \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
 		      \begin{minted}{java}
-    Student paul = new Student("Paul", 12345);
+Student paul = new Student("Paul", 12345);
 
-    System.out.println(paul.name);
+System.out.println(paul.name);
   \end{minted}
 		      \only<5->{\begin{ausgabe}
 				      \alert{java: name hat private-Zugriff in Student}
@@ -304,12 +325,15 @@ public class Student {
 \end{frame}
 
 
-\begin{frame}[fragile]{Attribute können auch \texttt{final} sein}
+\begin{frame}[fragile]
+	\frametitle{Attribute können auch \texttt{final} sein}
 
 	\begin{itemize}
 		\item<2-> mit \texttt{final} kann Attribut nach Initialisierung nicht mehr geändert werden
-		\item<3-> Syntax: \texttt{<Sichtbarkeit> final <Datentyp> <Name> = <Wert>;}
-		\item<4-> Beispiel:
+		      \begin{minted}{java}
+<Sichtbarkeit> final <Datentyp> <Name> = <Wert>;
+		\end{minted}
+		\item<3-> Beispiel:
 		      \begin{minted}{java}
 public class Student {
     private final String name;
@@ -322,7 +346,7 @@ public class Student {
 }
 \end{minted}
 
-		\item<5-> Wird versucht \texttt{name} später zu ändern → \alert{Fehler}
+		\item<4-> Wird versucht \texttt{name} später zu ändern → \alert{Fehler}
 	\end{itemize}
 
 \end{frame}
@@ -330,11 +354,14 @@ public class Student {
 
 
 
-\begin{frame}[fragile]{Klassen sind Highperformer\textsuperscript{²}}
-
+\begin{frame}[fragile]
+	\frametitle{Klassen sind Highperformer\textsuperscript{²}}
+	\pause
 	\begin{itemize}
-		\item<2-> Klassen können auch andere Objekte enthalten
-		\item<3-> Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
+		\item Klassen können auch andere Objekte enthalten
+		      \pause
+		\item Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
+		      \pause
 		      \begin{minted}{java}
 public class Universitaet {
     Student[] alleStudis;
@@ -350,39 +377,35 @@ public class Universitaet {
 	\end{itemize}
 \end{frame}
 
-
-\begin{frame}[fragile]{Och nöö Prüfungsphase}
+\begin{frame}[fragile]
+	\frametitle{Alle Studenten lernen}
 
 	\begin{itemize}
-		\item<2-> neue Funktion der \texttt{Universitaet} Klasse
+		\item<2-> Neue Methode in \texttt{Universitaet}:
 		      \begin{minted}{java}
 public void pruefungsvorbereitung() {
-    for (Student s : alleStudis) {
-        s.lernen();
-    }
+	for (Student s : alleStudis) {
+		s.lernen();
+	}
 }
 \end{minted}
-		\item<3-> \texttt{pruefungsvorbereitung} bringt alle Studenten einer Universität zum lernen
 	\end{itemize}
 \end{frame}
-
-% Folie 3
-\begin{frame}[fragile]{so schnell kanns gehen}
+\begin{frame}[fragile]
+	\frametitle{so schnell kanns gehen}
 
 	\begin{itemize}
 		\item<2-> Was passiert hier?
 		      \begin{minted}{java}
-public class Main {
-    Universitaet uniStuttgart = new Universitaet(3);
-	uniStuttgart.pruefungsvorbereitung();
-}
+Universitaet uniStuttgart = new Universitaet(3);
+uniStuttgart.pruefungsvorbereitung();
 \end{minted}
 		      \begin{itemize}
-			      \item<4->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt
-			      \item<5->[\textbullet]der \texttt{Universitaet} Konstruktor erstellt 3 Studenten
-			      \item<6->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
+			      \item<3->[\textbullet]uniStuttgart wird mit anzahl 3 erstellt
+			      \item<4->[\textbullet]der \texttt{Universitaet} Konstruktor erstellt 3 Studenten
+			      \item<5->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
 		      \end{itemize}
-		      \only<7->{
+		      \only<6->{
 			      \begin{ausgabe}
 				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 
@@ -392,6 +415,4 @@ public class Main {
 			      \end{ausgabe}}
 	\end{itemize}
 \end{frame}
-
-
 \end{document}

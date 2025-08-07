@@ -9,6 +9,7 @@
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
 \makeatother
 
+\setlength{\marginparwidth}{2cm}
 \usepackage{todonotes}
 \setuptodonotes{inline}
 
@@ -32,7 +33,7 @@
 
 %BOOLEAN
 \begin{frame}[fragile]
-  \frametitle{Boolean – Wahr oder Falsch}
+  \frametitle{Boolean - Wahr oder Falsch}
   \begin{itemize}
     \item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
     \item Wahrheitswerte speichern und verarbeiten
@@ -54,22 +55,22 @@ boolean heuteDienstag = true;
   \only<1->{Wenn \texttt{a} und \texttt{b} Zahlen sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<1->\texttt{a == b} \quad Wahr, wenn \texttt{a} gleich \texttt{b} ist
+    \item<1->\texttt{isDienstag == esRegnet} \quad Wahr, wenn \texttt{isDienstag} gleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (a == b); // result true, wenn a gleich b
+boolean result = (isDienstag == esRegnet); // result true, wenn isDienstag gleich esRegnet
     \end{minted}
 
-    \item<2->\texttt{a != b} \quad Wahr, wenn \texttt{a} ungleich \texttt{b} ist
+    \item<2->\texttt{isDienstag != esRegnet} \quad Wahr, wenn \texttt{isDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (a != b); // result true, wenn a ungleich b
+boolean result = (isDienstag != esRegnet); // result true, wenn isDienstag ungleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{a < b} \quad Wahr, wenn \texttt{a} kleiner als \texttt{b} ist
+    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
           \begin{minted}{java}
-boolean result = (a < b); // result true, wenn a kleiner als b
+boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
 
-    \item<4->analog bei \texttt{a > b}, \texttt{a <= b}, \texttt{a >= b} \quad
+    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
   \end{itemize}
 \end{frame}
 
@@ -78,67 +79,57 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 %BOOLEAN OPERATOREN
 \begin{frame}[fragile]
   \frametitle{Boolean Operatoren}
-
+  \pause
   \begin{columns}
-    % Linke Spalte: Operatoren und Wahrheitstabellen
-    \begin{column}{0.55\textwidth}
+    %Linke Spalte: Operatoren und Wahrheitstabellen
+    \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item<1-> \texttt{!a} \quad \textrightarrow \quad nicht a
-
-        \item<2-> \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
-              \only<3->{
-                {\tiny
-                    \begin{tabular}{|c|c|c|}
-                      \hline
-                      a              & b              & a \&\& b       \\
-                      \hline
-                      \texttt{true}  & \texttt{true}  & \texttt{true}  \\
-                      \texttt{true}  & \texttt{false} & \texttt{false} \\
-                      \texttt{false} & \texttt{true}  & \texttt{false} \\
-                      \texttt{false} & \texttt{false} & \texttt{false} \\
-                      \hline
-                    \end{tabular}
-                  }
-              }
-
-        \item<4-> \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
-              \only<5->{
-                {\tiny
-                    \begin{tabular}{|c|c|c|}
-                      \hline
-                      a              & b              & a || b         \\
-                      \hline
-                      \texttt{true}  & \texttt{true}  & \texttt{true}  \\
-                      \texttt{true}  & \texttt{false} & \texttt{true}  \\
-                      \texttt{false} & \texttt{true}  & \texttt{true}  \\
-                      \texttt{false} & \texttt{false} & \texttt{false} \\
-                      \hline
-                    \end{tabular}
-                  }
+        \item \texttt{!a} \quad \textrightarrow \quad nicht a
+              \pause
+        \item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
+              \pause
+              {\rowcolors{2}{tablerow}{white}
+                \begin{tabular}{l l l}
+                  \rowcolor{tablehead}
+                  \textbf{a}     & \textbf{b}     & \textbf{a \&\& b} \\
+                  \texttt{true}  & \texttt{true}  & \texttt{true}     \\
+                  \texttt{true}  & \texttt{false} & \texttt{false}    \\
+                  \texttt{false} & \texttt{true}  & \texttt{false}    \\
+                  \texttt{false} & \texttt{false} & \texttt{false}    \\
+                \end{tabular}
               }
       \end{itemize}
     \end{column}
 
-    \begin{column}{0.4\textwidth}
-      \only<6->{
-        \textbf{Klammern priorisieren:}
-        \vspace{0.5em}
-
-        \begin{itemize}
-          \item \mintinline{java}{true || false && false} \\
-                \only<7->{\quad $\Rightarrow$ \mintinline{java}{true}}
-
-          \item \mintinline{java}{(true || false) && false} \\
-                \only<8->{\quad $\Rightarrow$ \mintinline{java}{false}}
-        \end{itemize}
-      }
+    \begin{column}{0.5\textwidth}
+      \newline
+      \pause
+      \begin{itemize}
+        \item \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
+              \pause
+              {\rowcolors{2}{tablerow}{white}
+                \begin{tabular}{l l l}
+                  \rowcolor{tablehead}
+                  \textbf{a}     & \textbf{b}     & \textbf{a || b} \\
+                  \texttt{true}  & \texttt{true}  & \texttt{true}   \\
+                  \texttt{true}  & \texttt{false} & \texttt{true}   \\
+                  \texttt{false} & \texttt{true}  & \texttt{true}   \\
+                  \texttt{false} & \texttt{false} & \texttt{false}  \\
+                \end{tabular}
+              }
+      \end{itemize}
     \end{column}
   \end{columns}
+  \vspace{0.5cm}
+  \pause
+  \textbf{Klammern priorisieren:}
+  \begin{minted}{java}
+  true || false && false 
+  // -> true
+  (true || false) && false
+  // -> false
+  \end{minted}
 \end{frame}
-
-
-
-
 
 %IF-VERZWEIGUNG
 \begin{frame}[fragile]
@@ -146,7 +137,6 @@ boolean result = (a < b); // result true, wenn a kleiner als b
 
   \begin{itemize}
     \item<1-> Ausführung nur wenn Bedingung \texttt{true}
-    \item<1-> Syntax:
           \begin{minted}{java}
 if (Bedingung) {
   // Code bei true
@@ -192,7 +182,6 @@ if (lieblingszahl == 42) {
   \begin{itemize}
     \item<1-> erweitert die \texttt{if} Anweisung
     \item<1-> "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
-    \item<1-> Syntax:
           \begin{minted}{java}
 if (Bedingung) {
   // Code bei Bedingung true
@@ -242,18 +231,20 @@ if (note == 1) {
   \end{itemize}
 \end{frame}
 
-
-
-
 %WHILE
 \begin{frame}[fragile]
   \frametitle{\texttt{while}-Schleife}
-
   \begin{itemize}
-    \item<1-> Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist
-    \item<1-> Syntax: \mintinline{java}{while (Bedingung) { /* Code */ }}
-    \item<2-> Beispiel:
+    \item  Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist
           \begin{minted}{java}
+while (Bedingung) { /* Code */ }
+        \end{minted}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{while}-Schleife}
+  \begin{minted}{java}
 Scanner scanner = new Scanner(System.in);
 String eingabe = "";
 
@@ -261,21 +252,13 @@ while (!eingabe.equals("ok")) {
   System.out.println("Bitte 'ok' eingeben:");
   eingabe = scanner.nextLine();
 }
-      \end{minted}
-
-          \begin{ausgabe}
-            Bitte 'ok' eingeben:
-
-            ...
-
-            Bitte 'ok' eingeben:
-
-            (Benutzer tippt "ok") → Schleife endet
-
-          \end{ausgabe}
-
-  \end{itemize}
-
+  \end{minted}
+  \begin{ausgabe}
+    Bitte 'ok' eingeben: \newline
+    ...\newline
+    Bitte 'ok' eingeben: \newline
+    (Benutzer tippt 'ok') → Schleife endet
+  \end{ausgabe}
 \end{frame}
 
 
@@ -309,7 +292,7 @@ System.out.println("I'm in");
 %CODE TOGHETER
 \begin{frame}[plain]
   \centering
-  {\Huge\bfseries\textcolor{red}{WURST TOGETHER}}
+  {\Huge\bfseries{Code together}}
 \end{frame}
 
 
@@ -319,7 +302,6 @@ System.out.println("I'm in");
 
   \begin{itemize}
     \item Wiederholt Anweisungen eine festgelegte Anzahl von Malen
-    \item Syntax:
           \begin{minted}[fontsize=\large]{java}
 for (Start; Bedingung; Schritt) {
     // Schleifenrumpf
@@ -343,17 +325,17 @@ for (Start; Bedingung; Schritt) {
   Somit wird aus\dots
 
   \begin{minted}{java}
-    int momentaneWurst = 4
-int letzteWurst = 8
+int momentaneWurst = 4;
+int letzteWurst = 8;
 while (momentaneWurst <= letzteWurst) {
-	System.out.println("Schmeiß Wurst Nr." + momentaneWurst + "auf den Grill");
-	momentaneWurst++;
+    System.out.println("Schmeiß Wurst Nr." + momentaneWurst + " auf den Grill");
+    momentaneWurst++;
 }
   \end{minted}
   ganz simpel\dots
   \begin{minted}{java}
-      for (int i = 4; i <= 8; i++) {
-	System.out.println("Schmeiß Wurst Nr." + i + "auf den Grill");
+for (int i = 4; i <= 8; i++) {
+    System.out.println("Schmeiß Wurst Nr." + i + " auf den Grill");
 }
   \end{minted}
 
