@@ -40,24 +40,21 @@
 \begin{frame}[fragile]
 	\frametitle{Map (Dictionary)}
 	\begin{itemize}
-		\item Wir wollen Werte mit einem \texttt{Schlüssel} verbinden → z. B. “Name” → Handynummer
+		\item Wir wollen Werte mit einem \texttt{Schlüssel} verbinden → z. B. “Name” → Matrikelnummer
 		\item Dafür gibt es in Java Map-Strukturen - der Standard: HashMap
 	\end{itemize}
 	\begin{minted}{java}
 import java.util.HashMap;
+	\end{minted}
+	\begin{minted}{java}
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melani", 1976370);
+studis.put("Paul", 1249609);
 
-public class Main {
-    public static void main(String[] args) {
-        HashMap<String, Integer> phonebook = new HashMap<>();
-        phonebook.put("Anna", 01711234567);
-        phonebook.put("Ben", 01517654321);
-
-        System.out.println(phonebook.get("Anna"));
-    }
-}
-\end{minted}
+System.out.println(studis.get("Melani"));
+	\end{minted}
 	\begin{ausgabe}
-		01711234567
+		1976370
 	\end{ausgabe}
 \end{frame}
 
@@ -80,6 +77,91 @@ public class Main {
 	\end{table}
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Map - remove()}
+	\begin{itemize}
+		\item Die \texttt{remove()} Methode entfernt einen Eintrag aus der Map
+		\item Gibt den entfernten Wert zurück oder \texttt{null}, falls der Schlüssel nicht existiert
+	\end{itemize}
+	\begin{minted}{java}
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melani", 1976370);
+studis.put("Paul", 1249609);
 
+System.out.println("Vor remove: " + studis.size());
+Integer removed = studis.remove("Paul");
+System.out.println("Entfernter Wert: " + removed);
+System.out.println("Nach remove: " + studis.size());
+	\end{minted}
+	\begin{ausgabe}
+		Vor remove: 2 \newline
+		Entfernter Wert: 1249609 \newline
+		Nach remove: 1
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Map - containsKey()}
+	\begin{itemize}
+		\item Die \texttt{containsKey()} Methode prüft, ob ein bestimmter Schlüssel in der Map existiert
+		\item Gibt \texttt{true} zurück, wenn der Schlüssel vorhanden ist, sonst \texttt{false}
+	\end{itemize}
+	\begin{minted}{java}
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melani", 1976370);
+
+System.out.println("Paul existiert: " + studis.containsKey("Paul"));
+
+if (studis.containsKey("Melani")) {
+    System.out.println("Melanis Matrikelnummer: " + studis.get("Melani"));
+}
+	\end{minted}
+	\begin{ausgabe}
+		Paul existiert: false \newline
+		Melanis Matrikelnummer: 1976370
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Map - keySet()}
+	\begin{itemize}
+		\item Die \texttt{keySet()} Methode gibt alle Schlüssel der Map als Set zurück
+		\item Nützlich zum Iterieren über alle Einträge der Map
+	\end{itemize}
+	\begin{minted}{java}
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melani", 1976370);
+studis.put("Paul", 1249609);
+
+System.out.print("Alle Namen: ");
+for (String name : studis.keySet()) {
+    System.out.print(name + ", ");
+}
+	\end{minted}
+	\begin{ausgabe}
+		Alle Namen: Paul, Melani,
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Map - values()}
+	\begin{itemize}
+		\item Die \texttt{values()} Methode gibt alle Werte der Map als Collection zurück
+		\item Ermöglicht den Zugriff auf alle gespeicherten Werte ohne die Schlüssel
+	\end{itemize}
+	\begin{minted}{java}
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melani", 1976370);
+studis.put("Paul", 1249609);
+
+System.out.println("Alle Matrikelnummern: ");
+for (Integer number : studis.values()) {
+    System.out.println(number + ", ");
+}
+	\end{minted}
+	\begin{ausgabe}
+		Alle Matrikelnummern: 1249609, 1976370,
+	\end{ausgabe}
+\end{frame}
 
 \end{document}
