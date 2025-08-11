@@ -31,6 +31,7 @@ _minted-*/
 
 //IntelliJ
 .idea
+*.iml
 out
 
 //VS Code workspace
