@@ -12,8 +12,8 @@
 Heute werden wir eine Klassenstruktur umsetzen, die ein Modell für eine Grillung sein soll.
 
 \begin{enumerate}
-    \item Erstelle zuallererst mit der Syntax aus der Präsi eine Grillklasse. Gib ihr einen Konstruktor, der ausgibt, dass ein neuer Grill erstellt wird. 
-    \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine main-Klassen-Datei, sowie eine Grill-Klassen-Datei. Man kann jetzt in der Main in einer Funktion auf die Grillklasse zugreifen. Teste den Konstruktor der Grillklasse in dem du ein Grillobjekt in der Main-\textit{Funktion} der Main-\textit{Klasse} erstellst.
+    \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine \texttt{Main}-Klassen-Datei, sowie eine \texttt{Grill}-Klassen-Datei. Man kann jetzt in der Main in einer Funktion auf die Grillklasse zugreifen. 
+    \item Gib deiner Grillklasse einen Konstruktor, der ausgibt, dass ein neuer Grill erstellt wird. Teste den Konstruktor der Grillklasse in dem du ein Grillobjekt in der Main-\textit{Funktion} der Main-\textit{Klasse} erstellst und in einer Variable mit dem Typ \texttt{Grill} speicherst.
     \item Füge dem Grill Attribute hinzu, jeder Grill sollte einen Grillmeister, mit Namen als String benannt, eine maximale Würstchenanzahl, eine maximale Hitze, sowie eine momentane Hitze haben. Erweitere deinen Konstruktor so, dass auch die Attribute des Grills initialisiert werden, wenn ein neues Grillobjekt erstellt wird. Der Konstruktor soll den Namen des Grillmeisters als Parameter entgegennehmen.
     \item Gib dem Grill eine oder mehrere Funktionen zur Kontrolle der Hitze. Gestalte sie so wie du es für sinnvoll hältst.
     \item Füge dem Grill ein Array hinzu, dass die Würstchen symbolisieren soll. Erstelle zwei Funktionen zum Würstchen auf den Grill zu legen, sowie um sie wieder runterzunehmen. Die \texttt{runternehmen}-Funktion sollte ausgeben, ob das Würstchen roh, durch oder verbrannt ist. Ein Würstchen wird mit dem Wert 0 auf den Grill gelegt. Ein Würstchen ist durch, wenn sein ''Durchheitswert'' zwischen 10 und 15 ist, wenn es über 15 gegrillt wird, dann ist es verbrannt. \\
@@ -43,7 +43,7 @@ Ein Grillkäse ist fertig, er ist komplett Schwarz gebrannt.
 
 \newpage
 \aufgabe{HIGHPERFORMER: Optimale Grillerei}
-Stellt euch vor, es war ein langer Tag im PSE-Vorkurs und ihr habt euch eine Grillung verdient, doch der Grill ist klein und es gibt viele unterschiedliche Grillgüter, sowie viele hungrige Studis. Jetzt muss eine Methode her um möglichst schnell alles gegrillt zu bekommen und das ohne, dass ein einziges Stück verbrennt.
+Stellt euch vor, es war ein langer Tag im PSE-Vorkurs und ihr habt euch eine Grillung verdient, doch der Grill ist klein und es gibt viele unterschiedliche Grillgüter, sowie viele hungrige Studis. Jetzt muss eine Methode her um möglichst schnell alles gegrillt zu bekommen und das natürlich ohne, dass ein einziges Stück verbrennt oder roh bleiben muss.
 \begin{enumerate}
     \item Erstelle eine Funktion, die ein Array von einzelnen \texttt{Grillgut}-Objekten entgegennimmt und in möglichst wenigen aufrufen der \texttt{grillen}-Funktion alle grillt. Es darf natürlich am Ende keine verbrannten oder rohen Würstchen geben. Wir haben einen Beispielhaften Algorithmus (im \hyperlink{Highperformer}{Codeanhang}) gebastelt, gegen den ihr euren antreten lassen könnt. 
 \end{enumerate}
