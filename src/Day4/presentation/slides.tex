@@ -296,31 +296,33 @@ public class Student {
 
 \begin{frame}[fragile]
 	\frametitle{Sichtbarkeit in Klassen}
-
+	\pause
 	\begin{itemize}
-
-		\item<2-> \texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
+		\item\texttt{matrikelnummer} und \texttt{lernen} ist \texttt{public} → kann man von außen verwenden
 		      \begin{minted}{java}
 Student paul = new Student("Paul", 12345);
 
 System.out.println(paul.matrikelnummer);
 paul.lernen();
   \end{minted}
-		      \only<3->{\begin{ausgabe}
+		      \pause
+		      {\begin{ausgabe}
 				      12345
 
 
 				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 			      \end{ausgabe}}
-		\item<4-> \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
+		      \pause
+		\item \texttt{name} ist \texttt{private} → kann nur innerhalb der Klasse verwendet werden
 		      \begin{minted}{java}
 Student paul = new Student("Paul", 12345);
 
 System.out.println(paul.name);
   \end{minted}
-		      \only<5->{\begin{ausgabe}
-				      \alert{java: name hat private-Zugriff in Student}
-			      \end{ausgabe}}
+		      \pause
+		      \begin{ausgabe}
+			      \alert{java: name hat private-Zugriff in Student}
+		      \end{ausgabe}
 	\end{itemize}
 \end{frame}
 
