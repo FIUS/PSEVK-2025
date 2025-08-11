@@ -22,7 +22,7 @@ Manche von euch haben sicher schon Erfahrung mit Programmieren, wenn ihr auf ein
 
 \aufgabe{Aufgabe 1: Variablen und Ausgaben}
 Man kann mit \texttt{System.out.println(einString)} den Wert von \texttt{einString} in der Konsole (unten in der Mitte bei der Ausführung des Codes) ausgeben. Folgender code:
-\begin{minted}{java}
+\begin{minted}[linenos=false]{java}
 System.out.println("PSE-Zeit ist Grillzeit")
 \end{minted}
 Gibt folgendes aus:
@@ -77,7 +77,7 @@ Gibt folgendes aus:
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
 Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
-\begin{minted}{java}
+\begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
 System.out.println("Gib deinen Namen ein: ");
 String deinName = derScanner.next();
@@ -111,7 +111,7 @@ Das richtige Ergebnis von 14 \% 3 ist: 2
 \aufgabe{HIGHPERFORMER-Aufgabe: Zufallszahlen}
 Java stellt einen Zufallszahlengenerator zur Verfügung. Dieser besitzt unter anderem folgende Funktionen:
 
-\begin{minted}{java}
+\begin{minted}[linenos=false]{java}
 Random rndGenerator = new Random();
 
 //gibt ein zufälligen float zwischen 0.0 und 1.0 zurück:

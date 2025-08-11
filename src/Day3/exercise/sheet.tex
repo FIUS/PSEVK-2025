@@ -23,7 +23,7 @@ Wir sind so back.
               Komm ran Melanie, es gibt Grillung!
           \end{ausgabe}
     \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
-          \begin{minted}{java}
+          \begin{minted}[linenos=false]{java}
 int a = 3;
 a++;
 System.out.println(a);
@@ -46,7 +46,7 @@ System.out.println(a);
           Hinweis: Erinner dich an Array.length aus der Präsi.
     \item Programmiere eine neue print Funktion, die statt den normalen Listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.\\
     Hinweis: Ein zweidimensionales Array ist ein Array von Arrays:
-    \begin{minted}{java}
+    \begin{minted}[linenos=false]{java}
 int[][] einArray = new int[3][3]; //ein zweidimensionales Array der Größe 3x3
 einArray[0][2] = 3;
 System.out.println(einArray[0][2]);
@@ -77,7 +77,7 @@ System.out.println(einArray[0][2]);
               1 1 1 1 1 1 0 0 0 0 \\
               1 1 1 1 1 1 1 0 0 0
           \end{ausgabe}
-          Wenn du an dieser Aufgabe Spaß hattest gibt es im Codeanhang noch mehr Muster die du versuchen kannst zu generieren.
+          Wenn du an dieser Aufgabe Spaß hattest gibt es im \hyperlink{Aufgabe_4}{Codeanhang} noch mehr Muster die du versuchen kannst zu generieren.
     \item Programmiere eine Funktion, die eine Zahl n entgegennimmt und ein Array mit den ersten n Zahlen der Fibonacci-Reihe zurückgibt. Teste dein Programm mit der Array-Printfunktion die du oben Programmiert hast.\\
           Hinweis: Die Fibonacci Reihe fängt mit 1, 1 an und jedes darauffolgende Element ist die Summe der Beiden vorigen Elemente: 1, 1, 2, 3, 5, 8, 13, ...
 
@@ -90,7 +90,7 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
     \item Miss die durchschnittliche Laufzeit eines prints.
     \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. \\
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
-    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im Codeanhang damit du dessen Laufzeit selbst testen kannst. \\
+    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit selbst testen kannst. \\
           Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten bei einer Laufzeitanalyse die Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
     \item Versuche deine Funktion zu Optimieren und somit schneller zu machen. \\
           Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann.
@@ -99,6 +99,7 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
 
 \newpage
 \aufgabe{Codeanhang}
+\hypertarget{Aufgabe_4}{}
 Aufgabe 2: Arrays:\\
 4. Alle mit Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
 \begin{ausgabe}
@@ -149,6 +150,7 @@ Aufgabe 2: Arrays:\\
 
 Higherformer-Aufgabe:\\
 3.
+\hypertarget{Highperformer}{}
 \begin{minted}[linenos=false]{java}
 public int[] quicksort(int[]){
     //TODO

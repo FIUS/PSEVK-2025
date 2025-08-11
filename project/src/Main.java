@@ -70,7 +70,7 @@ public class Main {;
         }
 
         double expectedProbability = 0.1;
-        int maxOutputLines = 10;
+        int maxOutputLines = 1;
         int outputLines = 0;
         boolean komprimiert = false;
         Scanner sc = new Scanner(System.in);
