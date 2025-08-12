@@ -9,14 +9,26 @@ Heute Abend UNO!
 
 \newpage
 \aufgabe{Aufgabe 1: Maps}
-Maps sind eine Datenstruktur, die zwei Objekte verbindet. 
-
+TODO hier zeug
 \begin{enumerate}
-    \item Erstelle eine \texttt{Student}-Klasse. Sie soll als Attribute einen \texttt{name}-String und eine \texttt{noten}-Map haben. Die Map soll als Schlüssel Namen von Modulen (\texttt{String}) und als Werte Noten (\texttt{float}) haben.
-    \item Programmiere eine Funktion die ein neues Fach mit Note in die \texttt{noten} eines \texttt{Student} Objekts einfügt. 
-    \item Erstelle eine Funktion, die mit einem Scanner abfragt, welche Noten der Nutzer 
+    \item 
 \end{enumerate}
 
 \newpage
+\aufgabe{Aufgabe 2: Datenstrukturen selber machen}
+Man kann sich in Java jederzeit selbst eine eigene Datenstruktur bauen, die dann auch an die eigenheiten der Problemstellung angepasst sein kann. Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Unsere Liste soll aus einzelnen Knotenklassen bestehen, die dann untereinander verbunden werden.
+\begin{enumerate}
+    \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.\\\\
+    \includegraphics[width=\linewidth]{img/linkedlist.png}
+    \item Erstelle jetzt die Listenklasse. Jede \texttt{List} hat einen Startknoten \texttt{startNode}. Programmiere wieder einen sinnvollen Konstruktor.
+    \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um das zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen. 
+    \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden. 
+    \item Programmiere eine \texttt{printElements()} Funktion, die alle Elemente in der Liste anschaulich in der Konsole ausgibt.
+\end{enumerate}
 
+Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wichtig als Datenstruktur mit Variabler Größe und sie existieren auch in nativem Java: \url{https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html}
+
+
+\newpage
+\aufgabe{HIGHPERFORMER-Aufgabe: Bäume oder doubly linked list oder was besseres gerne auch schwerer}
 \end{document}
