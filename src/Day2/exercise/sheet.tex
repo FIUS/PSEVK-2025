@@ -7,8 +7,8 @@
 \maketitle
 
 \textbf{Hilfe suchen und finden}\\
-Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die Offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.\\\\
-\includegraphics[width=1\linewidth]{../../memes/break.png}
+Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die Offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.
+
 
 \newpage
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
@@ -48,7 +48,7 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
               Bier 1 ist geöffnet\\
               Bier 2 ist geöffnet
           \end{ausgabe}
-    \item Da Studis ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann.
+    \item Da Studis ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
     \begin{ausgabe}
         Wie viel Geld hast du? 23\\
         Wie viele Shots hättest du gerne? 1\\
@@ -61,6 +61,9 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
         Wie viele Shots hättest du gerne? 1\\
         ...
     \end{ausgabe}
+
+    \includegraphics[width=1\linewidth]{../../memes/break.png}
+    
     \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze keine String Variablen.\\
     Hinweis: Es kann Sinnvoll sein Methoden aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)}. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
     \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich, z.b.: 4165614 oder 829928). Nutze natürlich wieder keine String Variablen.
