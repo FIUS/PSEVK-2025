@@ -29,6 +29,77 @@
 \end{frame}
 
 \begin{frame}[fragile]
+    \frametitle{Angenommen \dots}
+    \begin{itemize}
+        \item Notendurchschnitt von zwei Studis berechnen
+        \begin{minted}{java}
+            // Melanie
+            double m1 = 1.7, m2 = 2.3, m3 = 1.3;
+            double melanieDurchschnitt = (m1 + m2 + m3) / 3;
+            System.out.println("Melanies Schnitt: " + melanieDurchschnitt);
+
+            // Paul
+            double p1 = 4.0, p2 = 2.3, p3 = 3.3;
+            double paulDurchschnitt = (p1 + p2 + p3) / 3;
+            System.out.println("Pauls Schnitt: " + paulDurchschnitt);
+        \end{minted}
+        \begin{ausgabe}
+            Melanies Schnitt: 1.7666666666666666 
+        
+            Pauls Schnitt: 3.1999999999999997
+        \end{ausgabe}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Warum so nicht?!}
+    \begin{itemize}
+        \item\pause \textbf{Redundanz} \\
+        Gleicher Code mehrfach – nur andere Zahlen
+
+        \item\pause \textbf{Fehleranfällig} \\
+        Ein Zahlendreher reicht, und das Ergebnis stimmt nicht
+
+        \item\pause \textbf{Schlecht wartbar} \\
+        Bei Änderungen muss alles händisch angepasst werden
+
+        \item\pause \textbf{Nicht wiederverwendbar} \\
+        Die Berechnung lässt sich nicht woanders nutzen
+
+        \item\pause \textbf{Unübersichtlich} \\
+        Zwischen vielen Zeilen geht die Logik unter
+\end{itemize}
+    \vspace{2em}
+    \begin{minipage}{\textwidth}
+	\centering
+	\onslide\pause{\Huge $\rightarrow$~}%
+	\onslide{\Large Funktionen retten uns vor Copy-Paste}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Was sind eigentlich Funktionen?}
+    \begin{itemize}
+        \item  Möglichket Code auszulagern
+        \item Syntax:
+        \begin{minted}{java}   
+Rückgabedatentyp Funktionsbezeichner(Datentyp Parametername,...){
+        ...
+        return Rückgabewert;
+ }
+        \end{minted}
+        \item in unserem Fall:
+        \begin{minted}{java}
+        static void avg(String name, double note1, double note2, double note3) {
+        double avg = (note1 + note2 + note3) / 3;
+        System.out.println(name + "s Schnitt: " + avg);
+            \end{minted}
+        \item \textbf{Lösung:} Funktionen ermöglichen Wiederverwendung von Code!
+    \end{itemize}
+\end{frame}
+
+%%ALT
+\begin{frame}[fragile]
     \frametitle{Funktionen}
     \begin{itemize}
         \item Beim Programmieren benötigt man oft die gleiche Funktionalität an mehreren Stellen.
@@ -80,6 +151,8 @@ Rückgabedatentyp Funktionsbezeichner(Datentyp1 Parametername1, ...) {
     }
     \end{minted}
 \end{frame}
+%%
+
 
 \begin{frame}[plain]
     \centering
