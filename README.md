@@ -56,6 +56,14 @@ make (exercise|presentation)/DayX
 ``` 
 wird das Arbeitsblatt/ die Präsentation des spezifischen Tag kompiliert.
 
+Mit 
+```bash
+make (diff|diff-slides) 
+``` 
+kann ein Diff zwischen unterschiedlichen Versionen erstellt werden.
+Mittels der Kommandozeilenargumente **old** und **new** können Commits spezifiziert werden. 
+Standardmäßig sind die Argumente **old=HEAD** und **new=--**, welches das aktuelle Verzeichnis mit dem letzten Commit vergleicht.
+
 ### Autoformatter
 um ein einheitliches Code lesen zu gewährleisten wird latexindent verwenden in kombination mit latexworkshop -> VSCode Extension
 ```bash
