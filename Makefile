@@ -6,16 +6,22 @@ PRESENTATION_OUTPUTS = $(subst exercise/sheet,presentation/slides,$(EXERCISE_OUT
 #DAYS = $(wildcard */)
 DAYS = $(subst /,,$(subst src/,,$(sort $(dir $(wildcard src/Day*/)))))
 CLEAN_DAYS = $(addprefix clean/,$(subst /,,$(subst src/,,$(sort $(dir $(wildcard src/Day*/))))))
+DIFF_DAYS = $(addprefix diff/,$(subst /,,$(subst src/,,$(sort $(dir $(wildcard src/Day*/))))))
 
-
+old=HEAD
+new=--
 
 TYPES= exercise presentation
 #$(foreach var,$(DAYS),cd scr/$(var)/exercise; latexmk -c sheet.tex;)
 
 all: build-exercise rushb
 	make clean
+diff:
+	$(foreach day, $(DAYS),git-latexdiff --main src/$(day)/exercise/sheet.tex  -o src/$(day)/exercise/diff-$(day)-sheet.pdf --latexopt -shell-escape --append-textcmd="aufgabe,ausgabe"  $(old) $(new);)
 
 
+diff-slides:
+	$(foreach day, $(DAYS),git-latexdiff --main src/$(day)/presentation/slides.tex  -o src/$(day)/presentation/diff-$(day)-slides.pdf  --latexopt  -shell-escape --ignore-latex-errors    --append-textcmd="aufgabe,ausgabe,frametitle"  $(old) $(new);)
 
 build-exercise: $(EXERCISE_OUTPUTS)
 
@@ -27,8 +33,8 @@ clean: $(CLEAN_DAYS)
 
 
 cleanall: clean
-	$(foreach var,$(DAYS),rm -f src/$(var)/exercise/$(var).pdf; rm -rf src/$(var)/exercise/_minted*;)
-	$(foreach var,$(DAYS),rm -f src/$(var)/presentation/$(var).pdf; rm -rf src/$(var)/presentation/_minted*;)
+	$(foreach var,$(DAYS),rm -f src/$(var)/exercise/$(var)-sheet.pdf; rm -rf src/$(var)/exercise/diff-$(var)-sheet.pdf; rm -rf src/$(var)/exercise/_minted*;)
+	$(foreach var,$(DAYS),rm -f src/$(var)/presentation/$(var)-slides.pdf;rm -f src/$(var)/presentation/diff-$(var)-slides.pdf; rm -rf src/$(var)/presentation/_minted*;)
 
 	
 
@@ -42,7 +48,7 @@ cleanall: clean
 	cd $(@D) && latexmk -pdf -shell-escape -jobname=$(subst /presentation/slides.pdf,,$(subst src/,,$(@)))-slides slides.tex
 
 clean/Day%:
-	rm -f $(filter-out src/$(@F)/exercise/$(@F).pdf ,$(wildcard src/$(@F)/exercise/$(@F)-sheet.*));
+	rm -f $(filter-out src/$(@F)/exercise/$(@F)-sheet.pdf ,$(wildcard src/$(@F)/exercise/$(@F)-sheet.*));
 	rm -f $(filter-out src/$(@F)/presentation/$(@F).pdf ,$(wildcard src/$(@F)/presentation/$(@F)-slides.*))
 
 
