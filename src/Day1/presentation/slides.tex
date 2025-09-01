@@ -188,7 +188,7 @@
   \begin{itemize}
     \item Das Programm soll nun bei allen von euch gestartet werden
     \item Dazu klickt auf das grüne Dreieck oben rechts in der IDE
-    \item Wenn alles korrekt eingerichtet ist, sollte die Ausgabe "Hallo Welt!" erscheinen.
+    \item Wenn alles korrekt eingerichtet ist, sollte die Ausgabe "Hallo Welt!'' erscheinen.
           \achtung{} Wenn eine Fehlermeldung erscheint, überprüft bitte den Code alternativ fragt einen Tutor.
   \end{itemize}
 \end{frame}
@@ -217,7 +217,9 @@
   \pause
   \begin{itemize}
     \item Variablen werden benötigt, um Werte im Programm zwischenzuspeichern
+          \pause
     \item Sie haben einen Namen (Bezeichner), einen Datentyp und speichern einen Wert
+          \pause
     \item Über den Namen kann später auf den gespeicherten Wert zugegriffen werden
           \pause
           \begin{minted}{java}
@@ -236,7 +238,7 @@
       String name = null; // name zeigt auf nichts
       \end{minted}
           \pause
-    \item Zugriff auf Methoden oder Eigenschaften einer \texttt{null}-Referenz führt zu einem Fehler (\color{red}\texttt{NullPointerException}).
+    \item Zugriff auf Methoden oder Eigenschaften einer \texttt{null}-Referenz führt zu einem Fehler "\color{red}\texttt{NullPointerException}\color{black}".
   \end{itemize}
   \pause
   \achtung{} \texttt{null} ist nicht dasselbe wie eine leere Zeichenkette (\texttt{""}) oder die Zahl 0.
@@ -425,9 +427,12 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
   \frametitle{Eingabe mit \texttt{Scanner}}
   \pause
   Benutzereingaben werden in Java mit der \texttt{Scanner} Klasse verarbeitet
+  \pause
   \begin{itemize}
     \item Mit \texttt{Scanner} kann man Benutzereingaben aus der Konsole einlesen.
+          \pause
     \item Dafür muss die Klasse \texttt{Scanner} aus dem Paket \texttt{java.util} importiert werden.
+          \pause
     \item Imports steht ganz oben im Java-Quelltext
   \end{itemize}
   \pause
@@ -522,7 +527,7 @@ public int add(int x, int y) {
   \begin{itemize}
     \item Autoformatter sorgt für übersichtliche und einheitliche Code-Formatierung.
           \pause
-    \item Tastenkombination: \texttt{Strg + Alt + L} (Windows/Linux), \texttt{Cmd + Alt + L} (Mac).
+    \item Tastenkombination: \texttt{Strg + Alt + L} (Windows/Linux), \texttt{Cmd + Opt + L} (Mac).
           \pause
     \item Achtet auf Einrückungen, Abstände und Zeilenumbrüche.
           \pause

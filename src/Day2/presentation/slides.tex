@@ -33,10 +33,12 @@
 %BOOLEAN
 \begin{frame}[fragile]
   \frametitle{\texttt{Boolean} - Wahr oder Falsch}
+  \pause
   \begin{itemize}
     \item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
+          \pause
     \item Wahrheitswerte speichern und verarbeiten
-
+          \pause
     \item z.B:
           \begin{minted}{java}
 boolean heuteDienstag = true;
@@ -50,26 +52,26 @@ boolean heuteDienstag = true;
 %ARITHMETRISCH BOOLEAN
 \begin{frame}[fragile]
   \frametitle{\texttt{Boolean} Operatoren}
-
-  \only<1->{Wenn \texttt{a} und \texttt{b} Zahlen sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
+  \pause
+  \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<1->\texttt{isDienstag == esRegnet} \quad Wahr, wenn \texttt{isDienstag} gleich \texttt{esRegnet} ist
+    \item<2->\texttt{isDienstag == esRegnet} \quad Wahr, wenn \texttt{isDienstag} gleich \texttt{esRegnet} ist
           \begin{minted}{java}
 boolean result = (isDienstag == esRegnet); // result true, wenn isDienstag gleich esRegnet
     \end{minted}
 
-    \item<2->\texttt{isDienstag != esRegnet} \quad Wahr, wenn \texttt{isDienstag} ungleich \texttt{esRegnet} ist
+    \item<3->\texttt{isDienstag != esRegnet} \quad Wahr, wenn \texttt{isDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
 boolean result = (isDienstag != esRegnet); // result true, wenn isDienstag ungleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
+    \item<4->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
           \begin{minted}{java}
 boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
 
-    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
+    \item<5->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
   \end{itemize}
 \end{frame}
 
@@ -133,21 +135,24 @@ boolean result = (preis < geld); // result true, wenn preis kleiner als geld
 %IF-VERZWEIGUNG
 \begin{frame}[fragile]
   \frametitle{\texttt{if}-Verzweigung}
-
+  \pause
   \begin{itemize}
-    \item<1-> Ausführung nur wenn Bedingung \texttt{true}
+    \item Ausführung nur wenn Bedingung \texttt{true}
+          \pause
           \begin{minted}{java}
 if (Bedingung) {
   // Code bei true
 }
       \end{minted}
-    \item<2-> Beispiel:
+          \pause
+    \item Beispiel:
           \begin{minted}{java}
 boolean heuteDienstag = true;
 if (heuteDienstag) {
   System.out.println("Crazyyy heute ist Dienstag");
 }
       \end{minted}
+          \pause
           \begin{ausgabe}
             Crazyyy heute ist Dienstag
           \end{ausgabe}
@@ -156,16 +161,18 @@ if (heuteDienstag) {
 
 \begin{frame}[fragile]
   \frametitle{\texttt{if}-Verzweigung}
-
+  \pause
   \begin{itemize}
-    \item<1-> geht genauso mit \texttt{int} etc.
-    \item<2-> Beispiel:
+    \item geht genauso mit \texttt{int} etc.
+          \pause
+    \item Beispiel:
           \begin{minted}{java}
 int lieblingszahl = 42;
 if (lieblingszahl == 42) {
   System.out.println("Du bist ein Highperformer!");
 }
       \end{minted}
+          \pause
           \begin{ausgabe}
             Du bist ein Highperformer!
           \end{ausgabe}
@@ -177,10 +184,12 @@ if (lieblingszahl == 42) {
 %IF-ELSE-VERZWEIGUNG
 \begin{frame}[fragile]
   \frametitle{\texttt{if}-\texttt{else}}
-
+  \pause
   \begin{itemize}
-    \item<1-> erweitert die \texttt{if} Anweisung
-    \item<1-> "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
+    \item erweitert die \texttt{if} Anweisung
+          \pause
+    \item "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
+          \pause
           \begin{minted}{java}
 if (Bedingung) {
   // Code bei Bedingung true
@@ -193,8 +202,9 @@ if (Bedingung) {
 
 \begin{frame}[fragile]
   \frametitle{\texttt{if}-\texttt{else}}
+  \pause
   \begin{itemize}
-    \item<1-> Beispiel:
+    \item Beispiel:
           \begin{minted}{java}
 boolean heuteDonnerstag = false;
 if (heuteDonnerstag) {
@@ -203,18 +213,19 @@ if (heuteDonnerstag) {
   System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
-          \only{
-            \begin{ausgabe}
-              :( bestimmt ist bald wieder Donnerstag
-            \end{ausgabe}
-          }
+          \pause
+          \begin{ausgabe}
+            :( bestimmt ist bald wieder Donnerstag
+          \end{ausgabe}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{\texttt{else if}}
+  \pause
   \begin{itemize}
     \item \texttt{else if} prüft mehrere Bedingungen
+          \pause
     \item Beispiel:
           \begin{minted}{java}
 if (note == 1) {
@@ -233,6 +244,7 @@ if (note == 1) {
 %WHILE
 \begin{frame}[fragile]
   \frametitle{\texttt{while}-Schleife}
+  \pause
   \begin{itemize}
     \item  Wiederholt Anweisungen, solange eine Bedingung \texttt{true} ist
           \begin{minted}{java}
@@ -243,6 +255,7 @@ while (Bedingung) { /* Code */ }
 
 \begin{frame}[fragile]
   \frametitle{\texttt{while}-Schleife}
+  \pause
   \begin{minted}{java}
 Scanner scanner = new Scanner(System.in);
 String eingabe = "";
@@ -252,6 +265,7 @@ while (!eingabe.equals("ok")) {
   eingabe = scanner.nextLine();
 }
   \end{minted}
+  \pause
   \begin{ausgabe}
     Bitte 'ok' eingeben: \newline
     ...\newline
@@ -264,11 +278,11 @@ while (!eingabe.equals("ok")) {
 %WHILE MIT BREAK
 \begin{frame}[fragile]
   \frametitle{\texttt{break}}
-
+  \pause
   \begin{itemize}
     \item Mit \texttt{break} kann man eine Schleife vorzeitig beenden
   \end{itemize}
-
+  \pause
   \begin{minted}[fontsize=\footnotesize, linenos]{java}
 Scanner scanner = new Scanner(System.in);
 
@@ -299,23 +313,28 @@ System.out.println("I'm in");
 %FOR SCHLEIFE
 \begin{frame}[fragile]
   \frametitle{Was ist eine \texttt{for}-Schleife?}
-
+  \pause
   \begin{itemize}
     \item Wiederholt Anweisungen eine festgelegte Anzahl von Malen
+          \pause
           \begin{minted}[fontsize=\large]{java}
 for (Start; Bedingung; Schritt) {
     // Schleifenrumpf
 }
 \end{minted}
+          \pause
     \item Ablauf:
+          \pause
           \begin{enumerate}
             \item Wo starten wir? (z.B. bei 0)
+                  \pause
             \item Bedingung noch erfüllt?
+                  \pause
             \item Falls ja, Code im Block ausführen
+                  \pause
             \item Zähler ändern i.d.R. einen hochzählen
           \end{enumerate}
   \end{itemize}
-  \todo{bessere Erklärung}
 \end{frame}
 
 
@@ -323,6 +342,7 @@ for (Start; Bedingung; Schritt) {
 %FOR BEISPIEL
 \begin{frame}[fragile]
   \frametitle{\texttt{for}-Schleife}
+  \pause
   Somit wird aus\dots
 
   \begin{minted}{java}
@@ -333,6 +353,7 @@ while (momentaneWurst <= letzteWurst) {
     momentaneWurst++;
 }
   \end{minted}
+  \pause
   ganz simpel\dots
   \begin{minted}{java}
 for (int i = 4; i <= 8; i++) {
