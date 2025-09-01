@@ -11,6 +11,9 @@
 
 \usepackage{todonotes}
 \setuptodonotes{inline}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+
 
 
 \begin{document}
@@ -73,30 +76,82 @@
     \begin{minipage}{\textwidth}
 	\centering
 	\onslide\pause{\Huge $\rightarrow$~}%
-	\onslide{\Large Funktionen retten uns vor Copy-Paste}
+	\onslide{\Large Funktionen ermöglichen Wiederverwendung von Code!}
 \end{minipage}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Was sind eigentlich Funktionen?}
     \begin{itemize}
-        \item  Möglichket Code auszulagern
-        \item Syntax:
+        \item\pause  Möglichket Code auszulagern
+        \item\pause Syntax:
         \begin{minted}{java}   
 Rückgabedatentyp Funktionsbezeichner(Datentyp Parametername,...){
         ...
         return Rückgabewert;
  }
         \end{minted}
-        \item in unserem Fall:
-        \begin{minted}{java}
+        \item\pause in unserem Fall:
+        \begin{minted}[fontsize=\footnotesize]{java}
         static void avg(String name, double note1, double note2, double note3) {
-        double avg = (note1 + note2 + note3) / 3;
-        System.out.println(name + "s Schnitt: " + avg);
+            double avg = (note1 + note2 + note3) / 3;
+            System.out.println(name + "s Schnitt: " + avg);}
             \end{minted}
-        \item \textbf{Lösung:} Funktionen ermöglichen Wiederverwendung von Code!
+    \end{itemize}
+    Schlüsselwort \texttt{static} ist hier notwendig wird in PSE genauer erklärt 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{\texttt{return}}
+    \begin{itemize}
+        \item\pause Funktionen können Werte zurück geben
+        \item\pause z.B eine Zahl
+        \begin{minted}{java}
+            static int add(int num1, int num2){
+                int sum = num1 + num2;
+                return sum
+            }
+        \end{minted}
+    \item\pause Datentyp des \texttt{return} Wert's muss im Funktionskopf stehen
+    \item\pause Wenn kein Rückgabewert $\rightarrow$ \texttt{void}
     \end{itemize}
 \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{\texttt{return}}
+
+\begin{itemize}
+    \item<1-> Funktionen können Werte zurückgeben
+    \item<2-> z.B. eine Zahl:
+
+\begin{minted}[escapeinside=||]{java}
+static |{\tikzmark{rettyp}}|int add(int num1, int num2){
+    int sum = num1 + num2;
+    return sum;
+}
+\end{minted}
+
+    \item<3-> Datentyp des \texttt{return}-Werts muss im Funktionskopf stehen
+
+    \begin{tikzpicture}[remember picture, overlay]
+      \draw[->, red, thick]
+        ([yshift=0.4ex]pic cs:rettyp)
+        -- ++(1.8, 0)
+        node[right] {\scriptsize \texttt{int} = Rückgabetyp};
+    \end{tikzpicture}
+
+    \item<4-> Wenn kein Rückgabewert $\rightarrow$ \texttt{void}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
 
 %%ALT
 \begin{frame}[fragile]
