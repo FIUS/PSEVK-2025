@@ -9,9 +9,15 @@ Heute Abend UNO!
 
 \newpage
 \aufgabe{Aufgabe 1: Maps}
-TODO hier zeug
+Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefeonnummern zu verbinden:
+\begin{minted}[linenos=false]{java}
+Map<String, Integer> telefonbuch = new HashMap<String, Integer>();
+//erstes Parameter ist der Schlüssel, zweites ist der Wert
+telefonbuch.put("Paul Griller", 1374927394);
+\end{minted}
+
 \begin{enumerate}
-    \item 
+    \item
 \end{enumerate}
 
 \newpage
@@ -28,7 +34,19 @@ Man kann sich in Java jederzeit selbst eine eigene Datenstruktur bauen, die dann
 
 Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wichtig als Datenstruktur mit Variabler Größe und sie existieren auch in nativem Java: \url{https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html}
 
-
 \newpage
-\aufgabe{HIGHPERFORMER-Aufgabe: Bäume oder doubly linked list oder was besseres gerne auch schwerer}
+\aufgabe{HIGHPERFORMER-Aufgabe: Bäume}
+Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder Knoten mit Kindknoten verbunden, welche wiederum mit weiteren Kindknoten verbunden sind. So werden die Daten in einer Baumstruktur gespeichert:
+\\
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{img/baum.png}    
+\end{center}
+
+\begin{enumerate}
+    \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert.
+    \item baum printen mit max tiefe
+    \item zu Array
+    \item arrayzubaum
+\end{enumerate}
+
 \end{document}
