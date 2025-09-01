@@ -17,7 +17,24 @@ telefonbuch.put("Paul Griller", 1374927394);
 \end{minted}
 
 \begin{enumerate}
+<<<<<<< HEAD
     \item
+=======
+    \item Erstelle einen neue String-Variable mit dem folgenden Text
+    \begin{ausgabe}
+        Grimmige Griller grillen glühend gern grobe Grillgemüse-Spieße.
+    \end{ausgabe}
+    \item Schreibe einen Algorithmus der in einem Dictionary speichert, wie oft jeder Buchstabe im String vorkommt. 
+
+    Hinweis: Verwende die split("") Methode auf einen String in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
+
+    \item Schreibe eine Funktion die ein Dictionary entgegennimmt und alle Schlüssel und die dazugehörigen Werte ausgibt.
+    
+    Lösung:
+    \begin{ausgabe}
+        b: 1, d: 1, e: 10, g: 9, h: 1, i: 6, l: 7, m: 3, n: 3, o: 1, p: 1, r: 7, s: 2, ß: 1, ü: 2
+    \end{ausgabe}
+>>>>>>> 8d47fb7 (Tag 5 Aufgabe 1)
 \end{enumerate}
 
 \newpage
@@ -30,6 +47,7 @@ Man kann sich in Java jederzeit selbst eine eigene Datenstruktur bauen, die dann
     \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um das zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen. 
     \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden. 
     \item Programmiere eine \texttt{printElements()} Funktion, die alle Elemente in der Liste anschaulich in der Konsole ausgibt.
+    \item Schreibe eine Funktion, die die Summe der Elemente in der Liste berechnet. Schreibe dazu eine Funktion in der Klasse Node, die eine Summe entgegennimmt, ihren eigenen Wert hinzuaddiert und sich dann im nächsten Knoten selbst aufruft. Wenn die Methode auf den letzten Knoten in der Liste stößt, soll die berechnete Gesamtsumme auf der Konsole ausgegeben werden. Füge zuletzt der Klasse „List“ eine Funktion hinzu, die die Summenfunktion im ersten Knoten aufruft.
 \end{enumerate}
 
 Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wichtig als Datenstruktur mit Variabler Größe und sie existieren auch in nativem Java: \url{https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html}
