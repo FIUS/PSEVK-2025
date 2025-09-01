@@ -19,13 +19,56 @@
 	\titlepage
 \end{frame}
 
-\begin{frame}
-	\listoftodos
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 4}
+	\pause
+	\begin{minted}{java}
+public class Student {
+String name;
+int matrikelnummer;
+
+void lernen() {
+	System.out.println(name + " lernt fleißig!");
+	}
+}
+	\end{minted}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Recap Tag 4}
-	\todo{am Anfang immer Vortages recap?}
+	\pause
+	\begin{minted}{java}
+public Student(String name, int matrikelnummer) {
+	this.name = name;
+	this.matrikelnummer = matrikelnummer;
+}
+
+Student paul = new Student("Paul", 12345);
+paul.lernen(); // → Paul lernt fleißig!
+	\end{minted}
+	\pause
+	\begin{minted}{java}
+Student anna = new Student("Anna", 67890);
+
+System.out.println(anna.matrikelnummer); // 67890
+anna.lernen(); // Anna lernt fleißig!
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 4}
+	\pause
+	\begin{minted}{java}
+public class Student {
+	private final String name;
+	public int matrikelnummer;
+
+	public Student(String name, int matrikelnummer) {
+		this.name = name;
+		this.matrikelnummer = matrikelnummer;
+	}
+}
+	\end{minted}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -48,10 +91,10 @@ import java.util.HashMap;
 	\end{minted}
 	\begin{minted}{java}
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melani", 1976370);
+studis.put("Melanie", 1976370);
 studis.put("Paul", 1249609);
 
-System.out.println(studis.get("Melani"));
+System.out.println(studis.get("Melanie"));
 	\end{minted}
 	\begin{ausgabe}
 		1976370
@@ -85,7 +128,7 @@ System.out.println(studis.get("Melani"));
 	\end{itemize}
 	\begin{minted}{java}
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melani", 1976370);
+studis.put("Melanie", 1976370);
 studis.put("Paul", 1249609);
 
 System.out.println("Vor remove: " + studis.size());
@@ -108,17 +151,17 @@ System.out.println("Nach remove: " + studis.size());
 	\end{itemize}
 	\begin{minted}{java}
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melani", 1976370);
+studis.put("Melanie", 1976370);
 
 System.out.println("Paul existiert: " + studis.containsKey("Paul"));
 
-if (studis.containsKey("Melani")) {
-    System.out.println("Melanis Matrikelnummer: " + studis.get("Melani"));
+if (studis.containsKey("Melanie")) {
+    System.out.println("Melanies Matrikelnummer: " + studis.get("Melanie"));
 }
 	\end{minted}
 	\begin{ausgabe}
 		Paul existiert: false \newline
-		Melanis Matrikelnummer: 1976370
+		Melanies Matrikelnummer: 1976370
 	\end{ausgabe}
 \end{frame}
 
@@ -130,7 +173,7 @@ if (studis.containsKey("Melani")) {
 	\end{itemize}
 	\begin{minted}{java}
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melani", 1976370);
+studis.put("Melanie", 1976370);
 studis.put("Paul", 1249609);
 
 System.out.print("Alle Namen: ");
@@ -139,7 +182,7 @@ for (String name : studis.keySet()) {
 }
 	\end{minted}
 	\begin{ausgabe}
-		Alle Namen: Paul, Melani,
+		Alle Namen: Paul, Melanie,
 	\end{ausgabe}
 \end{frame}
 
@@ -151,7 +194,7 @@ for (String name : studis.keySet()) {
 	\end{itemize}
 	\begin{minted}{java}
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melani", 1976370);
+studis.put("Melanie", 1976370);
 studis.put("Paul", 1249609);
 
 System.out.println("Alle Matrikelnummern: ");

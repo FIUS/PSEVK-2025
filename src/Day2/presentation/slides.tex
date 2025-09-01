@@ -20,13 +20,59 @@
   \titlepage
 \end{frame}
 
-\begin{frame}
-  \listoftodos
+\begin{frame}[fragile]
+  \frametitle{Recap Tag 1}
+  \pause
+  \begin{center}
+    \begin{minted}{java}
+int alter = 20;    // Deklaration + Initialisierung
+int zahl;          // Deklaration
+zahl = 42;         // Initialisierung
+  \end{minted}
+    \rowcolors{2}{tablerow}{white}
+    \pause
+    \begin{tabular}{l l l}
+      \rowcolor{tablehead}
+      \textbf{Operator
+      }           & \textbf{Bedeutung
+      }           & \textbf{Beispiele
+      }                                           \\
+      \texttt{+}  & {Addition / String-Verkettung
+      }           & \texttt{3+2, ''a"+"b"
+      }                                           \\
+      \texttt{-}  & \texttt{Subtraktion
+      }           & \texttt{7-5
+      }                                           \\
+      \texttt{*}  & \texttt{Multiplikation
+      }           & \texttt{3*4
+      }                                           \\
+      \texttt{/}  & \texttt{Division
+      }           & \texttt{10/2
+      }                                           \\
+      \texttt{\%} & \texttt{Modulo
+      }           & \texttt{5\%2
+      }                                           \\
+    \end{tabular}
+  \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Recap Tag 1}
-  \todo{am Anfang immer Vortages recap?}
+  \pause
+  \begin{minted}{java}
+System.out.print("Hallo");
+System.out.println("Welt");
+System.out.println("Zahl: " + 42);
+  \end{minted}
+  \pause
+  \begin{minted}{java}
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int x = sc.nextInt();
+int y = sc.nextInt();
+System.out.println(x + y);
+  \end{minted}
 \end{frame}
 
 
