@@ -43,10 +43,11 @@ Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder K
 \end{center}
 
 \begin{enumerate}
-    \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert.
-    \item baum printen mit max tiefe
-    \item zu Array
-    \item arrayzubaum
+    \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum. 
+    \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt. 
+    \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die den Baum anschaulich ausgibt.
+    \item Programmiere zwei Funktionen, die den Baum eindeutig in eine LinkedList umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann. 
+    Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist. 
 \end{enumerate}
 
 \end{document}
