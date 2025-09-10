@@ -60,7 +60,7 @@
 		\item\pause \textbf{Redundanz:} Gleicher Code mehrfach
 		\item\pause \textbf{Fehleranfällig:} Zahlendreher möglich
 		\item\pause \textbf{Schlecht wartbar:} Änderungen mehrfach nötig
-		\item\pause \textbf{Nicht wiederverwendbar:} Nur an dieser Stelle nutzbar 
+		\item\pause \textbf{Nicht wiederverwendbar:} Nur an dieser Stelle nutzbar
 		\item\pause \textbf{Unübersichtlich:} Logik geht unter
 	\end{itemize}
 	\vspace{2em}
@@ -112,7 +112,7 @@ static |{\tikzmark{rettyp}}|int add(int num1, int num2){
 			      -- ([yshift=1.5ex,xshift=1.0em]pic cs:rettyp)
 			      node[anchor=west, yshift=2.0em, xshift=1.0em] {\scriptsize hier \texttt{int} Rückgabetyp};
 		      \end{tikzpicture}
-		\item\pause Wenn kein Rückgabewert $\rightarrow$ \texttt{void} (wie vorhin) 
+		\item\pause Wenn kein Rückgabewert $\rightarrow$ \texttt{void} (wie vorhin)
 	\end{itemize}
 \end{frame}
 
@@ -122,14 +122,14 @@ static |{\tikzmark{rettyp}}|int add(int num1, int num2){
 	\begin{itemize}
 		\item\pause Rückgabewert wird zurück an den Aufrufer gegeben
 		\item\pause Speicherung in Variable
-		\begin{minted}{java}
+		      \begin{minted}{java}
 int result = add(3, 4);
 System.out.println(result); 
 		\end{minted}
-\begin{ausgabe}
-    7
-\end{ausgabe}
-		\item\pause \texttt{return} beendet Funktion sofort 
+		      \begin{ausgabe}
+			      7
+		      \end{ausgabe}
+		\item\pause \texttt{return} beendet Funktion sofort
 		\item\pause Code nach \texttt{return} wird nicht mehr ausgeführt
 	\end{itemize}
 \end{frame}
@@ -162,18 +162,36 @@ public static void main(String[] args) {
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Basic Scopes}
+
+\begin{frame}[fragile]{Sichtbarkeit von Variablen (Scopes)}
 	\begin{itemize}
-		\item Variablen, die \textbf{in einer Funktion} definiert sind, können nur in dieser Funktion verwendet werden.
-		\item Variablen, die \textbf{außerhalb einer Funktion} definiert sind, können auch in der Funktion verwendet werden.
-		\item Bei korrekter Einrückung gilt: Variablen sind in den \textbf{kleineren Ebenen} sichtbar, aber nicht in den darüberliegenden.
-		\item Das gilt auch für Schleifen, \texttt{if}-Blöcke usw.
+		\item\pause Variablen sind sichtbar im aktuellen und in allen tieferen Blöcken
+		      \begin{minted}[fontsize=\footnotesize]{java}
+public static void main(String[] args) {
+int y = 10;
+
+if (y > 5) {
+    System.out.println(y); // OK – Zugriff auf äußere Variable
+}}
+    \end{minted}
+		\item\pause In äußeren Blöcken sind sie nicht sichtbar
+		      \begin{minted}[fontsize=\footnotesize]{java}
+public static void main(String[] args) {
+    int x = 5;
+}
+public static void andereMethode() {
+    System.out.println(x); // Fehler! x ist hier nicht sichtbar
+}
+    \end{minted}
+
+		\item\pause Gilt für alle Blöcke: Funktionen, if, Schleifen, etc.
 	\end{itemize}
 \end{frame}
 
+
 \begin{frame}[fragile]
 	\frametitle{Basic Scopes}
+	\todo{Irgendwas mit dem Meme machen}
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
 
