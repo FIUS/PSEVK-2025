@@ -27,11 +27,56 @@
 	\todo{am Anfang immer Vortages recap?}
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 3 – Funktionen \& Scopes}
+
+	\begin{itemize}
+		\item\pause Funktionen helfen, Code auszulagern und mehrfach zu nutzen
+		      \begin{minted}[fontsize=\scriptsize]{java}
+static double avg(double a, double b, double c) {
+    return (a + b + c) / 3;
+}
+          \end{minted}
+		\item\pause \texttt{return} gibt einen Wert zurück und beendet die Funktion
+		\item\pause Scopes: Variablen nur im jeweiligen Block sichtbar
+		      \begin{minted}[fontsize=\scriptsize]{java}
+int x = 5;
+if (x > 0) {
+    int y = 10; // y nur hier sichtbar
+}
+System.out.println(y); // Fehler!
+          \end{minted}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 3 – Arrays}
+	\pause
+	\begin{itemize}
+		\item\pause Arrays speichern mehrere Werte gleichen Typs
+		      \begin{minted}[fontsize=\scriptsize]{java}
+int[] zahlen = new int[5];
+zahlen[0] = 42;
+          \end{minted}
+		\item\pause Zugriff über Index, Start bei \texttt{0}
+		\item\pause Initialisierung auch direkt möglich:
+		      \begin{minted}[fontsize=\scriptsize]{java}
+String[] grill = {"Wurst", "Steak", "Mais"};
+          \end{minted}
+		\item Mit \texttt{.length} über alle Elemente iterieren:
+		      \begin{minted}[fontsize=\scriptsize]{java}
+for (int i = 0; i < grill.length; i++) {
+    System.out.println(grill[i]);
+}
+          \end{minted}
+	\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{Angenommen \dots}
 	\begin{itemize}
-		\item Wir wollen z.B. Informationen über Studierende speichern
+		\item\pause Wir wollen z.B. Informationen über Studierende speichern
 		      \begin{itemize}
 			      \item<2->[\textbullet] Name
 			      \item<3->[\textbullet] Matrikelnummer
