@@ -19,32 +19,32 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
 
 \begin{enumerate}
     \item Schreibe eine Funktion die einen Dictionary entgegennimmt und alle Schlüssel und die dazugehörigen Werte ausgibt:
-    
-    \begin{ausgabe}
-        Paul Griller: 1374927394, Melanie Barbecue: 9257632984
-    \end{ausgabe}
-    
+
+          \begin{ausgabe}
+              Paul Griller: 1374927394, Melanie Barbecue: 9257632984
+          \end{ausgabe}
+
     \item Schreibe einen Algorithmus der in einem Dictionary speichert, wie oft jeder Buchstabe in einem String vorkommt.
 
-    \begin{ausgabe}
-        grimmige griller grillen glühend gern grobe grillgemüse-spieße.
-    \end{ausgabe}
-    wird zu:
-    \begin{ausgabe}
-        g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
-    \end{ausgabe}
+          \begin{ausgabe}
+              grimmige griller grillen glühend gern grobe grillgemüse-spieße.
+          \end{ausgabe}
+          wird zu:
+          \begin{ausgabe}
+              g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
+          \end{ausgabe}
 
-    Hinweis: Verwende die split("") Methode auf einen String in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
+          Hinweis: Verwende die split("") Methode auf einen String in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
 
     \item Erweitere deinen Algorithmus, sodass er einen Integer \texttt{length} entgegennimmt und statt nach einzelnen Buchstaben, jetzt nach Buchstabenfolgen der Länge \texttt{length} sucht.
-    
-    \begin{ausgabe}
-        grimmige griller grillen glühend gern grobe grillgemüse-spieße.
-    \end{ausgabe}
-    wird bei \texttt{length = 3} zu:
-    \begin{ausgabe}
-        gri: 4, rim: 1, imm: 1, mmi: 1, mig: 1, ige: 1, ge : 1, e g: 2,  gr: 4, ril: 3, ill: 3, lle: 2, ler: 1, er : 1, r g: 1, len: 1, en : 1, n g: 2,  gl: 1, glü: 1, lüh: 1, ühe: 1, hen: 1, end: 1, nd : 1, d g: 1,  ge: 1, ger: 1, ern: 1, rn : 1, gro: 1, rob: 1, obe: 1, be : 1, llg: 1, lge: 1, gem: 1, emü: 1, müs: 1, üse: 1, se-: 1, e-s: 1, -sp: 1, spi: 1, pie: 1, ieß: 1, eße: 1, ße.: 1
-    \end{ausgabe}
+
+          \begin{ausgabe}
+              grimmige griller grillen glühend gern grobe grillgemüse-spieße.
+          \end{ausgabe}
+          wird bei \texttt{length = 3} zu:
+          \begin{ausgabe}
+              gri: 4, rim: 1, imm: 1, mmi: 1, mig: 1, ige: 1, ge : 1, e g: 2,  gr: 4, ril: 3, ill: 3, lle: 2, ler: 1, er : 1, r g: 1, len: 1, en : 1, n g: 2,  gl: 1, glü: 1, lüh: 1, ühe: 1, hen: 1, end: 1, nd : 1, d g: 1,  ge: 1, ger: 1, ern: 1, rn : 1, gro: 1, rob: 1, obe: 1, be : 1, llg: 1, lge: 1, gem: 1, emü: 1, müs: 1, üse: 1, se-: 1, e-s: 1, -sp: 1, spi: 1, pie: 1, ieß: 1, eße: 1, ße.: 1
+          \end{ausgabe}
 
 \end{enumerate}
 
@@ -53,10 +53,10 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
 Man kann sich in Java jederzeit selbst eine eigene Datenstruktur bauen, die dann auch an die eigenheiten der Problemstellung angepasst sein kann. Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Unsere Liste soll aus einzelnen Knotenklassen bestehen, die dann untereinander verbunden werden.
 \begin{enumerate}
     \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.\\\\
-    \includegraphics[width=\linewidth]{img/linkedlist.png}
+          \includegraphics[width=\linewidth]{img/linkedlist.png}
     \item Erstelle jetzt die Listenklasse. Jede \texttt{List} hat einen Startknoten \texttt{startNode}. Programmiere wieder einen sinnvollen Konstruktor.
-    \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um das zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen. 
-    \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden. 
+    \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um das zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen.
+    \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden.
     \item Programmiere eine \texttt{printElements()} Funktion, die alle Elemente in der Liste anschaulich in der Konsole ausgibt.
     \item Schreibe eine Funktion, die die Summe der Elemente in der Liste berechnet. Schreibe dazu eine Funktion in der Klasse Node, die eine Summe entgegennimmt, ihren eigenen Wert hinzuaddiert und sich dann im nächsten Knoten selbst aufruft. Wenn die Methode auf den letzten Knoten in der Liste stößt, soll die berechnete Gesamtsumme auf der Konsole ausgegeben werden. Füge zuletzt der Klasse „List“ eine Funktion hinzu, die die Summenfunktion im ersten Knoten aufruft.
 \end{enumerate}
@@ -68,14 +68,14 @@ Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wich
 Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder Knoten mit Kindknoten verbunden, welche wiederum mit weiteren Kindknoten verbunden sind. So werden die Daten in einer Baumstruktur gespeichert:
 \\
 \begin{center}
-    \includegraphics[width=0.5\linewidth]{img/baum.png}    
+    \includegraphics[width=0.5\linewidth]{img/baum.png}
 \end{center}
 
 \begin{enumerate}
-    \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum. 
-    \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt. 
+    \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum.
+    \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt.
     \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die den Baum anschaulich ausgibt.
-    \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann. 
-    Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist. 
+    \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann.
+          Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist.
 \end{enumerate}
 \end{document}
