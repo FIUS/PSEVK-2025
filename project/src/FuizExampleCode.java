@@ -24,7 +24,7 @@ public class FuizExampleCode {
 
         //5
 
-        System.out.println(10 + ((3 * 4) + "7"));
+        System.out.println(3 + ((2 * 2) + "7"));
 
         //6
 
@@ -34,19 +34,18 @@ public class FuizExampleCode {
 
         //7
 
-        System.out.println(10 + "6" * 4);
+        System.out.println(3 + "4" * 2);
 
         //8
 
-        int a = 8 * 4;
-        a = a / 5;
+        int a = 3;
+        a = a / 2;
         System.out.println(a);
 
         //9
 
-        float a = 8 * 4;
-        a = a / 5;
+        float a = 2.8;
+        a = a / 2;
         System.out.println(a + "3");
-
     }
 }
