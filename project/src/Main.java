@@ -12,6 +12,10 @@ public class Main {;
     static double predictionTolerance = 0.1;
 
     public static void main(String[] args) {
+        float a = 8 * 4;
+        a = a / 5;
+        System.out.println(a + "3");
+
         Random rnd = new Random();
         long[] results = new long[evalCycles];
 
