@@ -2,7 +2,23 @@ import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {;
+public class Day1Highperformer {;
+    public static long randomize(long seed) {
+        long ausgabeZahl = 0;
+        // VON HIER seed nehmen und basierend darauf eine 10-stellige Zahl machen
+
+
+
+
+
+
+
+        // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern
+        // um dein Verfahren zu testen, einfach diesen Code ausführen
+        return ausgabeZahl;
+    }
+
+
     static int evalCycles = 10000000;
     static int seedBound = 100000;
     static int resultDigits = 10;
@@ -12,10 +28,6 @@ public class Main {;
     static double predictionTolerance = 0.1;
 
     public static void main(String[] args) {
-        float a = 8 * 4;
-        a = a / 5;
-        System.out.println(a + "3");
-
         Random rnd = new Random();
         long[] results = new long[evalCycles];
 
@@ -26,16 +38,21 @@ public class Main {;
         eval(results);
     }
 
-    public static long randomize(long seed) {
-        Random rnd = new Random();
-        return seed * 472823469 % resultBound;
-        //return seed * 100000;
-        //return rnd.nextLong(resultBound);
-    }
-
     public static void eval(long[] results) {
         long start = System.nanoTime();
 
+        System.out.println("-------------------------------");
+        System.out.println("Determinismusanalyse:");
+        int numDeterminismTests = 5;
+        for (int i = 0; i < numDeterminismTests; i++) {
+            if (randomize(results[i]) != randomize(results[i])) {
+                System.out.println("Dein Algorithmus soll bei gleichem Seed immer ein die gleiche Ausgabezahl ausgeben");
+                return;
+            }
+        }
+        System.out.println("Dein Algorithmus ist im Kontext vom seed Deterministisch :)");
+        System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
+        start = System.nanoTime();
         System.out.println("-------------------------------");
         System.out.println("Ziffernanalyse:");
         if(!numberOccurenceAnalysis(results)){
@@ -176,7 +193,7 @@ public class Main {;
             }
         }
         if (noProblems){
-            System.out.println("Alle Ziffern kommen Gleichverteilt vor.");
+            System.out.println("Alle Ziffern kommen Gleichverteilt vor :)");
         }
         return noProblems;
     }
@@ -232,7 +249,7 @@ public class Main {;
             }
         }
         if (noProblems) {
-            System.out.println("Die Ausgabezahlen sind nach Levenshtein Distanz unabhängig voneinander");
+            System.out.println("Die Ausgabezahlen sind nach Levenshtein Distanz unabhängig voneinander :)");
         }
         return noProblems;
     }

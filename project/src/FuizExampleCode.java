@@ -34,18 +34,18 @@ public class FuizExampleCode {
 
         //7
 
-        System.out.println(3 + "4" * 2);
+        //System.out.println(3 + "4" * 2);
 
         //8
 
-        int a = 3;
-        a = a / 2;
+        int c = 3;
+        c = c / 2;
         System.out.println(a);
 
         //9
 
-        float a = 2.8;
-        a = a / 2;
+        float b = 2.8f;
+        b = b / 2;
         System.out.println(a + "3");
     }
 }
