@@ -24,9 +24,9 @@ public class Main {;
 
     public static long randomize(long seed) {
         Random rnd = new Random();
-        //return seed * 100000 + seed;
+        return seed * 472683461 % resultBound;
         //return seed * 100000;
-        return rnd.nextLong(resultBound);
+        //return rnd.nextLong(resultBound);
     }
 
     public static void eval(long[] results) {
@@ -34,12 +34,12 @@ public class Main {;
 
         System.out.println("-------------------------------");
         System.out.println("Ziffernanalyse:");
-        numberOccurenceAnalysis(results);
+        //numberOccurenceAnalysis(results);
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
         start = System.nanoTime();
         System.out.println("-------------------------------");
         System.out.println("Levenshteinanalyse (https://de.wikipedia.org/wiki/Levenshtein-Distanz):");
-        levenshteinDistanceAnalysis(results);
+        //levenshteinDistanceAnalysis(results);
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
         System.out.println("-------------------------------");
         System.out.println("Ziffernkorrelationsanalyse:");
@@ -70,7 +70,7 @@ public class Main {;
         }
 
         double expectedProbability = 0.1;
-        int maxOutputLines = 1;
+        int maxOutputLines = 3;
         int outputLines = 0;
         boolean komprimiert = false;
         Scanner sc = new Scanner(System.in);
@@ -79,17 +79,43 @@ public class Main {;
             for (int digit = 0; digit < resultDigits; digit++) {
                 long predictorOccurences = occurrence[predictorPos][digit];
 
-                for (int predictedPos = 0; predictedPos < resultDigits; predictedPos++) {
+                for (int predictedPos = predictorPos; predictedPos < resultDigits; predictedPos++) {
                     for (int predictedDigit = 0; predictedDigit < resultDigits; predictedDigit++) {
                         double predictionProbability = (double) prediction[predictorPos][digit][predictedPos][predictedDigit] / (double) occurrence[predictorPos][digit];
 
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        String predictionProbString = df.format(predictionProbability * 100);
+
+                        int numLines = 0;
                         if ((predictionProbability > expectedProbability + expectedProbability * predictionTolerance || predictionProbability < expectedProbability - expectedProbability * predictionTolerance) && outputLines <= maxOutputLines && predictorPos != predictedPos) {
                             if (!komprimiert) {
                                 System.out.println("Wenn eine " + digit + " an Stelle " + predictorPos + " steht, dann ist die Wahrscheinlichkeit, dass eine " + predictedDigit + " an Stelle " + predictedPos + " steht " + predictionProbability * 100 + "%, der Erwartungswert ist 10%");
                             } else {
-                                System.out.println(digit + " bei " + predictorPos + " =" + predictionProbability * 100 + "%=> " + predictedDigit +  " bei " + predictedPos);
+                                //System.out.println(digit + " bei " + predictorPos + " =" + predictionProbability * 100 + "%=> " + predictedDigit +  " bei " + predictedPos);
+                                StringBuilder builder = new StringBuilder();
+                                String outputString = "";
+                                outputString = outputString + builder.repeat("X", predictorPos);
+                                builder.delete(0, builder.length());
+
+                                outputString = outputString + Integer.toString(digit);
+                                outputString = outputString + builder.repeat("X", resultDigits - 1 - predictorPos);
+                                builder.delete(0, builder.length());
+
+                                builder.repeat(" ", 5 - predictionProbString.length());
+                                outputString = outputString + "  --- " + builder + predictionProbString + "% ---> ";
+                                builder.delete(0, builder.length());
+
+                                outputString = outputString + builder.repeat("X", predictedPos);
+                                builder.delete(0, builder.length());
+
+                                outputString = outputString + Integer.toString(predictedDigit);
+                                outputString = outputString + builder.repeat("X", resultDigits - 1 - predictedPos);
+
+                                System.out.println(outputString);
+                                System.out.println("--------------------------------------");
                             }
                             outputLines++;
+                            System.out.println(outputLines);
                         } else if (outputLines >= maxOutputLines) {
 
                             System.out.println("Es gibt noch mehr über- oder unterdurchschnittliche Korrelationen, die hier aus Platzgründen nicht ausgegeben werden.");
