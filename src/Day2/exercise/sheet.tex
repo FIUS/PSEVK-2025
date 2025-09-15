@@ -73,13 +73,13 @@ Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr 
 \aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
 In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck. 
 \\\\
-Man unterteilt Formen in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder je nach den Werten der Variablen manchmal Wahr und manchmal Falsch (Erfüllbar):
+Man unterteilt Formeln in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder je nach den Werten der Variablen manchmal Wahr und manchmal Falsch (Erfüllbar):
 \\\\
 \textbf{Erfüllbar: } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
 \textbf{Unerfüllbar: } \texttt{(a \&\& !b \&\& !a \&\& c)}, da a zugleich wahr und falsch sein müsste\\
 \textbf{Tautologie: } \texttt{(!(a \&\& b) == !a || !b)}, da die linke Seite nur \texttt{false} ist, wenn a und b beide \texttt{true} sind, für die Rechte seite gilt genau das gleiche. Deswegen ist sind die beiden Seiten immer gleich.
 \begin{enumerate}
-    \item Prüfe folgende Boole'sche Ausdrücke Systematisch mit einem Programm auf ihre Erfüllbarkeit und gib dann erfüllbar, unerfüllbar oder Tautologie aus.
+    \item Prüfe folgende Boole'sche Ausdrücke Systematisch mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke rauskopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.
           \begin{enumerate}
               \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
               \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar
@@ -98,49 +98,7 @@ Man unterteilt Formen in immer Wahr (Tautologien), immer Falsch sind (Unerfüllb
                             (!a \&\& c \&\& d \&\& !b \&\& !e) ||
                             (!b \&\& !c \&\& !d \&\& e \&\& f)) \&\& (!g || h)}
                     \end{ausgabe} %Erfüllbar 9/128
-              \item \begin{ausgabe} \texttt{(!w || x) \&\&
-                            (k || !j) \&\&
-                            (!z || !a) \&\&
-                            (!q || r) \&\&
-                            (!k || l) \&\&\\
-                            (!v || a) \&\&
-                            (!g || h) \&\&
-                            (!h || i) \&\&
-                            (!u || v) \&\&
-                            (!a || b) \&\&\\
-                            (j || !k) \&\&
-                            (!l || m) \&\&
-                            (!n || o) \&\&
-                            (!c || d) \&\&
-                            (!x || y) \&\&\\
-                            (b || f) \&\&
-                            (!b || c) \&\&
-                            (y || !z) \&\&
-                            (!t || u) \&\&
-                            (!m || n) \&\&\\
-                            (!o || p) \&\&
-                            (!r || s) \&\&
-                            (!j || k) \&\&
-                            (!s || t) \&\&
-                            (!i || j) \&\&\\
-                            (d || e) \&\&
-                            (!d || e) \&\&
-                            (z || a) \&\&
-                            (!f || g) \&\&
-                            (!e || f) \&\&\\
-                            (a || !b) \&\&
-                            (c || !d) \&\&
-                            (!p || q) \&\&
-                            (!x || d) \&\&
-                            (!w || x) \&\&\\
-                            (h || !e) \&\&
-                            (!n || q) \&\&
-                            (!v || a) \&\&
-                            (!s || h) \&\&\\
-                            (u || !t) \&\&
-                            (!g || h)}
-                    \end{ausgabe} %Unerfüllbar
-                    Tipp: Da wegen den und's alle Klammern wahr werden müssen, kann man z.b. aus \texttt{(a || b)} schließen, dass wenn \texttt{a = false}, dann muss \texttt{b = true} sein und andersrum.\\
-          \end{enumerate}
-\end{enumerate}
+        \end{enumerate}
+        \item Modifiziere dein Programm so, dass wenn eine Formel erfüllbar ist, auch ausgegeben wird wie viele Belegungen die Formel jeweils wahr oder falsch werden lassen, sowie die Wahrscheinlichkeit, dass eine zufällige Belegung wahr wird. 
+    \end{enumerate}
 \end{document}

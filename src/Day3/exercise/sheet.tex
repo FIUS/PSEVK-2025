@@ -16,7 +16,7 @@ Wir sind so back.
           \begin{ausgabe}
               Es ist Grillereizeit meine Freunde!
           \end{ausgabe}
-          Hinweis: Wenn man die Funktion erstellt wird sie noch nicht ausgeführt, sie muss zusätzlich in der main aufgerufen werden.
+          Hinweis: Wenn man die Funktion nur erstellt dann wird sie noch nicht ausgeführt, sie muss zusätzlich in der main aufgerufen werden.
     \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als String zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe wie oben in Aufgabe 1 zu erstellen. Zusätzlich kannst du versuchen die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter annimmt und die Person herzlich zur Grillerei einläd:
           \begin{ausgabe}
@@ -41,7 +41,7 @@ System.out.println(a);
 
 
 \begin{enumerate}
-    \item Versuche ein Array zu Printen
+    \item Erstelle ein Array mit 10 \texttt{int}-Werten und Versuche es zu Printen
     \item Das scheint nicht zu klappen, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich printed.\\
           Hinweis: Erinner dich an Array.length aus der Präsi.
     \item Programmiere eine neue print Funktion, die statt den normalen Listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.\\
@@ -87,14 +87,14 @@ System.out.println(einArray[0][2]);
 \aufgabe{HIGHPERFORMER-Aufgabe: Sortieren und Performance-Analyse}
 Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} gibt die Java-interne Zeitmessung in Nanosekunden ($10^{-9}$ Sekunden) aus.
 \begin{enumerate}
-    \item Miss die durchschnittliche Laufzeit eines prints.
+    \item Miss die durchschnittliche Laufzeit eines prints.\\
+    Hinweis: Es ist sinnvoll bei einer Laufzeitanalyse die zu messende Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
     \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten. \\
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
-    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Länge deiner Funktion. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit selbst testen kannst. \\
-          Hinweis: Es ist sinnvoll wegen der Zufallskomponente im Eingabearray, sowie wegen anderen Unbekannten bei einer Laufzeitanalyse die Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
-    \item Versuche deine Funktion zu Optimieren und somit schneller zu machen. \\
+    \item Überlege dir ein Verfahren zum sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.          
+    \item Versuche deine Funktion zu optimieren und somit schneller zu machen. Wir (die PSE-Hauptorgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Quicksort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit selbst testen kannst.\\
           Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann.
-    \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen oder zwei die dir gefallen zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
+    \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen der dir gefällt zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
 \end{enumerate}
 
 \newpage

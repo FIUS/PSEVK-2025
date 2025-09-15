@@ -26,16 +26,48 @@
 	\listoftodos
 \end{frame}
 
-\begin{frame}
-	\frametitle{Recap Tag 2}
-	\begin{minted}{java}
-if (Bedingung) {
-  // Code bei Bedingung true
+
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 2 - Bedingungen \& Booleans}
+
+	\begin{itemize}
+		\item\pause Boolean: Wahrheitswerte \texttt{true} und \texttt{false}
+		\item\pause Vergleiche: \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}
+		\item\pause Logische Operatoren: \texttt{\&\&} (UND), \texttt{||} (ODER), \texttt{!} (NICHT)
+		\item\pause \textbf{\texttt{if}, \texttt{else}, \texttt{else if}} zur Entscheidungslogik
+		      \begin{minted}[fontsize=\footnotesize]{java}
+if (x > 5 && x < 10) {
+  System.out.println("x ist zwischen 5 und 10");
 } else {
-  // Code bei Bedingung false
+  System.out.println("x ist außerhalb");
 }
-\end{minted}
+          \end{minted}
+	\end{itemize}
 \end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Recap Tag 2 - Schleifen}
+
+	\begin{itemize}
+		\item\pause \texttt{while}-Schleife: läuft, solange Bedingung \texttt{true} ist
+		      \begin{minted}[fontsize=\footnotesize]{java}
+while (!eingabe.equals("ok")) {
+  eingabe = scanner.nextLine();
+}
+          \end{minted}
+		\item\pause \texttt{for}-Schleife: Zählergesteuerte Schleife
+		      \begin{minted}[fontsize=\footnotesize]{java}
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+          \end{minted}
+		\item\pause \textbf{\texttt{break}}: beendet Schleife vorzeitig
+
+	\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}[fragile]
 	\frametitle{Angenommen \dots}
@@ -80,7 +112,7 @@ if (Bedingung) {
 \begin{frame}[fragile]
 	\frametitle{Was sind eigentlich Funktionen?}
 	\begin{itemize}
-		\item\pause  Möglichket Code auszulagern
+		\item\pause  Möglichkeit Code auszulagern
 		\item\pause Syntax:
 		      \begin{minted}{java}   
 Rückgabedatentyp Funktionsbezeichner(Datentyp Parametername,...){
@@ -202,6 +234,7 @@ public static void andereMethode() {
 \begin{frame}[fragile]
 	\frametitle{Basic Scopes}
 	\todo{Irgendwas mit dem Meme machen}
+	\todo{ich hätte gesagt folie 12 so abspecken das sie nur das mit tieferen blöcken hat und neue folie mit äußeren blöcken sind sie nicht sichtbar + meme da passts drauf}
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
 

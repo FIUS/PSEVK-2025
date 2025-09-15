@@ -12,6 +12,10 @@ public class Main {;
     static double predictionTolerance = 0.1;
 
     public static void main(String[] args) {
+        float a = 8 * 4;
+        a = a / 5;
+        System.out.println(a + "3");
+
         Random rnd = new Random();
         long[] results = new long[evalCycles];
 
@@ -24,9 +28,9 @@ public class Main {;
 
     public static long randomize(long seed) {
         Random rnd = new Random();
-        //return seed * 100000 + seed;
+        return seed * 472823469 % resultBound;
         //return seed * 100000;
-        return rnd.nextLong(resultBound);
+        //return rnd.nextLong(resultBound);
     }
 
     public static void eval(long[] results) {
@@ -34,16 +38,27 @@ public class Main {;
 
         System.out.println("-------------------------------");
         System.out.println("Ziffernanalyse:");
-        numberOccurenceAnalysis(results);
+        if(!numberOccurenceAnalysis(results)){
+            System.out.println("Probier dafür zu sorgen, dass die Wahrscheinlichkeit für jede Ziffer gleich hoch wird.");
+            return;
+        }
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
         start = System.nanoTime();
         System.out.println("-------------------------------");
         System.out.println("Levenshteinanalyse (https://de.wikipedia.org/wiki/Levenshtein-Distanz):");
-        levenshteinDistanceAnalysis(results);
+        if(!levenshteinDistanceAnalysis(results)) {
+            System.out.println("Probier dafür zu sorgen, dass die unterschiedlichen Ergebnisse keine Musterartigen Ähnlichkeiten aufweisen.");
+            return;
+        }
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
         System.out.println("-------------------------------");
         System.out.println("Ziffernkorrelationsanalyse:");
-        predictionAnalysis(results);
+        if(!predictionAnalysis(results)) {
+            System.out.println("Probier dafür zu sorgen, dass alle Ausgabeziffern unabhängig voneinander sind.");
+            return;
+        } else {
+            System.out.println("Sehr gut gemacht!");
+        }
         System.out.println((double) (System.nanoTime() - start) / 1000000000 + " sekunden");
     }
 
@@ -51,7 +66,7 @@ public class Main {;
         return String.format("%0"+numDigits+"d", number);
     }
 
-    public static void predictionAnalysis(long[] results) {
+    public static boolean predictionAnalysis(long[] results) {
         long[][] occurrence = new long[resultDigits][10];
         long[][][][] prediction = new long[resultDigits][10][resultDigits][10];
 
@@ -70,7 +85,7 @@ public class Main {;
         }
 
         double expectedProbability = 0.1;
-        int maxOutputLines = 1;
+        int maxOutputLines = 3;
         int outputLines = 0;
         boolean komprimiert = false;
         Scanner sc = new Scanner(System.in);
@@ -79,20 +94,35 @@ public class Main {;
             for (int digit = 0; digit < resultDigits; digit++) {
                 long predictorOccurences = occurrence[predictorPos][digit];
 
-                for (int predictedPos = 0; predictedPos < resultDigits; predictedPos++) {
+                for (int predictedPos = predictorPos; predictedPos < resultDigits; predictedPos++) {
                     for (int predictedDigit = 0; predictedDigit < resultDigits; predictedDigit++) {
                         double predictionProbability = (double) prediction[predictorPos][digit][predictedPos][predictedDigit] / (double) occurrence[predictorPos][digit];
 
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        String predictionProbString = df.format(predictionProbability * 100);
+
+                        int numLines = 0;
                         if ((predictionProbability > expectedProbability + expectedProbability * predictionTolerance || predictionProbability < expectedProbability - expectedProbability * predictionTolerance) && outputLines <= maxOutputLines && predictorPos != predictedPos) {
                             if (!komprimiert) {
-                                System.out.println("Wenn eine " + digit + " an Stelle " + predictorPos + " steht, dann ist die Wahrscheinlichkeit, dass eine " + predictedDigit + " an Stelle " + predictedPos + " steht " + predictionProbability * 100 + "%, der Erwartungswert ist 10%");
+                                System.out.println("Eine " + digit + " an Stelle " + predictorPos + " tritt zu " + predictionProbString + "% mit einer " + predictedDigit + " an Stelle " + predictedPos + " auf. Der Erwartungswert ist hierfür ist 10%");
                             } else {
-                                System.out.println(digit + " bei " + predictorPos + " =" + predictionProbability * 100 + "%=> " + predictedDigit +  " bei " + predictedPos);
+                                //System.out.println(digit + " bei " + predictorPos + " =" + predictionProbability * 100 + "%=> " + predictedDigit +  " bei " + predictedPos)
+                                String outputString = "";
+                                outputString = outputString + "X".repeat(predictorPos);
+                                outputString = outputString + Integer.toString(digit);
+                                outputString = outputString + "X".repeat(resultDigits - 1 - predictorPos);
+                                outputString = outputString + "  <--- " + " ".repeat(5 - predictionProbString.length()) + predictionProbString + "% ---> ";
+                                outputString = outputString + "X".repeat(predictedPos);
+                                outputString = outputString + Integer.toString(predictedDigit);
+                                outputString = outputString + "X".repeat(resultDigits - 1 - predictedPos);
+
+                                System.out.println(outputString);
+                                System.out.println("--------------------------------------");
                             }
                             outputLines++;
                         } else if (outputLines >= maxOutputLines) {
 
-                            System.out.println("Es gibt noch mehr über- oder unterdurchschnittliche Korrelationen, die hier aus Platzgründen nicht ausgegeben werden.");
+                            System.out.println("Es gibt noch mehr über- oder unterdurchschnittliche Korrelationen, die hier aus Platzgründen noch nicht ausgegeben wurden.");
                             System.out.print("Hättest du gerne alle Korrelationen in komprimierter Form ausgegegeben? (gib j oder n für ja oder nein ein):");
                             String doAusfuehrlich = sc.next();
 
@@ -101,7 +131,7 @@ public class Main {;
                                 komprimiert = true;
                                 System.out.println();
                             } else {
-                                return;
+                                return false;
                             }
                         }
                     }
@@ -111,10 +141,13 @@ public class Main {;
 
         if (outputLines == 0) {
             System.out.println("Keine außerordentlichen Korrelationen entdeckt :)");
+            return true;
+        } else {
+            return false;
         }
     }
 
-    public static void numberOccurenceAnalysis (long[] results) {
+    public static boolean numberOccurenceAnalysis (long[] results) {
         long[] digitCounter = new long[resultDigits];
 
         for (long result: results){
@@ -131,18 +164,25 @@ public class Main {;
             System.out.println(digit + " : " + df.format( (double) digitCounter[digit] / evalCycles * 10) + " % = " + digitCounter[digit]);
         }
 
+        boolean noProblems = true;
         for (int digit = 0; digit < digitCounter.length; digit++) {
             if (digitCounter[digit] > evalCycles * (1 + offsetTolerance)) {
                 System.out.println("Es sind tendenziell zu viele " + digit + " in deinen Zufallszahlen Vorhanden.");
+                noProblems = false;
             }
             if (digitCounter[digit] < evalCycles * (1 - offsetTolerance)) {
                 System.out.println("Es sind tendenziell zu wenige " + digit + " in deinen Zufallszahlen Vorhanden.");
+                noProblems = false;
             }
         }
+        if (noProblems){
+            System.out.println("Alle Ziffern kommen Gleichverteilt vor.");
+        }
+        return noProblems;
     }
 
 
-    public static void levenshteinDistanceAnalysis(long[] results) {
+    public static boolean levenshteinDistanceAnalysis(long[] results) {
         long totalDistance = 0;
         String prevString = addLeadingZeros(results[0], resultDigits);
 
@@ -180,13 +220,20 @@ public class Main {;
             System.out.println(i + " : " + df.format(digitAvg));
         }
 
+        boolean noProblems = true;
         for (int i = 0; i < resultDigits; i++) {
             if ((double) digitDistances[i] / evalCycles < (double) expectedDist / 10 * (1 - levenshteinTolerance)) {
                 System.out.println("Es ist tendenziell zu wenig Variation an der " + i + ". Stelle deiner Zufallszahlen Vorhanden.");
+                noProblems = false;
             }
             if ((double) digitDistances[i] / evalCycles > (double) expectedDist / 10 * (1 + levenshteinTolerance)) {
                 System.out.println("Es ist tendenziell zu viel Variation an der " + i + ". Stelle deiner Zufallszahlen Vorhanden.");
+                noProblems = false;
             }
         }
+        if (noProblems) {
+            System.out.println("Die Ausgabezahlen sind nach Levenshtein Distanz unabhängig voneinander");
+        }
+        return noProblems;
     }
 }

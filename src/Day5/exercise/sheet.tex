@@ -9,28 +9,43 @@ Heute Abend UNO!
 
 \newpage
 \aufgabe{Aufgabe 1: Maps}
-Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefeonnummern zu verbinden:
+Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verbinden:
 \begin{minted}[linenos=false]{java}
 Map<String, Integer> telefonbuch = new HashMap<String, Integer>();
 //erstes Parameter ist der Schlüssel, zweites ist der Wert
 telefonbuch.put("Paul Griller", 1374927394);
+telefonbuch.put("Melanie Barbecue", 9257632984);
 \end{minted}
 
 \begin{enumerate}
-    \item Erstelle einen neue String-Variable mit dem folgenden Text:
+    \item Schreibe eine Funktion die einen Dictionary entgegennimmt und alle Schlüssel und die dazugehörigen Werte ausgibt:
+    
     \begin{ausgabe}
-        Grimmige Griller grillen glühend gern grobe Grillgemüse-Spieße.
+        Paul Griller: 1374927394, Melanie Barbecue: 9257632984
     \end{ausgabe}
-    \item Schreibe einen Algorithmus der in einem Dictionary speichert, wie oft jeder Buchstabe im String vorkommt. 
+    
+    \item Schreibe einen Algorithmus der in einem Dictionary speichert, wie oft jeder Buchstabe in einem String vorkommt.
+
+    \begin{ausgabe}
+        grimmige griller grillen glühend gern grobe grillgemüse-spieße.
+    \end{ausgabe}
+    wird zu:
+    \begin{ausgabe}
+        g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
+    \end{ausgabe}
 
     Hinweis: Verwende die split("") Methode auf einen String in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
 
-    \item Schreibe eine Funktion die ein Dictionary entgegennimmt und alle Schlüssel und die dazugehörigen Werte ausgibt.
+    \item Erweitere deinen Algorithmus, sodass er einen Integer \texttt{length} entgegennimmt und statt nach einzelnen Buchstaben, jetzt nach Buchstabenfolgen der Länge \texttt{length} sucht.
     
-    Lösung:
     \begin{ausgabe}
-        b: 1, d: 1, e: 10, g: 9, h: 1, i: 6, l: 7, m: 3, n: 3, o: 1, p: 1, r: 7, s: 2, ß: 1, ü: 2
+        grimmige griller grillen glühend gern grobe grillgemüse-spieße.
     \end{ausgabe}
+    wird bei \texttt{length = 3} zu:
+    \begin{ausgabe}
+        gri: 4, rim: 1, imm: 1, mmi: 1, mig: 1, ige: 1, ge : 1, e g: 2,  gr: 4, ril: 3, ill: 3, lle: 2, ler: 1, er : 1, r g: 1, len: 1, en : 1, n g: 2,  gl: 1, glü: 1, lüh: 1, ühe: 1, hen: 1, end: 1, nd : 1, d g: 1,  ge: 1, ger: 1, ern: 1, rn : 1, gro: 1, rob: 1, obe: 1, be : 1, llg: 1, lge: 1, gem: 1, emü: 1, müs: 1, üse: 1, se-: 1, e-s: 1, -sp: 1, spi: 1, pie: 1, ieß: 1, eße: 1, ße.: 1
+    \end{ausgabe}
+
 \end{enumerate}
 
 \newpage
@@ -60,8 +75,7 @@ Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder K
     \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum. 
     \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt. 
     \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die den Baum anschaulich ausgibt.
-    \item Programmiere zwei Funktionen, die den Baum eindeutig in eine LinkedList umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann. 
+    \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann. 
     Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist. 
 \end{enumerate}
-
 \end{document}
