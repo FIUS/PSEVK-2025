@@ -216,6 +216,13 @@ if (y > 5) {
     System.out.println(y); // OK – Zugriff auf äußere Variable
 }}
     \end{minted}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Sichtbarkeit von Variablen (Scopes)}
+	\begin{itemize}
 		\item\pause In äußeren Blöcken sind sie nicht sichtbar
 		      \begin{minted}[fontsize=\footnotesize]{java}
 public static void main(String[] args) {
@@ -228,13 +235,6 @@ public static void andereMethode() {
 
 		\item\pause Gilt für alle Blöcke: Funktionen, if, Schleifen, etc.
 	\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-	\frametitle{Basic Scopes}
-	\todo{Irgendwas mit dem Meme machen}
-	\todo{ich hätte gesagt folie 12 so abspecken das sie nur das mit tieferen blöcken hat und neue folie mit äußeren blöcken sind sie nicht sichtbar + meme da passts drauf}
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
 
