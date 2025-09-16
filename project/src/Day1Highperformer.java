@@ -14,7 +14,7 @@ public class Day1Highperformer {;
 
 
         // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern
-        // um dein Verfahren zu testen, einfach diesen Code ausführen
+        // um dein Verfahren zu testen, einfach den Code in dieser Datei ausführen
         return ausgabeZahl;
     }
 
