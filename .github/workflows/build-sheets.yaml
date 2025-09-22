@@ -13,8 +13,9 @@ jobs:
           run: |
             apk add make
             make build-exercise
+            mv src/Day*/exercise/Day*.pdf .
       - name: zip files
         uses: actions/upload-artifact@v4
         with:
           name: sheets
-          path: 'src/Day*/exercise/Day*.pdf'
+          path: 'Day*.pdf'

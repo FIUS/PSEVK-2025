@@ -13,8 +13,9 @@ jobs:
           run: |
             apk add make
             make rushb
+            mv src/Day*/presentation/Day*.pdf .
       - name: zip exams
         uses: actions/upload-artifact@v4
         with:
           name: slides
-          path: 'src/Day*/presentation/Day*.pdf'
+          path: 'Day*.pdf'
