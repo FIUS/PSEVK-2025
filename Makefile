@@ -65,7 +65,7 @@ presentation/Day%:
 	cd src/$(@F)/presentation/; latexmk -pdf -shell-escape -jobname=$(@F)-slides -interaction=nonstopmode slides.tex;
 
 rushb:
-	$(foreach day, $(DAYS), cd src/$(day)/presentation && latexmk -pdf -shell-escape -interaction=nonstopmode -jobname=$(day)-slides slides.tex; cd ../../..;)
+	$(foreach day, $(filter-out Day0, $(DAYS)), cd src/$(day)/presentation && latexmk -pdf -shell-escape -interaction=nonstopmode -jobname=$(day)-slides slides.tex; cd ../../..;)
 
 
 
