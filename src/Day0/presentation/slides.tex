@@ -1,11 +1,17 @@
-\documentclass[
-  12pt,
-  aspectratio=169, % 16:9 Format
-  notes=show % erlaubt das Anzeigen von Notizen
-]{beamer}
+\documentclass{../../presentation}
 
-% Aktiviert die Anzeige von Notizen auf einem zweiten Bildschirm
-\setbeameroption{show notes on second screen=right} 
+\title{PSE - Vorkurs Tag 1}
+\author{Linus, Philipp, Tillmann, Tobias}
+\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
+\date{06.09.2025}
+
+\makeatletter
+\renewcommand{\lecture@pathprefix}[1]{../../logos/}
+\makeatother
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+
 
 \title{Meine Präsentation}
 \author{Max Mustermann}
