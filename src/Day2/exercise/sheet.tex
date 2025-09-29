@@ -9,7 +9,39 @@
 \textbf{Hilfe suchen und finden}\\
 Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die Offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.
 
+\aufgabe{Präsentations-Cheatsheet}
+\textbf{Booleanoperatoren:}
+\begin{itemize}
+		\item Boolean: Wahrheitswerte \texttt{true} und \texttt{false}
+		\item Vergleiche: \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}
+		\item Logische Operatoren: \texttt{\&\&} (UND), \texttt{||} (ODER), \texttt{!} (NICHT)
+		\item \textbf{\texttt{if}, \texttt{else}, \texttt{else if}} zur Entscheidungslogik
+		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+if (x > 5 && x < 10) {
+  System.out.println("x ist zwischen 5 und 10");
+} else {
+  System.out.println("x ist außerhalb");
+}
+          \end{minted}
+	\end{itemize}
+    \bigskip
+\textbf{Schleifen:}
+\begin{itemize}
+		\item \texttt{while}-Schleife: läuft, solange Bedingung \texttt{true} ist
+		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+while (!eingabe.equals("ok")) {
+  eingabe = scanner.nextLine();
+}
+          \end{minted}
+		\item \texttt{for}-Schleife: Zählergesteuerte Schleife
+		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+          \end{minted}
+		\item \textbf{\texttt{break}}: beendet Schleife vorzeitig
 
+	\end{itemize}
 \newpage
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}

@@ -24,12 +24,12 @@
 	\pause
 	\begin{minted}{java}
 public class Student {
-String name;
-int matrikelnummer;
+    String name;
+    int matrikelnummer;
 
-void lernen() {
+    void lernen() {
 	System.out.println(name + " lernt fleißig!");
-	}
+    }
 }
 	\end{minted}
 \end{frame}
@@ -50,8 +50,8 @@ paul.lernen(); // → Paul lernt fleißig!
 	\begin{minted}{java}
 Student anna = new Student("Anna", 67890);
 
-System.out.println(anna.matrikelnummer); // 67890
-anna.lernen(); // Anna lernt fleißig!
+System.out.println(anna.matrikelnummer); // → 67890
+anna.lernen(); // → Anna lernt fleißig!
 	\end{minted}
 \end{frame}
 
@@ -60,13 +60,13 @@ anna.lernen(); // Anna lernt fleißig!
 	\pause
 	\begin{minted}{java}
 public class Student {
-	private final String name;
-	public int matrikelnummer;
+private final String name;
+public int matrikelnummer;
 
-	public Student(String name, int matrikelnummer) {
-		this.name = name;
-		this.matrikelnummer = matrikelnummer;
-	}
+public Student(String name, int matrikelnummer) {
+	this.name = name;
+	this.matrikelnummer = matrikelnummer;
+}
 }
 	\end{minted}
 \end{frame}

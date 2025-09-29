@@ -7,6 +7,37 @@
 \maketitle
 Heute Abend UNO!
 
+\aufgabe{Präsentations-Cheatsheet}
+\textbf{Map Funktionen:}
+\begin{table}[h]
+		\centering
+		\rowcolors{2}{tablerow}{white}
+		\begin{tabular}{l l}
+			\rowcolor{tablehead}
+			\textbf{Methode}        & \textbf{Beschreibung}                    \\
+			\texttt{put(k, v)}      & Fügt einen neuen Schlüssel-Wert-Paar ein \\
+			\texttt{get(k)}         & Gibt den Wert zu einem Schlüssel zurück  \\
+			\texttt{remove(k)}      & Entfernt einen Eintrag                   \\
+			\texttt{containsKey(k)} & Prüft, ob Schlüssel existiert            \\
+			\texttt{keySet()}       & Gibt alle Schlüssel zurück               \\
+			\texttt{values()}       & Gibt alle Werte zurück                   \\
+			\texttt{size()}         & Gibt die Anzahl der Einträge zurück      \\
+		\end{tabular}
+	\end{table}
+
+\textbf{Map-Syntax:}
+
+\begin{minted}[linenos=false]{java}
+import java.util.HashMap;
+
+HashMap<String, Integer> studis = new HashMap<>();
+studis.put("Melanie", 1976370);
+studis.put("Paul", 1249609);
+
+System.out.println(studis.get("Melanie"));
+	\end{minted}
+
+
 \newpage
 \aufgabe{Aufgabe 1: Maps}
 Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verbinden:

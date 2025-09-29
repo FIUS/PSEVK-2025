@@ -6,6 +6,54 @@
 \begin{document}
 \maketitle
 
+\aufgabe{Präsentations-Cheatsheet}
+\textbf{Klassensyntax:}
+	\begin{minted}[linenos=false]{java}
+public class Student {
+    String name;
+    int matrikelnummer;
+
+    void lernen() {
+	System.out.println(name + " lernt fleißig!");
+    }
+}
+\end{minted}
+
+\textbf{Paul Instantiieren:}
+	
+	\begin{minted}[linenos=false]{java}
+public Student(String name, int matrikelnummer) {
+    this.name = name;
+    this.matrikelnummer = matrikelnummer;
+}
+
+Student paul = new Student("Paul", 12345);
+paul.lernen(); // → Paul lernt fleißig!
+	\end{minted}
+	
+\textbf{Anna Instantiieren:}
+
+	\begin{minted}[linenos=false]{java}
+Student anna = new Student("Anna", 67890);
+
+System.out.println(anna.matrikelnummer); // → 67890
+anna.lernen(); // → Anna lernt fleißig!
+	\end{minted}
+
+\textbf{Konstruktorsyntax:}
+
+	\begin{minted}[linenos=false]{java}
+public class Student {
+    private final String name;
+    public int matrikelnummer;
+
+    public Student(String name, int matrikelnummer) {
+	this.name = name;
+	this.matrikelnummer = matrikelnummer;
+    }
+}
+	\end{minted}
+
 \newpage
 
 \aufgabe{Aufgabe 1: Klassen}
