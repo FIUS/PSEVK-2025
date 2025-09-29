@@ -64,6 +64,14 @@ kann ein Diff zwischen unterschiedlichen Versionen erstellt werden.
 Mittels der Kommandozeilenargumente **old** und **new** können Commits spezifiziert werden. 
 Standardmäßig sind die Argumente **old=HEAD** und **new=--**, welches das aktuelle Verzeichnis mit dem letzten Commit vergleicht.
 
+
+### Präsentieren und Anschauen
+Falls pdfpc installiert ist, kann man mit dem Makefile direkt die Präsentation aufrufen. 
+```bash
+make (view/DayX|viewexercise/DayX) 
+``` 
+
+
 ### Autoformatter
 um ein einheitliches Code lesen zu gewährleisten wird latexindent verwenden in kombination mit latexworkshop -> VSCode Extension
 ```bash
