@@ -15,13 +15,22 @@
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}
 \RequirePackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{colortbl}
+\usepackage{multirow}
 
-% Farben
+
+% Farben 
 \definecolor{accent}{RGB}{80, 85, 124}
 \definecolor{dark}{RGB}{36, 36, 36}
 \definecolor{green}{rgb}{0.0, 0.7, 0.0}
 \definecolor{codebackgroundcolor}{rgb}{1, 1, 1}
 \definecolor{codelinenocolor}{rgb}{0.18, 0.18, 0.18}
+% Farben für Tabellenzeilen
+\definecolor{tablehead}{RGB}{216,232,237}
+\definecolor{tablerow}{RGB}{240,240,240}
 
 % Seitenränder
 \geometry{margin=2.5cm}

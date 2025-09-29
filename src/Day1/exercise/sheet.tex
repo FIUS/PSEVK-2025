@@ -29,6 +29,61 @@
 Manche von euch haben sicher schon Erfahrung mit Programmieren, wenn ihr auf ein Problem stoßt, fragt einfach mal eure Sitznachbahrn und helft euch gegenseitig. Ihr könnt natürlich auch die freundlichen Tutoren ranholen und um Hilfe bitten.
 \newpage
 
+\aufgabe{Präsentations-Cheatsheet}
+\textbf{Variablen:}
+\begin{center}
+    \begin{minted}{java}
+int alter = 20;    // Deklaration + Initialisierung
+int zahl;          // Deklaration
+zahl = 42;         // Initialisierung
+  \end{minted}
+\end{center}
+  \bigskip
+  \textbf{Operatoren:}
+  \begin{center}
+    \rowcolors{2}{tablerow}{white}
+    \begin{tabular}{l l l}
+      \rowcolor{tablehead}
+      \textbf{Operator
+      }           & \textbf{Bedeutung
+      }           & \textbf{Beispiele
+      }                                           \\
+      \texttt{+}  & \texttt{Addition / String-Verkettung
+      }           & \texttt{3+2, ''a"+"b"
+      }                                           \\
+      \texttt{-}  & \texttt{Subtraktion
+      }           & \texttt{7-5
+      }                                           \\
+      \texttt{*}  & \texttt{Multiplikation
+      }           & \texttt{3*4
+      }                                           \\
+      \texttt{/}  & \texttt{Division
+      }           & \texttt{10/2
+      }                                           \\
+      \texttt{\%} & \texttt{Modulo
+      }           & \texttt{5\%2
+      }                                           \\
+    \end{tabular}
+\end{center}
+\bigskip
+\textbf{String-Addition:}
+\begin{minted}{java}
+System.out.print("Hallo");
+System.out.println("Welt");
+System.out.println("Zahl: " + 42);
+  \end{minted}
+\bigskip
+\textbf{Scanner:}
+  \begin{minted}{java}
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int x = sc.nextInt();
+int y = sc.nextInt();
+System.out.println(x + y);
+  \end{minted}
+\newpage
+
 
 \aufgabe{Aufgabe 1: Variablen und Ausgaben}
 Man kann mit \texttt{System.out.println(einString)} den Wert von \texttt{einString} in der Konsole (unten in der Mitte bei der Ausführung des Codes) ausgeben. Folgender code:
@@ -144,6 +199,5 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 \texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.\\
 \textbf{Highperformer Aufgabe 2:}
 \hypertarget{Aufgabe_2.2}{}
-\textbf{Highperformer Aufgabe 2:}
-\\TODO hier vom Git klonen lassen
+\\\url{https://fius.de/index.php/pse-vk-folien/}
 \end{document}
