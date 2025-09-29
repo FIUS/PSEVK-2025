@@ -25,7 +25,8 @@ _minted-*/
 *.pygtex
 *.pdf
 !logos/*.pdf
-
+*.upa
+*.pdfpc
 
 //macOS 
 .DS_Store

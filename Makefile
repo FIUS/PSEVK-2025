@@ -12,6 +12,10 @@ old=HEAD
 new=--
 
 TYPES= exercise presentation
+
+
+PRESENTER= pdfpc -w both --notes=right
+VIEWER = firefox
 #$(foreach var,$(DAYS),cd scr/$(var)/exercise; latexmk -c sheet.tex;)
 
 all: build-exercise rushb
@@ -70,3 +74,8 @@ rushb:
 
 
 
+view/Day%:
+	$(PRESENTER) src/$(@F)/presentation/$(@F)-slides.pdf
+
+viewexercise/Day%:
+	$(VIEWER) src/$(@F)/exercise/$(@F)-sheet.pdf
