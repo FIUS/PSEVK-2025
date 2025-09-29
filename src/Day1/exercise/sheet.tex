@@ -97,7 +97,7 @@ Gibt folgendes aus:
 
 \begin{enumerate}
     \item Kopiert folgenden Grill und nutzt print(s) um ihn in der Konsole auszugeben.\\
-    Hinweis: Kopiert den Grill direkt zwischen die Gänsefüsschen in euer \texttt{System.out.println("grill hier")},  
+    Hinweis: Kopiert den Grill direkt zwischen die Gänsefüsschen in euer \\\texttt{System.out.println("grill hier")},  
           \begin{ausgabe}
 ........................\\
 ..........@.............\\
@@ -119,20 +119,25 @@ Gibt folgendes aus:
 ..@@..@@.........@@.....\\
 ...@@@@...........@@....
           \end{ausgabe}
-    \item Erstelle eine Variable mit beliebigem Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert und gib dieselbe Variable nochmal aus.
-    \item Erstelle zwei int Variablen und gib die Summe und das Produkt aus.
-    \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print, das dich mit deinem Namen begrüßt.
+    \item Erstelle eine Variable mit beliebigem Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
+    \item Erstelle zwei int Variablen und gib deren Summe und deren Produkt aus.
+    \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das dich mit deinem Namen begrüßt.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
-Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
+Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
 \begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
 System.out.println("Gib deinen Namen ein: ");
 String deinName = derScanner.next();
-System.out.println("Du heißt: " + deinName);
+System.out.println("Du heißt " + deinName);
 \end{minted}
+\begin{ausgabe}
+Gib deinen Namen ein: Melanie\\
+Du heißt Melanie
+\end{ausgabe}
+Wobei die obere Melanie vom Nutzer eingegeben wird.
 
 \begin{enumerate}
     \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Etwas funktioniert nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
@@ -148,7 +153,7 @@ Gib noch eine Zahl ein: 3\\
 Gib dein Ergebnis ein: 6\\
 Das richtige Ergebnis von 14 \% 3 ist: 2
 \end{ausgabe}
-    \item Schreibe eine kurze Geschichte (oder such dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
+    \item Schreibe eine kurze Geschichte (oder suche dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
           \begin{ausgabe}
               Gib ein Thema ein: backen\\
               Gib ein Verb ein: Ofen sprengen\\
@@ -159,7 +164,7 @@ Das richtige Ergebnis von 14 \% 3 ist: 2
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Zufallszahlen}
-Java stellt einen Zufallszahlengenerator zur Verfügung. Dieser besitzt unter anderem folgende Funktionen:
+Java stellt einen Zufallszahlengenerator zur Verfügung. Er wird ähnlich wie ein Scanner initialisiert und er besitzt unter anderem folgende Funktionen:
 
 \begin{minted}[linenos=false]{java}
 Random rndGenerator = new Random();
@@ -174,15 +179,12 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 
 \begin{enumerate}
     \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Zahlen nicht mehr selbst eingibt (war auch wirklich zu leicht so), sondern so, dass diese zufällig generiert werden.
-    \item Kopiert das Programm aus dem \hyperlink{Aufgabe_2.2}{Codeanhang}. Dort bekommt ihr einen sogenannten Seed (5-Stellig) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Hauptorgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen.
+    \item Ladet euch das Programm hier \url{https://fius.de/index.php/pse-vk-folien/} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
 \end{enumerate}
 
 \newpage
 \aufgabe{Codeanhang}
 \hypertarget{Aufgabe_2.1}{}
 \textbf{Aufgabe 2.1}\\
-\texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.\\
-\textbf{Highperformer Aufgabe 2:}
-\hypertarget{Aufgabe_2.2}{}
-\\\url{https://fius.de/index.php/pse-vk-folien/}
+\texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.
 \end{document}

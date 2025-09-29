@@ -45,12 +45,12 @@ for (int i = 0; i < 5; i++) {
 \newpage
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}
-    \item Schreibe für die UNO diesen Freitag (Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
+    \item Schreibe für die UNO diesen Freitag (die Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
     \begin{ausgabe}
         Wie alt bist du: 17\\
         Sorry, du darfst noch nicht rein :/
     \end{ausgabe}
-    \item Füge dem Programm ein Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: lies einen boolean Wert ein). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
+    \item Füge dem Programm einen Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: lies einen boolean Wert ein). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
     \begin{ausgabe}
         Bist du ein Ersti? true\\
         Für dich sinds 3 Euro
@@ -63,7 +63,7 @@ for (int i = 0; i < 5; i++) {
         Wie viele Softdrinks hättest du gerne? 6\\
         Wie viele Cocktails hättest du gerne? 3\\
         Wie viele Biere hättest du gerne? 4\\
-        Das sind insgesamt 38 Euro\\
+        Das sind insgesamt 39 Euro\\
         Du hast zu wenig Geld
     \end{ausgabe}
 \end{enumerate}
@@ -71,7 +71,7 @@ for (int i = 0; i < 5; i++) {
 \newpage
 \aufgabe{Aufgabe 2: Schleifen}
 \begin{enumerate}
-    \item Wir arbeiten weiter mit dem UNO Programm. Implementiere mithilfe von for-Schleifen, dass jedes Getränk Nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann:
+    \item Wir arbeiten weiter mit dem UNO Programm. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk Nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann:
           \begin{ausgabe}
               Shot 1 ist  eingeschenkt\\
               Shot 2 ist  eingeschenkt\\
@@ -80,7 +80,7 @@ for (int i = 0; i < 5; i++) {
               Bier 1 ist geöffnet\\
               Bier 2 ist geöffnet
           \end{ausgabe}
-    \item Da Studis ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
+    \item Da Informatiker ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
     \begin{ausgabe}
         Wie viel Geld hast du? 23\\
         Wie viele Shots hättest du gerne? 1\\
@@ -96,9 +96,11 @@ for (int i = 0; i < 5; i++) {
 
     \includegraphics[width=1\linewidth]{../../memes/breakohnerand.png}
     
-    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze keine String Variablen.\\
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich, z.b.: 4165614 oder 829928). Nutze keine String Variablen.\\
     Hinweis: Es kann Sinnvoll sein Methoden aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)}. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
-    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich, z.b.: 4165614 oder 829928). Nutze natürlich wieder keine String Variablen.
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze natürlich wieder keine String Variablen.
+
+
 \end{enumerate}
 
 \newpage
