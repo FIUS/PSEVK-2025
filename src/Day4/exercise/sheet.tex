@@ -61,9 +61,9 @@ Heute werden wir eine Klassenstruktur umsetzen, die ein Modell für eine Grillun
 \begin{enumerate}
     \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine \texttt{Main}-Klassen-Datei, sowie eine \texttt{Grill}-Klassen-Datei. Man kann jetzt in der Main in einer Funktion auf die Grillklasse zugreifen, also diese zum Beispiel Instanziieren.
     \item Gib deiner Grillklasse einen Konstruktor, der ausgibt, dass ein neuer Grill erstellt wird. Teste den Konstruktor der Grillklasse in dem du ein Grillobjekt in der Main-\textit{Funktion} der Main-\textit{Klasse} erstellst und in einer Variable mit dem Typ \texttt{Grill} speicherst.
-    \item Füge dem Grill Attribute hinzu. Jeder Grill sollte einen Grillmeister (Name als \texttt{String}), eine maximale Würstchenanzahl (\texttt{int}), eine maximale Hitze (\texttt{int}), sowie eine momentane Hitze (\texttt{int}) haben. Erweitere deinen Konstruktor so, dass auch die Attribute des Grills initialisiert werden, wenn ein neues Grillobjekt erstellt wird. Der Konstruktor soll nun den Namen des Grillmeisters, die maximale Würstchenanzahl und die maximale Hitze als Parameter entgegennehmen und setzen.
+    \item Füge dem Grill Attribute hinzu. Jeder Grill sollte einen Grillmeister (Name als \texttt{String}), eine maximale Würstchenanzahl (\texttt{int}), eine maximale Hitze (\texttt{int}), sowie eine momentane Hitze (\texttt{int}) haben. Erweitere deinen Konstruktor so, dass auch die Attribute des Grills initialisiert werden, wenn ein neues Grillobjekt erstellt wird. Der Konstruktor soll nun den Namen des Grillmeisters, die maximale Würstchenanzahl und die maximale Hitze als Parameter entgegennehmen und anschließend die Attribute entsprechend setzen.
     \item Gib dem Grill eine oder mehrere Funktionen zur Kontrolle der Hitze. Gestalte sie so wie du es für sinnvoll hältst.
-    \item Füge dem Grill ein Array der Größe \texttt{maximaleWuerstchen} hinzu, dass die Würstchen symbolisieren soll. Erstelle eine Funktion, um Würstchen auf den Grill zu legen, sowie eine um sie wieder runterzunehmen. Wenn an einer Stelle kein Würstchen liegt soll -1 and der Stelle im Array stehen. Ein Würstchen wird mit dem Wert 0 auf den Grill gelegt. Ein Würstchen ist durch, wenn sein ''Durchheitswert'' zwischen 10 und 15 ist. Wenn es über 15 gegrillt wird, dann ist es verbrannt. Die \texttt{runternehmen}-Funktion sollte ausgeben, ob das Würstchen roh, durch oder verbrannt ist.\\
+    \item Füge dem Grill ein Array der Größe \texttt{maximaleWuerstchen} hinzu, dass die Würstchen symbolisieren soll. Erstelle eine Funktion, um Würstchen auf den Grill zu legen, sowie eine um sie wieder runterzunehmen. Wenn an einer Stelle kein Würstchen liegt soll -1 and der Stelle im Array stehen. Ein Würstchen wird mit dem Wert 0 auf den Grill gelegt. Ein Würstchen ist durch, wenn sein ''Durchheitswert'' zwischen 10 und 15 ist. Wenn es über 15 gegrillt wird, dann ist es verbrannt. Die \texttt{runternehmen}-Funktion soll ausgeben, ob das Würstchen roh, durch oder verbrannt ist.\\
     Hinweis: Vergiss nicht das Array im Konstruktor zu initialisieren.
     \item Füge dem Grill eine \texttt{Grillen} Funktion hinzu, die die momentane Hitze auf den Durchheitswert jeder Würstchen addiert.
     \item Nutze die main um einen Beispielhaften Grillablauf einer mehr oder weniger erfolgreichen Grillerei darzustellen. 
@@ -76,14 +76,7 @@ Eine Sache, die dir vielleicht schon aufgefallen ist, ist dass wir momentan leid
     \item Erstelle eine neue Klasse (wieder mit neuer Datei) namens \texttt{Grillgut}. Sie soll einen Grillguttyp (\texttt{String}, z.B. Currywurst), einen minimalen Durchheitswert (\texttt{int}), einen maximalen Durchheitswert (\texttt{int}), einen momentanen Durchheitswert (\texttt{int}), eine Hitzetoleranz (\texttt{int}) und einen verbrannt (\texttt{Boolean}) Status haben. Wenn das Grillgut einmal mit einer Hitze größer der Hitzetoleranz gegrillt wird, dann ist es sofort verbrannt.
     \item Implementiere einen Konstruktor, der manche der obigen Attribute als Parameter entgegennimmt (die bei denen es dir sinnvoll erscheint), aber alle Attribute initialisiert, d.h. nach der Ausführung des Konstruktors sollten alle Attribute einen Wert haben.
     \item Erstelle eine \texttt{grillen} Funktion, die eine Hitze als Parameter entgegennimmt und das Grillgut entsprechend grillt. 
-    \item Erstelle zudem eine \texttt{vomGrillNehmen} Funktion, die ausgibt, was gerade vom Grill genommen wurde und zudem in 5 Stufen ausgibt wie durch es ist:
-    \begin{ausgabe}
-Currywurst ist fertig, es ist noch roh.\\
-Steak ist fertig, es ist durch.\\
-Würstchen ist fertig, es ist gut durch.\\
-Spieß ist fertig, es ist leider verbrannt.\\
-Grillkäse ist fertig, er ist komplett schwarz gebrannt.
-    \end{ausgabe}
+    \item Erstelle zudem eine \texttt{vomGrillNehmen} Funktion die ausgibt was gerade vom Grill genommen wurde und auch ausgibt wie durch es ist.
     \item Gehe zurück zu deiner Grillklasse und ersetze das \texttt{int[] aufDemGrill} Array mit einem \texttt{Grillgut[] aufDemGrill}. Mache als Folge dessen sinnvolle Anpassungen in der Grillklasse, die die Funktionen aus Grillgut verwenden.
     \item Nutze die main-Funktion um einen neuen Beispielhaften Grillablauf einer mehr oder weniger erfolgreichen
     Grillung darzustellen, aber jetzt mit vielen unterschiedlichen Grillgütern.
