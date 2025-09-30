@@ -1,10 +1,6 @@
 import java.util.Random;
 
 public class Day3Highperformer {
-    public static void main(String[] args) {
-
-    }
-
     public static int[] bubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
