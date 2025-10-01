@@ -1,7 +1,7 @@
 \ProvidesClass{presentation}[2024/11/27 Lecture Slides for PSE]
 
 % Beamer class requires the following line to be included
-\LoadClass[aspectratio=1610,notes=show]{beamer}
+\LoadClass[aspectratio=1610]{beamer}
 \makeatletter
 \newcommand{\lecture@pathprefix}[1]{}
 \makeatother
@@ -233,8 +233,7 @@ cross/.default={1pt}}
 %% \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{footline}[frame number] % Show slide numbers in the footer
 
-% Aktiviert die Anzeige von Notizen auf einem zweiten Bildschirm
-\setbeameroption{show notes on second screen=right} 
+
 \BeforeBeginEnvironment{minted}{
   \begin{tcolorbox}[colback=gray!5, colframe=black!80, boxrule=0.5pt, arc=2mm]
 }
