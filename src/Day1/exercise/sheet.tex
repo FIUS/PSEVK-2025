@@ -7,6 +7,12 @@
 \begin{document}
 \maketitle
 
+\aufgabe{Hilfe nichts funktioniert :(}
+Manche von euch haben sicher schon Erfahrung mit Programmieren, wenn ihr auf ein Problem stoßt, fragt einfach mal eure Sitznachbahrn und helft euch gegenseitig. Ihr könnt natürlich auch die freundlichen Tutoren ranholen und um Hilfe bitten.
+\aufgabe{Highperformer-Aufgaben}
+Wir haben für jeden Tag am ende des Blattes eine Highperformer-Aufgabe entworfen. Sie soll die schnelleren von euch zum Knobeln und Zusammenarbeiten anregen. Es ist überhaupt kein Problem wenn ihr nicht zu den Highperformer-Aufgaben kommt. Deren Stoff geht weit über den essenziellen Inhalt des Vorkurses (und zum Teil sogar über die Inhalte der PSE) hinaus.
+
+
 \aufgabe{Wichtige Shortcuts: (Windows/Linux)}
 \begin{itemize}
     \item Code automatisch formattieren (z.B. richtig Einrücken): \textbf{Strg+Alt+L}
@@ -25,8 +31,7 @@
     \item IntelliJ Autovervollständigungsvorschläge annehmen: \textbf{Tab}
 \end{itemize}
 
-\aufgabe{Hilfe nichts funktioniert :(}
-Manche von euch haben sicher schon Erfahrung mit Programmieren, wenn ihr auf ein Problem stoßt, fragt einfach mal eure Sitznachbahrn und helft euch gegenseitig. Ihr könnt natürlich auch die freundlichen Tutoren ranholen und um Hilfe bitten.
+
 \newpage
 
 \aufgabe{Präsentations-Cheatsheet}
@@ -49,7 +54,7 @@ zahl = 42;         // Initialisierung
       }           & \textbf{Beispiele
       }                                           \\
       \texttt{+}  & \texttt{Addition / String-Verkettung
-      }           & \texttt{3+2, "a"+"b"
+      }           & \texttt{3+2, "b"+"c"
       }                                           \\
       \texttt{-}  & \texttt{Subtraktion
       }           & \texttt{7-5
@@ -71,7 +76,13 @@ zahl = 42;         // Initialisierung
 System.out.print("Hallo");
 System.out.println("Welt");
 System.out.println("Zahl: " + 42);
+System.out.println("\nLeerzeile");
   \end{minted}
+\begin{ausgabe}
+HalloWelt\\
+Zahl: 42\\\\
+Leerzeile
+\end{ausgabe}
 \bigskip
 \textbf{Scanner:}
   \begin{minted}[linenos=false]{java}
@@ -119,14 +130,15 @@ Gibt folgendes aus:
 ..@@..@@.........@@.....\\
 ...@@@@...........@@....
           \end{ausgabe}
-    \item Erstelle eine Variable mit beliebigem Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
+    \item Erstelle eine Variable mit einem beliebigen Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
     \item Erstelle zwei int Variablen und gib deren Summe und deren Produkt aus.
-    \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das dich mit deinem Namen begrüßt.
+    \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das die Person in der Variable begrüßt.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
-Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.
+Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.\\
+Hinweis: Kommentiert am besten die Aufgaben aus, die ihr schon erledigt habt, sonst werden irgendwann bei jedem durchlauf all eure Lösungen ausgeführt werden.
 \begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
 System.out.println("Gib deinen Namen ein: ");
@@ -140,24 +152,24 @@ Du heißt Melanie
 Wobei die obere Melanie vom Nutzer eingegeben wird.
 
 \begin{enumerate}
-    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Etwas funktioniert nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
+    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
 \begin{ausgabe}
 Gib eine Zahl ein: 12\\
 Gib noch eine Zahl ein: 3\\
 Die Summe ist: 15
 \end{ausgabe}
-    \item Programmiere ein Modulo Übungsprogramm, bei dem man zwei Zahlen mit dem Scanner eingibt, dann das Ergebnis von \texttt{zahl1 \% zahl2} eingeben soll und dann am Ende das korrekte Ergebnis ausgegeben wird.
+    \item Programmiere ein Modulo Übungsprogramm, bei dem man erst zwei Zahlen mit dem Scanner eingibt. Anschließend soll der Nutzer versuchen die Lösung von \texttt{zahl1 \% zahl2} selbst zu berechnen und einzugeben. Am Schluss soll dann das korrekte Ergebnis ausgegeben werden.
 \begin{ausgabe}
 Gib eine Zahl ein: 14\\
 Gib noch eine Zahl ein: 3\\
 Gib dein Ergebnis ein: 6\\
 Das richtige Ergebnis von 14 \% 3 ist: 2
 \end{ausgabe}
-    \item Schreibe eine kurze Geschichte (oder suche dir einen kurzen Text im Internet). Markiere dann ein paar Wörter mit ihren Wortarten und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
+    \item Schreibe eine kurze Geschichte (oder suche dir einen kurzen Text im Internet). Suche dann ein paar Wörter mit ihren Wortarten aus und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
           \begin{ausgabe}
               Gib ein Thema ein: backen\\
               Gib ein Verb ein: Ofen sprengen\\
-              Die backen-Vorkurs Hauptorgas lieben Ofen sprengen.
+              Die backen-Vorkurs Orgas lieben Ofen sprengen.
           \end{ausgabe}
           Lass deine Sitznachbarn und/oder die Helfer dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt.
 \end{enumerate}
@@ -178,12 +190,12 @@ int zufallsInt = rndGenerator.nextInt(10);
 Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
 
 \begin{enumerate}
-    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Zahlen nicht mehr selbst eingibt (war auch wirklich zu leicht so), sondern so, dass diese zufällig generiert werden.
-    \item Ladet euch das Programm hier \url{https://fius.de/index.php/pse-vk-folien/} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch vielleicht kriegt ihr es auch hin den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
+    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Anfangszahlen nicht mehr selbst eingibt sondern so, dass diese zufällig generiert werden. Man soll immer noch selber versuchen das Ergebnis zu berechnen. 
+    \item Ladet euch das Programm hier \url{https://fius.de/index.php/pse-vk-folien/} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
 \end{enumerate}
 
 \newpage
-\aufgabe{Codeanhang}
+\aufgabe{Anhang}
 \hypertarget{Aufgabe_2.1}{}
 \textbf{Aufgabe 2.1}\\
 \texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.

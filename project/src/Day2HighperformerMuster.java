@@ -11,7 +11,7 @@ public class Day2HighperformerMuster {
 
         for (int i = 0; i < Math.pow(2, numVars); i++) {
             String binary = Integer.toBinaryString(i);
-            System.out.println(binary);
+            //System.out.println(binary);
 
             while (binary.length() < numVars) {
                 binary = "0" + binary;

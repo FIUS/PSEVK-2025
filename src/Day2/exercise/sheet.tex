@@ -55,15 +55,13 @@ for (int i = 0; i < 5; i++) {
         Bist du ein Ersti? true\\
         Für dich sinds 3 Euro
     \end{ausgabe}
-    \item Jetzt fehlen nur noch Drinks, frage ab wie viel Geld die Person dabei hat und jeweils wieviele Shots (1 Euro), Longdrinks (3 Euro), Softdrinks (2 Euro), Cocktails (3 Euro) und Biere (2 Euro) die Person will. Gib am Ende aus ob das Geld ausreicht.
+    \item Jetzt fehlen nur noch Drinks, frage ab wie viel Geld die Person dabei hat und jeweils wieviele Shots (1 Euro), Softdrinks (2 Euro), und Biere (2 Euro) die Person bestellen will. Gib am Ende aus ob das Geld für die Bestellung ausreicht.
     \begin{ausgabe}
-        Wie viel Geld hast du? 23\\
+        Wie viel Geld hast du? 13\\
         Wie viele Shots hättest du gerne? 1\\
-        Wie viele Longdrinks hättest du gerne? 3\\
         Wie viele Softdrinks hättest du gerne? 6\\
-        Wie viele Cocktails hättest du gerne? 3\\
         Wie viele Biere hättest du gerne? 4\\
-        Das sind insgesamt 39 Euro\\
+        Das sind insgesamt 21 Euro\\
         Du hast zu wenig Geld
     \end{ausgabe}
 \end{enumerate}
@@ -71,36 +69,41 @@ for (int i = 0; i < 5; i++) {
 \newpage
 \aufgabe{Aufgabe 2: Schleifen}
 \begin{enumerate}
-    \item Wir arbeiten weiter mit dem UNO Programm. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk Nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann:
+    \item Wir arbeiten weiter mit dem UNO Programm aus Aufgabe 1. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann:
           \begin{ausgabe}
-              Shot 1 ist  eingeschenkt\\
-              Shot 2 ist  eingeschenkt\\
-              Shot 3 ist  eingeschenkt\\
-              Cocktail 1 ist  Gemixt\\
+              Shot 1 ist eingeschenkt\\
+              Shot 2 ist eingeschenkt\\
+              Shot 3 ist eingeschenkt\\
+              Sofdrink 1 ist fertig\\
               Bier 1 ist geöffnet\\
               Bier 2 ist geöffnet
           \end{ausgabe}
-    \item Da Informatiker ja bekanntlichermaßen nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
+    \item Da Informatiker ja bekanntlich nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
     \begin{ausgabe}
-        Wie viel Geld hast du? 23\\
+        Wie viel Geld hast du? 13\\
         Wie viele Shots hättest du gerne? 1\\
-        Wie viele Longdrinks hättest du gerne? 3\\
         Wie viele Softdrinks hättest du gerne? 6\\
-        Wie viele Cocktails hättest du gerne? 3\\
         Wie viele Biere hättest du gerne? 4\\
-        Das sind insgesamt 38 Euro\\
+        Das sind insgesamt 21 Euro\\
         Du hast zu wenig Geld, probier eine andere Bestellung\\
         Wie viele Shots hättest du gerne? 1\\
         ...
     \end{ausgabe}
 
     \includegraphics[width=1\linewidth]{../../memes/breakohnerand.png}
-    
-    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich, z.b.: 4165614 oder 829928). Nutze keine String Variablen.\\
-    Hinweis: Es kann Sinnvoll sein Methoden aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)}. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
-    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze natürlich wieder keine String Variablen.
+\end{enumerate}
+\newpage
 
-
+\aufgabe{Aufgabe 3: Palindrome}
+Es kann für diese Aufgaben sinnvoll sein Funktionen aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)} für den Logarithmus einer Zahl. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
+\begin{enumerate}
+    \item Schreibe ein Programm, dass eine Zahl einliest und sie zweimal hintereinander schreibt. Nutze dafür keine String oder Char Variablen.
+    \begin{ausgabe}
+Gib eine Zahl ein: 38429\\
+Zahl 2 mal hintereinander: 3842938429
+    \end{ausgabe}
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich ist, z.b.: 4165614 oder 829928). Nutze keine String oder Char Variablen.
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze natürlich wieder keine String oder Char Variablen.
 \end{enumerate}
 
 \newpage
@@ -109,11 +112,12 @@ In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Ei
 \\\\
 Man unterteilt Formeln in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder je nach den Werten der Variablen manchmal Wahr und manchmal Falsch (Erfüllbar):
 \\\\
-\textbf{Erfüllbar: } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
-\textbf{Unerfüllbar: } \texttt{(a \&\& !b \&\& !a \&\& c)}, da a zugleich wahr und falsch sein müsste\\
-\textbf{Tautologie: } \texttt{(!(a \&\& b) == !a || !b)}, da die linke Seite nur \texttt{false} ist, wenn a und b beide \texttt{true} sind, für die Rechte seite gilt genau das gleiche. Deswegen ist sind die beiden Seiten immer gleich.
+\textbf{Erfüllbar (kann wahr oder falsch sein): } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
+\textbf{Unerfüllbar (ist immer falsch): } \texttt{(a \&\& !b \&\& !a \&\& c)}, da \texttt{a} zugleich wahr und falsch sein müsste\\
+\textbf{Tautologie (ist immer wahr): } \texttt{(a || !a)}, da \texttt{a} entweder wahr oder falsch sein muss, somit ist die oder Verknüpfung von \texttt{a} und \texttt{!a} immer wahr.
 \begin{enumerate}
-    \item Prüfe folgende Boole'sche Ausdrücke Systematisch mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke rauskopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.
+    \item Prüfe folgende Boole'sche Ausdrücke systematisch mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke nacheinander in deinen Code kopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.\\
+    Hinweis: Die Formeln haben bis zu 8 Variablen (a-h)
           \begin{enumerate}
               \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
               \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar

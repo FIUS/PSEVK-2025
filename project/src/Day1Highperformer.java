@@ -1,17 +1,37 @@
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Day1Highperformer {;
+    static int resultDigits = 10; // Ziffernanzahl der Ausgabezahl
+    static long resultBound = (long) Math.pow(10, resultDigits); // Maximale Ausgabezahl
+    static int seedDigits = 5; // Ziffernanzahl der Seeds
+    static int seedBound = (int) Math.pow(10, seedDigits); // Maximaler Seed
+
+
     public static long randomize(long seed) {
         long ausgabeZahl = 0;
-        // VON HIER seed nehmen und basierend darauf eine 10-stellige Zahl machen
+        // VON HIER den 5-stelligen seed nehmen und basierend darauf eine 10-stellige Zahl machen
+        // Wenn sie dir helfen kannst du gerne die 4 obigen Variablen (Zeile 6-9) verwenden
 
 
+        String ausgabe = "";
+        long prev = seed;
+        while (ausgabe.length() < resultDigits) {
+            long temp = (long) Math.pow(prev, 3);
 
+            String tempString = addLeadingZeros(temp, 10);
+            //System.out.println(tempString.length());
+            String middleNumbers = tempString.substring(4, resultDigits-1);
+            prev = Long.parseLong(middleNumbers);
+            //System.out.println(middleNumbers.length());
+            ausgabe = ausgabe + middleNumbers;
+        }
+        ausgabeZahl = Long.parseLong(ausgabe);
+        ausgabeZahl = ausgabeZahl % resultBound;
 
-
-
+        //System.out.println(ausgabeZahl);
 
         // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern
         // um dein Verfahren zu testen, einfach den Code in dieser Datei ausführen
@@ -20,12 +40,9 @@ public class Day1Highperformer {;
 
 
     static int evalCycles = 10000000;
-    static int seedBound = 100000;
-    static int resultDigits = 10;
-    static long resultBound = (long) Math.pow(10, resultDigits);
-    static double offsetTolerance = 0.1;
-    static double levenshteinTolerance = 0.05;
-    static double predictionTolerance = 0.1;
+    static double offsetTolerance = 0.15;
+    static double levenshteinTolerance = 0.15;
+    static double predictionTolerance = 0.15;
 
     public static void main(String[] args) {
         Random rnd = new Random();
@@ -34,6 +51,17 @@ public class Day1Highperformer {;
         for (int i = 0; i < evalCycles; i++) {
             int seed = rnd.nextInt(seedBound);
             results[i] = randomize(seed);
+        }
+
+        for (int i = 0; i < evalCycles; i++) {
+            if (results[i] > resultBound) {
+                System.out.println("Eins deiner Ergebnisse ist zu groß (müssen alle maximal Zehnstellig sein)");
+                return;
+            }
+            if (results[i] < 0) {
+                System.out.println("Eins deiner Ergebnisse ist negativ, ausgabeZahl muss positiv sein");
+                return;
+            }
         }
         eval(results);
     }
