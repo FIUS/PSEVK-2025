@@ -32,11 +32,11 @@ public class Grillgut {
 
     public void vomGrillNehmen() {
         if (verbrannt) {
-            System.out.println("Das Würstchen ist verbrannt :(");
+            System.out.println(typ + " ist verbrannt :(");
         } else if (durchheit < minDurchheit) {
-            System.out.println("Das Würstchen ist roh :(");
+            System.out.println(typ + " ist roh :(");
         } else {
-            System.out.println("Das Würstchen ist gut :)");
+            System.out.println(typ + " ist gut :)");
         }
     }
 }
