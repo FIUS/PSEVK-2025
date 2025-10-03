@@ -1,3 +1,5 @@
+package Day1;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -102,5 +104,6 @@ public class Day1Muster {
 
         // 2
         //ausgabeZahl = seed * 8387234217L % resultBound;
+
     }
 }

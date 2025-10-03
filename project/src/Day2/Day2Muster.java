@@ -1,5 +1,11 @@
-public class Day2HighperformerMuster {
+package Day2;
+
+public class Day2Muster {
     public static void main(String[] args) {
+
+
+
+        // Highperformer
         int numVars = 8;
 
         int wahr = 0;
@@ -26,6 +32,7 @@ public class Day2HighperformerMuster {
             boolean g = binary.charAt(6) == '1';
             boolean h = binary.charAt(7) == '1';
 
+            // hier die Boole'schen Formeln reinkopieren
             if (((a && b && !c && !d && !e) || (!a && c && d && !b && !e) || (!b && !c
                     && !d && e && f)) && (!g || h)) {
                 wahr++;
