@@ -1,5 +1,7 @@
+import java.nio.ByteBuffer;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,22 +18,17 @@ public class Day1Highperformer {;
         // Wenn sie dir helfen kannst du gerne die 4 obigen Variablen (Zeile 6-9) verwenden
 
 
-        String ausgabe = "";
-        long prev = seed;
-        while (ausgabe.length() < resultDigits) {
-            long temp = (long) Math.pow(prev, 3);
+        String seedString = Long.toString(seed);
 
-            String tempString = addLeadingZeros(temp, 10);
-            //System.out.println(tempString.length());
-            String middleNumbers = tempString.substring(4, resultDigits-1);
-            prev = Long.parseLong(middleNumbers);
-            //System.out.println(middleNumbers.length());
-            ausgabe = ausgabe + middleNumbers;
+        try {
+            MessageDigest digester = MessageDigest.getInstance("SHA-256");
+            byte[] hashedString = digester.digest(seedString.getBytes());
+            ByteBuffer bb = ByteBuffer.wrap(hashedString);
+            ausgabeZahl = Math.abs(bb.getLong()) % resultBound;
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
-        ausgabeZahl = Long.parseLong(ausgabe);
-        ausgabeZahl = ausgabeZahl % resultBound;
 
-        //System.out.println(ausgabeZahl);
 
         // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern
         // um dein Verfahren zu testen, einfach den Code in dieser Datei ausführen

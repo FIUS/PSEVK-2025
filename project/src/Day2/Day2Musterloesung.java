@@ -1,6 +1,6 @@
 package Day2;
 
-public class Day2Muster {
+public class Day2Musterloesung {
     public static void main(String[] args) {
 
 
