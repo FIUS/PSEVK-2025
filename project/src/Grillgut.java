@@ -1,3 +1,5 @@
+// Aufgabe 2:
+
 public class Grillgut {
     String typ;
     int minDurchheit;
@@ -29,7 +31,7 @@ public class Grillgut {
     }
 
     public void vomGrillNehmen() {
-        if (verbrannt) {
+        if (verbrannt || durchheit > maxDurchheit) {
             System.out.println(typ + " ist verbrannt :(");
         } else if (durchheit < minDurchheit) {
             System.out.println(typ + " ist roh :(");

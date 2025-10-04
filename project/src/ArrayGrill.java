@@ -1,3 +1,5 @@
+// Aufgabe 1:
+
 public class ArrayGrill {
     String grillmeister;
     int maxWuerstchen;

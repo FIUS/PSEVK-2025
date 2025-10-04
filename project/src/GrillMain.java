@@ -37,5 +37,10 @@ public class GrillMain {
         for (int i = 0; i < 8; i++) {
             derGrill.runternehmen(i);
         }
+
+        // Highperformer Aufgabe
+        Grill optimalerGrill = new Grill("Felix", 10, 15);
+        Grillgut[] allesGrillzeug = optimalerGrill.zufaelligeGrillgueter();
+        optimalerGrill.optimaleGrillerei(allesGrillzeug);
     }
 }
