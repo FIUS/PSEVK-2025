@@ -1,5 +1,3 @@
-package Day4;
-
 public class ArrayGrill {
     String grillmeister;
     int maxWuerstchen;

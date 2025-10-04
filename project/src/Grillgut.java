@@ -1,5 +1,3 @@
-package Day4;
-
 public class Grillgut {
     String typ;
     int minDurchheit;

@@ -1,5 +1,3 @@
-package Day2;
-
 public class Day2Musterloesung {
     public static void main(String[] args) {
 

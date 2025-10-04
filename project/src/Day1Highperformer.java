@@ -1,6 +1,3 @@
-import java.nio.ByteBuffer;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
@@ -16,18 +13,6 @@ public class Day1Highperformer {;
         long ausgabeZahl = 0;
         // VON HIER den 5-stelligen seed nehmen und basierend darauf eine 10-stellige Zahl machen
         // Wenn sie dir helfen kannst du gerne die 4 obigen Variablen (Zeile 6-9) verwenden
-
-
-        String seedString = Long.toString(seed);
-
-        try {
-            MessageDigest digester = MessageDigest.getInstance("SHA-256");
-            byte[] hashedString = digester.digest(seedString.getBytes());
-            ByteBuffer bb = ByteBuffer.wrap(hashedString);
-            ausgabeZahl = Math.abs(bb.getLong()) % resultBound;
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
 
 
         // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern

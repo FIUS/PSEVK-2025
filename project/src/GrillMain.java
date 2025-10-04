@@ -1,6 +1,4 @@
-package Day4;
-
-public class Main {
+public class GrillMain {
     public static void main(String[] args) {
         // Aufgabe 1 Beispielhafte Grillung:
 

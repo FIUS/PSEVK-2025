@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Day3Highperformer {
     public static int[] bubbleSort(int[] arr) {
         int n = arr.length;
