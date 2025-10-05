@@ -43,7 +43,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Erste Java Klasse}
-  Nun schreiben wir folgenen Code in die Main Klasse rein
+  Nun schreiben wir folgenen Code in die \texttt{Main}-Klasse
   \begin{minted}{java}
     public class Main {
       public static void main(String[] args) {
@@ -51,13 +51,13 @@
       }
     }
   \end{minted}
-  \achtung{} Was das alles bedeutet werden wir euch dann in den nächsten Tagen erklären!
+  \achtung{} Was das alles bedeutet, werden wir euch dann in den nächsten Tagen erklären!
 \end{frame}
 
 \begin{frame}
   \frametitle{Erste Java Klasse}
   \begin{itemize}
-    \item Das Programm soll nun bei allen von euch gestartet werden
+    \item Das Programm soll nun von euch gestartet werden
     \item Dazu klickt auf das grüne Dreieck oben rechts in der IDE
     \item Wenn alles korrekt eingerichtet ist, sollte die Ausgabe "Hallo Welt!'' erscheinen.
           \achtung{} Wenn eine Fehlermeldung erscheint, überprüft bitte den Code alternativ fragt einen Tutor.
@@ -66,7 +66,7 @@
 
 \begin{frame}
   \frametitle{GitHub}
-  GitHub ist eine Plattform, auf der man Code online speichern, verwalten und mit anderen teilen kann. Es basiert auf Git, einem Versionskontrollsystem.
+  GitHub ist eine Plattform, auf der man Code online speichern, verwalten und mit Anderen teilen kann. Es basiert auf Git, einem Versionskontrollsystem.
 \end{frame}
 
 \begin{frame}
@@ -161,14 +161,14 @@
   \begin{tabular}{l l}
     \rowcolor{tablehead}
     \textbf{Typ} & \textbf{Beschreibung}                          \\
-    int          & Ganzzahlen (z.\,B. 1, 2, 3)                    \\
-    float        & Kommazahlen (weniger genau)                    \\
-    double       & Kommazahlen (hohe Genauigkeit)                 \\
-    char         & Einzelnes Zeichen (z.\,B. 'a')                 \\
-    short        & Kleine Ganzzahlen                              \\
-    long         & Große Ganzzahlen                               \\
-    boolean      & Wahrheitswert (\texttt{true} / \texttt{false}) \\
-    String       & Text (z.\,B. "Hallo")                          \\
+    \texttt{int}          & Ganzzahlen (z.\,B. 1, 2, 3)                    \\
+    \texttt{float}        & Kommazahlen (weniger genau)                    \\
+    \texttt{double}       & Kommazahlen (hohe Genauigkeit)                 \\
+    \texttt{char}         & Einzelnes Zeichen (z.\,B. 'a')                 \\
+    \texttt{short}        & Kleine Ganzzahlen                              \\
+    \texttt{long}         & Große Ganzzahlen                               \\
+    \texttt{boolean}      & Wahrheitswert (\texttt{true} / \texttt{false}) \\
+    \texttt{String}       & Text (z.\,B. "Hallo")                          \\
   \end{tabular}
 \end{frame}
 
@@ -181,11 +181,11 @@
   \begin{tabular}{l l l}
     \rowcolor{tablehead}
     \textbf{Operator} & \textbf{Bedeutung}    & \textbf{Gültige Typen} \\
-    +                 & Addition / Verkettung & Zahlen, String         \\
-    -                 & Subtraktion           & Zahlen                 \\
-    *                 & Multiplikation        & Zahlen                 \\
-    /                 & Division              & Zahlen                 \\
-    \%                & Modulo (Rest)         & Ganzzahlen             \\
+    \texttt{+}                 & Addition / Verkettung & Zahlen, String         \\
+    \texttt{-}                 & Subtraktion           & Zahlen                 \\
+    \texttt{*}                 & Multiplikation        & Zahlen                 \\
+    \texttt{/}                 & Division              & Zahlen                 \\
+    \texttt{\%}                & Modulo (Rest)         & Ganzzahlen             \\
   \end{tabular}
 \end{frame}
 
@@ -230,19 +230,19 @@ int summe = x + y;
   \pause
   \vspace{0.5em}
   \begin{minted}{java}
-System.out.print("Das ist eine Konsolen Ausgabe");
+System.out.print("Das ist eine Konsolenausgabe");
   \end{minted}
   \begin{ausgabe}
-    Das ist eine Konsolen Ausgabe
+    Das ist eine Konsolenausgabe
   \end{ausgabe}
   \pause
   \begin{minted}{java}
-System.out.print("Das ist eine Konsolen Ausgabe");
+System.out.print("Das ist eine Konsolenausgabe");
 System.out.print("Das ist noch eine Ausgabe");
   \end{minted}
   \pause
   \begin{ausgabe}
-    Das ist eine Konsolen AusgabeDas ist noch eine Ausgabe
+    Das ist eine KonsolenausgabeDas ist noch eine Ausgabe
   \end{ausgabe}
 \end{frame}
 
@@ -433,7 +433,7 @@ System.out.println(name);
   \frametitle{Syntaxfehler - Beispiele}
   \pause
   \begin{itemize}
-    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `;`)
+    \item \textbf{Syntaxfehler:} Code verletzt Java-Regeln (z.\,B. fehlendes `\texttt{;}`)
   \end{itemize}
   \begin{minted}{java}
 // Fehlendes Semikolon
