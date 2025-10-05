@@ -28,33 +28,22 @@
 int alter = 20;    // Deklaration + Initialisierung
 int zahl;          // Deklaration
 zahl = 42;         // Initialisierung
-  \end{minted}
+    \end{minted}
+
     \rowcolors{2}{tablerow}{white}
     \pause
     \begin{tabular}{l l l}
       \rowcolor{tablehead}
-      \textbf{Operator
-      }           & \textbf{Bedeutung
-      }           & \textbf{Beispiele
-      }                                           \\
-      \texttt{+}  & {Addition / String-Verkettung
-      }           & \texttt{3+2, "a"+"b"
-      }                                           \\
-      \texttt{-}  & \texttt{Subtraktion
-      }           & \texttt{7-5
-      }                                           \\
-      \texttt{*}  & \texttt{Multiplikation
-      }           & \texttt{3*4
-      }                                           \\
-      \texttt{/}  & \texttt{Division
-      }           & \texttt{10/2
-      }                                           \\
-      \texttt{\%} & \texttt{Modulo
-      }           & \texttt{5\%2
-      }                                           \\
+      \textbf{Operator} & \textbf{Bedeutung}           & \textbf{Beispiele}              \\
+      \texttt{+}        & Addition / String-Verkettung & 3\texttt{+}2, "a"\texttt{+}"b"  \\
+      \texttt{-}        & Subtraktion                  & 7\texttt{-}5                    \\
+      \texttt{*}        & Multiplikation               & 3\texttt{*}4                    \\
+      \texttt{/}        & Division                     & 10\texttt{/}2                   \\
+      \texttt{\%}       & Modulo                       & 5\texttt{\%}2                   \\
     \end{tabular}
   \end{center}
 \end{frame}
+
 
 \begin{frame}[fragile]
   \frametitle{Recap Tag 1}
@@ -102,14 +91,14 @@ boolean heuteDienstag = true;
   \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<2->\texttt{isDienstag == esRegnet} \quad Wahr, wenn \texttt{isDienstag} gleich \texttt{esRegnet} ist
+    \item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (isDienstag == esRegnet); // result true, wenn isDienstag gleich esRegnet
+boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{isDienstag != esRegnet} \quad Wahr, wenn \texttt{isDienstag} ungleich \texttt{esRegnet} ist
+    \item<3->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (isDienstag != esRegnet); // result true, wenn isDienstag ungleich esRegnet
+boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
     \item<4->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
@@ -131,7 +120,7 @@ boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     %Linke Spalte: Operatoren und Wahrheitstabellen
     \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item \texttt{!a} \quad \textrightarrow \quad nicht a
+        \item \texttt{!a} \quad \textrightarrow \quad NICHT a
               \pause
         \item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
               \pause
