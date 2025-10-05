@@ -97,7 +97,7 @@ System.out.println(x + y);
 
 
 \aufgabe{Aufgabe 1: Variablen und Ausgaben}
-Man kann mit \texttt{System.out.println(einString)} den Wert von \texttt{einString} in der Konsole (unten in der Mitte bei der Ausführung des Codes) ausgeben. Folgender code:
+Mit \texttt{System.out.println(einString)} kann der Wert von \texttt{einString} in der Konsole (unten in der Mitte bei der Ausführung des Codes) ausgegeben werden. Folgender Code:
 \begin{minted}[linenos=false]{java}
 System.out.println("PSE-Zeit ist Grillzeit")
 \end{minted}
@@ -131,13 +131,13 @@ Gibt folgendes aus:
 ...@@@@...........@@....
           \end{ausgabe}
     \item Erstelle eine Variable mit einem beliebigen Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
-    \item Erstelle zwei int Variablen und gib deren Summe und deren Produkt aus.
+    \item Erstelle zwei \texttt{int}-Variablen und gib deren Summe und deren Produkt aus.
     \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das die Person in der Variable begrüßt.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
-Man kann während das Program ausgeführt wird auch Werte aus der Konsole einlesen. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} beendet man die Eingabe.\\
+Während das Program ausgeführt wird können auch Werte aus der Konsole eingelesen werden. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} wird die Eingabe beendet.\\
 Hinweis: Kommentiert am besten die Aufgaben aus, die ihr schon erledigt habt, sonst werden irgendwann bei jedem durchlauf all eure Lösungen ausgeführt werden.
 \begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
@@ -152,13 +152,13 @@ Du heißt Melanie
 Wobei die obere Melanie vom Nutzer eingegeben wird.
 
 \begin{enumerate}
-    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
+    \item Programmiere einen Addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
 \begin{ausgabe}
 Gib eine Zahl ein: 12\\
 Gib noch eine Zahl ein: 3\\
 Die Summe ist: 15
 \end{ausgabe}
-    \item Programmiere ein Modulo Übungsprogramm, bei dem man erst zwei Zahlen mit dem Scanner eingibt. Anschließend soll der Nutzer versuchen die Lösung von \texttt{zahl1 \% zahl2} selbst zu berechnen und einzugeben. Am Schluss soll dann das korrekte Ergebnis ausgegeben werden.
+    \item Programmiere ein Modulo-Übungsprogramm, bei dem erst zwei Zahlen mit dem Scanner eingegeben werden. Anschließend soll der Nutzer versuchen die Lösung von \texttt{zahl1 \% zahl2} selbst zu berechnen und einzugeben. Am Schluss soll dann das korrekte Ergebnis ausgegeben werden.
 \begin{ausgabe}
 Gib eine Zahl ein: 14\\
 Gib noch eine Zahl ein: 3\\
@@ -190,7 +190,7 @@ int zufallsInt = rndGenerator.nextInt(10);
 Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
 
 \begin{enumerate}
-    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Anfangszahlen nicht mehr selbst eingibt sondern so, dass diese zufällig generiert werden. Man soll immer noch selber versuchen das Ergebnis zu berechnen. 
+    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen. 
     \item Ladet euch das Rahmenprogramm \href{https://fius.de/wp-content/uploads/2025/10/Day1Highperformer.zip}{hier} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
 \end{enumerate}
 
@@ -198,5 +198,5 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 \aufgabe{Anhang}
 \hypertarget{Aufgabe_2.1}{}
 \textbf{Aufgabe 2.1}\\
-\texttt{derScanner.next()} gibt einen String zurück, wenn man die beiden addiert werden die beiden Zahlen stumpf hintereinandergeschrieben, statt gescheit addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.
+\texttt{derScanner.next()} gibt einen String zurück. Wenn die beiden addiert werden, dann werden die beiden Zahlen stumpf hintereinandergeschrieben, statt als Zahlen addiert zu werden. Um stattdessen einen \texttt{int} einzulesen besitzt Scanner die \texttt{nextInt()} Funktion.
 \end{document}
