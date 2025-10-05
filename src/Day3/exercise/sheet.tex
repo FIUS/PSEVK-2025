@@ -58,13 +58,13 @@ for (int i = 0; i < grill.length; i++) {
           \begin{ausgabe}
               Es ist Grillereizeit meine Freunde!
           \end{ausgabe}
-          Hinweis: Wenn man die Funktion nur erstellt, dann wird sie noch nicht ausgeführt. Sie muss zusätzlich in der \texttt{main}-Funktion aufgerufen werden.
+          Hinweis: Wenn eine Funktion nur erstellt wird, dann wird sie noch nicht ausgeführt. Sie muss zusätzlich in der \texttt{main}-Funktion aufgerufen werden.
     \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als \texttt{String} zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe wie oben in Aufgabe 1 zu erstellen. Zusätzlich kannst du versuchen die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter entgegennimmt und die Person herzlich zur Grillerei einläd:
           \begin{ausgabe}
               Komm ran Melanie, es gibt Grillung!
           \end{ausgabe}
-    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
+    \item Erstelle eine Funktion, die zwei Zahlen addiert und das Ergebnis der Addition zurückgibt, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
           \begin{minted}[linenos=false]{java}
 int a = 3;
 a++;
@@ -75,7 +75,7 @@ System.out.println(a);
           \end{ausgabe}
     \item Nutze die Additionsfunktion um eine neue Funktion zu erstellen, die zwei Zahlen multipliziert, im Code dieser Funktion dürfen keine Mathematischen Operatoren vorkommen.
     \item Nutze die Multiplikationsfunktion um Fakultät zu implementieren.\\
-          Hinweis: Beispielsweise schreibt man Fakultät von 6 so: 6! = 6*5*4*3*2*1
+          Hinweis: Beispielsweise wird die Fakultät von 6 so geschrieben: 6! = 6*5*4*3*2*1
 \end{enumerate}
 
 \newpage
@@ -135,7 +135,7 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
     \item Überlege dir ein Verfahren zum Sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Higherformer-Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.          
     \item Versuche deine Funktion zu optimieren und somit schneller zu machen. Wir (die Vorkurs-Orgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Bubblesort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit lokal bei dir testen kannst.\\
-          Hinweis: Bei der Optimierung kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um rauszufinden wo man am meisten Zeit einsparen kann.
+          Hinweis: Bei der Optimierung kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um rauszufinden wo am meisten Zeit eingespart werden kann.
     \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen der dir gefällt zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
 \end{enumerate}
 
@@ -175,19 +175,19 @@ Alle gezeigten Arrays haben Seitenlänge 13, aber deine Funktion sollte die Arra
     1 1 1 1 1 1 0 1 1 1 1 1 1
 \end{ausgabe}
 \begin{ausgabe}
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0
 \end{ausgabe}
 \newpage
 \hypertarget{Highperformer}{}
