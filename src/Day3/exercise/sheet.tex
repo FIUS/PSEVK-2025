@@ -84,9 +84,10 @@ System.out.println(a);
 
 \begin{enumerate}
     \item Erstelle ein Array mit 10 \texttt{int}-Werten und versuche das Array auszugeben.
-    \item Da dies nicht zu klappen scheint, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich ausgibt.\\
+    \item Da dies nicht zu klappen scheint, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich in der Konsole ausgibt.\\
           Hinweis: Erinnere dich an \texttt{Array.length} aus der Präsi.
-    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.\\
+    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und ausgibt.\\
+    Hinweis: 2-Dimensionale Arrays funktionieren so:
     \begin{minted}[linenos=false]{java}
 int[][] einArray = new int[3][3]; //ein zweidimensionales Array der Größe 3x3
 einArray[0][2] = 3;
@@ -95,7 +96,7 @@ System.out.println(einArray[0][2]);
     \begin{ausgabe}
         3
     \end{ausgabe}
-    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein 2-D Array erstellt. Das Array soll bis auf einen drei Nullen breiten diagonalen Streifen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
+    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein quadratisches 2-D Array erstellt. Das Array soll bis auf einen drei Nullen breiten diagonalen Streifen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
           Seitenlänge 6:
           \begin{ausgabe}
               0 0 0 1 1 1\\
@@ -134,15 +135,15 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
     \item Überlege dir ein Verfahren zum Sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Higherformer-Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.          
     \item Versuche deine Funktion zu optimieren und somit schneller zu machen. Wir (die Vorkurs-Orgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Bubblesort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit lokal bei dir testen kannst.\\
-          Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann.
+          Hinweis: Bei der Optimierung kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um rauszufinden wo man am meisten Zeit einsparen kann.
     \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen der dir gefällt zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
 \end{enumerate}
 
 \newpage
 \aufgabe{Codeanhang}
 \hypertarget{Aufgabe_4}{}
-Aufgabe 2: Arrays:\\
-4. Alle mit Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
+Aufgabe 2.4:\\
+Alle gezeigten Arrays haben Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
 \begin{ausgabe}
     1 0 1 0 1 0 1 0 1 0 1 0 1 \\
     0 1 0 1 0 1 0 1 0 1 0 1 0 \\

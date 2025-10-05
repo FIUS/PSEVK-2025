@@ -42,7 +42,7 @@ System.out.println(studis.get("Melanie"));
 \aufgabe{Aufgabe 1: Maps}
 Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verbinden:
 \begin{minted}[linenos=false]{java}
-Map<String, Integer> telefonbuch = new HashMap<String, Integer>();
+Map<String, Long> telefonbuch = new HashMap<String, Long>();
 //erstes Parameter ist der Schlüssel, zweites ist der Wert
 telefonbuch.put("Paul Griller", 1374927394);
 telefonbuch.put("Melanie Barbecue", 9257632984);
@@ -65,7 +65,7 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
               g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
           \end{ausgabe}
 
-          Hinweis: Verwende die split("") Methode auf einen String in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
+          Hinweis: Verwende die \texttt{split("")} Methode auf einem String um ihn in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
 
     \item Erweitere deinen Algorithmus, sodass er einen Integer \texttt{length} entgegennimmt und statt nach einzelnen Buchstaben, jetzt nach Buchstabenfolgen der Länge \texttt{length} sucht.
 
@@ -81,7 +81,7 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
 
 \newpage
 \aufgabe{Aufgabe 2: Datenstrukturen selber machen}
-Man kann sich in Java jederzeit selbst eine eigene Datenstruktur bauen, die dann auch an die eigenheiten der Problemstellung angepasst sein kann. \\
+In Java kann jederzeit selbst eine eigene Datenstruktur gebaut werden, die dann auch an die eigenheiten der Problemstellung angepasst sein kann. \\
 Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Unsere Liste soll aus einzelnen Knotenobjekten bestehen, die dann untereinander verbunden werden.
 \begin{enumerate}
     \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.\\\\
@@ -107,7 +107,7 @@ Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder K
     \item Erstelle eine \texttt{Baum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum.
     \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt.
     \item Programmiere eine Funktion in der \texttt{Baum}-Klasse, die den Baum anschaulich in der Konsole ausgibt.
-    \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie man die Struktur eines Baums in der Liste abbilden kann.\\
+    \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie die Struktur des Baums in der Liste abgebildet werden kann.\\
     Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist.
 \end{enumerate}
 \end{document}
