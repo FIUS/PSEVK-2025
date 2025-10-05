@@ -170,6 +170,7 @@
   \fi
 }
 
+\newcommand{\achtung}{\tikz\node[inner sep=0pt]{\includegraphics[height=1em]{\logopath warning.png}}; Achtung:}
 
 % Abstände
 \setlength{\parindent}{0pt}
