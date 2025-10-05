@@ -287,6 +287,135 @@ if (note == 1) {
   \end{itemize}
 \end{frame}
 
+\begin{frame}[plain]
+  \centering
+  {\Huge\bfseries{Check Yourself!}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 1: Was ergibt...}
+  \begin{minted}{java}
+    false || true
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    true
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 2: Was ergibt...}
+  \begin{minted}{java}
+    true || false && false
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    true
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 3: Was wird ausgegeben ?}
+  \begin{minted}{java}
+    boolean a = true;
+    boolean b = false;
+    boolean result = a && b;
+    System.out.println(result);
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    false
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 4: Was ergibt true?}
+  \pause
+  \begin{minted}{java}
+    (true && (false || true)) || false
+    // und auch 
+    (true || false) && (true && true)
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 5: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean sonne = true;
+    boolean regen = false;
+    if (sonne && !regen) {
+      System.out.println("Perfektes Wetter!");
+    } else {
+      System.out.println("Bleib lieber drinnen.");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Perfektes Wetter!
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 6: Was wird ausgegeben?}
+  \begin{minted}{java}
+    int note = 3;
+    if (note == 1) {
+      System.out.println("Sehr gut");
+    } else if (note == 2) {
+      System.out.println("Gut");
+    } else {
+      System.out.println("Der Rest");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Der Rest
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 7: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean a = false;
+    boolean b = true;
+    if (a = b) {
+      System.out.println("Wow!");
+    } else {
+      System.out.println("Nope!");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Wow!
+  \end{ausgabe}
+    a = b ist eine Zuweisung, kein Vergleich!\\
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 8: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean a = true;
+    boolean b = false;
+    boolean c = true;
+    if (a && (b || c)) {
+      System.out.println("1");
+    }
+    if ((a && b) || (c && !b)){
+      System.out.println("2");
+    } 
+    if ((a || b)) && !(c && b)) {
+      System.out.println("3");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    1\newline
+    2\newline
+    3
+  \end{ausgabe}
+\end{frame}
+
+
 %WHILE
 \begin{frame}[fragile]
   \frametitle{\texttt{while}-Schleife}
