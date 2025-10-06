@@ -12,10 +12,10 @@ Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jah
 
 
 \aufgabe{Hilfe suchen und finden}
-Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die Offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.
+Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.
 
 \aufgabe{Musterlösungen}
-Es wird auf jedem Ausgabenblatt ein Link zu den Musterlösungen des Vortags geben, falls es noch unklarheiten gibt oder ihr sie mit euren Lösungen vergleichen wollt: \href{https://fius.de/wp-content/uploads/2025/10/Day1Musterloesung.zip}{Tag 1 Lösungen}
+Es wird auf jedem Ausgabenblatt ein Link zu den Musterlösungen des Vortags geben, falls es noch Unklarheiten gibt oder ihr sie mit euren Lösungen vergleichen wollt: \href{https://fius.de/wp-content/uploads/2025/10/Day1Musterloesung.zip}{Tag 1 Lösungen}
 
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Booleanoperatoren:}
@@ -54,11 +54,11 @@ for (int i = 0; i < 5; i++) {
 \newpage
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}
-    \item Schreibe für die UNO diesen Freitag (die Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
-          \begin{ausgabe}
-              Wie alt bist du: 17\\
-              Sorry, du darfst noch nicht rein :/
-          \end{ausgabe}
+    \item Schreibe für die UNO diesen Freitag (die Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird, ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner-Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
+    \begin{ausgabe}
+        Wie alt bist du: 17\\
+        Sorry, du darfst noch nicht rein :/
+    \end{ausgabe}
     \item Füge dem Programm einen Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: lies einen boolean Wert ein). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
           \begin{ausgabe}
               Bist du ein Ersti (true oder false eingeben): true\\
@@ -78,7 +78,7 @@ for (int i = 0; i < 5; i++) {
 \newpage
 \aufgabe{Aufgabe 2: Schleifen}
 \begin{enumerate}
-    \item Wir arbeiten weiter mit dem UNO Programm aus Aufgabe 1. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn man die Getränke auch bezahlen kann:
+    \item Wir arbeiten weiter mit dem UNO Programm aus Aufgabe 1. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn die Getränke auch bezahlt werden können:
           \begin{ausgabe}
               Shot 1 ist eingeschenkt\\
               Shot 2 ist eingeschenkt\\
@@ -107,11 +107,11 @@ for (int i = 0; i < 5; i++) {
 Es kann für diese Aufgaben sinnvoll sein Funktionen aus dem \texttt{Math} Package zu verwenden, z.B. \texttt{Math.log(eineZahl)} für den Logarithmus einer Zahl. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}
 \begin{enumerate}
     \item Schreibe ein Programm, dass eine Zahl einliest und sie zweimal hintereinander schreibt. Nutze dafür keine String oder Char Variablen.
-          \begin{ausgabe}
-              Gib eine Zahl ein: 38429\\
-              Zahl zwei mal hintereinander: 3842938429
-          \end{ausgabe}
-    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich ist, z.b.: 4165614 oder 829928). Nutze keine String oder Char Variablen.
+    \begin{ausgabe}
+Gib eine Zahl ein: 38429\\
+Zahl zwei mal hintereinander: 3842938429
+    \end{ausgabe}
+    \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und prüft, ob diese ein Palindrom ist (Vorwärts und Rückwärts gelesen gleich ist, z.b.: 4165614 oder 829928). Nutze keine String oder Char Variablen.
     \item Schreibe ein Programm, dass vom Nutzer eine Zahl einliest und sie Rückwärts geschrieben wieder ausgibt. Nutze natürlich wieder keine String oder Char Variablen.
 \end{enumerate}
 
@@ -119,14 +119,15 @@ Es kann für diese Aufgaben sinnvoll sein Funktionen aus dem \texttt{Math} Packa
 \aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
 In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck.
 \\\\
-Man unterteilt Formeln in immer Wahr (Tautologien), immer Falsch sind (Unerfüllbar) oder je nach den Werten der Variablen manchmal Wahr und manchmal Falsch (Erfüllbar):
+Formeln werden in drei Kategorien unterteilt: immer wahr (Tautologien), immer falsch (unerfüllbar) oder je nach den Werten der Variablen manchmal wahr und manchmal falsch (erfüllbar).
 \\\\
-\textbf{Erfüllbar (kann wahr oder falsch sein): } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}\\
+\textbf{Tautologie (ist immer wahr): } \texttt{(a || !a)}, da \texttt{a} entweder wahr oder falsch sein muss, somit ist die oder Verknüpfung von \texttt{a} und \texttt{!a} immer wahr.\\
 \textbf{Unerfüllbar (ist immer falsch): } \texttt{(a \&\& !b \&\& !a \&\& c)}, da \texttt{a} zugleich wahr und falsch sein müsste\\
-\textbf{Tautologie (ist immer wahr): } \texttt{(a || !a)}, da \texttt{a} entweder wahr oder falsch sein muss, somit ist die oder Verknüpfung von \texttt{a} und \texttt{!a} immer wahr.
+\textbf{Erfüllbar (kann wahr oder falsch sein): } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}
+
 \begin{enumerate}
-    \item Prüfe folgende Boole'sche Ausdrücke systematisch mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke nacheinander in deinen Code kopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.\\
-          Hinweis: Die Formeln haben bis zu 8 Variablen (a-h)
+    \item Prüfe folgende Boole'sche Ausdrücke mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke nacheinander in deinen Code kopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.\\
+    Hinweis: Die Formeln haben bis zu 8 Variablen (a-h)
           \begin{enumerate}
               \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
               \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar
@@ -145,7 +146,7 @@ Man unterteilt Formeln in immer Wahr (Tautologien), immer Falsch sind (Unerfüll
                             (!a \&\& c \&\& d \&\& !b \&\& !e) ||
                             (!b \&\& !c \&\& !d \&\& e \&\& f)) \&\& (!g || h)}
                     \end{ausgabe} %Erfüllbar 9/128
-          \end{enumerate}
-    \item Modifiziere dein Programm so, dass wenn eine Formel erfüllbar ist, auch ausgegeben wird wie viele Belegungen die Formel jeweils wahr oder falsch werden lassen, sowie die Wahrscheinlichkeit, dass eine zufällige Belegung wahr wird.
-\end{enumerate}
+        \end{enumerate}
+        \item Modifiziere nun dein Programm: Wenn eine Formel erfüllbar ist, soll zusätzlich ausgegeben werden, wie viele Belegungen die Formel wahr oder falsch machen und wie groß die Wahrscheinlichkeit ist, dass eine zufällige Belegung wahr die Formel wahr werden lässt.
+    \end{enumerate}
 \end{document}

@@ -9,6 +9,8 @@ Wir sind so back.
 
 \aufgabe{Feedback}
 Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jahre verbessern können. Der Bogen ist anonym und dauert nur 2-3 Minuten. \newline Ihr findet ihn unter: \url{https://forms.gle/BxZRFrbm8K7jPtMi6}
+\aufgabe{Musterlösungen}
+\href{https://fius.de/wp-content/uploads/2025/10/Day2Musterloesung.zip}{Tag 2 Lösungen}
 
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Funktionen und Scopes:}
@@ -61,13 +63,13 @@ for (int i = 0; i < grill.length; i++) {
           \begin{ausgabe}
               Es ist Grillereizeit meine Freunde!
           \end{ausgabe}
-          Hinweis: Wenn man die Funktion nur erstellt, dann wird sie noch nicht ausgeführt. Sie muss zusätzlich in der \texttt{main}-Funktion aufgerufen werden.
+          Hinweis: Wenn eine Funktion nur erstellt wird, dann wird sie noch nicht ausgeführt. Sie muss zusätzlich in der \texttt{main}-Funktion aufgerufen werden.
     \item Erstelle noch eine Funktion, die selbst nichts ausgibt, aber dafür den obigen Text als \texttt{String} zurückgibt. Nutze diese neue Funktion um die gleiche Ausgabe wie oben in Aufgabe 1 zu erstellen. Zusätzlich kannst du versuchen die Aufgabe ohne Variable zu lösen.
     \item Erstelle eine dritte Funktion, die einen Namen als Parameter entgegennimmt und die Person herzlich zur Grillerei einläd:
           \begin{ausgabe}
               Komm ran Melanie, es gibt Grillung!
           \end{ausgabe}
-    \item Erstelle eine Funktion, die zwei Zahlen addiert, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
+    \item Erstelle eine Funktion, die zwei Zahlen addiert und das Ergebnis der Addition zurückgibt, hierfür aber nur den ++ Operator verwendet (also kein + - * / etc.). Als Erinnerung an den ++ Operator:
           \begin{minted}[linenos=false]{java}
 int a = 3;
 a++;
@@ -78,7 +80,7 @@ System.out.println(a);
           \end{ausgabe}
     \item Nutze die Additionsfunktion um eine neue Funktion zu erstellen, die zwei Zahlen multipliziert, im Code dieser Funktion dürfen keine Mathematischen Operatoren vorkommen.
     \item Nutze die Multiplikationsfunktion um Fakultät zu implementieren.\\
-          Hinweis: Beispielsweise schreibt man Fakultät von 6 so: 6! = 6*5*4*3*2*1
+          Hinweis: Beispielsweise wird die Fakultät von 6 so geschrieben: 6! = 6*5*4*3*2*1
 \end{enumerate}
 
 \newpage
@@ -87,18 +89,19 @@ System.out.println(a);
 
 \begin{enumerate}
     \item Erstelle ein Array mit 10 \texttt{int}-Werten und versuche das Array auszugeben.
-    \item Da dies nicht zu klappen scheint, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich ausgibt.\\
+    \item Da dies nicht zu klappen scheint, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich in der Konsole ausgibt.\\
           Hinweis: Erinnere dich an \texttt{Array.length} aus der Präsi.
-    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und wie oben ausgibt.\\
-          \begin{minted}[linenos=false]{java}
+    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und ausgibt.\\
+    Hinweis: 2-Dimensionale Arrays funktionieren so:
+    \begin{minted}[linenos=false]{java}
 int[][] einArray = new int[3][3]; //ein zweidimensionales Array der Größe 3x3
 einArray[0][2] = 3;
 System.out.println(einArray[0][2]);
     \end{minted}
-          \begin{ausgabe}
-              3
-          \end{ausgabe}
-    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein 2-D Array erstellt. Das Array soll bis auf einen drei Nullen breiten diagonalen Streifen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
+    \begin{ausgabe}
+        3
+    \end{ausgabe}
+    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein quadratisches 2-D Array erstellt. Das Array soll bis auf einen drei Nullen breiten diagonalen Streifen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
           Seitenlänge 6:
           \begin{ausgabe}
               0 0 0 1 1 1\\
@@ -137,15 +140,15 @@ Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} 
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
     \item Überlege dir ein Verfahren zum Sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Higherformer-Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.
     \item Versuche deine Funktion zu optimieren und somit schneller zu machen. Wir (die Vorkurs-Orgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Bubblesort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit lokal bei dir testen kannst.\\
-          Hinweis: Hierbei kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um zu wissen wo man am meisten Zeit einsparen kann.
+          Hinweis: Bei der Optimierung kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um rauszufinden wo am meisten Zeit eingespart werden kann.
     \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen der dir gefällt zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.
 \end{enumerate}
 
 \newpage
 \aufgabe{Codeanhang}
 \hypertarget{Aufgabe_4}{}
-Aufgabe 2: Arrays:\\
-4. Alle mit Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
+Aufgabe 2.4:\\
+Alle gezeigten Arrays haben Seitenlänge 13, aber deine Funktion sollte die Arrays natürlich je nach Eingabegröße generieren.
 \begin{ausgabe}
     1 0 1 0 1 0 1 0 1 0 1 0 1 \\
     0 1 0 1 0 1 0 1 0 1 0 1 0 \\
@@ -177,19 +180,19 @@ Aufgabe 2: Arrays:\\
     1 1 1 1 1 1 0 1 1 1 1 1 1
 \end{ausgabe}
 \begin{ausgabe}
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 0 0 0 1 0 0 0 1 0 0 0 1 \\
-    1 1 0 1 1 1 0 1 1 1 0 1 1 \\
-    1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 1 0 1 1 1 1 0 1 1 1 1 0 \\
+    1 0 0 0 1 1 0 0 0 1 1 0 0 \\
+    0 0 0 0 0 0 0 0 0 0 0 0 0
 \end{ausgabe}
 \newpage
 \hypertarget{Highperformer}{}

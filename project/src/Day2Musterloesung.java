@@ -4,7 +4,7 @@ public class Day2Musterloesung {
     public static void main(String[] args) {
         // Aufgabe 1
         Scanner sc = new Scanner(System.in);
-/*
+
         // 1.1 + 1.2
         System.out.print("Wie Alt bist du: ");
         int alter = sc.nextInt();
@@ -58,10 +58,11 @@ public class Day2Musterloesung {
         // 2.2
         int geld2 = -1;
         int gesamt2 = 0;
-        System.out.print("Wie viel Geld hast du? ");
-        geld2 = sc.nextInt();
+
 
         while (geld2 <= gesamt2) {
+            System.out.print("Wie viel Geld hast du? ");
+            geld2 = sc.nextInt();
             System.out.print("Wie viele Shots hättest du gerne: ");
             int shots2 = sc.nextInt();
             System.out.print("Wie viele Softdrinks hättest du gerne: ");
@@ -78,7 +79,7 @@ public class Day2Musterloesung {
                 System.out.println("Du hast zu wenig Geld dabei, probier eine andere Bestellung");
             }
         }
-*/
+
         // Aufgabe 3
         // 3.1
         System.out.print("Gib eine Zahl ein: ");
@@ -165,6 +166,5 @@ public class Day2Musterloesung {
         System.out.println("Die Formel ist eine Tautologie ist: " + tautologie);
         System.out.println("Die Formel wird bei " + wahr + " von " + (int) Math.pow(2, numVars) + " Belegungen wahr");
         System.out.println("Die Wahrscheinlichkeit das die Formel bei einer zufälligen Belegung wahr wird ist " + wahr / Math.pow(2, numVars) * 100 + "%");
-
     }
 }

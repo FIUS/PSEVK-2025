@@ -28,33 +28,22 @@
 int alter = 20;    // Deklaration + Initialisierung
 int zahl;          // Deklaration
 zahl = 42;         // Initialisierung
-  \end{minted}
+    \end{minted}
+
     \rowcolors{2}{tablerow}{white}
     \pause
     \begin{tabular}{l l l}
       \rowcolor{tablehead}
-      \textbf{Operator
-      }           & \textbf{Bedeutung
-      }           & \textbf{Beispiele
-      }                                           \\
-      \texttt{+}  & {Addition / String-Verkettung
-      }           & \texttt{3+2, "a"+"b"
-      }                                           \\
-      \texttt{-}  & \texttt{Subtraktion
-      }           & \texttt{7-5
-      }                                           \\
-      \texttt{*}  & \texttt{Multiplikation
-      }           & \texttt{3*4
-      }                                           \\
-      \texttt{/}  & \texttt{Division
-      }           & \texttt{10/2
-      }                                           \\
-      \texttt{\%} & \texttt{Modulo
-      }           & \texttt{5\%2
-      }                                           \\
+      \textbf{Operator} & \textbf{Bedeutung}           & \textbf{Beispiele}              \\
+      \texttt{+}        & Addition / String-Verkettung & 3\texttt{+}2, "a"\texttt{+}"b"  \\
+      \texttt{-}        & Subtraktion                  & 7\texttt{-}5                    \\
+      \texttt{*}        & Multiplikation               & 3\texttt{*}4                    \\
+      \texttt{/}        & Division                     & 10\texttt{/}2                   \\
+      \texttt{\%}       & Modulo                       & 5\texttt{\%}2                   \\
     \end{tabular}
   \end{center}
 \end{frame}
+
 
 \begin{frame}[fragile]
   \frametitle{Recap Tag 1}
@@ -102,14 +91,14 @@ boolean heuteDienstag = true;
   \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<2->\texttt{isDienstag == esRegnet} \quad Wahr, wenn \texttt{isDienstag} gleich \texttt{esRegnet} ist
+    \item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (isDienstag == esRegnet); // result true, wenn isDienstag gleich esRegnet
+boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{isDienstag != esRegnet} \quad Wahr, wenn \texttt{isDienstag} ungleich \texttt{esRegnet} ist
+    \item<3->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
-boolean result = (isDienstag != esRegnet); // result true, wenn isDienstag ungleich esRegnet
+boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
     \item<4->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
@@ -131,7 +120,7 @@ boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     %Linke Spalte: Operatoren und Wahrheitstabellen
     \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item \texttt{!a} \quad \textrightarrow \quad nicht a
+        \item \texttt{!a} \quad \textrightarrow \quad NICHT a
               \pause
         \item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
               \pause
@@ -286,6 +275,135 @@ if (note == 1) {
     \end{minted}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[plain]
+  \centering
+  {\Huge\bfseries{Check Yourself!}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 1: Was ergibt...}
+  \begin{minted}{java}
+    false || true
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    true
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 2: Was ergibt...}
+  \begin{minted}{java}
+    true || false && false
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    true
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 3: Was wird ausgegeben ?}
+  \begin{minted}{java}
+    boolean a = true;
+    boolean b = false;
+    boolean result = a && b;
+    System.out.println(result);
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    false
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 4: Was ergibt true?}
+  \pause
+  \begin{minted}{java}
+    (true && (false || true)) || false
+    // und auch 
+    (true || false) && (true && true)
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 5: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean sonne = true;
+    boolean regen = false;
+    if (sonne && !regen) {
+      System.out.println("Perfektes Wetter!");
+    } else {
+      System.out.println("Bleib lieber drinnen.");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Perfektes Wetter!
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 6: Was wird ausgegeben?}
+  \begin{minted}{java}
+    int note = 3;
+    if (note == 1) {
+      System.out.println("Sehr gut");
+    } else if (note == 2) {
+      System.out.println("Gut");
+    } else {
+      System.out.println("Der Rest");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Der Rest
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 7: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean a = false;
+    boolean b = true;
+    if (a = b) {
+      System.out.println("Wow!");
+    } else {
+      System.out.println("Nope!");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    Wow!
+  \end{ausgabe}
+    a = b ist eine Zuweisung, kein Vergleich!\\
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 8: Was wird ausgegeben?}
+  \begin{minted}{java}
+    boolean a = true;
+    boolean b = false;
+    boolean c = true;
+    if (a && (b || c)) {
+      System.out.println("1");
+    }
+    if ((a && b) || (c && !b)){
+      System.out.println("2");
+    } 
+    if ((a || b)) && !(c && b)) {
+      System.out.println("3");
+    }
+  \end{minted}
+  \pause
+  \begin{ausgabe}
+    1\newline
+    2\newline
+    3
+  \end{ausgabe}
+\end{frame}
+
 
 %WHILE
 \begin{frame}[fragile]
