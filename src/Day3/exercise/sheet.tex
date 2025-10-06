@@ -7,49 +7,51 @@
 \maketitle
 Wir sind so back.
 
+\aufgabe{Feedback}
+Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jahre verbessern können. Der Bogen ist anonym und dauert nur 2-3 Minuten. \newline Ihr findet ihn unter: \url{https://forms.gle/BxZRFrbm8K7jPtMi6}
 \aufgabe{Musterlösungen}
 \href{https://fius.de/wp-content/uploads/2025/10/Day2Musterloesung.zip}{Tag 2 Lösungen}
 
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Funktionen und Scopes:}
-	\begin{itemize}
-		\item Funktionen helfen Code auszulagern und mehrfach zu nutzen
-		      \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
+\begin{itemize}
+    \item Funktionen helfen Code auszulagern und mehrfach zu nutzen
+          \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 public static double avg(double a, double b, double c) {
     return (a + b + c) / 3;
 }
           \end{minted}
-		\item \texttt{return} gibt einen Wert zurück und beendet die Funktion
-		\item Scopes: Variablen nur im jeweiligen Block sichtbar
-		      \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
+    \item \texttt{return} gibt einen Wert zurück und beendet die Funktion
+    \item Scopes: Variablen nur im jeweiligen Block sichtbar
+          \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 int x = 5;
 if (x > 0) {
     int y = 10; // y nur hier sichtbar
 }
 System.out.println(y); // Fehler!
           \end{minted}
-	\end{itemize}
+\end{itemize}
 
-    \textbf{Arrays:}
-	
-	\begin{itemize}
-		\item Arrays speichern mehrere Werte gleichen Typs
-		      \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
+\textbf{Arrays:}
+
+\begin{itemize}
+    \item Arrays speichern mehrere Werte gleichen Typs
+          \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 int[] zahlen = new int[5];
 zahlen[0] = 42;
           \end{minted}
-		\item Zugriff über Index, Start bei \texttt{0}
-		\item Initialisierung auch direkt möglich:
-		      \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
+    \item Zugriff über Index, Start bei \texttt{0}
+    \item Initialisierung auch direkt möglich:
+          \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 String[] grill = {"Wurst", "Steak", "Mais"};
           \end{minted}
-		\item Mit \texttt{.length} über alle Elemente iterieren:
-		      \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
+    \item Mit \texttt{.length} über alle Elemente iterieren:
+          \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 for (int i = 0; i < grill.length; i++) {
     System.out.println(grill[i]);
 }
           \end{minted}
-	\end{itemize}
+\end{itemize}
 
 
 \newpage
@@ -133,10 +135,10 @@ System.out.println(einArray[0][2]);
 Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} gibt die Java-interne Zeitmessung in Nanosekunden ($10^{-9}$ Sekunden) aus.
 \begin{enumerate}
     \item Miss die durchschnittliche Laufzeit eines prints.\\
-    Hinweis: Es ist sinnvoll bei einer Laufzeitanalyse die zu messende Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
+          Hinweis: Es ist sinnvoll bei einer Laufzeitanalyse die zu messende Funktion mehrmals durchzuführen und mit dem Durchschnitt der Ergebnisse zu arbeiten.
     \item Erstelle ein Array der Länge 100 und initialisiere es mit zufälligen Werten zwischen 0 und 99.\\
           Hinweis: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
-    \item Überlege dir ein Verfahren zum Sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Higherformer-Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.          
+    \item Überlege dir ein Verfahren zum Sortieren von Arrays und programmiere eine Funktion, die das zufällige Array aus Higherformer-Aufgabe 2. als Parameter entgegennimmt und es sortiert zurückgibt. Miss die durchschnittliche Laufzeit deiner Funktion.
     \item Versuche deine Funktion zu optimieren und somit schneller zu machen. Wir (die Vorkurs-Orgas) haben unkreativ wie wir sind einen bekannten Sortieralgorithmus (Bubblesort) implementiert, vielleicht bekommst du es hin unsere Zeit zu schlagen. Unser Algorithmus ist im \hyperlink{Highperformer}{Codeanhang} damit du dessen Laufzeit lokal bei dir testen kannst.\\
           Hinweis: Bei der Optimierung kann es sehr hilfreich sein nicht nur die gesamte Laufzeit zu analysieren, sondern auch einzelne Teile des Codes, um rauszufinden wo am meisten Zeit eingespart werden kann.
     \item Informier dich im Internet über unterschiedliche Sortieralgorithmen und versuche einen der dir gefällt zu implementieren. Natürlich gehört da auch wieder eine Laufzeitanalyse dazu.

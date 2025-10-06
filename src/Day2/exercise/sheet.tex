@@ -6,6 +6,11 @@
 \begin{document}
 \maketitle
 Heute Abend gibts Karaoke!
+
+\aufgabe{Feedback}
+Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jahre verbessern können. Der Bogen ist anonym und dauert nur 2-3 Minuten. \newline Ihr findet ihn unter: \url{https://forms.gle/bjVu3k4KAfTsQQL58}
+
+
 \aufgabe{Hilfe suchen und finden}
 Beim Programmieren sind Google und Dokumentationen der Sprache/Umgebung die ihr nutzt sehr hilfreich. Wenn ihr ein Problem habt, kann es neben Tutoren fragen auch sinnvoll sein einfach mal eine Fehlermeldung oder eine neue Funktion im Internet zu suchen. Die offizielle Dokumentation für Java ist hier: \url{https://docs.oracle.com/javase/8/docs/api/}.
 
@@ -15,36 +20,37 @@ Es wird auf jedem Ausgabenblatt ein Link zu den Musterlösungen des Vortags gebe
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Booleanoperatoren:}
 \begin{itemize}
-		\item Boolean: Wahrheitswerte \texttt{true} und \texttt{false}
-		\item Vergleiche: \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}
-		\item Logische Operatoren: \texttt{\&\&} (UND), \texttt{||} (ODER), \texttt{!} (NICHT)
-		\item \textbf{\texttt{if}, \texttt{else}, \texttt{else if}} zur Entscheidungslogik
-		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+    \item Boolean: Wahrheitswerte \texttt{true} und \texttt{false}
+    \item Vergleiche: \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}
+    \item Logische Operatoren: \texttt{\&\&} (UND), \texttt{||} (ODER), \texttt{!} (NICHT)
+    \item \textbf{\texttt{if}, \texttt{else}, \texttt{else if}} zur Entscheidungslogik
+          \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
 if (x > 5 && x < 10) {
   System.out.println("x ist zwischen 5 und 10");
 } else {
   System.out.println("x ist außerhalb");
 }
           \end{minted}
-	\end{itemize}
-    \bigskip
+\end{itemize}
+\newpage
+\bigskip
 \textbf{Schleifen:}
 \begin{itemize}
-		\item \texttt{while}-Schleife: läuft, solange Bedingung \texttt{true} ist
-		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+    \item \texttt{while}-Schleife: läuft, solange Bedingung \texttt{true} ist
+          \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
 while (!eingabe.equals("ok")) {
   eingabe = scanner.nextLine();
 }
           \end{minted}
-		\item \texttt{for}-Schleife: Zählergesteuerte Schleife
-		      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
+    \item \texttt{for}-Schleife: Zählergesteuerte Schleife
+          \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
 for (int i = 0; i < 5; i++) {
   System.out.println(i);
 }
           \end{minted}
-		\item \textbf{\texttt{break}}: beendet Schleife vorzeitig
+    \item \textbf{\texttt{break}}: beendet Schleife vorzeitig
 
-	\end{itemize}
+\end{itemize}
 \newpage
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}
@@ -54,19 +60,19 @@ for (int i = 0; i < 5; i++) {
         Sorry, du darfst noch nicht rein :/
     \end{ausgabe}
     \item Füge dem Programm einen Preiskalkulierer hinzu, der mit dem Scanner einliest ob die Person Ersti ist oder nicht (Tipp: lies einen boolean Wert ein). Bei der UNO zahlen Erstis nämlich nur 3 Euro, alle anderen aber 7 Euro. Vergiss aber nicht, dass ja alle unter 18 leider nicht reindürfen und deswegen keinen Preis ausgegeben bekommen sollten.
-    \begin{ausgabe}
-        Bist du ein Ersti (true oder false eingeben): true\\
-        Für dich sinds 3 Euro
-    \end{ausgabe}
+          \begin{ausgabe}
+              Bist du ein Ersti (true oder false eingeben): true\\
+              Für dich sinds 3 Euro
+          \end{ausgabe}
     \item Jetzt fehlen nur noch Drinks, frage ab wie viel Geld die Person dabei hat und jeweils wieviele Shots (1 Euro), Softdrinks (2 Euro), und Biere (2 Euro) die Person bestellen will. Gib am Ende aus ob das Geld für die Bestellung ausreicht.
-    \begin{ausgabe}
-        Wie viel Geld hast du: 13\\
-        Wie viele Shots hättest du gerne: 1\\
-        Wie viele Softdrinks hättest du gerne: 6\\
-        Wie viele Biere hättest du gerne: 4\\
-        Das sind insgesamt 21 Euro\\
-        Du hast zu wenig Geld dabei
-    \end{ausgabe}
+          \begin{ausgabe}
+              Wie viel Geld hast du: 13\\
+              Wie viele Shots hättest du gerne: 1\\
+              Wie viele Softdrinks hättest du gerne: 6\\
+              Wie viele Biere hättest du gerne: 4\\
+              Das sind insgesamt 21 Euro\\
+              Du hast zu wenig Geld dabei
+          \end{ausgabe}
 \end{enumerate}
 
 \newpage
@@ -82,18 +88,18 @@ for (int i = 0; i < 5; i++) {
               Bier 2 ist geöffnet
           \end{ausgabe}
     \item Da Informatiker ja bekanntlich nicht rechnen können gehen wir davon aus, dass es oft passiert das eine Person mehr Shots will als sie sich leisten kann. Nutze eine While Schleife um solange neue Getränkeanfragen einzulesen, bis die Person sich ihre Bestellung leisten kann, nutze \texttt{break} um dann aus der Schleife auszubrechen.
-    \begin{ausgabe}
-        Wie viel Geld hast du? 13\\
-        Wie viele Shots hättest du gerne? 1\\
-        Wie viele Softdrinks hättest du gerne? 6\\
-        Wie viele Biere hättest du gerne? 4\\
-        Das sind insgesamt 21 Euro\\
-        Du hast zu wenig Geld, probier eine andere Bestellung\\
-        Wie viele Shots hättest du gerne? 1\\
-        ...
-    \end{ausgabe}
+          \begin{ausgabe}
+              Wie viel Geld hast du? 13\\
+              Wie viele Shots hättest du gerne? 1\\
+              Wie viele Softdrinks hättest du gerne? 6\\
+              Wie viele Biere hättest du gerne? 4\\
+              Das sind insgesamt 21 Euro\\
+              Du hast zu wenig Geld, probier eine andere Bestellung\\
+              Wie viele Shots hättest du gerne? 1\\
+              ...
+          \end{ausgabe}
 
-    \includegraphics[width=1\linewidth]{../../memes/breakohnerand.png}
+          \includegraphics[width=1\linewidth]{../../memes/breakohnerand.png}
 \end{enumerate}
 \newpage
 
@@ -111,7 +117,7 @@ Zahl zwei mal hintereinander: 3842938429
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
-In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck. 
+In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck.
 \\\\
 Formeln werden in drei Kategorien unterteilt: immer wahr (Tautologien), immer falsch (unerfüllbar) oder je nach den Werten der Variablen manchmal wahr und manchmal falsch (erfüllbar).
 \\\\
