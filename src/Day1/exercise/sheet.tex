@@ -7,6 +7,9 @@
 \begin{document}
 \maketitle
 
+\aufgabe{Feedback}
+Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jahre verbessern können. Der Bogen ist anonym und dauert nur 2-3 Minuten. \newline Ihr findet ihn unter: \url{https://forms.gle/VuAPkwtCdcjug1DW6}
+
 \aufgabe{Hilfe nichts funktioniert :(}
 Manche von euch haben sicher schon Erfahrung mit Programmieren, wenn ihr auf ein Problem stoßt, fragt einfach mal eure Sitznachbahrn und helft euch gegenseitig. Ihr könnt natürlich auch die freundlichen Tutoren ranholen und um Hilfe bitten.
 \aufgabe{Highperformer-Aufgaben}
@@ -15,20 +18,20 @@ Wir haben für jeden Tag am ende des Blattes eine Highperformer-Aufgabe entworfe
 
 \aufgabe{Wichtige Shortcuts: (Windows/Linux)}
 \begin{itemize}
-    \item Code automatisch formattieren (z.B. richtig Einrücken): \textbf{Strg+Alt+L}
-    \item Code kopieren: \textbf{Strg+C}
-    \item Den mit \textbf{Strg+C} kopierten Code woanders einfügen: \textbf{Strg+V}
-    \item Letzte Aktion rückgängig machen: \textbf{Strg+Z}
-    \item IntelliJ Autovervollständigungsvorschläge annehmen: \textbf{Tab}
+  \item Code automatisch formattieren (z.B. richtig Einrücken): \textbf{Strg+Alt+L}
+  \item Code kopieren: \textbf{Strg+C}
+  \item Den mit \textbf{Strg+C} kopierten Code woanders einfügen: \textbf{Strg+V}
+  \item Letzte Aktion rückgängig machen: \textbf{Strg+Z}
+  \item IntelliJ Autovervollständigungsvorschläge annehmen: \textbf{Tab}
 \end{itemize}
 
 \aufgabe{Wichtige Shortcuts: (macOS)}
 \begin{itemize}
-    \item Code automatisch formattieren (z.B. richtig Einrücken): \textbf{cmd+option+L}
-    \item Code kopieren: \textbf{cmd+C}
-    \item Den mit \textbf{cmd+C} kopierten Code woanders einfügen: \textbf{cmd+V}
-    \item Letzte Aktion rückgängig machen: \textbf{cmd+Z}
-    \item IntelliJ Autovervollständigungsvorschläge annehmen: \textbf{Tab}
+  \item Code automatisch formattieren (z.B. richtig Einrücken): \textbf{cmd+option+L}
+  \item Code kopieren: \textbf{cmd+C}
+  \item Den mit \textbf{cmd+C} kopierten Code woanders einfügen: \textbf{cmd+V}
+  \item Letzte Aktion rückgängig machen: \textbf{cmd+Z}
+  \item IntelliJ Autovervollständigungsvorschläge annehmen: \textbf{Tab}
 \end{itemize}
 
 
@@ -37,38 +40,38 @@ Wir haben für jeden Tag am ende des Blattes eine Highperformer-Aufgabe entworfe
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Variablen:}
 \begin{center}
-    \begin{minted}[linenos=false]{java}
+  \begin{minted}[linenos=false]{java}
 int alter = 20;    // Deklaration + Initialisierung
 int zahl;          // Deklaration
 zahl = 42;         // Initialisierung
   \end{minted}
 \end{center}
-  \bigskip
-  \textbf{Operatoren:}
-  \begin{center}
-    \rowcolors{2}{tablerow}{white}
-    \begin{tabular}{l l l}
-      \rowcolor{tablehead}
-      \textbf{Operator
-      }           & \textbf{Bedeutung
-      }           & \textbf{Beispiele
-      }                                           \\
-      \texttt{+}  & \texttt{Addition / String-Verkettung
-      }           & \texttt{3+2, "b"+"c"
-      }                                           \\
-      \texttt{-}  & \texttt{Subtraktion
-      }           & \texttt{7-5
-      }                                           \\
-      \texttt{*}  & \texttt{Multiplikation
-      }           & \texttt{3*4
-      }                                           \\
-      \texttt{/}  & \texttt{Division
-      }           & \texttt{10/2
-      }                                           \\
-      \texttt{\%} & \texttt{Modulo
-      }           & \texttt{5\%2
-      }                                           \\
-    \end{tabular}
+\bigskip
+\textbf{Operatoren:}
+\begin{center}
+  \rowcolors{2}{tablerow}{white}
+  \begin{tabular}{l l l}
+    \rowcolor{tablehead}
+    \textbf{Operator
+    }           & \textbf{Bedeutung
+    }           & \textbf{Beispiele
+    }                                                  \\
+    \texttt{+}  & \texttt{Addition / String-Verkettung
+    }           & \texttt{3+2, "b"+"c"
+    }                                                  \\
+    \texttt{-}  & \texttt{Subtraktion
+    }           & \texttt{7-5
+    }                                                  \\
+    \texttt{*}  & \texttt{Multiplikation
+    }           & \texttt{3*4
+    }                                                  \\
+    \texttt{/}  & \texttt{Division
+    }           & \texttt{10/2
+    }                                                  \\
+    \texttt{\%} & \texttt{Modulo
+    }           & \texttt{5\%2
+    }                                                  \\
+  \end{tabular}
 \end{center}
 \bigskip
 \textbf{String-Addition:}
@@ -79,13 +82,13 @@ System.out.println("Zahl: " + 42);
 System.out.println("\nLeerzeile");
   \end{minted}
 \begin{ausgabe}
-HalloWelt\\
-Zahl: 42\\\\
-Leerzeile
+  HalloWelt\\
+  Zahl: 42\\\\
+  Leerzeile
 \end{ausgabe}
 \bigskip
 \textbf{Scanner:}
-  \begin{minted}[linenos=false]{java}
+\begin{minted}[linenos=false]{java}
 import java.util.Scanner;
 
 Scanner sc = new Scanner(System.in);
@@ -103,36 +106,36 @@ System.out.println("PSE-Zeit ist Grillzeit")
 \end{minted}
 Gibt folgendes aus:
 \begin{ausgabe}
-    PSE-Zeit ist Grillzeit
+  PSE-Zeit ist Grillzeit
 \end{ausgabe}
 
 \begin{enumerate}
-    \item Kopiert folgenden Grill und nutzt print(s) um ihn in der Konsole auszugeben.\\
-    Hinweis: Kopiert den Grill direkt zwischen die Gänsefüsschen in euer \\\texttt{System.out.println("grill hier")},  
-          \begin{ausgabe}
-........................\\
-..........@.............\\
-..........@.............\\
-..........@..@..........\\
-.........@..@+..........\\
-.........@..@...........\\
-.........*..............\\
-........................\\
-..@@@@@@@@@@@@@@@@@@....\\
-...@@@@@@@@@@@@@@@@@++..\\
-....@@@@@@@@@@@@@@@.....\\
-.....@@@@@@@@@@@@-......\\
-........@@@@@@..........\\
-.......-@....:@.........\\
-......:@......\%@........\\
-...@@@@........@@.......\\
-..@@..@@@@@@@@@@@@......\\
-..@@..@@.........@@.....\\
-...@@@@...........@@....
-          \end{ausgabe}
-    \item Erstelle eine Variable mit einem beliebigen Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
-    \item Erstelle zwei int Variablen und gib deren Summe und deren Produkt aus.
-    \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das die Person in der Variable begrüßt.
+  \item Kopiert folgenden Grill und nutzt print(s) um ihn in der Konsole auszugeben.\\
+        Hinweis: Kopiert den Grill direkt zwischen die Gänsefüsschen in euer \\\texttt{System.out.println("grill hier")},
+        \begin{ausgabe}
+          ........................\\
+          ..........@.............\\
+          ..........@.............\\
+          ..........@..@..........\\
+          .........@..@+..........\\
+          .........@..@...........\\
+          .........*..............\\
+          ........................\\
+          ..@@@@@@@@@@@@@@@@@@....\\
+          ...@@@@@@@@@@@@@@@@@++..\\
+          ....@@@@@@@@@@@@@@@.....\\
+          .....@@@@@@@@@@@@-......\\
+          ........@@@@@@..........\\
+          .......-@....:@.........\\
+          ......:@......\%@........\\
+          ...@@@@........@@.......\\
+          ..@@..@@@@@@@@@@@@......\\
+          ..@@..@@.........@@.....\\
+          ...@@@@...........@@....
+        \end{ausgabe}
+  \item Erstelle eine Variable mit einem beliebigen Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
+  \item Erstelle zwei int Variablen und gib deren Summe und deren Produkt aus.
+  \item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das die Person in der Variable begrüßt.
 \end{enumerate}
 
 \newpage
@@ -146,32 +149,32 @@ String deinName = derScanner.next();
 System.out.println("Du heißt " + deinName);
 \end{minted}
 \begin{ausgabe}
-Gib deinen Namen ein: Melanie\\
-Du heißt Melanie
+  Gib deinen Namen ein: Melanie\\
+  Du heißt Melanie
 \end{ausgabe}
 Wobei die obere Melanie vom Nutzer eingegeben wird.
 
 \begin{enumerate}
-    \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
-\begin{ausgabe}
-Gib eine Zahl ein: 12\\
-Gib noch eine Zahl ein: 3\\
-Die Summe ist: 15
-\end{ausgabe}
-    \item Programmiere ein Modulo Übungsprogramm, bei dem man erst zwei Zahlen mit dem Scanner eingibt. Anschließend soll der Nutzer versuchen die Lösung von \texttt{zahl1 \% zahl2} selbst zu berechnen und einzugeben. Am Schluss soll dann das korrekte Ergebnis ausgegeben werden.
-\begin{ausgabe}
-Gib eine Zahl ein: 14\\
-Gib noch eine Zahl ein: 3\\
-Gib dein Ergebnis ein: 6\\
-Das richtige Ergebnis von 14 \% 3 ist: 2
-\end{ausgabe}
-    \item Schreibe eine kurze Geschichte (oder suche dir einen kurzen Text im Internet). Suche dann ein paar Wörter mit ihren Wortarten aus und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
-          \begin{ausgabe}
-              Gib ein Thema ein: backen\\
-              Gib ein Verb ein: Ofen sprengen\\
-              Die backen-Vorkurs Orgas lieben Ofen sprengen.
-          \end{ausgabe}
-          Lass deine Sitznachbarn und/oder die Helfer dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt.
+  \item Programmiere einen addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
+        \begin{ausgabe}
+          Gib eine Zahl ein: 12\\
+          Gib noch eine Zahl ein: 3\\
+          Die Summe ist: 15
+        \end{ausgabe}
+  \item Programmiere ein Modulo Übungsprogramm, bei dem man erst zwei Zahlen mit dem Scanner eingibt. Anschließend soll der Nutzer versuchen die Lösung von \texttt{zahl1 \% zahl2} selbst zu berechnen und einzugeben. Am Schluss soll dann das korrekte Ergebnis ausgegeben werden.
+        \begin{ausgabe}
+          Gib eine Zahl ein: 14\\
+          Gib noch eine Zahl ein: 3\\
+          Gib dein Ergebnis ein: 6\\
+          Das richtige Ergebnis von 14 \% 3 ist: 2
+        \end{ausgabe}
+  \item Schreibe eine kurze Geschichte (oder suche dir einen kurzen Text im Internet). Suche dann ein paar Wörter mit ihren Wortarten aus und lass den Nutzer sie mit dem Scanner durch andere ersetzen. Gib dann die Geschichte mit den vom Nutzer eingegebenen Wörtern aus. Zum Beispiel wird: ''\textit{Die \underline{PSE}-Vorkurs Hauptorgas lieben \underline{grillen}.}'' \space zu:
+        \begin{ausgabe}
+          Gib ein Thema ein: backen\\
+          Gib ein Verb ein: Ofen sprengen\\
+          Die backen-Vorkurs Orgas lieben Ofen sprengen.
+        \end{ausgabe}
+        Lass deine Sitznachbarn und/oder die Helfer dein Programm ausführen ohne, dass sie wissen welcher Text dahintersteckt.
 \end{enumerate}
 
 \newpage
@@ -190,8 +193,8 @@ int zufallsInt = rndGenerator.nextInt(10);
 Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
 
 \begin{enumerate}
-    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Anfangszahlen nicht mehr selbst eingibt sondern so, dass diese zufällig generiert werden. Man soll immer noch selber versuchen das Ergebnis zu berechnen. 
-    \item Ladet euch das Rahmenprogramm \href{https://fius.de/wp-content/uploads/2025/10/Day1Highperformer.zip}{hier} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
+  \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass man die beiden Anfangszahlen nicht mehr selbst eingibt sondern so, dass diese zufällig generiert werden. Man soll immer noch selber versuchen das Ergebnis zu berechnen.
+  \item Ladet euch das Rahmenprogramm \href{https://fius.de/wp-content/uploads/2025/10/Day1Highperformer.zip}{hier} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.
 \end{enumerate}
 
 \newpage
