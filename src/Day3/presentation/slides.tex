@@ -219,7 +219,6 @@ if (y > 5) {
 	\end{itemize}
 \end{frame}
 
-
 \begin{frame}[fragile]
 	\frametitle{Sichtbarkeit von Variablen (Scopes)}
 	\begin{itemize}
@@ -238,6 +237,95 @@ public static void andereMethode() {
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
 
+
+\begin{frame}[plain]
+  \centering
+  {\Huge\bfseries{Check Yourself!}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 1: Was gibt die void-Deklaration bei einer Funktion an?}
+  \begin{ausgabe}
+    Die Funktion gibt keinen Wert zurück
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 2: Welche Aussage ist richtig?}
+  \begin{minted}{java}
+public static int multiply(int a, int b) {
+    int result = a * b;
+    return result;
+}
+  \end{minted}
+  \begin{ausgabe}
+    Es gibt keinen Fehler im Code
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 3: Bilde die erste Zeile einer Funktion, die eine Note als Parameter erhält und nichts zurückgibt?}
+  \begin{minted}{java}
+public static void printGrade(double grade) {
+    // für Lösung nur Zeile 1 relevant
+}
+
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 4: Welche Aussage über Funktionen in Java ist richtig??}
+  \begin{ausgabe}
+    Methoden in Java können andere Methoden aufrufen
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 5: Was wird ausgegeben?}
+  \begin{minted}{java}
+if (true) {
+    int y = 8;
+}
+System.out.println(y);
+
+  \end{minted}
+  \begin{ausgabe}
+    Fehler
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 6: Was wird ausgegeben?}
+  \begin{minted}{java}
+int i = 0;
+for (i = 0; i < 3; i++) {
+    System.out.print(i);
+}
+System.out.print(i);
+  \end{minted}
+  \begin{ausgabe}
+    0123
+  \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Frage 7: Was wird ausgegeben?}
+  \begin{minted}{java}
+public static void main(String[] args) {
+    int a = 5;
+    zeigeA(a);
+    System.out.print(a);
+}
+
+public static void zeigeA(int a) {
+    a = a + 1;
+    System.out.print(a);
+}
+  \end{minted}
+  \begin{ausgabe}
+    65
+  \end{ausgabe}
+\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Was ist ein Array?}
