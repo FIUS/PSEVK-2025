@@ -36,11 +36,15 @@ System.out.println(y); // Fehler!
 
 \begin{itemize}
     \item Arrays speichern mehrere Werte gleichen Typs
+    \item Zugriff über Index, Start bei \texttt{0}
           \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 int[] zahlen = new int[5];
 zahlen[0] = 42;
+System.out.println(zahlen[0])
           \end{minted}
-    \item Zugriff über Index, Start bei \texttt{0}
+\begin{ausgabe}
+42
+\end{ausgabe}
     \item Initialisierung auch direkt möglich:
           \begin{minted}[fontsize=\scriptsize,linenos=false]{java}
 String[] grill = {"Wurst", "Steak", "Mais"};
@@ -91,7 +95,7 @@ System.out.println(a);
     \item Erstelle ein Array mit 10 \texttt{int}-Werten und versuche das Array auszugeben.
     \item Da dies nicht zu klappen scheint, programmiere eine Funktion, die ein Array entgegennimmt und es anschaulich in der Konsole ausgibt.\\
           Hinweis: Erinnere dich an \texttt{Array.length} aus der Präsi.
-    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays 2-Dimensionale Arrays entgegennimmt und ausgibt.\\
+    \item Programmiere eine neue Ausgabe-Funktion, die statt den normalen listenartigen Arrays ein 2-Dimensionales Array entgegennimmt und das gesamte Array anschaulich ausgibt.\\
     Hinweis: 2-Dimensionale Arrays funktionieren so:
     \begin{minted}[linenos=false]{java}
 int[][] einArray = new int[3][3]; //ein zweidimensionales Array der Größe 3x3
@@ -101,7 +105,7 @@ System.out.println(einArray[0][2]);
     \begin{ausgabe}
         3
     \end{ausgabe}
-    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein quadratisches 2-D Array erstellt. Das Array soll bis auf einen diagonalen Streifen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
+    \item Programmiere eine Funktion, die eine Seitenlänge als Parameter entgegennimmt und daraus ein quadratisches 2-D Array erstellt. Das Array soll bis auf einen diagonalen Streifen aus Nullen komplett aus Einsen bestehen (siehe Ausgabe). Teste dein Ergebnis mit der Printfunktion die du in Aufgabe 3 programmiert hast.\\
           Seitenlänge 6:
           \begin{ausgabe}
               0 0 0 1 1 1\\
