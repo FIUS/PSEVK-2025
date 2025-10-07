@@ -240,3 +240,4 @@ cross/.default={1pt}}
 \AfterEndEnvironment{minted}{
   \end{tcolorbox}
 }
+
