@@ -95,21 +95,29 @@ boolean heuteDienstag = true;
           \begin{minted}{java}
 boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
     \end{minted}
+    \achtung für Strings: \texttt{equals()} benutzen!
 
-    \item<3->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} Operatoren}
+  \pause
+
+  \begin{itemize}
+    \item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
 boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
-    \item<4->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
+    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
           \begin{minted}{java}
 boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
 
-    \item<5->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
+    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
   \end{itemize}
 \end{frame}
-
 
 
 %BOOLEAN OPERATOREN
