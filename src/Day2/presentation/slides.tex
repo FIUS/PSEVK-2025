@@ -34,12 +34,12 @@ zahl = 42;         // Initialisierung
     \pause
     \begin{tabular}{l l l}
       \rowcolor{tablehead}
-      \textbf{Operator} & \textbf{Bedeutung}           & \textbf{Beispiele}             \\
-      \texttt{+}        & Addition / String-Verkettung & 3\texttt{+}2, "a"\texttt{+}"b" \\
-      \texttt{-}        & Subtraktion                  & 7\texttt{-}5                   \\
-      \texttt{*}        & Multiplikation               & 3\texttt{*}4                   \\
-      \texttt{/}        & Division                     & 10\texttt{/}2                  \\
-      \texttt{\%}       & Modulo                       & 5\texttt{\%}2                  \\
+      \textbf{Operator} & \textbf{Bedeutung}           & \textbf{Beispiele}              \\
+      \texttt{+}        & Addition / String-Verkettung & 3\texttt{+}2, "a"\texttt{+}"b"  \\
+      \texttt{-}        & Subtraktion                  & 7\texttt{-}5                    \\
+      \texttt{*}        & Multiplikation               & 3\texttt{*}4                    \\
+      \texttt{/}        & Division                     & 10\texttt{/}2                   \\
+      \texttt{\%}       & Modulo                       & 5\texttt{\%}2                   \\
     \end{tabular}
   \end{center}
 \end{frame}
@@ -91,25 +91,33 @@ boolean heuteDienstag = true;
   \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
   \begin{itemize}
-    \item<2->\texttt{heuteDienstag == esRegnet} Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet}
+    \item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
           \begin{minted}{java}
 boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
     \end{minted}
+    \achtung für Strings: \texttt{equals()} benutzen!
 
-    \item<3->\texttt{heuteDienstag != esRegnet} Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} Operatoren}
+  \pause
+
+  \begin{itemize}
+    \item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
           \begin{minted}{java}
 boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
-    \item<4->\texttt{preis < geld} Wahr, wenn \texttt{geld} kleiner als \texttt{preis}
+    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
           \begin{minted}{java}
 boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
 
-    \item<5->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld}
+    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
   \end{itemize}
 \end{frame}
-
 
 
 %BOOLEAN OPERATOREN
@@ -377,7 +385,7 @@ if (note == 1) {
   \begin{ausgabe}
     Wow!
   \end{ausgabe}
-  a = b ist eine Zuweisung, kein Vergleich!\\
+    a = b ist eine Zuweisung, kein Vergleich!\\
 \end{frame}
 
 \begin{frame}[fragile]
@@ -526,7 +534,5 @@ for (int i = 4; i <= 8; i++) {
   \end{minted}
 
 \end{frame}
-
-\input{../../end}
 
 \end{document}
