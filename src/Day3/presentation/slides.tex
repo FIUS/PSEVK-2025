@@ -22,11 +22,6 @@
 	\titlepage
 \end{frame}
 
-\begin{frame}
-	\listoftodos
-\end{frame}
-
-
 \begin{frame}[fragile]
 	\frametitle{Recap Tag 2 - Bedingungen \& Booleans}
 
@@ -175,17 +170,27 @@ System.out.println(result);
 
 \begin{frame}[plain]
 	\centering
-	{\Huge\bfseries{Code together}}
-	\todo{vielleicht besser einführen damit nicht so random kommt?}
-	\begin{block}{}
+	{\Huge\bfseries Code together: Promillerechner}
+
+	\vspace{1em}
+
+	\begin{flushleft}
+		\textbf{Aufgabe:} Schreibe eine Funktion \texttt{berechnePromille}, die anhand der Getränkemenge (in Litern),
+		des Alkoholgehalts (Vol-\%) und des Körpergewichts die Blutalkoholkonzentration berechnet.
+
+		\vspace{1em}
+
+		\textbf{Formeln:}
 		\[
 			\text{Promille} \approx \frac{\text{Alkohol in Gramm}}{\text{Körpergewicht in kg} \times 0{,}65}
 		\]
 		\[
 			\text{Alkohol in Gramm} = \text{Getränkemenge in Liter} \times \text{Vol\%} \times 8
 		\]
-	\end{block}
+	\end{flushleft}
 \end{frame}
+
+
 
 
 \begin{frame}[fragile]{Die \texttt{main}-Funktion}
@@ -210,15 +215,15 @@ public static void main(String[] args) {
 		\item\pause Variablen sind sichtbar im aktuellen und in allen tieferen Blöcken
 		      \begin{minted}[fontsize=\footnotesize]{java}
 public static void main(String[] args) {
-int y = 10;
+    int y = 10;
 
-if (y > 5) {
-    System.out.println(y); // OK – Zugriff auf äußere Variable
-}}
+    if (y > 5) {
+        System.out.println(y); // OK – Zugriff auf äußere Variable
+    }
+}
     \end{minted}
 	\end{itemize}
 \end{frame}
-
 
 \begin{frame}[fragile]
 	\frametitle{Sichtbarkeit von Variablen (Scopes)}
@@ -228,7 +233,7 @@ if (y > 5) {
 public static void main(String[] args) {
     int x = 5;
 }
-public static void andereMethode() {
+public static void andereFunktion() {
     System.out.println(x); // Fehler! x ist hier nicht sichtbar
 }
     \end{minted}
@@ -238,6 +243,96 @@ public static void andereMethode() {
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
 
+
+\begin{frame}[plain]
+	\centering
+	{\Huge\bfseries{Check Yourself!}}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 1: Was gibt die void-Deklaration bei einer Funktion an?}
+	\begin{ausgabe}
+		Die Funktion gibt keinen Wert zurück
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 2: Welche Aussage ist richtig?}
+	\begin{minted}{java}
+public static int multiply(int a, int b) {
+    int result = a * b;
+    return result;
+}
+  \end{minted}
+	\begin{ausgabe}
+		Es gibt keinen Fehler im Code
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 3: Bilde die erste Zeile einer Funktion, die eine Note als Parameter erhält und nichts zurückgibt?}
+	\begin{minted}{java}
+public static void printGrade(double grade) {
+    // für Lösung nur Zeile 1 relevant
+}
+
+  \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 4: Welche Aussage über Funktionen in Java ist richtig??}
+	\begin{ausgabe}
+		Funktionen in Java können andere Funktionen aufrufen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 5: Was wird ausgegeben?}
+	\begin{minted}{java}
+if (true) {
+    int y = 8;
+}
+System.out.println(y);
+
+  \end{minted}
+	\begin{ausgabe}
+		Fehler
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 6: Was wird ausgegeben?}
+	\begin{minted}{java}
+int i = 0;
+for (i = 0; i < 3; i++) {
+    System.out.print(i);
+}
+System.out.print(i);
+  \end{minted}
+	\begin{ausgabe}
+		0123
+	\end{ausgabe}
+	Was würde ausgegeben werden, wenn Zeile 1 entfernt wird?
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 7: Was wird ausgegeben?}
+	\begin{minted}{java}
+public static void main(String[] args) {
+    int a = 5;
+    zeigeA(a);
+    System.out.print(a);
+}
+
+public static void zeigeA(int a) {
+    a = a + 1;
+    System.out.print(a);
+}
+  \end{minted}
+	\begin{ausgabe}
+		65
+	\end{ausgabe}
+\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Was ist ein Array?}
