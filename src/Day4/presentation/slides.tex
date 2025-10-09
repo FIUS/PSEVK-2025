@@ -3,7 +3,7 @@
 \title{PSE - Vorkurs Tag 4}
 \author{Linus, Philipp, Tillmann, Tobias}
 \institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
-\date{09.09.2025}
+\date{09.10.2025}
 
 \makeatletter
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
@@ -305,7 +305,7 @@ paul.lernen();
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Wie sehen Klassen in IntelliJ aus?}
+	\frametitle{Wie sehen Klassen in Java aus?}
 	\pause
 	\begin{itemize}
 		\item Klassen werden in eigenen Dateien gespeichert
@@ -402,18 +402,132 @@ public class Student {
 
 \end{frame}
 
-\begin{frame}
-	\frametitle{FUIZ!}
-	\begin{center}
-		Fuiz los gehts!
-	\end{center} 
+
+\begin{frame}[plain]
+	\centering
+	{\Huge\bfseries{Fuiz los geht's!}}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Klassen sind Highperformer\textsuperscript{²}}
+	\frametitle{Frage 1: Wie nennt man ein Objekt, das von einer Klasse erstellt wurde?}
+	\begin{ausgabe}
+		Konstruktor
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Instanz}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Attribut
+	\end{ausgabe}
+	\begin{ausgabe}
+		Funktion
+	\end{ausgabe}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 2: Was beschreibt Klassen am besten?}
+	\begin{ausgabe}
+		Eine fertige Instanz von Daten
+	\end{ausgabe}
+	\begin{ausgabe}
+		Eine Gruppe von ähnlichen Funktionen
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Ein Bauplan für Objekte}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Eine Gruppe von Variablen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 3: Welche Aussage trifft auf Konstruktoren zu?}
+	\begin{ausgabe}
+		Ein Konstruktor hat immer den Rückgabetyp void
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Ein Konstruktor initialisiert Objekte}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Ein Konstruktor kann beliebig benannt werden
+	\end{ausgabe}
+	\begin{ausgabe}
+		Konstruktoren dürfen keine Parameter haben
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Frage 4: Eine Funktion innerhalb einer Klasse kann auf alle Attribute dieser Klasse zugreifen.}
+
+    \begin{ausgabe}
+        \textcolor<2->{green!100!black}{wahr}
+    \end{ausgabe}
+
+    \begin{ausgabe}
+        falsch
+    \end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 5: Was ist notwendig für eine Klasse?}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Ein Bezeichner}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Attribute
+	\end{ausgabe}
+	\begin{ausgabe}
+		Ein definierter Konstruktor
+	\end{ausgabe}
+	\begin{ausgabe}
+		Funktionen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 6: Welche Aussage ist wahr?}
+	\begin{minted}{java}
+public class Student {
+    private final String name;
+    public int matrikelnummer;
+
+    public Student(String name, int matrikelnummer) {
+        this.name = name;
+        this.matrikelnummer = matrikelnummer;
+    }
+
+    public void lernen() {
+        System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
+    }
+}
+	\end{minted}
+	\begin{ausgabe}
+		\textcolor{green!100!black}{Name kann nur im Konstruktor gesetzt werden}
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 7: Was bedeutet es wenn ein Attribut private ist?}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Es kann nur innerhalb der Klasse darauf zugegriffen und verändert werden}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Es kann nur innerhalb der Klasse Verändert werden
+	\end{ausgabe}
+	\begin{ausgabe}
+		Es kann nur innerhalb der Klasse darauf zugegriffen werden
+	\end{ausgabe}
+	\begin{ausgabe}
+		Es kann nicht verändert werden
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Klassen in Klassen}
 	\pause
 	\begin{itemize}
-		\item Klassen können auch andere Objekte enthalten
+		\item Klassen können auch Objekte von anderen Klassen enthalten
 		      \pause
 		\item Beispiel: \texttt{Universitaet} enthält viele \texttt{Studenten} (Objekte der \texttt{Student} Klasse)
 		      \pause
@@ -471,6 +585,7 @@ uniStuttgart.pruefungsvorbereitung();
 	\end{itemize}
 \end{frame}
 
+\renewcommand{\feedbackurl}{https://forms.gle/JasKFVgR2ARoFVTEA}
 \input{../../end}
 
 \end{document}

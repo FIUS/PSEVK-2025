@@ -241,3 +241,5 @@ cross/.default={1pt}}
   \end{tcolorbox}
 }
 
+\newcommand{\feedbackurl}{}
+\usepackage{qrcode}
