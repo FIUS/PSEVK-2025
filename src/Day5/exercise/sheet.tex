@@ -112,13 +112,14 @@ Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder K
 \end{center}
 
 \begin{enumerate}
-    \item Erstelle eine \texttt{BinaerBaum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder ist der Baum ein sogenannter binärer Baum.
+    \item Erstelle eine \texttt{BinaerBaum}-Klasse, die einen Wurzelknoten besitzt, sowie eine \texttt{Knoten}-Klasse, die einen \texttt{int}-Wert, sowie genau zwei Kindknoten (\texttt{linkesKind} und \texttt{rechtesKind}) speichert. Wenn ein Knoten bspw. kein rechtes Kind hat soll der Wert von \texttt{rechtesKind} gleich \texttt{null} sein. Da jeder Knoten maximal zwei Kinder hat ist der Baum ein sogenannter binärer Baum.
     \item Programmiere eine Funktion in der \texttt{BinaerBaum}-Klasse, die eine neue Zahl in den Baum einfügt. Diese Funktion soll den Baum Knoten für Knoten durchgehen und bei jedem Knoten zufällig zum rechten oder linken Kind ''abbiegen''. Sobald auf ein \texttt{null} gestoßen wird, wird der einzufügende Wert dort mit einem neuen Knoten hinzugefügt.
     \item Programmiere eine Funktion in der \texttt{BinaerBaum}-Klasse, die den Baum anschaulich in der Konsole ausgibt.
     \item Programmiere zwei Funktionen, eine die den Baum eindeutig in eine LinkedList (die aus Aufgabe 2.) umwandelt und eine die dasselbe umgekehrt macht. Überlege dir hierfür eine Möglichkeit wie die Struktur des Baums in der Liste abgebildet werden kann.\\
     Hinweis: Du kannst deine Funktionen Testen indem du einen Baum zu einer LinkedList umwandeln lässt und dann mit der anderen Funktion zurück zu einem Baum umwandelst und dann prüfst ob die Struktur erhalten geblieben ist.
+    \item Programmiere eine Funktion \texttt{maxPathSum} in der \texttt{BinaerBaum}-Klasse, die einen \texttt{BinaerBaum} entgegennimmt und die maximale Pfadsumme für diesen Baum berechnet. Es werden alle Knoten entlang eines Pfades von oben nach unten addiert und die höchste Summe soll zurückgegeben werden. Bei dem obigen Beispielbaum wäre die maximale Pfadsumme 26 für den Pfad \texttt{2 - 7 - 6 - 11} . 
 \end{enumerate}
-
+\newpage
 \aufgabe{Feedback}
 Bitte füllt den Feedbackbogen aus, damit wir den Vorkurs für die nächsten Jahre verbessern können. Der Bogen ist anonym und dauert diesmal ein bisschen länger. \newline Ihr findet ihn unter: \url{https://forms.gle/HhisY91RZc8eDkPy5}
 
