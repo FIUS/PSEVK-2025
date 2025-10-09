@@ -61,19 +61,19 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
               Paul Griller: 1374927394, Melanie Barbecue: 9257632984
           \end{ausgabe}
 
-    \item Schreibe einen Algorithmus der in einem Dictionary speichert, wie oft jeder Buchstabe in einem String vorkommt.
+    \item Schreibe eine Funktion die einen String entgegennimmt und in einem Dictionary speichert, wie oft jeder Buchstabe darin vorkommt.
 
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
           \end{ausgabe}
-          wird mithilfe der Funktion aus Aufgabe 1.1 zu:
+          wird mithilfe der Ausgabe-Funktion aus Aufgabe 1.1 zu:
           \begin{ausgabe}
               g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
           \end{ausgabe}
 
-          Hinweis: Verwende die \texttt{split("")} Methode auf einem String um ihn in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
+          Hinweis: Verwende die \texttt{split("")} Funktion auf einem String um ihn in ein Zeichenarray umzuwanden. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
 
-    \item Erweitere deinen Algorithmus, sodass er einen Integer \texttt{length} entgegennimmt und statt nach einzelnen Buchstaben, jetzt nach Buchstabenfolgen der Länge \texttt{length} sucht.
+    \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt und statt einzelne Buchstaben, jetzt Buchstabenfolgen der Länge \texttt{length} zählt.
 
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
@@ -86,24 +86,26 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
 \end{enumerate}
 
 \newpage
-\aufgabe{Aufgabe 2: Datenstrukturen selber machen}
-In Java kann jederzeit selbst eine eigene Datenstruktur gebaut werden, die dann auch an die eigenheiten der Problemstellung angepasst sein kann. \\
-Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Unsere Liste soll aus einzelnen Knotenobjekten bestehen, die dann untereinander verbunden werden.
+\aufgabe{Aufgabe 2: Datenstrukturen selber erstellen}
+In Java kann jederzeit eine neue Datenstruktur gebaut werden, die dann auch an die Eigenheiten der Problemstellung angepasst sein kann. \\
+Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Im Folgenden bauen wir eine Listen-Datenstruktur welche dieses Problem löst. Sie soll aus einzelnen Knotenobjekten bestehen, die dann untereinander verbunden werden. \\
+\\
+\includegraphics[width=\linewidth]{img/linkedlist.png}
+
 \begin{enumerate}
-    \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.\\\\
-          \includegraphics[width=\linewidth]{img/linkedlist.png}
+    \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.
     \item Erstelle jetzt die Listenklasse. Jede \texttt{List} hat einen Startknoten \texttt{startNode}. Programmiere wieder einen sinnvollen Konstruktor.
     \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um das zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen.
     \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden.
     \item Programmiere eine \texttt{printElements()} Funktion, die alle Elemente in der Liste anschaulich in der Konsole ausgibt.
-    \item Schreibe eine Funktion, die die Summe der Elemente in der Liste berechnet. Schreibe dazu eine Funktion in der Klasse Node, die eine Summe entgegennimmt, ihren eigenen Wert hinzuaddiert und sich dann im nächsten Knoten selbst aufruft. Wenn die Methode auf den letzten Knoten in der Liste stößt, soll die berechnete Gesamtsumme auf der Konsole ausgegeben werden. Füge zuletzt der Klasse „List“ eine Funktion hinzu, die die Summenfunktion im ersten Knoten aufruft.
+    \item In dieser Aufgabe soll die Summe der Werte unserer Liste berechnet werden. Schreibe dazu eine Funktion in der Klasse Node, die die bisherige Summe entgegennimmt, ihren eigenen Wert hinzuaddiert und sich dann im nächsten Knoten selbst aufruft. Wenn die Methode auf den letzten Knoten in der Liste stößt, soll die berechnete Gesamtsumme zurückgegeben werden. Füge zuletzt der Klasse „List“ eine Funktion hinzu, die die Summenfunktion im ersten Knoten (natürlich mit bisheriger Summe 0) aufruft.
 \end{enumerate}
 
 Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wichtig als Datenstruktur mit Variabler Größe und sie existieren auch in nativem Java: \url{https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html}
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Bäume}
-Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder Knoten mit Kindknoten verbunden, welche wiederum mit weiteren Kindknoten verbunden sind. So werden die Daten in einer Baumstruktur gespeichert. Binärbäume sind besondere Bäume, bei welchen jeder Knoten maximal zwei Kindknoten haben darf: 
+Bäume sind auch eine wichtige Datenstruktur in Java. Bei einem Baum ist jeder Knoten mit Kindknoten verbunden, welche wiederum mit weiteren Kindknoten verbunden sind. So werden die Daten in einer Art Baumstruktur gespeichert. Binärbäume sind besondere Bäume, bei welchen jeder Knoten maximal zwei Kindknoten haben darf: 
 \\
 \begin{center}
     \includegraphics[width=0.5\linewidth]{img/baum.png}
