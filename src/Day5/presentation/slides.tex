@@ -102,13 +102,13 @@ System.out.println(studis.get("Melanie"));
 \end{frame}
 
 \begin{frame}
-	\frametitle{Map - Methoden}
+	\frametitle{Map - Funktionen}
 	\begin{table}[h]
 		\centering
 		\rowcolors{2}{tablerow}{white}
 		\begin{tabular}{l l}
 			\rowcolor{tablehead}
-			\textbf{Methode}        & \textbf{Beschreibung}                    \\
+			\textbf{Funktion}        & \textbf{Beschreibung}                    \\
 			\texttt{put(k, v)}      & Fügt einen neuen Schlüssel-Wert-Paar ein \\
 			\texttt{get(k)}         & Gibt den Wert zu einem Schlüssel zurück  \\
 			\texttt{remove(k)}      & Entfernt einen Eintrag                   \\
@@ -123,7 +123,7 @@ System.out.println(studis.get("Melanie"));
 \begin{frame}[fragile]
 	\frametitle{Map - remove()}
 	\begin{itemize}
-		\item Die \texttt{remove()} Methode entfernt einen Eintrag aus der Map
+		\item Die \texttt{remove()} Funktion entfernt einen Eintrag aus der Map
 		\item Gibt den entfernten Wert zurück oder \texttt{null}, falls der Schlüssel nicht existiert
 	\end{itemize}
 	\begin{minted}{java}
@@ -146,7 +146,7 @@ System.out.println("Nach remove: " + studis.size());
 \begin{frame}[fragile]
 	\frametitle{Map - containsKey()}
 	\begin{itemize}
-		\item Die \texttt{containsKey()} Methode prüft, ob ein bestimmter Schlüssel in der Map existiert
+		\item Die \texttt{containsKey()} Funktion prüft, ob ein bestimmter Schlüssel in der Map existiert
 		\item Gibt \texttt{true} zurück, wenn der Schlüssel vorhanden ist, sonst \texttt{false}
 	\end{itemize}
 	\begin{minted}{java}
@@ -168,7 +168,7 @@ if (studis.containsKey("Melanie")) {
 \begin{frame}[fragile]
 	\frametitle{Map - keySet()}
 	\begin{itemize}
-		\item Die \texttt{keySet()} Methode gibt alle Schlüssel der Map als Set zurück
+		\item Die \texttt{keySet()} Funktion gibt alle Schlüssel der Map als Set zurück
 		\item Nützlich zum Iterieren über alle Einträge der Map
 	\end{itemize}
 	\begin{minted}{java}
@@ -189,7 +189,7 @@ for (String name : studis.keySet()) {
 \begin{frame}[fragile]
 	\frametitle{Map - values()}
 	\begin{itemize}
-		\item Die \texttt{values()} Methode gibt alle Werte der Map als Collection zurück
+		\item Die \texttt{values()} Funktion gibt alle Werte der Map als Collection zurück
 		\item Ermöglicht den Zugriff auf alle gespeicherten Werte ohne die Schlüssel
 	\end{itemize}
 	\begin{minted}{java}
