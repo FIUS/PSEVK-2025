@@ -30,15 +30,31 @@ public class Day5Musterloesung {
     public static void Aufgabe13(String text, int length) {
         Map<String, Long> sequenceMap = new HashMap<>();
 
-        for (int i = 0; i <= text.length() - length; i++) {
+        /*for (int i = 0; i <= text.length() - length; i++) {
             String sequence = text.substring(i, i + length);
             if (sequenceMap.containsKey(sequence)) {
                 sequenceMap.put(sequence, sequenceMap.get(sequence) + 1);
             } else {
                 sequenceMap.put(sequence, 1L);
             }
+        }*/
+
+        String[] sequences = text.split("");
+        String sequence;
+
+        for (int i = 0; i < sequences.length - length; i++) {
+            sequence = "";
+            for (int j = 0; j < length; j++) {
+                sequence += sequences[i + j];
+            }
+
+            if (sequenceMap.containsKey(sequence)) {
+                sequenceMap.put(sequence, sequenceMap.get(sequence) + 1);
+            } else {
+                sequenceMap.put(sequence, 1L);
+            }
         }
-    
+
         Aufgabe11(sequenceMap);
     }
 
