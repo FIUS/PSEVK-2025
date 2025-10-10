@@ -1,0 +1,194 @@
+% Copyright 2018-2022 FIUS
+%
+% This file is part of theo-vorkurs-folien.
+%
+% theo-vorkurs-folien is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% theo-vorkurs-folien is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with theo-vorkurs-folien.  If not, see <https://www.gnu.org/licenses/>.
+
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage{paperandpencil}
+\usepackage[ngerman]{babel}
+\usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{eso-pic}
+\usepackage{qrcode}
+\usepackage{forloop}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\pagestyle{plain}
+\begin{document}
+
+\providecommand{\docNum}{0}
+\newcounter{x}
+\setcounter{x}{\docNum}
+%\forloop{x}{0}{\value{x} < 50}{%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\AddToShipoutPictureBG*{
+  %\put(0.5\paperwidth+5mm,7.5mm+5mm){\qrcode[height=15mm]{\arabic{x}S1}}
+}
+
+\AddToShipoutPictureBG{
+  %\put(\paperwidth-15mm,10mm){\includegraphics[height=10mm]{./aruco_4x4-0.pdf}}
+}
+
+\AddToShipoutPictureBG{
+  %\put(\paperwidth-15mm,\paperheight-15mm){\includegraphics[height=10mm]{./aruco_4x4-1.pdf}}
+}
+
+\AddToShipoutPictureBG{
+  %\put(5mm,\paperheight-15mm){\includegraphics[height=10mm]{./aruco_4x4-2.pdf}}
+}
+
+\AddToShipoutPictureBG{
+  %\put(5mm,10mm){\includegraphics[height=10mm]{./aruco_4x4-3.pdf}}
+}
+
+\begin{figure}[h]
+  \centering
+  % \includegraphics{school_logo.png} Optional -uncomment to use
+\end{figure}
+\section*{\LARGE Feedback - PSE Vorkurs 2025}
+\vspace{1cm}
+
+\begin{tabular}{p{5.6cm}p{1.8cm}p{1.8cm}p{2.3cm}p{1.8cm}p{1.8cm}p{0.001cm}}
+  Ich war überwiegend im Seminarraum... & $\Box$ 0.108 & $\Box$ 0.124 & $\Box$ GS-Pool \\
+                           & $\Box$ 0.363 & $\Box$ 0.447
+\end{tabular}
+
+\question*{Welchen Studiengang und im wievielten Semester studierst du?}
+\fbox{\parbox[c][1cm]{\textwidth}{\phantom{.}}}
+
+\question*{Wie hast du vom Vorkurs erfahren?}
+\fbox{\parbox[c][2.5cm]{\textwidth}{\phantom{.}}}
+
+%\section*{Your job}
+%\question{FRAGE}
+\subsection*{MINT Vorkurse}
+\begin{tabular}{p{9.5cm}C{2.1cm}C{2.1cm}p{0.001cm}}
+   & ja & nein                                       \\
+  Ich war auch im Informatik-Vorkurs des MINT-Kolleg  &  $\Box$ &  $\Box$\\
+\end{tabular}
+\\
+\\
+\\
+\begin{tabular}{p{8.5cm}C{2.1cm}C{2.1cm}C{2.1cm}p{0.001cm}}
+                                                                             & besser & gleich gut & schlechter \\
+  Ich fand die Erklärungen der gleichen Themen ... als im MINT-Vorkurs & $\Box$ & $\Box$     & $\Box$
+\end{tabular}
+
+\subsection*{Allgemein}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Der Vorkurs hat mir weiter geholfen.}
+  \blocktextfour{Der Vorkurs hat mir Spaß gemacht.}
+  \blocktextfour{Der Vorkurs war gut organisiert.}
+  \blocktextfour{Ich konnte im Vorkurs Kontakte knüpfen.}
+}
+
+\subsection*{Vortrag}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Die Vortragenden haben den Inhalt verständlich erklärt.}
+  \blocktextfour{Der Vortrag wurde professionell durchgeführt.}
+  \blocktextfour{Die zusätzlichen Ausführungen der Vortragenden waren hilfreich.}
+  \blocktextfour{Die Vortragenden wirkten sympathisch.}
+  \blocktextfour{Die Kombination aus Vortrag, Quizen und Live-Coding war gut.}
+}
+
+\AddToShipoutPictureBG*{
+  \put(0.5\paperwidth+5mm,7.5mm+5mm){\qrcode[height=15mm]{\arabic{x}S2}}
+}
+
+\subsection*{Übungsaufgaben}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Die Übungsaufgaben hatten einen Mehrwert für den Vorkurs.}
+  \blocktextfour{Ich habe die Übungsaufgaben verstanden.}
+  \blocktextfour{Bei Fragen habe ich schnell Hilfe bekommen.}
+  \blocktextfour{Bei Fragen konnte mir gut weitergeholfen werden.}
+  \blocktextfour{Ich konnte mich mit den anderen Teilnehmern austauschen.}
+}
+
+\subsection*{Zeiteinteilung}
+\vertikalblockthree{zu schnell}{angemessen}{zu langsam}{
+  \blocktextthree{Das Tempo des Vorkurs war...}
+}
+\\
+\vertikalblockthree{zu kurz}{angemessen}{zu lang}{
+  \blocktextthree{Die Länge der Vorträge war...}
+  \blocktextthree{Die Länge der Übungsphasen war...}
+}
+
+\subsection*{Foliensatz}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Die Folien waren verständlich.}
+  \blocktextfour{Ich werde mir die Folien nach dem Vortrag nochmal anschauen.}
+  \blocktextfour{Die zusätzlichen Ausführungen der Vortragenden waren hilfreich.}
+}
+
+
+
+\AddToShipoutPictureBG*{
+  \put(0.5\paperwidth+5mm,7.5mm+5mm){\qrcode[height=15mm]{\arabic{x}S3}}
+}
+
+\vspace{-1cm}
+
+\subsection*{Themen}
+
+\vspace{-0.7cm}
+
+\vertikalblockthree{teilweise neu}{größtenteils neu}{alle\\neu}{
+  \blocktextthree{Die Themen waren mir...}
+}
+
+\question*{Wie gut hast du folgende Themenfelder verstanden?}
+\vertikalblockfour{vollständig}{eher ja}{eher nein}{gar nicht}{
+  \blocktextfour{Variablen, Datentypen und Prints}
+  \blocktextfour{Boolean, If, While und For Schleifen}
+  \blocktextfour{Funktionen und Arrays}
+  \blocktextfour{Klassen und Objekte}
+  \blocktextfour{Datenstrukturen}
+}
+
+\question*{Für welche Themen hättest du dir mehr Erklärung/Zeit gewünscht und für welche weniger?}
+\fbox{\parbox[c][1cm]{\textwidth}{\phantom{.}}}
+
+% \subsection*{Hygiene}
+% \vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+%   \blocktextfour{Die geltenden Hygieneregeln wurden verständlich erklärt.}
+%   \blocktextfour{Für die Einhalung der Regeln wurde gesorgt.}
+% }
+
+\question*{Was hat dir besonders gut gefallen?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Was hat dir nicht so gut gefallen?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Welche Verbesserungsvorschläge hast du für uns?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Was ich sonst noch sagen wollte...}
+\fbox{\parbox[c][4cm]{\textwidth}{\phantom{.}}}
+
+\AddToShipoutPictureBG*{
+  \put(0.5\paperwidth+5mm,7.5mm+5mm){\qrcode[height=15mm]{\arabic{x}S4}}
+}
+
+\pagebreak
+
+%}
+
+\end{document}
