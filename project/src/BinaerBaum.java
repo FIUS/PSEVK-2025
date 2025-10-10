@@ -52,19 +52,19 @@ public class BinaerBaum {
         }
     }
 
-    private void baumAusgeben(Knoten knoten, String prefix, boolean istLinkesKind) {
+    private void baumAusgeben(Knoten knoten, String prefix, boolean istLetztesKind) {
         if (knoten == null) return;
 
-        System.out.println(prefix + (istLinkesKind ? "├── " : "└── ") + knoten.wert);
+        System.out.println(prefix + (!istLetztesKind ? "├── " : "└── ") + knoten.wert);
 
         if (knoten.linkesKind != null || knoten.rechtesKind != null) {
-            String neuerPrefix = prefix + (istLinkesKind ? "│   " : "    ");
+            String neuerPrefix = prefix + (!istLetztesKind ? "│   " : "    ");
 
-            if (knoten.linkesKind != null)
-                baumAusgeben(knoten.linkesKind, neuerPrefix, true);
+            if (knoten.linkesKind != null && knoten.rechtesKind != null)
+                baumAusgeben(knoten.linkesKind, neuerPrefix, false);
 
             if (knoten.rechtesKind != null)
-                baumAusgeben(knoten.rechtesKind, neuerPrefix, false);
+                baumAusgeben(knoten.rechtesKind, neuerPrefix, true);
         }
     }
 
@@ -74,10 +74,10 @@ public class BinaerBaum {
             System.out.println("(leer)");
         } else {
             System.out.println(wurzel.wert);
-            if (wurzel.linkesKind != null)
-                baumAusgeben(wurzel.linkesKind, "", true);
+            if (wurzel.linkesKind != null && wurzel.rechtesKind != null) {}
+                baumAusgeben(wurzel.linkesKind, "", false);
             if (wurzel.rechtesKind != null)
-                baumAusgeben(wurzel.rechtesKind, "", false);
+                baumAusgeben(wurzel.rechtesKind, "", true);
         }
     }
 
