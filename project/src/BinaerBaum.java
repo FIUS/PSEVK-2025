@@ -60,11 +60,16 @@ public class BinaerBaum {
         if (knoten.linkesKind != null || knoten.rechtesKind != null) {
             String neuerPrefix = prefix + (!istLetztesKind ? "│   " : "    ");
 
-            if (knoten.linkesKind != null && knoten.rechtesKind != null)
+            if (knoten.linkesKind != null && knoten.rechtesKind != null) {
                 baumAusgeben(knoten.linkesKind, neuerPrefix, false);
+            } else if (knoten.linkesKind != null) {
+                baumAusgeben(knoten.linkesKind, neuerPrefix, true);
+            }
 
-            if (knoten.rechtesKind != null)
+
+            if (knoten.rechtesKind != null){
                 baumAusgeben(knoten.rechtesKind, neuerPrefix, true);
+            }
         }
     }
 
