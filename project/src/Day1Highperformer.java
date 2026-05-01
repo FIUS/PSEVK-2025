@@ -14,6 +14,7 @@ public class Day1Highperformer {;
         // VON HIER den 5-stelligen seed nehmen und basierend darauf eine 10-stellige Zahl machen
         // Wenn sie dir helfen kannst du gerne die 4 obigen Variablen (Zeile 6-9) verwenden
 
+        ausgabeZahl = seed * 100000; // Beispielprogramm (schlecht weil die letzten 5 Stellen überhaupt nicht zufällig sind)
 
         // BIS HIER die fertige Zahl dann in der Variable ausgabeZahl speichern
         // um dein Verfahren zu testen, einfach den Code in dieser Datei ausführen
