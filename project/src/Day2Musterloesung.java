@@ -141,7 +141,124 @@ public class Day2Musterloesung {
         }
         System.out.println("Richtig geraten! Die gesuchte Zahl war " + result);
 
-        // Aufgabe 3
+        // Aufgabe 2 NEU
+        // 2.1
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Startkapital eingeben: ");
+        double kapital = scanner.nextDouble();
+
+        System.out.print("Zinssatz in % eingeben: ");
+        double zinssatz = scanner.nextDouble();
+
+        System.out.print("Laufzeit eingeben: ");
+        int laufzeit = scanner.nextInt();
+
+        for (int jahr = 1 ; jahr <= laufzeit; jahr++){
+            kapital = kapital * (1 + zinssatz / 100.0);
+            System.out.println("Der Kontostand nach Jahr " + jahr + " beträgt: " + kapital);
+        }
+
+        // 2.2
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Startkapital eingeben: ");
+        double kapital = scanner.nextDouble();
+
+        System.out.print("Zinssatz in % eingeben: ");
+        double zinssatz = scanner.nextDouble();
+
+        System.out.print("Laufzeit eingeben: ");
+        int laufzeit = scanner.nextInt();
+
+        System.out.print("Monatliche Sparrate eingeben: ");
+        double sparrate = scanner.nextDouble();
+
+        for (int jahr = 1 ; jahr <= laufzeit; jahr++){
+            for (int monat = 1; monat <= 12; monat++){
+                kapital = kapital + sparrate;
+                kapital = kapital * (1 + (zinssatz / 100.0) / 12.0);
+            }
+            System.out.println("Der Kontostand nach Jahr " + jahr + " beträgt: " + kapital);
+        }
+        
+        // Aufgabe 3 NEU 
+        // 3.1
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Zahl eingeben: ");
+        int zahl = scanner.nextInt();
+
+        int anzahlStellen = 0;
+        int aktuelleZahl = zahl;
+
+        while (aktuelleZahl > 0){
+            // hier machen wir uns die Ganzzahldivision zunutze da Nachkommastellen aufgrund von int abgeschnitten werden
+            aktuelleZahl = aktuelleZahl / 10;
+            anzahlStellen ++;
+        }
+        System.out.println(zahl + " hat " + anzahlStellen + " Stellen");
+
+        // 3.2
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Zahl eingeben: ");
+        int zahl = scanner.nextInt();
+
+        int quersumme = 0;
+        int aktuelleZahl = zahl;
+
+        while (aktuelleZahl > 0){
+            // mit mod 10 erhalten wir die letzte Stelle
+            quersumme = quersumme + aktuelleZahl % 10;
+            aktuelleZahl = aktuelleZahl / 10;
+        }
+        System.out.println("Die Quersumme von " + zahl + " ist " + quersumme);
+
+        // 3.3
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Zahl eingeben: ");
+        int zahl = scanner.nextInt();
+
+        long multiplikator = 1;
+        int aktuelleZahl = zahl;
+
+        while (aktuelleZahl > 0){
+            multiplikator = multiplikator * 10;
+            aktuelleZahl = aktuelleZahl / 10;
+        }
+        long doppelt = (long) zahl * multiplikator + zahl;
+        System.out.println(zahl + " zweimal hintereinander geschrieben ergibt: " + doppelt);
+
+        // 3.4
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Zahl eingeben: ");
+        int zahl = scanner.nextInt();
+
+        int umgedreht = 0;
+        int aktuelleZahl = zahl;
+
+        while (aktuelleZahl > 0){
+            int letzteZiffer = aktuelleZahl % 10;
+            umgedreht = umgedreht * 10 + letzteZiffer;
+            aktuelleZahl = aktuelleZahl / 10;
+        }
+        System.out.println(zahl + " umgedreht geschrieben ergibt: " + umgedreht);
+
+        // 3.5
+        
+        // hier lediglich folgende if Abfrage an 3.4 anhängen
+
+        if (umgedreht == zahl){
+            System.out.println(zahl + " ist ein Palindrom");
+        } else {
+            System.out.println(zahl + " ist kein Palindrom");
+        }
+
+
+        // Aufgabe 3 ALT kommt weg!!
         // 3.1
         System.out.print("Gib eine Zahl ein: ");
         double zahl = sc.nextDouble();
