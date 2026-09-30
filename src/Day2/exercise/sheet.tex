@@ -52,6 +52,7 @@ for (int i = 0; i < 5; i++) {
 
 \end{itemize}
 \newpage
+\achtung Aufgabe schon in Tag 1
 \aufgabe{Aufgabe 1: Boole'sche Ausdrücke und Verzweigungen}
 \begin{enumerate}
     \item Schreibe für die UNO diesen Freitag (die Party zum Start des Wintersemesters) ein Programm, bei dem das Alter der Studis geprüft wird und ausgegeben wird, ob die Person auf die Party gelassen wird oder nicht. Frage mit dem Scanner vom Nutzer das Alter ab. Erinnerung an die Scanner-Syntax:\\ \url{https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html}
@@ -76,6 +77,7 @@ for (int i = 0; i < 5; i++) {
 \end{enumerate}
 
 \newpage
+\achtung Aufgabe ohne vorherige Aufgabe nicht lösbar
 \aufgabe{Aufgabe 2: Schleifen}
 \begin{enumerate}
     \item Wir arbeiten weiter mit dem UNO Programm aus Aufgabe 1. Implementiere mithilfe von for-Schleifen, dass nachdem eine Bestellung abgegeben wurde, jedes Getränk nummeriert ausgegeben wird. Das soll natürlich nur passieren wenn die Getränke auch bezahlt werden können:
@@ -102,6 +104,36 @@ for (int i = 0; i < 5; i++) {
           \includegraphics[width=1\linewidth]{../../memes/breakohnerand.png}
 \end{enumerate}
 \newpage
+
+\aufgabe{Aufgabe 1: While Schleifen}
+\begin{enumerate}
+    \item Wir bauen den Passwort Checker aus der Vorlesung. Lege ein Passwort fest welches so lange abgefragt wird, bis der Nutzer das richtige Passwort eingibt. Nutze dafür eine While Schleife.
+    \begin{ausgabe}
+        //Beispiel mit dem Passwort "LeckerBierchen"\\
+        Passwort eingeben: 1234\\
+        Passwort falsch!\\
+        Passwort eingeben: Hallo\\
+        Passwort falsch!\\
+        Passwort eingeben: LeckerBierchen\\
+        Passwort richtig, erfolgreich eingeloggt!
+    \end{ausgabe}
+    \item Erweitere den Passwort Checker, sodass der Nutzer nur 3 Versuche hat. Nach dem dritten Fehlversuch soll das Programm mit einer entsprechenden Meldung abbrechen.
+
+    \item Schreibe ein Spiel, bei dem das Programm eine Zufallszahl zwischen 1 und 100 generiert, die der Nutzer erraten soll. Nach jedem Tipp gibt das Programm einen Hinweis aus, ob die gesuchte Zahl größer oder kleiner als der eingegebene Tipp ist. Das Spiel endet, sobald die Zahl korrekt erraten wurde.Nutze dafür wieder die Random Klasse.
+        \begin{ausgabe}
+            //Beispiel mit der Zufallszahl 61\\
+            Dein Tipp: 42\\
+            Die gesuchte Zahl ist größer als 42\\
+            Dein Tipp: 71\\
+            Die gesuchte Zahl ist kleiner als 71\\
+            Dein Tipp: 55\\
+            Die gesuchte Zahl ist größer als 55\\
+            Dein Tipp: 66\\
+            Die gesuchte Zahl ist kleiner als 66\\
+            Dein Tipp: 61\\
+            Richtig geraten! Die Zahl war 61
+        \end{ausgabe}
+\end{enumerate}
 
 \aufgabe{Aufgabe 3: Palindrome}
 Manche möglichen Lösungen nutzen Funktionen aus dem \texttt{Math} Package, z.B. \texttt{Math.log(eineZahl)} für den Logarithmus einer Zahl. Die Dokumentation dafür findet ihr hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html}

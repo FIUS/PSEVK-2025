@@ -80,6 +80,67 @@ public class Day2Musterloesung {
             }
         }
 
+        //Aufgabe 1 NEU 
+        // 1.1
+        Scanner scanner = new Scanner(System.in);
+
+        String passwort = "LeckerBierchen";
+
+        while (true) {
+            System.out.print("Passwort eingeben: ");
+            String momentaneEingabe = scanner.nextLine();
+
+            if (momentaneEingabe.equals(passwort)) {
+                System.out.println("Passwort richtig, erfolgreich eingeloggt!");
+                break;
+            }
+            System.out.println("Passwort falsch!");
+        }
+
+        // 1.2 
+        Scanner scanner = new Scanner(System.in);
+
+        String passwort = "LeckerBierchen";
+        int anzahlVersuche = 0;
+
+        while (true) {
+            if (anzahlVersuche == 3){
+                System.out.println("Vorgang abgebrochen zu viele Fehlversuche!");
+                break;
+            }
+            System.out.print("Passwort eingeben: ");
+            String momentaneEingabe = scanner.nextLine();
+
+            anzahlVersuche ++;
+
+            if (momentaneEingabe.equals(passwort)) {
+                System.out.println("Passwort richtig, erfolgreich eingeloggt!");
+                break;
+            }
+            System.out.println("Passwort falsch!");
+        }
+
+        // 1.3
+        // Alternativ genauso mit erster abfrage vor while und while(SpielerTipp != result) lösbar 
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int result = random.nextInt(101);
+
+        while (true) {
+            System.out.print("Dein Tipp: ");
+            int spielerTipp = scanner.nextInt();
+
+            if (spielerTipp < result){
+                System.out.println("Die gesuchte Zahl ist größer als " + spielerTipp);
+            } else if (spielerTipp > result){
+                System.out.println("Die gesuchte Zahl ist kleiner als " + spielerTipp);
+            }else {
+                break;
+            }
+        }
+        System.out.println("Richtig geraten! Die gesuchte Zahl war " + result);
+
         // Aufgabe 3
         // 3.1
         System.out.print("Gib eine Zahl ein: ");
