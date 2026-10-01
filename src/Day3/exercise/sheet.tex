@@ -132,6 +132,36 @@ System.out.println(einArray[0][2]);
 \end{enumerate}
 
 \newpage
+\aufgabe{Aufgabe 3: Rekursive Palindrome}
+In dieser Aufgabe wollen wir prüfen, ob ein gegebenes Wort ein Palindrom ist. Palindrome sind Wörter, die rückwärts gelesen dasselbe Wort wie vorwärts gelesen sind.
+
+\begin{enumerate}
+    \item Lies mithilfe des Scanners (wie an Tag 1) ein Wort ein und wandle dieses in ein Zeichen-Array um. \\
+    \textit{Hinweis:} Mit der Methode \texttt{String.toCharArray()} kannst du einen \texttt{String} in ein \texttt{char[]}-Array umwandeln. \\
+    \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--}
+    \item Schreibe eine Methode, die das Array als Parameter übergeben bekommt und prüft, ob das erste und das letzte Element identisch sind. Sind die Zeichen gleich, soll \texttt{true} zurückgegeben werden, andernfalls \texttt{false}.
+    
+    \item Passe die Methode aus der vorherigen Teilaufgabe so an, dass sie sich selbst aufruft (Rekursion). \\
+    Falls das erste und das letzte Zeichen gleich sind, ruft die Methode sich selbst mit einem verkürzten Array (ohne das erste und letzte Element) erneut auf. Dieser Vorgang soll sich so lange wiederholen, bis das Array weniger als 2 Elemente enthält, dann soll \texttt{true} zurückgegeben werden. \\
+    Wichtig: Der Rückgabewert der rekursiven Aufrufe muss immer an den Aufrufer weitergegeben werden, sodass am Ende nur dann \texttt{true} zurückgegeben wird, wenn alle verglichenen Zeichenpaare übereinstimmen. \\
+    Überlege dir, warum die Funktion prüft, ob das eingegebene Wort ein Palindrom ist.\\
+    \\
+    Hinweis: Kopiere die folgende Funktion und verwende sie um Elemente aus einem Array zu entfernen. Der Funktion musst du ein Array und einen Index übergeben und sie gibt ein neues Array ohne das Element am Index zurück.
+    \begin{minted}[linenos=false]{java}
+    public static char[] removeElement(char[] array, int index) {
+        if (array == null || index < 0 || index >= array.length) {
+            return array;
+        }
+        char[] result = new char[array.length - 1];
+        System.arraycopy(array, 0, result, 0, index);
+        System.arraycopy(array, index + 1, result, index, array.length - index - 1);
+
+        return result;
+    }
+    \end{minted}
+\end{enumerate}
+
+\newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Sortieren und Performance-Analyse}
 Java bietet eine Funktion um Zeit akkurat zu Messen: \texttt{System.nanoTime()} gibt die Java-interne Zeitmessung in Nanosekunden ($10^{-9}$ Sekunden) aus.
 \begin{enumerate}
