@@ -20,9 +20,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english,main=ngerman]{babel}
 
-
 \usepackage{xparse}
-
 
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -31,48 +29,46 @@
 \usepackage{multirow}
 \setlength\extrarowheight{6pt}
 
-
 \usepackage{csquotes}
 
 % Package imports
 \usepackage{tikz}
 \usetikzlibrary{positioning,
-                topaths,
-                decorations.pathreplacing,
-                decorations.pathmorphing,
-                intersections,
-                arrows,
-                calc,
-                backgrounds,
-                shapes.misc,
-                angles,
-                quotes,
-                patterns,
-                arrows.meta
+	topaths,
+	decorations.pathreplacing,
+	decorations.pathmorphing,
+	intersections,
+	arrows,
+	calc,
+	backgrounds,
+	shapes.misc,
+	angles,
+	quotes,
+	patterns,
+	arrows.meta
 }
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{listingsutf8}
 
-
 \tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
-%default radius will be 1pt. 
-cross/.default={1pt}}
+	%default radius will be 1pt.
+	cross/.default={1pt}}
 
 \tikzset{
-  -|-/.style={
-    to path={
-      (\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
-      \tikztonodes
-    }
-  },
-  -|-/.default=0.5,
-  |-|/.style={
-    to path={
-      (\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
-      \tikztonodes
-    }
-  },
-  |-|/.default=0.5,
+	-|-/.style={
+			to path={
+					(\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
+					\tikztonodes
+				}
+		},
+	-|-/.default=0.5,
+	|-|/.style={
+			to path={
+					(\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
+					\tikztonodes
+				}
+		},
+	|-|/.default=0.5,
 }
 
 \makeatletter
@@ -83,13 +79,10 @@ cross/.default={1pt}}
 \newcommand{\fehleritem}{\item[{\fehlersymbol}] Fehler:}
 \makeatother
 
-
 \tikzset{
-  notepath/.style={orange!20, thick},
-  note/.style={fill=orange!20, text=black, inner sep=4pt, rounded corners}
+	notepath/.style={orange!20, thick},
+	note/.style={fill=orange!20, text=black, inner sep=4pt, rounded corners}
 }
-
-
 
 \usepackage{tcolorbox}
 \definecolor{codebackgroundcolor}{rgb}{1, 1, 1}  % #2d2d2d (dark background)
@@ -97,14 +90,14 @@ cross/.default={1pt}}
 
 \usepackage{minted}
 \setminted{
-  fontsize={\small},
-  linenos=true,
-  stripall=true,
-  breaklines=true,
-  autogobble=true,
-  xleftmargin=0.5em,
-  texcomments,
-  escapeinside=~~,
+	fontsize={\small},
+	linenos=true,
+	stripall=true,
+	breaklines=true,
+	autogobble=true,
+	xleftmargin=0.5em,
+	texcomments,
+	escapeinside=~~,
 }
 \usemintedstyle{paraiso-light
 }
@@ -112,99 +105,87 @@ cross/.default={1pt}}
 \renewcommand{\theFancyVerbLine}{\color{codelinenocolor}\tiny\arabic{FancyVerbLine}}
 
 \tcbset{
-  codebox/.style={
-    enhanced,
-    colback=codebackgroundcolor,
-    colframe=black,
-    width=\linewidth,
-    arc=2mm
-}}
+	codebox/.style={
+			enhanced,
+			colback=codebackgroundcolor,
+			colframe=black,
+			width=\linewidth,
+			arc=2mm
+		}}
 
 % Inline code
 \tcbset{
-    inlinecode/.style={
-        on line,
-        colback=lightgray,
-        colframe=gray,
-        boxrule=0pt,
-        arc=2pt, % <-- Rounded corners!
-        left=2pt, right=2pt, top=1pt, bottom=1pt
-    }
+	inlinecode/.style={
+			on line,
+			colback=lightgray,
+			colframe=gray,
+			boxrule=0pt,
+			arc=2pt, % <-- Rounded corners!
+			left=2pt, right=2pt, top=1pt, bottom=1pt
+		}
 }
 \newcommand{\inlinecode}[1]{%
-    \SaveVerb{#1}§#1§%
-    \tcbox[inlinecode]{\UseVerb{#1}}%
+	\SaveVerb{#1}§#1§%
+	\tcbox[inlinecode]{\UseVerb{#1}}%
 }
-
-
 
 % Code blocks with highlighting
 \newenvironment{code}[1]
 {%
-\VerbatimEnvironment%
-\begin{tcolorbox}[codebox, overlay={
-    \node[anchor=south east, text=white] at (frame.south east) {\tiny\MakeUppercase #1};
-}]%
-\color{white}
-\begin{minted}{#1}%
+	\VerbatimEnvironment%
+	\begin{tcolorbox}[codebox, overlay={
+					\node[anchor=south east, text=white] at (frame.south east) {\tiny\MakeUppercase #1};
+				}]%
+		\color{white}
+		\begin{minted}{#1}%
 }{%
 \end{minted}
-\end{tcolorbox}
+	\end{tcolorbox}
 }
 
 \makeatletter
 \NewDocumentCommand{\inputcode}{O{1} O{9999} m m}{%
-\begin{tcolorbox}[codebox, overlay={
-    \node[anchor=south east, text=white] at (frame.south east) {\tiny\MakeUppercase #3};
-    \node[anchor=north east, text=codelinenocolor] at (frame.north east) {\tiny\href{#4}{\detokenize{#4} \includegraphics[height=1em]{\lecture@pathprefix{}external_link}}};
-}]%
-\color{white}
-  \inputminted[
-    firstline=#1,
-    lastline=#2
-  ]{#3}{#4}
-\end{tcolorbox}
+	\begin{tcolorbox}[codebox, overlay={
+					\node[anchor=south east, text=white] at (frame.south east) {\tiny\MakeUppercase #3};
+					\node[anchor=north east, text=codelinenocolor] at (frame.north east) {\tiny\href{#4}{\detokenize{#4} \includegraphics[height=1em]{\lecture@pathprefix{}external_link}}};
+				}]%
+		\color{white}
+		\inputminted[
+			firstline=#1,
+			lastline=#2
+		]{#3}{#4}
+	\end{tcolorbox}
 }
 
 \newtcolorbox{ausgabe}{
-  enhanced,
-  breakable,
-  colback=gray!3,
-  colframe=black!20,
-  boxrule=0.5pt,
-  arc=2mm,
-  left=1em,
-  right=1em,
-  top=0.6em,
-  bottom=0.6em,
-  boxsep=0pt,
-  fontupper=\ttfamily\small\color{black},
+	enhanced,
+	breakable,
+	colback=gray!3,
+	colframe=black!20,
+	boxrule=0.5pt,
+	arc=2mm,
+	left=1em,
+	right=1em,
+	top=0.6em,
+	bottom=0.6em,
+	boxsep=0pt,
+	fontupper=\ttfamily\small\color{black},
 }
-
-
-
-
-
-
-
-
-
 
 % Tikz Anchors inside text or code environments.
 \newcommand{\anchor}[1]{\tikz[remember picture]\coordinate (#1);}
 
 % Define custom background for content slides
 \newcommand{\custombackground}{
-  \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=south west] (uni) at (current page.south west) {\includegraphics[height=1.5em]{\lecture@pathprefix{}logo-uni.pdf}};
-    \node[right=0.5em of uni] {\includegraphics[height=1.5em]{\lecture@pathprefix{}fius-logo-neu.png}};
-  \end{tikzpicture}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south west] (uni) at (current page.south west) {\includegraphics[height=1.5em]{\lecture@pathprefix{}logo-uni.pdf}};
+		\node[right=0.5em of uni] {\includegraphics[height=1.5em]{\lecture@pathprefix{}fius-logo-neu.png}};
+	\end{tikzpicture}
 }
 \makeatother
 
-
 \setbeamertemplate{background canvas}{
-  \custombackground
+	\custombackground
 }
 
 \setbeamercolor{background canvas}{bg=white} % Default background color
@@ -233,12 +214,11 @@ cross/.default={1pt}}
 %% \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{footline}[frame number] % Show slide numbers in the footer
 
-
 \BeforeBeginEnvironment{minted}{
-  \begin{tcolorbox}[colback=gray!5, colframe=black!80, boxrule=0.5pt, arc=2mm]
+	\begin{tcolorbox}[colback=gray!5, colframe=black!80, boxrule=0.5pt, arc=2mm]
 }
 \AfterEndEnvironment{minted}{
-  \end{tcolorbox}
+	\end{tcolorbox}
 }
 
 \newcommand{\feedbackurl}{}
