@@ -10,6 +10,7 @@
 \makeatother
 
 \usepackage{todonotes}
+\usepackage{comment}
 \setuptodonotes{inline}
 
 \begin{document}
@@ -79,6 +80,7 @@
 	\end{itemize}
 \end{frame}
 
+\begin{comment}
 \begin{frame}[fragile]
 	\frametitle{Konzept \texttt{null}}
 	\pause
@@ -93,6 +95,9 @@
 	\pause
 	\achtung{} \texttt{null} ist nicht dasselbe wie eine leere Zeichenkette \texttt{''} oder die Zahl 0.
 \end{frame}
+\end{comment}
+
+
 
 \begin{frame}[fragile]
 	\frametitle{Variablen}
@@ -474,7 +479,7 @@ boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag
 boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
+    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{preis} kleiner als \texttt{geld} ist
           \begin{minted}{java}
 boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
@@ -648,7 +653,7 @@ if (note == 1) {
   \end{itemize}
 \end{frame}
 
-
+\begin{comment}
 \begin{frame}[fragile]
 	\frametitle{Syntaxfehler - Beispiele}
 	\pause
@@ -676,6 +681,7 @@ text.length(); // NullPointerException
 int zahl = 5 / 0; // ArithmeticException
   \end{minted}
 \end{frame}
+\end{comment}
 
 % \begin{frame}[fragile]
 %   \todo{Logikfehler in Tag 3}
@@ -690,6 +696,7 @@ int zahl = 5 / 0; // ArithmeticException
 %   \end{minted}
 % \end{frame}
 
+\begin{comment}
 \begin{frame}[fragile]
 	\frametitle{Fehler suche IDE}
 	\pause
@@ -710,7 +717,9 @@ int zahl = 5 / 0; // ArithmeticException
 		\color{red}java: ';' expected
 	\end{ausgabe}
 \end{frame}
+\end{comment}
 
+\begin{comment}
 \begin{frame}[fragile]
 	\frametitle{Hinweise zum Programmieren}
 	\pause
@@ -722,7 +731,9 @@ int zahl = 5 / 0; // ArithmeticException
 		\item Teste deinen Code regelmäßig, um Fehler frühzeitig zu finden
 	\end{itemize}
 \end{frame}
+\end{comment}
 
+\begin{comment}
 \begin{frame}
 	\frametitle{Autoformatter in IntelliJ IDEA}
 	\pause
@@ -738,6 +749,29 @@ int zahl = 5 / 0; // ArithmeticException
 		\item Tipp: Code regelmäßig vor dem Speichern oder Teilen formatieren.
 	\end{itemize}
 \end{frame}
+\end{comment}
+
+\begin{frame}[fragile]
+	\frametitle{Tipps und Tricks}
+	\pause
+	\begin{itemize}
+		\item IntelliJ unterstreicht Fehler rot und zeigt sie in der rechten Leiste an
+		      \pause
+		\item über Fehler hovern zeigt eine Beschreibung des Problems
+		      \pause
+		\item Konsole gibt auch Hinweise auf Fehler \newline
+			\begin{minted}{java}
+  System.out.println("Lecker Grillerei!")
+  			\end{minted}
+			\begin{ausgabe}
+				\color{red}java: ';' expected
+			\end{ausgabe}
+			\pause
+		\item Autoformatter: \texttt{Strg + Alt + L} (Windows/Linux), \texttt{Cmd + Opt + L} (Mac)
+	\end{itemize}
+	
+\end{frame}
+
 
 \input{../../end}
 
