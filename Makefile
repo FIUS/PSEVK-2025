@@ -1,4 +1,4 @@
-TEX_DEPS_COMMON = $(wildcard *.tex)
+TEX_DEPS_COMMON = $(wildcard *.tex) $(wildcard src/*.tex) $(wildcard src/*.cls)
 TEX_INPUTS = $(wildcard src/Day*/exercise/sheet.tex)
 EXERCISE_OUTPUTS = $(TEX_INPUTS:.tex=.pdf)
 PRESENTATION_OUTPUTS = $(subst exercise/sheet,presentation/slides,$(EXERCISE_OUTPUTS))

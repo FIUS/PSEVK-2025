@@ -3,14 +3,16 @@
     \begin{columns}
         \begin{column}{0.65\textwidth}
             \begin{itemize}
-                \item Folien und Aufgaben: \newline \url{https://fius.de/index.php/pse-vk-folien/}
+                \item Folien und Aufgaben: \newline \url{\vkFolienUrl}
             \end{itemize}
         \end{column}
         \begin{column}{0.35\textwidth}
-            \qrcode{https://fius.de/index.php/pse-vk-folien/}
+            \qrcode{\vkFolienUrl}
         \end{column}
     \end{columns}
 
+    \ifx\feedbackurl\empty
+    \else
     \vspace{3em}
 
     \begin{columns}
@@ -23,6 +25,7 @@
             \qrcode{\feedbackurl}
         \end{column}
     \end{columns}
+    \fi
 
     Wenn ihr Fragen habt, sagt Bescheid!
 

@@ -1,9 +1,9 @@
 \documentclass{../../presentation}
 
-\title{PSE – Vorkurs Tag 3}
-\author{Linus, Philipp, Tillmann, Tobias}
-\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
-\date{08.09.2025}
+\title{\vkTitle\ Tag 3}
+\author{\vkAuthors}
+\institute{\vkInstitute}
+\date{\vkDateDayThree}
 
 \makeatletter
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
@@ -40,7 +40,6 @@ if (x > 5 && x < 10) {
 	\end{itemize}
 \end{frame}
 
-
 \begin{frame}[fragile]
 	\frametitle{Recap Tag 2 - Schleifen}
 
@@ -61,8 +60,6 @@ for (int i = 0; i < 5; i++) {
 
 	\end{itemize}
 \end{frame}
-
-
 
 \begin{frame}[fragile]
 	\frametitle{Angenommen \dots}
@@ -109,7 +106,7 @@ for (int i = 0; i < 5; i++) {
 	\begin{itemize}
 		\item\pause  Möglichkeit Code auszulagern
 		\item\pause Syntax:
-		      \begin{minted}{java}   
+		      \begin{minted}{java}
 Rückgabedatentyp Funktionsbezeichner(Datentyp Parametername,...){
         ...
         return Rückgabewert;
@@ -124,7 +121,6 @@ Rückgabedatentyp Funktionsbezeichner(Datentyp Parametername,...){
 	\end{itemize}
 	Schlüsselwort \texttt{static} ist hier notwendig wird in PSE genauer erklärt
 \end{frame}
-
 
 \begin{frame}[fragile]
 	\frametitle{\texttt{return}}
@@ -142,8 +138,8 @@ static |{\tikzmark{rettyp}}|int add(int num1, int num2){
 		      \begin{tikzpicture}[remember picture, overlay]
 			      \draw[->, red, thick]
 			      ([yshift=2.5em,xshift=2.5em]pic cs:rettyp)
-			      -- ([yshift=1.5ex,xshift=1.0em]pic cs:rettyp)
-			      node[anchor=west, yshift=2.0em, xshift=1.0em] {\scriptsize hier \texttt{int} Rückgabetyp};
+				      -- ([yshift=1.5ex,xshift=1.0em]pic cs:rettyp)
+				      node[anchor=west, yshift=2.0em, xshift=1.0em] {\scriptsize hier \texttt{int} Rückgabetyp};
 		      \end{tikzpicture}
 		\item\pause Wenn kein Rückgabewert $\rightarrow$ \texttt{void} (wie vorhin)
 	\end{itemize}
@@ -157,7 +153,7 @@ static |{\tikzmark{rettyp}}|int add(int num1, int num2){
 		\item\pause Speicherung in Variable
 		      \begin{minted}{java}
 int result = add(3, 4);
-System.out.println(result); 
+System.out.println(result);
 		\end{minted}
 		      \begin{ausgabe}
 			      7
@@ -166,7 +162,6 @@ System.out.println(result);
 		\item\pause Code nach \texttt{return} wird nicht mehr ausgeführt
 	\end{itemize}
 \end{frame}
-
 
 \begin{frame}[plain]
 	\centering
@@ -190,9 +185,6 @@ System.out.println(result);
 	\end{flushleft}
 \end{frame}
 
-
-
-
 \begin{frame}[fragile]{Die \texttt{main}-Funktion}
 	\begin{itemize}
 		\item\pause Einstiegspunkt jedes Java-Programms
@@ -208,7 +200,6 @@ public static void main(String[] args) {
 }
 \end{minted}
 \end{frame}
-
 
 \begin{frame}[fragile]{Sichtbarkeit von Variablen (Scopes)}
 	\begin{itemize}
@@ -242,7 +233,6 @@ public static void andereFunktion() {
 	\end{itemize}
 	\includegraphics[width=1\linewidth]{img/scopesmemehoriz.png}
 \end{frame}
-
 
 \begin{frame}[plain]
 	\centering
@@ -385,7 +375,7 @@ public static void zeigeA(int a) {
 	\begin{itemize}
 		\item\pause Arrays können auch direkt mit Werten initialisiert werden
 		      \begin{minted}{java}
-    String[] grillSachen = {"würstchen", "steak", 
+    String[] grillSachen = {"würstchen", "steak",
                             "grillkäse", "maiskolben"};
     \end{minted}
 	\end{itemize}
@@ -415,6 +405,7 @@ public static void zeigeA(int a) {
 	\end{itemize}
 \end{frame}
 
+\renewcommand{\feedbackurl}{\vkFeedbackUrlDayThree}
 \input{../../end}
 
 \end{document}

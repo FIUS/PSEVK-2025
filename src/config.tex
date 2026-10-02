@@ -1,0 +1,81 @@
+% ==============================================================================
+% ZENTRALE KONFIGURATION - JAVA / PSE VORKURS
+% ==============================================================================
+
+\ifdefined\JVKCONFIGLOADED\endinput\fi
+\def\JVKCONFIGLOADED{1}
+
+% ------------------------------------------------------------------------------
+% 1. ALLGEMEINE INFORMATIONEN ZUM VORKURS
+% ------------------------------------------------------------------------------
+\newcommand{\vkTitle}{PSE - Vorkurs}
+\newcommand{\vkYear}{2026}
+\newcommand{\vkMonth}{10} % Monat für WordPress-Uploads (z. B. 10 für Oktober)
+\newcommand{\vkSemester}{Wintersemester 2026/27}
+\newcommand{\vkInstitute}{FIUS - Fachgruppe Informatik Universität Stuttgart}
+\newcommand{\vkAuthors}{Linus, Philipp, Tillmann, Tobias}
+\newcommand{\vkJdkVersion}{21}
+
+% ------------------------------------------------------------------------------
+% 2. TERMINE & DATEN DER EINZELNEN TAGE
+% ------------------------------------------------------------------------------
+\newcommand{\vkDateDayZero}{05.10.2026}   % Tag 0 (Einrichtung / Montag Vormittag)
+\newcommand{\vkDateDayOne}{05.10.2026}    % Tag 1 (Montag)
+\newcommand{\vkDateDayTwo}{06.10.2026}    % Tag 2 (Dienstag)
+\newcommand{\vkDateDayThree}{07.10.2026}  % Tag 3 (Mittwoch)
+\newcommand{\vkDateDayFour}{08.10.2026}   % Tag 4 (Donnerstag)
+\newcommand{\vkDateDayFive}{09.10.2026}   % Tag 5 (Freitag)
+
+% ------------------------------------------------------------------------------
+% 3. ZENTRALE WEB-LINKS (FOLIEN, FEEDBACK & MUSTERLÖSUNGEN)
+% ------------------------------------------------------------------------------
+% Hauptwebseite mit allen Folien und Aufgabenblättern:
+\newcommand{\vkFolienUrl}{https://fius.de/index.php/pse-vk-folien/}
+
+% Feedback-Formulare (z. B. Google Forms / EvaSys):
+% Bleibt ein Link leer (""), wird der Feedback-Block auf den Folien nicht angezeigt.
+\newcommand{\vkFeedbackUrlGeneral}{}                                   % Allgemeiner Feedback-Link
+\newcommand{\vkFeedbackUrlDayOne}{}                                    % Tag 1 (optional)
+\newcommand{\vkFeedbackUrlDayTwo}{}                                    % Tag 2 (optional)
+\newcommand{\vkFeedbackUrlDayThree}{}                                  % Tag 3 (optional)
+\newcommand{\vkFeedbackUrlDayFour}{https://forms.gle/JasKFVgR2ARoFVTEA}% Tag 4
+\newcommand{\vkFeedbackUrlDayFive}{https://forms.gle/V8TUw9PEVBnuoTR67}% Tag 5
+
+% Basis-URL für WordPress-Uploads auf fius.de:
+% Standard: https://fius.de/wp-content/uploads/<JAHR>/<MONAT>
+\newcommand{\vkUploadsBaseUrl}{https://fius.de/wp-content/uploads/\vkYear/\vkMonth}
+
+% Download-Links für Musterlösungen und Starter-Pakete (ZIP-Archive):
+\newcommand{\vkUrlDayOneHighperformer}{\vkUploadsBaseUrl/Day1Highperformer.zip}
+\newcommand{\vkUrlSolutionDayOne}{\vkUploadsBaseUrl/Day1Musterloesung.zip}
+\newcommand{\vkUrlSolutionDayTwo}{\vkUploadsBaseUrl/Day2Musterloesung.zip}
+\newcommand{\vkUrlSolutionDayThree}{\vkUploadsBaseUrl/Day3Musterloesung.zip}
+\newcommand{\vkUrlSolutionDayFour}{\vkUploadsBaseUrl/Day4Musterloesung.zip}
+
+% Externe Dokumentations-Links:
+\newcommand{\vkUrlJavaDocs}{https://docs.oracle.com/javase/8/docs/api/}
+\newcommand{\vkUrlEduroam}{uni-stuttgart.de/eduroam}
+\newcommand{\vkUrlJetbrainsToolbox}{jetbrains.com/toolbox-app/}
+
+% ------------------------------------------------------------------------------
+% 4. ABENDPROGRAMM / RAHMENPROGRAMM (SOCIAL EVENTS)
+% ------------------------------------------------------------------------------
+% Tag 0 (Folie: Gemeinsame Aktionen):
+\newcommand{\vkEventDayZero}{\textbf{Grillerei} - Heute Abend ab 18 Uhr}
+
+% Tag 1 (Übungsblatt Kopfzeile / Ankündigung):
+\newcommand{\vkEventDayOne}{Heute Abend gibts Karaoke!}
+
+% Tag 4 (Übungsblatt: Kneipentour o. Ä.):
+\newcommand{\vkEventDayFourTitle}{Kneipentour}
+\newcommand{\vkEventDayFourText}{Heute Abend (direkt 18:00 Treffpunkt) ist die Kneipentour und wir vier Orgas haben mies Bock, kommt gern vorbei ob ihr Trinker seid oder nicht.}
+
+% Tag 5 (Übungsblatt: UNO-Party / Shotbar):
+\newcommand{\vkEventDayFiveTitle}{Yippie UNO}
+\newcommand{\vkEventDayFiveText}{Heute Abend ist UNO, kommt gerne zwischen 23:00 und 1:00 bei der Shotbar vorbei, und wenn ihr uns ein Bild von diesem ASCII Grill zeigt gibts sogar einen shot kostenlos (gibt auch Alk-freie Shots)!}
+
+% ------------------------------------------------------------------------------
+% 5. FEEDBACKBÖGEN / UMFRAGEN (PRINT SURVEYS)
+% ------------------------------------------------------------------------------
+\newcommand{\vkSurveyTitle}{Feedback - \vkTitle\ \vkYear}
+\newcommand{\vkSurveyRooms}{$\Box$ 0.108 & $\Box$ 0.124 & $\Box$ GS-Pool & $\Box$ 0.363 \\ & $\Box$ 0.463 & $\Box$ 0.447 & $\Box$ 0.457}
