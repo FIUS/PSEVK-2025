@@ -307,7 +307,8 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
   \end{minted}
 	\pause
 	\begin{ausgabe}
-		23
+		2\newline
+		3
 	\end{ausgabe}
 \end{frame}
 
@@ -406,6 +407,228 @@ String name = scanner.nextLine();
 System.out.println(name);
   \end{minted}
 \end{frame}
+
+
+
+%BOOLEAN
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} - Wahr oder Falsch}
+  \pause
+  \begin{itemize}
+    \item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
+          \pause
+    \item Wahrheitswerte speichern und verarbeiten
+          \pause
+    \item z.B:
+          \begin{minted}{java}
+boolean heuteDienstag = true;
+    \end{minted}
+
+  \end{itemize}
+\end{frame}
+
+
+
+%ARITHMETRISCH BOOLEAN
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} Operatoren}
+  \pause
+  \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
+
+  \begin{itemize}
+    \item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
+          \begin{minted}{java}
+boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
+    \end{minted}
+          \achtung für Strings: \texttt{equals()} benutzen!
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} Operatoren}
+  \pause
+
+  \begin{itemize}
+    \item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
+          \begin{minted}{java}
+boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
+    \end{minted}
+
+    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{geld} kleiner als \texttt{preis} ist
+          \begin{minted}{java}
+boolean result = (preis < geld); // result true, wenn preis kleiner als geld
+    \end{minted}
+
+    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
+  \end{itemize}
+\end{frame}
+
+
+%BOOLEAN OPERATOREN
+\begin{frame}[fragile]
+  \frametitle{\texttt{Boolean} Operatoren}
+  \pause
+  \begin{columns}
+    %Linke Spalte: Operatoren und Wahrheitstabellen
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item \texttt{!a} \quad \textrightarrow \quad NICHT a
+              \pause
+        \item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
+              \pause
+              {\rowcolors{2}{tablerow}{white}
+                \begin{tabular}{l l l}
+                  \rowcolor{tablehead}
+                  \textbf{a}     & \textbf{b}     & \textbf{a \&\& b} \\
+                  \texttt{true}  & \texttt{true}  & \texttt{true}     \\
+                  \texttt{true}  & \texttt{false} & \texttt{false}    \\
+                  \texttt{false} & \texttt{true}  & \texttt{false}    \\
+                  \texttt{false} & \texttt{false} & \texttt{false}    \\
+                \end{tabular}
+              }
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \newline
+      \pause
+      \begin{itemize}
+        \item \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
+              \pause
+              {\rowcolors{2}{tablerow}{white}
+                \begin{tabular}{l l l}
+                  \rowcolor{tablehead}
+                  \textbf{a}     & \textbf{b}     & \textbf{a || b} \\
+                  \texttt{true}  & \texttt{true}  & \texttt{true}   \\
+                  \texttt{true}  & \texttt{false} & \texttt{true}   \\
+                  \texttt{false} & \texttt{true}  & \texttt{true}   \\
+                  \texttt{false} & \texttt{false} & \texttt{false}  \\
+                \end{tabular}
+              }
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.5cm}
+  \pause
+  \textbf{Klammern priorisieren:}
+  \begin{minted}{java}
+  true || false && false 
+  // -> true
+  (true || false) && false
+  // -> false
+  \end{minted}
+\end{frame}
+
+%IF-VERZWEIGUNG
+\begin{frame}[fragile]
+  \frametitle{\texttt{if}-Verzweigung}
+  \pause
+  \begin{itemize}
+    \item Ausführung nur wenn Bedingung \texttt{true}
+          \pause
+          \begin{minted}{java}
+if (Bedingung) {
+  // Code bei true
+}
+      \end{minted}
+          \pause
+    \item Beispiel:
+          \begin{minted}{java}
+boolean heuteDienstag = true;
+if (heuteDienstag) {
+  System.out.println("Crazyyy heute ist Dienstag");
+}
+      \end{minted}
+          \pause
+          \begin{ausgabe}
+            Crazyyy heute ist Dienstag
+          \end{ausgabe}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{if}-Verzweigung}
+  \pause
+  \begin{itemize}
+    \item geht genauso mit \texttt{int} etc.
+          \pause
+    \item Beispiel:
+          \begin{minted}{java}
+int lieblingszahl = 42;
+if (lieblingszahl == 42) {
+  System.out.println("Du bist ein Highperformer!");
+}
+      \end{minted}
+          \pause
+          \begin{ausgabe}
+            Du bist ein Highperformer!
+          \end{ausgabe}
+  \end{itemize}
+\end{frame}
+
+
+
+%IF-ELSE-VERZWEIGUNG
+\begin{frame}[fragile]
+  \frametitle{\texttt{if}-\texttt{else}}
+  \pause
+  \begin{itemize}
+    \item erweitert die \texttt{if} Anweisung
+          \pause
+    \item "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
+          \pause
+          \begin{minted}{java}
+if (Bedingung) {
+  // Code bei Bedingung true
+} else {
+  // Code bei Bedingung false
+}
+\end{minted}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{if}-\texttt{else}}
+  \pause
+  \begin{itemize}
+    \item Beispiel:
+          \begin{minted}{java}
+boolean heuteDonnerstag = false;
+if (heuteDonnerstag) {
+  System.out.println("endlich Wochenende");
+} else {
+  System.out.println(":( bestimmt ist bald wieder Donnerstag");
+}
+\end{minted}
+          \pause
+          \begin{ausgabe}
+            :( bestimmt ist bald wieder Donnerstag
+          \end{ausgabe}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{else if}}
+  \pause
+  \begin{itemize}
+    \item \texttt{else if} prüft mehrere Bedingungen
+          \pause
+    \item Beispiel:
+          \begin{minted}{java}
+if (note == 1) {
+    System.out.println("Sehr gut");
+} else if (note == 2) {
+    System.out.println("Gut");
+} else if (note == 3) {
+    System.out.println("Befriedigend");
+} else {
+    System.out.println("Ausreichend oder schlechter");
+} 
+    \end{minted}
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}[fragile]
 	\frametitle{Syntaxfehler - Beispiele}
