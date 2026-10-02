@@ -1,0 +1,125 @@
+% Copyright 2018-2022 FIUS
+%
+% This file is part of theo-vorkurs-folien.
+%
+% theo-vorkurs-folien is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% theo-vorkurs-folien is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with theo-vorkurs-folien.  If not, see <https://www.gnu.org/licenses/>.
+
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage{paperandpencil}
+\usepackage[ngerman]{babel}
+\usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{eso-pic}
+\usepackage{qrcode}
+\usepackage{forloop}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\pagestyle{plain}
+\begin{document}
+
+\providecommand{\docNum}{0}
+\newcounter{x}
+\setcounter{x}{\docNum}
+%\forloop{x}{0}{\value{x} < 50}{%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+\begin{figure}[h]
+  \centering
+  % \includegraphics{school_logo.png} Optional -uncomment to use
+\end{figure}
+\section*{\LARGE Feedback - PSE Vorkurs 2026}
+\vspace{1cm}
+
+\begin{tabular}{p{5.6cm}p{1.8cm}p{1.8cm}p{2.3cm}p{1.8cm}p{1.8cm}p{0.001cm}}
+  Ich war heute im Seminarraum... & $\Box$ 0.108 & $\Box$ 0.124 & $\Box$ GS-Pool & $\Box$ 0.363 \\
+                           & $\Box$ 0.463 & $\Box$ 0.447 & $\Box$ 0.457
+\end{tabular}
+
+\question*{Welchen Studiengang und im wievielten Semester studierst du?}
+\fbox{\parbox[c][1cm]{\textwidth}{\phantom{.}}}
+
+%\section*{Your job}
+%\question{FRAGE}
+\subsection*{MINT Vorkurse}
+\begin{tabular}{p{9.5cm}C{2.1cm}C{2.1cm}p{0.001cm}}
+   & ja & nein                                       \\
+  Ich war auch im Informatik-Vorkurs des MINT-Kolleg  &  $\Box$ &  $\Box$\\
+\end{tabular}
+\\
+
+\subsection*{Allgemein}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Der Vorkurs hat heute Spaß gemacht.}
+  \blocktextfour{Der Vorkurs war gut organisiert.}
+}
+
+\subsection*{Vortrag}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Die Vortragenden haben den Inhalt verständlich erklärt.}
+  \blocktextfour{Der Vortrag wurde professionell durchgeführt.}
+  \blocktextfour{Die Vortragenden wirkten sympathisch.}
+  \blocktextfour{Die Kombination aus Vortrag, Quizen und Live-Coding war gut.}
+}
+
+\subsection*{Übungsaufgaben}
+\vertikalblockfour{stimme zu}{stimme eher zu}{stimme eher nicht zu}{stimme nicht zu}{
+  \blocktextfour{Die Übungsaufgaben hatten einen Mehrwert für den Vorkurs.}
+  \blocktextfour{Bei Fragen habe ich schnell Hilfe bekommen.}
+  \blocktextfour{Bei Fragen konnte mir gut weitergeholfen werden.}
+  \blocktextfour{Ich konnte mich mit den anderen Teilnehmern austauschen.}
+}
+
+\subsection*{Tempo}
+\vertikalblockfive{viel zu hoch}{zu hoch}{genau richtig}{zu niedrig}{viel zu niedrig}{
+  \blocktextfive{Das Tempo in dem Inhalte im Vortrag behandelt wurden war...}
+  \blocktextfive{Die Schwierigkeit der Aufgaben war...}
+  \blocktextfive{Die Anzahl der Aufgaben...}
+}
+
+
+\subsection*{Weiterer Vorkurs}
+\vertikalblocktwo{versuchen jeden Tag den Vorkurs zu besuchen.}{nicht mehr kommen.}{
+  \blocktexttwo{Ich werde...}
+}
+
+
+\subsection*{Sonstiges}
+
+
+\question*{Was hat dir besonders gut gefallen?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Was hat dir nicht so gut gefallen?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Welche Verbesserungsvorschläge hast du für uns?}
+\fbox{\parbox[c][3.5cm]{\textwidth}{\phantom{.}}}
+
+\question*{Was ich sonst noch sagen wollte...}
+\fbox{\parbox[c][4cm]{\textwidth}{\phantom{.}}}
+
+\AddToShipoutPictureBG*{
+  \put(0.5\paperwidth+5mm,7.5mm+5mm){\qrcode[height=15mm]{\arabic{x}S4}}
+}
+
+\pagebreak
+
+%}
+
+\end{document}
