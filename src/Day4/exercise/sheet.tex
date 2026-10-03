@@ -115,8 +115,8 @@ public void optimaleGrillerei(Grillgut[] zuGrillen) {
                 draufGelegt++;
             }
             if (aufDemGrill[i] != null) {
-                momentaneMaxHitze = Math.mi(momentaneMaxHitze, aufDemGrill[i]hitzetoleranz);
-                momentaneMaxHitze = Math.mi(momentaneMaxHitze, aufDemGrill[i]maxDurchheit - aufDemGrill[i].durchheit);
+                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i]hitzetoleranz);
+                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i]maxDurchheit - aufDemGrill[i].durchheit);
             }
         }
         setzeHitze(momentaneMaxHitze);
