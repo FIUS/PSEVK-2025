@@ -23,20 +23,25 @@ public class Day3Musterloesung {
         System.out.println(fakultaet(5));
 
         // Aufgabe 2
-        // Aufgabe 2.1
+        // 2.1
+            int[] einArray = new int[5];
+            einArray[0] = 1;
+            einArray[1] = 2;
+            einArray[2] = 3;
+            einArray[3] = 4;
+            einArray[4] = 5;
+            System.out.println(einArray);
+        
+        // 2.2
+            arrayPrint(einArray);
 
-        int[] einArray = new int[10];
-        System.out.println(einArray);
+        // 2.3
+            findMax(einArray);
 
-        arrayPrint2D(diagonalesBand(13));
-        System.out.println();
-        arrayPrint2D(kariert(13));
-        System.out.println();
-        arrayPrint2D(diamant(13));
-        System.out.println();
-        arrayPrint2D(diamanten(13));
-        System.out.println();
-        arrayPrint(fibonacci(10));
+        // 2.4  
+            arrayPrint(fibonacci(10));
+
+
 
         // Highperformer
 
@@ -108,13 +113,44 @@ public class Day3Musterloesung {
     }
 
     // 2.3
+     public static void findMax(int[] einArray) {
+        int max = einArray[0];
+        for (int i = 1; i < einArray.length; i++) {
+            if (einArray[i] > max) {
+                max = einArray[i];
+            }
+        }
+        System.out.println(max);
+    }
+
+    // 2.4
+    public static int[] fibonacci(int n) {
+        if (n <= 0) return new int[0];
+
+        int[] fib = new int[n];
+        fib[0] = 0;
+        if (n > 1) {
+            fib[1] = 1;
+        }
+
+        for (int i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        return fib;
+    }
+
+
+// Aufgabe 3 neu 2D Arrays
+
+    // 3.1
     public static void arrayPrint2D(int[][] einArray) {
         for (int i = 0; i < einArray.length; i++) {
             arrayPrint(einArray[i]);
         }
     }
 
-    // 2.4
+    // 3.2
 
     public static int[][] diagonalesBand(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
@@ -131,7 +167,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 2.4 Codeanhang 1
+    // 3.2 Codeanhang 1
     public static int[][] kariert(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         for (int i = 0; i < seitenlaenge; i++) {
@@ -144,7 +180,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 2.4 Codeanhang 2
+    // 3.2 Codeanhang 2
     public static int[][] diamant(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         int mitte = seitenlaenge / 2;
@@ -161,7 +197,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 2.4 Codeanhang 3
+    // 3.2 Codeanhang 3
     public static int[][] diamanten(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         int mitte = 2;
@@ -178,20 +214,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 2.5
-    public static int[] fibonacci(int n) {
-        int[] fib = new int[n];
-        fib[0] = 0;
-        if (n > 0) {
-            fib[1] = 1;
-        }
-
-        for (int i = 2; i < n; i++) {
-            fib[i] = fib[i - 1] + fib[i - 2];
-        }
-
-        return fib;
-    }
+    
 
 
     // Highperformer
