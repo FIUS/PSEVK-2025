@@ -1,9 +1,9 @@
 \documentclass{../../presentation}
 
-\title{PSE - Vorkurs Tag 1}
-\author{Linus, Philipp, Tillmann, Tobias}
-\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
-\date{05.10.2026}
+\title{\vkTitle\ Tag 1}
+\author{\vkAuthors}
+\institute{\vkInstitute}
+\date{\vkDateDayOne}
 
 \makeatletter
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
@@ -173,20 +173,20 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Der Modulo-Operator \texttt{\%}}
-  \pause
-  \begin{itemize}
-    \item \texttt{\%} berechnet den Rest einer Division
-  \end{itemize}
-  \pause
-  \vspace{0.8em}
-  \begin{itemize}
-    \item \texttt{8 \% 4} \quad $\rightarrow$ \quad \textbf{0} \quad (geht perfekt auf)
-    \pause
-    \item \texttt{7 \% 2} \quad $\rightarrow$ \quad \textbf{1} \quad ($7 : 2 = 3$, Rest 1)
-    \pause
-    \item \texttt{14 \% 5} \quad $\rightarrow$ \quad \textbf{4} \quad ($14 : 5 = 2$, Rest 4)
-  \end{itemize}
+	\frametitle{Der Modulo-Operator \texttt{\%}}
+	\pause
+	\begin{itemize}
+		\item \texttt{\%} berechnet den Rest einer Division
+	\end{itemize}
+	\pause
+	\vspace{0.8em}
+	\begin{itemize}
+		\item \texttt{8 \% 4} \quad $\rightarrow$ \quad \textbf{0} \quad (geht perfekt auf)
+		      \pause
+		\item \texttt{7 \% 2} \quad $\rightarrow$ \quad \textbf{1} \quad ($7 : 2 = 3$, Rest 1)
+		      \pause
+		\item \texttt{14 \% 5} \quad $\rightarrow$ \quad \textbf{4} \quad ($14 : 5 = 2$, Rest 4)
+	\end{itemize}
 \end{frame}
 
 
@@ -326,18 +326,17 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
 \begin{frame}[fragile]
 	\frametitle{Frage 3: Was wird ausgegeben?}
 	\begin{minted}{java}
-    System.out.println(2);
-    System.out.println(3);
+    System.out.print(2);
+    System.out.print(3);
   \end{minted}
 	\pause
 	\begin{ausgabe}
-		2\newline
-		3
+		23
 	\end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Frage 4:Was wird ausgegeben?}
+	\frametitle{Frage 4: Was wird ausgegeben?}
 	\begin{minted}{java}
     System.out.println(13 % 3);
   \end{minted}
@@ -348,31 +347,7 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Frage 5:Was wird ausgegeben?}
-	\begin{minted}{java}
-    System.out.println(10 + ((3 * 4)+ "7"));
-  \end{minted}
-	\pause
-	\begin{ausgabe}
-		10127
-	\end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 6: Was wird ausgegeben?}
-	\begin{minted}{java}
-    int a = 3;
-    // a = 3 + 4;
-    System.out.println(a);
-  \end{minted}
-	\pause
-	\begin{ausgabe}
-		3
-	\end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 7:Was wird ausgegeben?}
+	\frametitle{Frage 5: Was wird ausgegeben?}
 	\begin{minted}{java}
     System.out.println(10 + "6" * 4);
   \end{minted}
@@ -383,30 +358,17 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Frage 8:Was wird ausgegeben?}
+	\frametitle{Frage 6: Was wird ausgegeben?}
 	\begin{minted}{java}
-    int a = 8 * 4;
-    a = a / 5;
+    int a = 7 / 2;
     System.out.println(a);
   \end{minted}
 	\pause
 	\begin{ausgabe}
-		6
+		3
 	\end{ausgabe}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Frage 9: Was wird ausgegeben?}
-	\begin{minted}{java}
-    float a = 8 * 4;
-    a = a / 5;
-    System.out.println(a + "3");
-  \end{minted}
-	\pause
-	\begin{ausgabe}
-		6.43
-	\end{ausgabe}
-\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Eingabe mit \texttt{Scanner}}
@@ -436,108 +398,108 @@ System.out.println(name);
 
 %BOOLEAN
 \begin{frame}[fragile]
-  \frametitle{\texttt{Boolean} - Wahr oder Falsch}
-  \pause
-  \begin{itemize}
-    \item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
-          \pause
-    \item Wahrheitswerte speichern und verarbeiten
-          \pause
-    \item z.B:
-          \begin{minted}{java}
+	\frametitle{\texttt{Boolean} - Wahr oder Falsch}
+	\pause
+	\begin{itemize}
+		\item Datentyp mit zwei Werten: \texttt{true} oder \texttt{false}
+		      \pause
+		\item Wahrheitswerte speichern und verarbeiten
+		      \pause
+		\item z.B:
+		      \begin{minted}{java}
 boolean heuteDienstag = true;
     \end{minted}
 
-  \end{itemize}
+	\end{itemize}
 \end{frame}
 
 
 
 %ARITHMETRISCH BOOLEAN
 \begin{frame}[fragile]
-  \frametitle{\texttt{Boolean} Operatoren}
-  \pause
-  \only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
+	\frametitle{\texttt{Boolean} Operatoren}
+	\pause
+	\only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
-  \begin{itemize}
-    \item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
-          \begin{minted}{java}
+	\begin{itemize}
+		\item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
+		      \begin{minted}{java}
 boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
     \end{minted}
-          \achtung für Strings: \texttt{equals()} benutzen!
+		      \achtung für Strings: \texttt{equals()} benutzen!
 
-  \end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{\texttt{Boolean} Operatoren}
-  \pause
+	\frametitle{\texttt{Boolean} Operatoren}
+	\pause
 
-  \begin{itemize}
-    \item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
-          \begin{minted}{java}
+	\begin{itemize}
+		\item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
+		      \begin{minted}{java}
 boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
     \end{minted}
 
-    \item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{preis} kleiner als \texttt{geld} ist
-          \begin{minted}{java}
+		\item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{preis} kleiner als \texttt{geld} ist
+		      \begin{minted}{java}
 boolean result = (preis < geld); // result true, wenn preis kleiner als geld
     \end{minted}
 
-    \item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
-  \end{itemize}
+		\item<4->analog bei \texttt{preis > geld}, \texttt{preis <= geld}, \texttt{preis >= geld} \quad
+	\end{itemize}
 \end{frame}
 
 
 %BOOLEAN OPERATOREN
 \begin{frame}[fragile]
-  \frametitle{\texttt{Boolean} Operatoren}
-  \pause
-  \begin{columns}
-    %Linke Spalte: Operatoren und Wahrheitstabellen
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item \texttt{!a} \quad \textrightarrow \quad NICHT a
-              \pause
-        \item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
-              \pause
-              {\rowcolors{2}{tablerow}{white}
-                \begin{tabular}{l l l}
-                  \rowcolor{tablehead}
-                  \textbf{a}     & \textbf{b}     & \textbf{a \&\& b} \\
-                  \texttt{true}  & \texttt{true}  & \texttt{true}     \\
-                  \texttt{true}  & \texttt{false} & \texttt{false}    \\
-                  \texttt{false} & \texttt{true}  & \texttt{false}    \\
-                  \texttt{false} & \texttt{false} & \texttt{false}    \\
-                \end{tabular}
-              }
-      \end{itemize}
-    \end{column}
+	\frametitle{\texttt{Boolean} Operatoren}
+	\pause
+	\begin{columns}
+		%Linke Spalte: Operatoren und Wahrheitstabellen
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item \texttt{!a} \quad \textrightarrow \quad NICHT a
+				      \pause
+				\item \texttt{a \&\& b} \quad \textrightarrow \quad a UND b\\[0.3em]
+				      \pause
+				      {\rowcolors{2}{tablerow}{white}
+					      \begin{tabular}{l l l}
+						      \rowcolor{tablehead}
+						      \textbf{a}     & \textbf{b}     & \textbf{a \&\& b} \\
+						      \texttt{true}  & \texttt{true}  & \texttt{true}     \\
+						      \texttt{true}  & \texttt{false} & \texttt{false}    \\
+						      \texttt{false} & \texttt{true}  & \texttt{false}    \\
+						      \texttt{false} & \texttt{false} & \texttt{false}    \\
+					      \end{tabular}
+				      }
+			\end{itemize}
+		\end{column}
 
-    \begin{column}{0.5\textwidth}
-      \newline
-      \pause
-      \begin{itemize}
-        \item \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
-              \pause
-              {\rowcolors{2}{tablerow}{white}
-                \begin{tabular}{l l l}
-                  \rowcolor{tablehead}
-                  \textbf{a}     & \textbf{b}     & \textbf{a || b} \\
-                  \texttt{true}  & \texttt{true}  & \texttt{true}   \\
-                  \texttt{true}  & \texttt{false} & \texttt{true}   \\
-                  \texttt{false} & \texttt{true}  & \texttt{true}   \\
-                  \texttt{false} & \texttt{false} & \texttt{false}  \\
-                \end{tabular}
-              }
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{0.5cm}
-  \pause
-  \textbf{Klammern priorisieren:}
-  \begin{minted}{java}
-  true || false && false 
+		\begin{column}{0.5\textwidth}
+			\newline
+			\pause
+			\begin{itemize}
+				\item \texttt{a || b} \quad \textrightarrow \quad a ODER b\\[0.3em]
+				      \pause
+				      {\rowcolors{2}{tablerow}{white}
+					      \begin{tabular}{l l l}
+						      \rowcolor{tablehead}
+						      \textbf{a}     & \textbf{b}     & \textbf{a || b} \\
+						      \texttt{true}  & \texttt{true}  & \texttt{true}   \\
+						      \texttt{true}  & \texttt{false} & \texttt{true}   \\
+						      \texttt{false} & \texttt{true}  & \texttt{true}   \\
+						      \texttt{false} & \texttt{false} & \texttt{false}  \\
+					      \end{tabular}
+				      }
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\vspace{0.5cm}
+	\pause
+	\textbf{Klammern priorisieren:}
+	\begin{minted}{java}
+  true || false && false
   // -> true
   (true || false) && false
   // -> false
@@ -546,78 +508,78 @@ boolean result = (preis < geld); // result true, wenn preis kleiner als geld
 
 %IF-VERZWEIGUNG
 \begin{frame}[fragile]
-  \frametitle{\texttt{if}-Verzweigung}
-  \pause
-  \begin{itemize}
-    \item Ausführung nur wenn Bedingung \texttt{true}
-          \pause
-          \begin{minted}{java}
+	\frametitle{\texttt{if}-Verzweigung}
+	\pause
+	\begin{itemize}
+		\item Ausführung nur wenn Bedingung \texttt{true}
+		      \pause
+		      \begin{minted}{java}
 if (Bedingung) {
   // Code bei true
 }
       \end{minted}
-          \pause
-    \item Beispiel:
-          \begin{minted}{java}
+		      \pause
+		\item Beispiel:
+		      \begin{minted}{java}
 boolean heuteDienstag = true;
 if (heuteDienstag) {
   System.out.println("Crazyyy heute ist Dienstag");
 }
       \end{minted}
-          \pause
-          \begin{ausgabe}
-            Crazyyy heute ist Dienstag
-          \end{ausgabe}
-  \end{itemize}
+		      \pause
+		      \begin{ausgabe}
+			      Crazyyy heute ist Dienstag
+		      \end{ausgabe}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{\texttt{if}-Verzweigung}
-  \pause
-  \begin{itemize}
-    \item geht genauso mit \texttt{int} etc.
-          \pause
-    \item Beispiel:
-          \begin{minted}{java}
+	\frametitle{\texttt{if}-Verzweigung}
+	\pause
+	\begin{itemize}
+		\item geht genauso mit \texttt{int} etc.
+		      \pause
+		\item Beispiel:
+		      \begin{minted}{java}
 int lieblingszahl = 42;
 if (lieblingszahl == 42) {
   System.out.println("Du bist ein Highperformer!");
 }
       \end{minted}
-          \pause
-          \begin{ausgabe}
-            Du bist ein Highperformer!
-          \end{ausgabe}
-  \end{itemize}
+		      \pause
+		      \begin{ausgabe}
+			      Du bist ein Highperformer!
+		      \end{ausgabe}
+	\end{itemize}
 \end{frame}
 
 
 
 %IF-ELSE-VERZWEIGUNG
 \begin{frame}[fragile]
-  \frametitle{\texttt{if}-\texttt{else}}
-  \pause
-  \begin{itemize}
-    \item erweitert die \texttt{if} Anweisung
-          \pause
-    \item "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
-          \pause
-          \begin{minted}{java}
+	\frametitle{\texttt{if}-\texttt{else}}
+	\pause
+	\begin{itemize}
+		\item erweitert die \texttt{if} Anweisung
+		      \pause
+		\item "wenn \texttt{if} Bedingung nicht erfüllt dann mach folgendes\dots"
+		      \pause
+		      \begin{minted}{java}
 if (Bedingung) {
   // Code bei Bedingung true
 } else {
   // Code bei Bedingung false
 }
 \end{minted}
-  \end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{\texttt{if}-\texttt{else}}
-  \pause
-  \begin{itemize}
-    \item Beispiel:
-          \begin{minted}{java}
+	\frametitle{\texttt{if}-\texttt{else}}
+	\pause
+	\begin{itemize}
+		\item Beispiel:
+		      \begin{minted}{java}
 boolean heuteDonnerstag = false;
 if (heuteDonnerstag) {
   System.out.println("endlich Wochenende");
@@ -625,21 +587,21 @@ if (heuteDonnerstag) {
   System.out.println(":( bestimmt ist bald wieder Donnerstag");
 }
 \end{minted}
-          \pause
-          \begin{ausgabe}
-            :( bestimmt ist bald wieder Donnerstag
-          \end{ausgabe}
-  \end{itemize}
+		      \pause
+		      \begin{ausgabe}
+			      :( bestimmt ist bald wieder Donnerstag
+		      \end{ausgabe}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{\texttt{else if}}
-  \pause
-  \begin{itemize}
-    \item \texttt{else if} prüft mehrere Bedingungen
-          \pause
-    \item Beispiel:
-          \begin{minted}{java}
+	\frametitle{\texttt{else if}}
+	\pause
+	\begin{itemize}
+		\item \texttt{else if} prüft mehrere Bedingungen
+		      \pause
+		\item Beispiel:
+		      \begin{minted}{java}
 if (note == 1) {
     System.out.println("Sehr gut");
 } else if (note == 2) {
@@ -648,9 +610,9 @@ if (note == 1) {
     System.out.println("Befriedigend");
 } else {
     System.out.println("Ausreichend oder schlechter");
-} 
+}
     \end{minted}
-  \end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{comment}
@@ -760,19 +722,20 @@ int zahl = 5 / 0; // ArithmeticException
 		\item über Fehler hovern zeigt eine Beschreibung des Problems
 		      \pause
 		\item Konsole gibt auch Hinweise auf Fehler \newline
-			\begin{minted}{java}
+		      \begin{minted}{java}
   System.out.println("Lecker Grillerei!")
   			\end{minted}
-			\begin{ausgabe}
-				\color{red}java: ';' expected
-			\end{ausgabe}
-			\pause
+		      \begin{ausgabe}
+			      \color{red}java: ';' expected
+		      \end{ausgabe}
+		      \pause
 		\item Autoformatter: \texttt{Strg + Alt + L} (Windows/Linux), \texttt{Cmd + Opt + L} (Mac)
 	\end{itemize}
-	
+
 \end{frame}
 
 
+\renewcommand{\feedbackurl}{\vkFeedbackUrlDayOne}
 \input{../../end}
 
 \end{document}

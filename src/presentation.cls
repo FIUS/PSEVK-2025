@@ -3,8 +3,26 @@
 % Beamer class requires the following line to be included
 \LoadClass[aspectratio=1610]{beamer}
 \makeatletter
-\newcommand{\lecture@pathprefix}[1]{}
+\newcommand{\lecture@pathprefix}[1]{../../logos/}
+% Zentrale Konfiguration laden (falls vorhanden)
+\IfFileExists{../../config.tex}{%
+	\input{../../config.tex}%
+}{%
+	\IfFileExists{../config.tex}{%
+		\input{../config.tex}%
+	}{%
+		\IfFileExists{./config.tex}{%
+			\input{./config.tex}%
+		}{%
+			\IfFileExists{./src/config.tex}{%
+				\input{./src/config.tex}%
+			}{}%
+		}%
+	}%
+}
 \makeatother
+
+
 
 \usepackage{xcolor}
 \definecolor{accent}{RGB}{80, 85, 124}
@@ -221,5 +239,5 @@
 	\end{tcolorbox}
 }
 
-\newcommand{\feedbackurl}{}
+\newcommand{\feedbackurl}{\ifdefined\vkFeedbackUrlGeneral\vkFeedbackUrlGeneral\fi}
 \usepackage{qrcode}

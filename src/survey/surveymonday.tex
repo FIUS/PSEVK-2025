@@ -27,6 +27,7 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\IfFileExists{../config.tex}{\input{../config.tex}}{}
 \pagestyle{plain}
 \begin{document}
 
@@ -43,12 +44,11 @@
   \centering
   % \includegraphics{school_logo.png} Optional -uncomment to use
 \end{figure}
-\section*{\LARGE Feedback - PSE Vorkurs 2026}
+\section*{\LARGE \vkSurveyTitle}
 \vspace{1cm}
 
 \begin{tabular}{p{5.6cm}p{1.8cm}p{1.8cm}p{2.3cm}p{1.8cm}p{1.8cm}p{0.001cm}}
-  Ich war heute im Seminarraum... & $\Box$ 0.108 & $\Box$ 0.124 & $\Box$ GS-Pool & $\Box$ 0.363 \\
-                           & $\Box$ 0.463 & $\Box$ 0.447 & $\Box$ 0.457
+  Ich war heute im Seminarraum... & \vkSurveyRooms
 \end{tabular}
 
 \question*{Welchen Studiengang und im wievielten Semester studierst du?}

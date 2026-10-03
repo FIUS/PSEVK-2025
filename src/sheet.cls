@@ -3,6 +3,23 @@
 
 \LoadClass[11pt,a4paper]{article}
 
+% Zentrale Konfiguration laden (falls vorhanden)
+\IfFileExists{../../config.tex}{%
+	\input{../../config.tex}%
+}{%
+	\IfFileExists{../config.tex}{%
+		\input{../config.tex}%
+	}{%
+		\IfFileExists{./config.tex}{%
+			\input{./config.tex}%
+		}{%
+			\IfFileExists{./src/config.tex}{%
+				\input{./src/config.tex}%
+			}{}%
+		}%
+	}%
+}
+
 % Pakete
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
@@ -112,7 +129,7 @@
 % Logos
 \RequirePackage{atbegshi}
 
-\newcommand{\logopath}{logos/}
+\newcommand{\logopath}{../../logos/}
 
 \RequirePackage{tikz}
 \RequirePackage{background}

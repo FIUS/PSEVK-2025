@@ -1,5 +1,19 @@
-# PSEVK-2025
+# PSEVK (Java-Vorkurs)
 Sheets and project for the annual Java-Vorkurs of the Fachgruppe Informatik der Universität Stuttgart.
+
+## Jährliche Konfiguration (`src/config.tex`)
+Da es sich um ein jährliches Event handelt, können alle Variablen (Datum, Links, Personen, Rahmenprogramm) an einem einzigen Ort geändert werden: **`src/config.tex`** (bzw. `config.tex` im Hauptverzeichnis).
+
+Dort lassen sich zentral anpassen:
+- **Allgemeine Event-Infos:** `\vkTitle`, `\vkYear`, `\vkMonth`, `\vkSemester`, `\vkAuthors`, `\vkInstitute`, `\vkJdkVersion`
+- **Tagesdaten:** `\vkDateDayZero` bis `\vkDateDayFive`
+- **Web-Links:**
+  - Folien- und Aufgaben-Link: `\vkFolienUrl` (wird automatisch mit QR-Code eingebunden)
+  - Feedback-Links (Google Forms / EvaSys): `\vkFeedbackUrlDayOne` bis `\vkFeedbackUrlDayFive`
+  - Basis-URL für Uploads & Musterlösungen: `\vkUploadsBaseUrl` (aktualisiert automatisch alle Musterlösungs-ZIPs für Tag 1-4 & Highperformer)
+- **Rahmenprogramm / Social Events:** Grillerei (`\vkEventDayZero`), Karaoke (`\vkEventDayOne`), Kneipentour (`\vkEventDayFour...`), UNO-Party (`\vkEventDayFive...`)
+- **Feedbackbögen (Print):** Titel (`\vkSurveyTitle`) und Seminarräume (`\vkSurveyRooms`)
+
 
 ## Kompilation 
 

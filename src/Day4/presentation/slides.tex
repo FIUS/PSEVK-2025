@@ -1,9 +1,9 @@
 \documentclass{../../presentation}
 
-\title{PSE - Vorkurs Tag 4}
-\author{Linus, Philipp, Tillmann, Tobias}
-\institute{FIUS - Fachgruppe Informatik Universität Stuttgart}
-\date{08.10.2026}
+\title{\vkTitle\ Tag 4}
+\author{\vkAuthors}
+\institute{\vkInstitute}
+\date{\vkDateDayFour}
 
 \makeatletter
 \renewcommand{\lecture@pathprefix}[1]{../../logos/}
@@ -63,7 +63,6 @@ for (int i = 0; i < grill.length; i++) {
 	\end{itemize}
 \end{frame}
 
-
 \begin{frame}
 	\frametitle{Angenommen \dots}
 	\begin{itemize}
@@ -81,8 +80,6 @@ for (int i = 0; i < grill.length; i++) {
 	\end{itemize}
 \end{frame}
 
-
-
 % Melanie
 \begin{frame}[fragile,t]
 	\frametitle{Direkt umgesetzt}
@@ -94,8 +91,6 @@ int matrikelnummer1 = 12345;
 \end{minted}
 	\end{minipage}
 \end{frame}
-
-
 
 % Melanie + Paul
 \begin{frame}[fragile,t]
@@ -111,8 +106,6 @@ int matrikelnummer2 = 54321;
 \end{minted}
 	\end{minipage}
 \end{frame}
-
-
 
 % komplett
 \begin{frame}[fragile,t]
@@ -135,12 +128,10 @@ public static void lernen(String name) {
 \end{minted}
 	\end{minipage}
 	\only<2->{\begin{ausgabe}
-			Melanie sagt: \texttt{"}Ich hasse mein Leben\texttt{"} \newline
-			Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-		\end{ausgabe}}
+				Melanie sagt: \texttt{"}Ich hasse mein Leben\texttt{"} \newline
+				Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+			\end{ausgabe}}
 \end{frame}
-
-
 
 \begin{frame}[fragile]
 	\frametitle{Warum so nicht?!}
@@ -164,8 +155,6 @@ public static void lernen(String name) {
 	\end{minipage}
 \end{frame}
 
-
-
 % Teil-Folie
 \begin{frame}[fragile,t]
 	\frametitle{Was sind eigentlich Klassen?}
@@ -184,8 +173,6 @@ public static void lernen(String name) {
 	\end{minipage}
 
 \end{frame}
-
-
 
 % Volle Folie
 \begin{frame}[fragile,t]
@@ -266,7 +253,7 @@ public class Student{
 	\begin{itemize}
 		\item Klasse mit Konstruktor (gekürzt, nicht kompilierbar):
 		      \begin{minted}{java}
-// ... Attribute 
+// ... Attribute
 public Student(String name, int matrikelnummer) {
   this.name = name;
   this.matrikelnummer = matrikelnummer;
@@ -279,7 +266,6 @@ Student paul = new Student("Paul", 12345);
 			  \end{minted}
 	\end{itemize}
 \end{frame}
-
 
 \begin{frame}[fragile]
 	\frametitle{\texttt{paul} ein Highperformer}
@@ -330,8 +316,8 @@ paul.lernen();
 		      \pause
 		      \begin{minted}{java}
 public class Student {
-    private String name;         
-    public int matrikelnummer;   
+    private String name;
+    public int matrikelnummer;
 
     public void lernen() {
         System.out.println(name + " sagt: \"Ich hasse mein Leben\"");
@@ -340,8 +326,6 @@ public class Student {
 	\end{minted}
 	\end{itemize}
 \end{frame}
-
-
 
 \begin{frame}[fragile]
 	\frametitle{Sichtbarkeit in Klassen}
@@ -357,7 +341,6 @@ paul.lernen();
 		      \pause
 		      {\begin{ausgabe}
 				      12345
-
 
 				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 			      \end{ausgabe}}
@@ -375,7 +358,6 @@ System.out.println(paul.name);
 	\end{itemize}
 \end{frame}
 
-
 \begin{frame}[fragile]
 	\frametitle{Attribute können auch \texttt{final} sein}
 
@@ -389,7 +371,7 @@ System.out.println(paul.name);
 public class Student {
     private final String name;
     public int matrikelnummer;
-    
+
   public Student(String name, int matrikelnummer) {
     this.name = name; //kann jetzt nie wieder geändert werden
     this.matrikelnummer = matrikelnummer; //kann beliebig oft geändert werden
@@ -401,7 +383,6 @@ public class Student {
 	\end{itemize}
 
 \end{frame}
-
 
 \begin{frame}[plain]
 	\centering
@@ -458,15 +439,15 @@ public class Student {
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Frage 4: Eine Funktion innerhalb einer Klasse kann auf alle Attribute dieser Klasse zugreifen.}
+	\frametitle{Frage 4: Eine Funktion innerhalb einer Klasse kann auf alle Attribute dieser Klasse zugreifen.}
 
-    \begin{ausgabe}
-        \textcolor<2->{green!100!black}{wahr}
-    \end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{wahr}
+	\end{ausgabe}
 
-    \begin{ausgabe}
-        falsch
-    \end{ausgabe}
+	\begin{ausgabe}
+		falsch
+	\end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -575,17 +556,17 @@ uniStuttgart.pruefungsvorbereitung();
 			      \item<5->[\textbullet]durch \texttt{pruefungsvorbereitung} lernen alle Studis
 		      \end{itemize}
 		      \only<6->{
-			      \begin{ausgabe}
-				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+				      \begin{ausgabe}
+					      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 
-				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+					      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
 
-				      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
-			      \end{ausgabe}}
+					      Paul sagt: \texttt{"}Ich hasse mein Leben\texttt{"}
+				      \end{ausgabe}}
 	\end{itemize}
 \end{frame}
 
-\renewcommand{\feedbackurl}{https://forms.gle/JasKFVgR2ARoFVTEA}
+\renewcommand{\feedbackurl}{\vkFeedbackUrlDayFour}
 \input{../../end}
 
 \end{document}

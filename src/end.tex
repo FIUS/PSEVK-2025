@@ -1,29 +1,33 @@
 \begin{frame}[fragile]
-    \frametitle{Ende}
-    \begin{columns}
-        \begin{column}{0.65\textwidth}
-            \begin{itemize}
-                \item Folien und Aufgaben: \newline \url{https://fius.de/index.php/pse-vk-folien/}
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.35\textwidth}
-            \qrcode{https://fius.de/index.php/pse-vk-folien/}
-        \end{column}
-    \end{columns}
+	\frametitle{Ende}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\begin{itemize}
+				\item Folien und Aufgaben: \newline \url{\vkFolienUrl}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\qrcode{\vkFolienUrl}
+		\end{column}
+	\end{columns}
 
-    \vspace{3em}
+	\ifdefined\feedbackurl
+		\ExpandArgs{e}\IfBlankTF{\feedbackurl}{}{%
+			\vspace{3em}
 
-    \begin{columns}
-        \begin{column}{0.65\textwidth}
-            \begin{itemize}
-                \item Feedback: \newline \url{\feedbackurl}
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.35\textwidth}
-            \qrcode{\feedbackurl}
-        \end{column}
-    \end{columns}
+			\begin{columns}
+				\begin{column}{0.65\textwidth}
+					\begin{itemize}
+						\item Feedback: \newline \url{\feedbackurl}
+					\end{itemize}
+				\end{column}
+				\begin{column}{0.35\textwidth}
+					\qrcode{\feedbackurl}
+				\end{column}
+			\end{columns}
+		}%
+	\fi
 
-    Wenn ihr Fragen habt, sagt Bescheid!
+	Wenn ihr Fragen habt, sagt Bescheid!
 
 \end{frame}
