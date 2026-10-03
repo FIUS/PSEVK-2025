@@ -327,6 +327,74 @@ class Scratch {
 }
 
 
+//Highperformer Scratch zweite Version
+
+
+class Scratch {
+    public static final String GREEN = "\u001B[92m";
+    public static final String YELLOW = "\u001B[93m";
+    public static final String RESET = "\u001B[0m";
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        long anzahlStellen = 4;
+        long unterGrenze = (long) Math.pow(10, anzahlStellen - 1);
+        long oberGrenze = (long) Math.pow(10, anzahlStellen);
+
+        long ergebnis = random.nextLong(unterGrenze, oberGrenze);
+        System.out.println(ergebnis);
+        long versuche = 1;
+
+        while (true) {
+            System.out.print(anzahlStellen + "-stellige Zahl eingeben: ");
+            int spielerGuess = scanner.nextInt();
+
+            if (spielerGuess < unterGrenze || spielerGuess >= oberGrenze) {
+                System.out.println("Fehler: Die Zahl muss genau "+anzahlStellen+" Ziffern haben!");
+                continue;
+            }
+
+            int match = 0;
+
+            for (int stelle = 1; stelle <= anzahlStellen; stelle++) {
+                long kleinererZehner = (long) Math.pow(10, anzahlStellen - stelle);
+                long jetztStelle = (spielerGuess / kleinererZehner) % 10;
+
+                for (int ergebnisStelle = 1; ergebnisStelle <= anzahlStellen; ergebnisStelle++) {
+                    long kleinerZehnerErgebnis = (long) Math.pow(10, anzahlStellen - ergebnisStelle);
+                    long jetztStelleErgebnis = (ergebnis / kleinerZehnerErgebnis) % 10;
+
+                    if (jetztStelle == jetztStelleErgebnis && stelle == ergebnisStelle) {
+                        match = 2;
+                    } else if (jetztStelle == jetztStelleErgebnis) {
+                        match = Math.max(match, 1);
+                    }
+                }
+                if (match == 0) {
+                    System.out.print(jetztStelle + " ");
+                } else if (match == 1) {
+                    System.out.print(YELLOW + jetztStelle + RESET + " ");
+                } else {
+                    System.out.print(GREEN + jetztStelle + RESET + " ");
+                }
+
+                match = 0;
+            }
+            System.out.println();
+            System.out.println("--------------------------------");
+            if (ergebnis == spielerGuess) {
+                System.out.println(GREEN + "Jaaa! Richtig geraten. Benötigte Versuche: " + versuche + RESET);
+                break;
+            }
+            versuche++;
+        }
+    }
+}
+
+
+
         // Highperformer
         int numVars = 8;
 
