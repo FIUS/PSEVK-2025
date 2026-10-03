@@ -170,32 +170,20 @@ System.out.println(einArray[0][2]);
 
 \newpage
 \aufgabe{Aufgabe 4: Rekursive Palindrome}
-In dieser Aufgabe wollen wir prüfen, ob ein gegebenes Wort ein Palindrom ist. Palindrome sind Wörter, die rückwärts gelesen dasselbe Wort wie vorwärts gelesen sind.
-
+Gestern habt ihr bereits geprüft, ob ein Wort ein Palindrom ist. Heute wollen wir dieses Problem auf eine völlig neue, elegantere Art lösen: mit Arrays und Rekursion! Rekursion ist ein Konzept, bei dem eine Funktion sich selbst aufruft (Rekursion ist ein mächtiges Werkzeug und wird euch noch häufig begegnen).
 \begin{enumerate}
-    \item Lies mithilfe des Scanners (wie an Tag 1) ein Wort ein und wandle dieses in ein Zeichen-Array um. \\
-    \textit{Hinweis:} Mit der Methode \texttt{String.toCharArray()} kannst du einen \texttt{String} in ein \texttt{char[]}-Array umwandeln. \\
+    \item Lies mithilfe des Scanners ein Wort ein und wandle dieses in ein Zeichen-Array um. \\
+    \textit{Hinweis:} Mit der Funktion \texttt{String.toCharArray()} kannst du einen \texttt{String} in ein \texttt{char[]}-Array umwandeln. \\
     \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--}
-    \item Schreibe eine Methode, die das Array als Parameter übergeben bekommt und prüft, ob das erste und das letzte Element identisch sind. Sind die Zeichen gleich, soll \texttt{true} zurückgegeben werden, andernfalls \texttt{false}.
+    \item Schreibe eine Funktion, die das Array als Parameter übergeben bekommt und prüft, ob das erste und das letzte Element gleich ist. Sind die Zeichen gleich, soll \texttt{true} zurückgegeben werden, andernfalls \texttt{false}.
+    \item Schreibe eine weitere Funktion welche das erste und letzte Element des Arrays entfernt und das neue Array zurückgibt.
+    \item Schreibe nun die finale, rekursive Methode welche prüft ob das eingegebene Wort ein Palindrom ist. Nutze dafür deine Hilfsfunktionen aus den vorherigen Teilaufgaben!
     
-    \item Schreibe eine Methode, die ein Element an einem bestimmten Index aus einem Array entfernt. Die Methode erhält als Parameter das ursprüngliche Array sowie den Index und gibt das gekürzte Array als Ergebnis zurück. Erstelle zuerst ein neues Array, das um eins kürzer ist als das alte. Übertrage dann die verbleibenden Werte mit der Methode \texttt{System.arraycopy} in das neue Array. Hinweis: du musst \texttt{System.arraycopy} zwei mal ausführen. Die Funktionsweise von \texttt{System.arraycopy} wird hier erklärt: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#arraycopy-java.lang.Object-int-java.lang.Object-int-int-}.
-    \item Passe die Methode aus der zweiten Teilaufgabe an. Falls das erste und das letzte Zeichen gleich sind, ruft die Methode sich selbst mit einem verkürzten Array (ohne das erste und letzte Element) erneut auf. Dieser Vorgang soll sich so lange wiederholen, bis das Array weniger als 2 Elemente enthält, dann soll \texttt{true} zurückgegeben werden. \\
-    Wichtig: Der Rückgabewert der rekursiven Aufrufe muss immer an den Aufrufer weitergegeben werden, sodass am Ende nur dann \texttt{true} zurückgegeben wird, wenn alle verglichenen Zeichenpaare übereinstimmen. \\
-    Überlege dir, warum die Funktion prüft, ob das eingegebene Wort ein Palindrom ist.\\
-    \\
-    Hinweis: Kopiere die folgende Funktion und verwende sie um Elemente aus einem Array zu entfernen. Der Funktion musst du ein Array und einen Index übergeben und sie gibt ein neues Array ohne das Element am Index zurück.
-    \begin{minted}[linenos=false]{java}
-    public static char[] removeElement(char[] array, int index) {
-        if (array == null || index < 0 || index >= array.length) {
-            return array;
-        }
-        char[] result = new char[array.length - 1];
-        System.arraycopy(array, 0, result, 0, index);
-        System.arraycopy(array, index + 1, result, index, array.length - index - 1);
-
-        return result;
-    }
-    \end{minted}
+Kombiniere die Vergleichs-Logik aus Teilaufgabe 2 mit deiner Kürzungs-Funktion aus Teilaufgabe 3: Falls die Buchstaben an den Rändern gleich sind, soll die Methode sich selbst mit dem gekürzten Array aufrufen. 
+    
+\textit{Hinweis zur Rekursion:} Jede rekursive Methode benötigt zwingend eine Abbruchbedingung, da sie sonst unendlich oft weiterläuft. Überlege dir logisch: Ab welcher Array-Größe steht zweifelsfrei fest, dass der verbleibende Rest ein Palindrom ist?
+    
+Rufe deine fertige Methode zum Testen in deiner \texttt{main}-Methode auf.
 \end{enumerate}
 
 \newpage

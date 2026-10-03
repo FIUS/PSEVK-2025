@@ -60,6 +60,17 @@ public class Day3Musterloesung {
             arrayPrint2D(diamant(7));
             arrayPrint2D(diamanten(10));
 
+        // Aufgabe 4
+        // 4.1
+            Scanner scanner = new Scanner(System.in);
+            String wort = scanner.nextLine();
+            char[] wortArray = wort.toCharArray();
+        
+        // 4.4
+            System.out.println(istPalindrom(wortArray));
+
+
+
         // Highperformer
 
         printZeit(10);
@@ -271,12 +282,50 @@ public class Day3Musterloesung {
 
         return matrix;
     }
-
     
 
+// Aufgabe 4
+    //4.2
+        public static boolean vergleicheRaender(char[] arr) {
+        if (arr.length == 0) {
+            return false;
+        }
 
-    // Highperformer
-    // Highperformer 1
+        if (arr[0] == arr[arr.length - 1]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+        // alternative elegante Lösung: return arr[0] == arr[arr.length - 1];
+    
+    // 4.3
+    public static char[] kuerzeArray(char[] arr) {
+        char[] gekuerzt = new char[arr.length - 2];
+
+        for (int i = 0; i < gekuerzt.length; i++) {
+            gekuerzt[i] = arr[i + 1];
+        }
+        return gekuerzt;
+    }
+
+    // 4.4
+    public static boolean istPalindrom(char[] arr) {
+        if (arr.length <= 1) {
+            return true;
+        }
+
+        if (vergleicheRaender(arr)) {
+            char[] gekuerztesArray = kuerzeArray(arr);
+            return istPalindrom(gekuerztesArray);
+        } else {
+            return false;
+        }
+    }
+
+
+// Highperformer
+// Highperformer 1
 
     public static double printZeit(int anzahlTests) {
         long gesamtZeit = 0;
