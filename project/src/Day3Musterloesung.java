@@ -182,6 +182,153 @@ public class Day3Musterloesung {
         return fib;
     }
 
+    // vielleicht Highperformer 
+    import java.util.Random;
+import java.util.Scanner;
+
+class Scratch {
+    public static final String GREEN = "\u001B[92m";
+    public static final String YELLOW = "\u001B[93m";
+    public static final String RESET = "\u001B[0m";
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int ergebnis = random.nextInt(1000, 10000);
+        int versuche = 1;
+
+        while (true) {
+            System.out.print("vier stellige Zahl eingeben: ");
+            int spielerGuess = scanner.nextInt();
+
+            if (spielerGuess < 1000 || spielerGuess > 9999) {
+                System.out.println("Fehler: Die Zahl muss genau 4 Ziffern haben!");
+                continue;
+            }
+
+            if (ergebnis == spielerGuess) {
+                System.out.println(GREEN + "Jaaa! Richtig geraten. Benötigte Versuche: " + versuche + RESET);
+                break;
+            }
+
+            //Zahl in stellen zerlegen
+            int aktuelleZahl = spielerGuess;
+            int aktuelleErgebnis = ergebnis;
+
+            // mit mod 10 erhalten wir die letzte Stelle
+            int spielerStelle4 = aktuelleZahl % 10;
+            aktuelleZahl = aktuelleZahl / 10;
+            int spielerStelle3 = aktuelleZahl % 10;
+            aktuelleZahl = aktuelleZahl / 10;
+            int spielerStelle2 = aktuelleZahl % 10;
+            aktuelleZahl = aktuelleZahl / 10;
+            int spielerStelle1 = aktuelleZahl % 10;
+
+            // mit mod 10 erhalten wir die letzte Stelle
+            int ergebnisStelle4 = aktuelleErgebnis % 10;
+            aktuelleErgebnis = aktuelleErgebnis / 10;
+            int ergebnisStelle3 = aktuelleErgebnis % 10;
+            aktuelleErgebnis = aktuelleErgebnis / 10;
+            int ergebnisStelle2 = aktuelleErgebnis % 10;
+            aktuelleErgebnis = aktuelleErgebnis / 10;
+            int ergebnisStelle1 = aktuelleErgebnis % 10;
+
+            String output1 = "_", output2 = "_", output3 = "_", output4 = "_";
+
+            //checken ob einzelne Stellen schon richtig sind
+            boolean stelle1richtig = ergebnisStelle1 == spielerStelle1;
+            boolean stelle2richtig = ergebnisStelle2 == spielerStelle2;
+            boolean stelle3richtig = ergebnisStelle3 == spielerStelle3;
+            boolean stelle4richtig = ergebnisStelle4 == spielerStelle4;
+
+            if (stelle1richtig) {
+                ergebnisStelle1 = 42;
+                output1 = GREEN + spielerStelle1 + RESET + " ";
+            }
+            if (stelle2richtig) {
+                ergebnisStelle2 = 42;
+                output2 = GREEN + spielerStelle2 + RESET + " ";
+            }
+            if (stelle3richtig) {
+                ergebnisStelle3 = 42;
+                output3 = GREEN + spielerStelle3 + RESET + " ";
+            }
+            if (stelle4richtig) {
+                ergebnisStelle4 = 42;
+                output4 = GREEN + spielerStelle4 + RESET + " ";
+            }
+
+
+            if (!stelle1richtig) {
+                if (spielerStelle1 == ergebnisStelle2) {
+                    ergebnisStelle2 = 42;
+                    output1 = YELLOW + spielerStelle1 + RESET + " ";
+                } else if (spielerStelle1 == ergebnisStelle3) {
+                    ergebnisStelle3 = 42;
+                    output1 = YELLOW + spielerStelle1 + RESET + " ";
+                } else if (spielerStelle1 == ergebnisStelle4) {
+                    ergebnisStelle4 = 42;
+                    output1 = YELLOW + spielerStelle1 + RESET + " ";
+                } else {
+                    output1 = spielerStelle1 + " ";
+                }
+            }
+
+            if (!stelle2richtig) {
+                if (spielerStelle2 == ergebnisStelle1) {
+                    ergebnisStelle1 = 42;
+                    output2 = YELLOW + spielerStelle2 + RESET + " ";
+                } else if (spielerStelle2 == ergebnisStelle3) {
+                    ergebnisStelle3 = 42;
+                    output2 = YELLOW + spielerStelle2 + RESET + " ";
+                } else if (spielerStelle2 == ergebnisStelle4) {
+                    ergebnisStelle4 = 42;
+                    output2 = YELLOW + spielerStelle2 + RESET + " ";
+                } else {
+                    output2 = spielerStelle2 + " ";
+                }
+            }
+
+
+            if (!stelle3richtig) {
+                if (spielerStelle3 == ergebnisStelle1) {
+                    ergebnisStelle1 = 42;
+                    output3 = YELLOW + spielerStelle3 + RESET + " ";
+                } else if (spielerStelle3 == ergebnisStelle2) {
+                    ergebnisStelle2 = 42;
+                    output3 = YELLOW + spielerStelle3 + RESET + " ";
+                } else if (spielerStelle3 == ergebnisStelle4) {
+                    ergebnisStelle4 = 42;
+                    output3 = YELLOW + spielerStelle3 + RESET + " ";
+                } else {
+                    output3 = spielerStelle3 + " ";
+                }
+            }
+
+            if (!stelle4richtig) {
+                if (spielerStelle4 == ergebnisStelle1) {
+                    ergebnisStelle1 = 42;
+                    output4 = YELLOW + spielerStelle4 + RESET + " ";
+                } else if (spielerStelle4 == ergebnisStelle2) {
+                    ergebnisStelle2 = 42;
+                    output4 = YELLOW + spielerStelle4 + RESET + " ";
+                } else if (spielerStelle4 == ergebnisStelle3) {
+                    ergebnisStelle3 = 42;
+                    output4 = YELLOW + spielerStelle4 + RESET + " ";
+                } else {
+                    output4 = spielerStelle4 + " ";
+                }
+            }
+
+            System.out.println("Auswertung: " + output1 + output2 + output3 + output4);
+            System.out.println("--------------------------------");
+
+            versuche++;
+        }
+    }
+}
+
     // Highperformer
     // Highperformer 1
 
