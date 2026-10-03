@@ -381,6 +381,7 @@ class Scratch {
                 }
 
                 match = 0;
+                Thread.sleep(500);
             }
             System.out.println();
             System.out.println("--------------------------------");
