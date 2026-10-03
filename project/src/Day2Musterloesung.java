@@ -327,15 +327,15 @@ class Scratch {
 }
 
 
-//Highperformer Scratch zweite Version
-
+import java.util.Random;
+import java.util.Scanner;
 
 class Scratch {
     public static final String GREEN = "\u001B[92m";
     public static final String YELLOW = "\u001B[93m";
     public static final String RESET = "\u001B[0m";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
@@ -352,7 +352,7 @@ class Scratch {
             int spielerGuess = scanner.nextInt();
 
             if (spielerGuess < unterGrenze || spielerGuess >= oberGrenze) {
-                System.out.println("Fehler: Die Zahl muss genau "+anzahlStellen+" Ziffern haben!");
+                System.out.println("Fehler: Die Zahl muss genau " + anzahlStellen + " Ziffern haben!");
                 continue;
             }
 
@@ -363,12 +363,15 @@ class Scratch {
                 long jetztStelle = (spielerGuess / kleinererZehner) % 10;
 
                 for (int ergebnisStelle = 1; ergebnisStelle <= anzahlStellen; ergebnisStelle++) {
+
+
                     long kleinerZehnerErgebnis = (long) Math.pow(10, anzahlStellen - ergebnisStelle);
                     long jetztStelleErgebnis = (ergebnis / kleinerZehnerErgebnis) % 10;
 
+
                     if (jetztStelle == jetztStelleErgebnis && stelle == ergebnisStelle) {
                         match = 2;
-                    } else if (jetztStelle == jetztStelleErgebnis) {
+                    } else if (jetztStelle == jetztStelleErgebnis && jetztStelleErgebnis != (spielerGuess / kleinerZehnerErgebnis) % 10) {
                         match = Math.max(match, 1);
                     }
                 }
@@ -381,6 +384,7 @@ class Scratch {
                 }
 
                 match = 0;
+
                 Thread.sleep(500);
             }
             System.out.println();
