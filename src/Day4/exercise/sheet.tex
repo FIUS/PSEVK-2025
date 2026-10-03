@@ -115,14 +115,14 @@ public void optimaleGrillerei(Grillgut[] zuGrillen) {
                 draufGelegt++;
             }
             if (aufDemGrill[i] != null) {
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i]hitzetoleranz);
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i]maxDurchheit - aufDemGrill[i].durchheit);
+                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].hitzetoleranz);
+                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].maxDurchheit - aufDemGrill[i].durchheit);
             }
         }
         setzeHitze(momentaneMaxHitze);
         grillen();
         for (int i = 0; i < aufDemGrill.length; i++) {
-            if (aufDemGrill[i] != null && aufDemGrill[i]durchheit <= aufDemGrill[i].maxDurchheit &&aufDemGrill[i].durchheit >= aufDemGrill[i]minDurchheit && !aufDemGrill[i].verbrannt) {
+            if (aufDemGrill[i] != null && aufDemGrill[i].durchheit <= aufDemGrill[i].maxDurchheit &&aufDemGrill[i].durchheit >= aufDemGrill[i].minDurchheit && !aufDemGrill[i].verbrannt) {
                 anzahlDurch++;
                 runternehmen(i);
             }
