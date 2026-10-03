@@ -182,6 +182,7 @@ public class Day3Musterloesung {
         return fib;
     }
 
+
     // Highperformer
     // Highperformer 1
 
