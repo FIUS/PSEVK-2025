@@ -4,11 +4,22 @@ public class Day3Musterloesung {
     public static void main(String[] args) {
         // Aufgabe 1
 
+        // 1.1
         ankuendigung();
+
+        // 1.2
         System.out.println(ankuendigungRueckgabe());
+
+        // 1.3
         namensAnkuendigung("Melanie");
+
+        // 1.4
         System.out.println(addierer(3, 5));
+
+        // 1.5
         System.out.println(multiplizierer(3, 5));
+
+        // 1.6
         System.out.println(fakultaet(5));
 
         // Aufgabe 2
@@ -46,19 +57,19 @@ public class Day3Musterloesung {
 
     // Aufgabe 1
     // 1.1
-    public static void ankuendigung() {
-        System.out.println("Es ist Grillereizeit meine Freunde!");
-    }
+        public static void ankuendigung() {
+            System.out.println("Es ist Grillereizeit meine Freunde!");
+        }
 
     // 1.2
-    public static String ankuendigungRueckgabe() {
-        return "Es ist Grillereizeit meine Freunde!";
-    }
+        public static String ankuendigungRueckgabe() {
+            return "Es ist Grillereizeit meine Freunde!";
+        }
 
     // 1.3
-    public static void namensAnkuendigung(String name) {
-        System.out.println("Komm ran " + name + " es gibt Grillung!");
-    }
+        public static void namensAnkuendigung(String name) {
+            System.out.println("Komm ran " + name + " es gibt Grillung!");
+        }
 
     // 1.4
     public static int addierer(int zahl1, int zahl2) {
@@ -82,7 +93,7 @@ public class Day3Musterloesung {
     public static int fakultaet(int zahl) {
         int ergebnis = 1;
         for (int i = zahl; i > 0; i--) {
-            ergebnis = ergebnis * i;
+            ergebnis = multiplizierer(ergebnis, i);
         }
         return ergebnis;
     }
