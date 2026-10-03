@@ -42,6 +42,23 @@ public class Day3Musterloesung {
             arrayPrint(fibonacci(10));
 
 
+        // Aufgabe 3
+        // 3.1
+            int[][] ein2DArray = new int[3][3];
+            ein2DArray[0][0] = 1;
+            ein2DArray[1][1] = 2;
+            ein2DArray[2][2] = 3;
+            arrayPrint2D(ein2DArray);
+
+        // 3.2
+            arrayPrint2D(diagonalesBandEinfach(6));
+        
+        // 3.3
+            arrayPrint2D(diagonalesBandBreit(6));
+            //optional: 3.3 Codeanhang 1,2,3
+            arrayPrint2D(kariert(6));
+            arrayPrint2D(diamant(7));
+            arrayPrint2D(diamanten(10));
 
         // Highperformer
 
@@ -151,13 +168,29 @@ public class Day3Musterloesung {
     }
 
     // 3.2
-
-    public static int[][] diagonalesBand(int seitenlaenge) {
+    public static int[][] diagonalesBandEinfach(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
 
         for (int i = 0; i < seitenlaenge; i++) {
             for (int j = 0; j < seitenlaenge; j++) {
-                if (Math.abs(i - j) < 3) {
+                if (j == i) {
+                    matrix[i][j] = 0;
+                }else {
+                    matrix[i][j] = 1;
+                }
+            }
+        }
+        return matrix;
+    }
+
+    // 3.3
+
+    public static int[][] diagonalesBandBreit(int seitenlaenge) {
+        int[][] matrix = new int[seitenlaenge][seitenlaenge];
+
+        for (int i = 0; i < seitenlaenge; i++) {
+            for (int j = 0; j < seitenlaenge; j++) {
+                if (j >= i - 2 && j <= i + 2) {
                     matrix[i][j] = 0;
                 } else {
                     matrix[i][j] = 1;
@@ -167,7 +200,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 3.2 Codeanhang 1
+    // 3.3 Codeanhang 1
     public static int[][] kariert(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         for (int i = 0; i < seitenlaenge; i++) {
@@ -180,7 +213,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 3.2 Codeanhang 2
+    // 3.3 Codeanhang 2
     public static int[][] diamant(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         int mitte = seitenlaenge / 2;
@@ -188,7 +221,18 @@ public class Day3Musterloesung {
         for (int i = 0; i < seitenlaenge; i++) {
             for (int j = 0; j < seitenlaenge; j++) {
                 matrix[i][j] = 1;
-                if (Math.abs(mitte - i) + Math.abs(mitte - j) <= mitte) {
+
+                int abstandI = mitte - i;
+                if (abstandI < 0) {
+                    abstandI = abstandI * -1; 
+                }
+                
+                int abstandJ = mitte - j;
+                if (abstandJ < 0) {
+                    abstandJ = abstandJ * -1; 
+                }
+                
+                if (abstandI + abstandJ <= mitte) {
                     matrix[i][j] = 0;
                 }
             }
@@ -197,7 +241,7 @@ public class Day3Musterloesung {
         return matrix;
     }
 
-    // 3.2 Codeanhang 3
+    // 3.3 Codeanhang 3
     public static int[][] diamanten(int seitenlaenge) {
         int[][] matrix = new int[seitenlaenge][seitenlaenge];
         int mitte = 2;
@@ -205,7 +249,21 @@ public class Day3Musterloesung {
         for (int i = 0; i < seitenlaenge; i++) {
             for (int j = 0; j < seitenlaenge; j++) {
                 matrix[i][j] = 1;
-                if (Math.abs(mitte - (i % 5)) + Math.abs(mitte - (j % 5)) <= mitte) {
+                
+                int zeileImBlock = i % 5;
+                int spalteImBlock = j % 5;
+                
+                int abstandI = mitte - zeileImBlock;
+                if (abstandI < 0) {
+                    abstandI = abstandI * -1;
+                }
+                
+                int abstandJ = mitte - spalteImBlock;
+                if (abstandJ < 0) {
+                    abstandJ = abstandJ * -1;
+                }
+                
+                if (abstandI + abstandJ <= mitte) {
                     matrix[i][j] = 0;
                 }
             }
