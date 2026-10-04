@@ -325,8 +325,6 @@ class Scratch {
         }
     }
 }
-
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -339,7 +337,7 @@ class Scratch {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-        long anzahlStellen = 4;
+        long anzahlStellen = 5;
         long unterGrenze = (long) Math.pow(10, anzahlStellen - 1);
         long oberGrenze = (long) Math.pow(10, anzahlStellen);
 
@@ -356,25 +354,38 @@ class Scratch {
                 continue;
             }
 
-            int match = 0;
-
             for (int stelle = 1; stelle <= anzahlStellen; stelle++) {
+                int match = 0;
                 long kleinererZehner = (long) Math.pow(10, anzahlStellen - stelle);
                 long jetztStelle = (spielerGuess / kleinererZehner) % 10;
 
+                int prevDuplicates = 0;
+
+                for (int selbstStelle = 0; selbstStelle < stelle; selbstStelle++) {
+                    long prevKleinererZehner = (long) Math.pow(10, anzahlStellen - selbstStelle);
+                    long prevStelle = (spielerGuess / prevKleinererZehner) % 10;
+                    if (prevStelle == jetztStelle) {
+                        prevDuplicates++;
+                    }
+                }
+
+
                 for (int ergebnisStelle = 1; ergebnisStelle <= anzahlStellen; ergebnisStelle++) {
-
-
                     long kleinerZehnerErgebnis = (long) Math.pow(10, anzahlStellen - ergebnisStelle);
                     long jetztStelleErgebnis = (ergebnis / kleinerZehnerErgebnis) % 10;
+                    long jetztStelleGuess = (spielerGuess / kleinerZehnerErgebnis) % 10;
+
 
 
                     if (jetztStelle == jetztStelleErgebnis && stelle == ergebnisStelle) {
                         match = 2;
-                    } else if (jetztStelle == jetztStelleErgebnis && jetztStelleErgebnis != (spielerGuess / kleinerZehnerErgebnis) % 10) {
+                    } else if (jetztStelle == jetztStelleErgebnis && jetztStelleErgebnis != jetztStelleGuess && prevDuplicates == 0) {
                         match = Math.max(match, 1);
+                    } else if (jetztStelle == jetztStelleErgebnis && jetztStelleErgebnis != jetztStelleGuess) {
+                        prevDuplicates--;
                     }
                 }
+
                 if (match == 0) {
                     System.out.print(jetztStelle + " ");
                 } else if (match == 1) {
