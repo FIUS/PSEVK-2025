@@ -138,25 +138,25 @@ public class Day1Musterloesung {
         int computerWahl = rndGenerator.nextInt(3);
 
         // 4.2
-        // Eingabe des Spielers
-        System.out.println("Wähle 0 (Schere), 1 (Stein) oder 2 (Papier): ");
-        int spielerWahl = sc.nextInt();
+            // Eingabe des Spielers
+            System.out.println("Wähle 0 (Schere), 1 (Stein) oder 2 (Papier): ");
+            int spielerWahl = sc.nextInt();
 
-        // reine Infromationsausgabe
-        System.out.println("Computer wählt: " + computerWahl);
-        System.out.println("Spieler wählt: " + spielerWahl);
+            // reine Infromationsausgabe
+            System.out.println("Computer wählt: " + computerWahl);
+            System.out.println("Spieler wählt: " + spielerWahl);
 
-        // Auswertung: Erst Unentschieden prüfen, dann alle 3 Gewinnfälle des Spielers
-        if (computerWahl == spielerWahl){
-            System.out.println("Unentschieden");
-        } else if ((spielerWahl == 0 && computerWahl == 2) ||
-                (spielerWahl == 1 && computerWahl == 0) ||
-                (spielerWahl == 2 && computerWahl == 1)) {
-            System.out.println("Spieler hat gewonnen!");
-        } else {
-            // Wenn es weder Unentschieden ist noch der Spieler gewonnen hat, gewinnt der Computer
-            System.out.println("Computer hat gewonnen!");
-        }
+            // Auswertung: Erst Unentschieden prüfen, dann alle 3 Gewinnfälle des Spielers
+            if (computerWahl == spielerWahl){
+                System.out.println("Unentschieden");
+            } else if ((spielerWahl == 0 && computerWahl == 2) ||
+                    (spielerWahl == 1 && computerWahl == 0) ||
+                    (spielerWahl == 2 && computerWahl == 1)) {
+                System.out.println("Spieler hat gewonnen!");
+            } else {
+                // Wenn es weder Unentschieden ist noch der Spieler gewonnen hat, gewinnt der Computer
+                System.out.println("Computer hat gewonnen!");
+            }
 
         // 4.3
         // Wir nutzen die Variablen aus der bisherigen Aufgabe
@@ -203,16 +203,7 @@ public class Day1Musterloesung {
         }
 
         // Highperformer
-        // 1
-        Random random = new Random();
-        int zufallszahlEins = random.nextInt(100);
-        int zufallszahlZwei = random.nextInt(100);
-
-        System.out.print("Versuche das Ergebnis von  " + zufallszahlEins + " % " + zufallszahlZwei + " einzugeben: ");
-        derScanner.nextInt();
-        System.out.println("Das richtige Ergebnis von " + zufallszahlEins + " % " + zufallszahlZwei + " ist: " + (zufallszahlEins % zufallszahlZwei));
-
-        // 2
+        
         // Lösung 1:
         //ausgabeZahl = seed * 8387234217L % resultBound;
         // alternativ sehr hohe Primzahl wie 2147483647L nutzen
