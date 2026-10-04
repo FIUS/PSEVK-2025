@@ -250,12 +250,20 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Pseudozufällige Zahlen}
-Vor allem in der Cybersecurity, aber auch in anderen Anwendungen wie Prozeduralen Systemen, sind Zufallszahlen sehr wichtig. 
-Echter Zufall ist nahezu unmöglich mit Computern zu erschaffen, deswegen werden oft pseudo-random-number-generators (Generatoren von "Pseudozufälligen" Zahlen) genutzt um aus einer kleinen, hoffentlich zufälligen Seed-Zahl größere Mengen an zufälligen Zahlen zu generieren, diese Generatoren sind Deterministisch, d.h. sie müssen für ein und denselben Seed immer dieselben Zufallszahlen generieren. Hierbei ist es sehr wichtig, das die Generatoren keine Muster aufweisen, da diese im Cybersecurity Beispiel für einen Angriff genutzt werden können. Hier baut ihr so einen pseudo-random-number-generator.
+Vor allem in der Cybersecurity sind Zufallszahlen extrem wichtig. 
+Echter Zufall ist jedoch für Computer nahezu unmöglich zu erzeugen. Daher nutzt man oft sogenannte pseudo-random-number-generators (Generatoren von "Pseudozufälligen" Zahlen). Diese nehmen eine kleine Startzahl (den Seed) und erzeugen daraus mit mathematischen Operatoren eine größere zufällige Zahl.
+
+Dabei ist es wichtig das für ein und denselben Seed immer auch die gleiche Zufallszahl erzeugt wird (das nennt man Determinismus). 
+Zusätzlich darf der Generator keine Muster aufweisen, da diese sonst von Angreifern ausgenutzt werden könnten.
+
+Im folgenden sollt ihr genau solche einen Generator bauen. Befolge dafür die folgenden Schritte:
 \begin{enumerate}
-	\item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen.
+	%\item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen.
 	\item Ladet euch das Rahmenprogramm hier: \newline \url{\vkUrlDayOneHighperformer}  \newline  herunter.
-	      \newline Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.
+  \item Macht euch mit der Datei vertraut. Für die Aufgabe ist in erster Linie die Funktion \texttt{randomize(long seed)} relevant. Dort schreibt ihr euren Code zwischen die Kommentare. Die Variable \texttt{seed} ist die 5-stellige Startzahl, die ihr vom eingebauten Zufallsgenerator bekommt. Am Ende der Funktion sollt ihr eure fertige 10-stellige Zufallszahl in der Variable \texttt{ausgabeZahl} speichern. Der Rest ist alles Teil unseres Testprogramms.
+  \item Bevor ihr etwas anpasst führe die Datei einmal aus. In der Konsole kannst du das Feedback unseres Testprogramms sehen.
+  \item Schreibe jetzt deine eigene \texttt{randomize(long seed)} Version. Nutze dafür ausschließlich die mathematische Operatoren welche wir bisher kennengelernt haben (ihr dürft natürlich nicht die Random Klasse verwenden).
+  Versuche dabei alle Anforderungen zu erfüllen welche das Testprogramm an dich stellt. Alternativ kannst du auch versuchen unser Testprogramm auszutricksen. 
 \end{enumerate}
 
 \newpage

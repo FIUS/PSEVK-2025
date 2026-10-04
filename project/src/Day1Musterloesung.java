@@ -215,6 +215,7 @@ public class Day1Musterloesung {
         // 2
         // Lösung 1:
         //ausgabeZahl = seed * 8387234217L % resultBound;
+        // alternativ sehr hohe Primzahl wie 2147483647L nutzen
 
         // Lösung 2:
         // !Braucht die drei folgenden imports!
