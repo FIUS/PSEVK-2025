@@ -50,7 +50,7 @@ for (int i = 0; i < 5; i++) {
     \end{ausgabe}
     \item Erweitere den Passwort Checker, sodass der Nutzer nur 3 Versuche hat. Nach dem dritten Fehlversuch soll das Programm mit einer entsprechenden Meldung abbrechen.
 
-    \item Schreibe ein Spiel, bei dem das Programm eine Zufallszahl zwischen 1 und 100 generiert, die der Nutzer erraten soll. Nach jedem Tipp gibt das Programm einen Hinweis aus, ob die gesuchte Zahl größer oder kleiner als der eingegebene Tipp ist. Das Spiel endet, sobald die Zahl korrekt erraten wurde.Nutze dafür wieder die Random Klasse.
+    \item Schreibe ein Spiel, bei dem das Programm eine Zufallszahl zwischen 1 und 100 generiert, die der Nutzer erraten soll. Nach jedem Tipp gibt das Programm einen Hinweis aus, ob die gesuchte Zahl größer oder kleiner als der eingegebene Tipp ist. Das Spiel endet, sobald die Zahl korrekt erraten wurde. Nutze dafür wieder die Random Klasse: \url{https://docs.oracle.com/javase/8/docs/api/java/util/Random.html}
         \begin{ausgabe}
             //Beispiel mit der Zufallszahl 61\\
             Dein Tipp: 42\\
@@ -97,37 +97,36 @@ Nutze für diese Aufgabe keine String oder Char Variablen sondern reine Zahlenar
 
 
 \newpage
-\aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
-In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck.
-\\\\
-Formeln werden in drei Kategorien unterteilt: immer wahr (Tautologien), immer falsch (unerfüllbar) oder je nach den Werten der Variablen manchmal wahr und manchmal falsch (erfüllbar).
-\\\\
-\textbf{Tautologie (ist immer wahr): } \texttt{(a || !a)}, da \texttt{a} entweder wahr oder falsch sein muss, somit ist die oder Verknüpfung von \texttt{a} und \texttt{!a} immer wahr.\\
-\textbf{Unerfüllbar (ist immer falsch): } \texttt{(a \&\& !b \&\& !a \&\& c)}, da \texttt{a} zugleich wahr und falsch sein müsste\\
-\textbf{Erfüllbar (kann wahr oder falsch sein): } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}
+\aufgabe{HIGHPERFORMER: Wordle aber anders}
+In der Highperformer-Aufgabe geht es darum das Rätselspiel Wordle (oder Mastermind für die Älteren unter euch) nachzubauen, mit dem Unterschied das Zahlen geraten werden. 
 
 \begin{enumerate}
-    \item Prüfe folgende Boole'sche Ausdrücke mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke nacheinander in deinen Code kopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.\\
-    Hinweis: Die Formeln haben bis zu 8 Variablen (a-h)
-          \begin{enumerate}
-              \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
-              \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar
-              \item \begin{ausgabe} \texttt{((a \&\& !b \&\& !c) || (!a \&\& b \&\& d)) \&\& (e || f)} \end{ausgabe} %Erfüllbar 3/16
-              \item \begin{ausgabe} \texttt{((a \&\& b) || (!a || b) || (!b)) \&\&
-                            ((c \&\& d) || (!c || d) || (!d)) \&\&
-                            ((e \&\& f) || (!e || f) || (!f)) \&\&
-                            ((g \&\& h) || (!g || h) || (!h))}
-                    \end{ausgabe} %Tautologie
-              \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c) \&\& (!a || !b || c)) \&\&
-                            ((d \&\& !e \&\& f) \&\& (!d || e || !f)) \&\&
-                            ((g \&\& h) \&\& (!g \&\& !h))}
-                    \end{ausgabe} %Unerfüllbar
-              \item \begin{ausgabe} \texttt{(!(a \&\& b \&\& c) || (a \&\& (b || c))) || (d || !d)} \end{ausgabe} %Tautologie
-              \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c \&\& !d \&\& !e) ||
-                            (!a \&\& c \&\& d \&\& !b \&\& !e) ||
-                            (!b \&\& !c \&\& !d \&\& e \&\& f)) \&\& (!g || h)}
-                    \end{ausgabe} %Erfüllbar 9/128
-        \end{enumerate}
-        \item Modifiziere nun dein Programm: Wenn eine Formel erfüllbar ist, soll zusätzlich ausgegeben werden, wie viele Belegungen die Formel wahr oder falsch machen und wie groß die Wahrscheinlichkeit ist, dass eine zufällige Belegung wahr die Formel wahr werden lässt.
+    \item Generiere eine Zufallszahl mit einer festen Anzahl an Stellen.
+    \item Es ist möglich die Farbe von Ausgaben zu bestimmen. Wenn man einen bestimmten "Farb-Char" vor eine Ausgabe und einen "Reset-Char" hinter einer Ausgabe schreibt, dann wird nimmt der Text zwischendrin die Farbe an. Kopiere folgenden Code und teste die Farben kurz:
+\begin{minted}[linenos=false]{java}
+String GREEN = "\u001B[92m";
+String YELLOW = "\u001B[93m";
+String RESET = "\u001B[0m";
+System.out.println(YELLOW + "Gelb " + RESET + GREEN + "Grün" + RESET);
+\end{minted}
+    \item Lies vom Nutzer wiederholt Zahlen ein und gib jeweils aus inwieweit sie mit dem Ergebnis übereinstimmen. Zähle die Anzahl der Versuche und gib dem Nutzer am Ende aus, wieviele Versuche gebraucht wurden.
+    \begin{enumerate}
+        \item Korrekt geratene Ziffern, welche an der richtigen Stelle stehen sollen Grün ausgegeben werden.
+        \item Jede geratene Ziffer, die zwar in der Lösungszahl vorkommt, aber eben nicht an der richtigen Stelle soll als Gelb ausgegeben werden. 
+        \item Ziffern die überhaupt nicht in der Lösungszahl vorkommen sollen Farblos ausgegeben werden.
     \end{enumerate}
+    Hier ein paar Beispiele zum selbsttest:
+\begin{ausgabe}
+Die gesuchte Zahl ist: 418538\\
+209726\\
+\textcolor{green}{41}6\textcolor{yellow}{8}2\textcolor{yellow}{5}\\
+\textcolor{yellow}{8}8\textcolor{green}{8}\textcolor{yellow}{4}44\\
+\textcolor{green}{418}\textcolor{yellow}{35}7\\
+\textcolor{green}{418538}
+\end{ausgabe}
+    \item Überlege dir, wie man dieses simple Spiel optimal, d.h. mit so wenig versuchen wie möglich lösen könnte und schreibe ein Programm das dir sagt was du in jeder Situation raten sollst.
+\end{enumerate}
+
+
+
 \end{document}

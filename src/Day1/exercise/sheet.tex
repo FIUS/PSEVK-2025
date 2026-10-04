@@ -246,8 +246,9 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 
 
 \newpage
-\aufgabe{HIGHPERFORMER-Aufgabe: Zufallszahlen}
-Nutze auch hier den Java Zufallsgenerator wie in Aufgabe 4 eingeführt.
+\aufgabe{HIGHPERFORMER-Aufgabe: Pseudozufällige Zahlen}
+Vor allem in der Cybersecurity, aber auch in anderen Anwendungen wie Prozeduralen Systemen, sind Zufallszahlen sehr wichtig. 
+Echter Zufall ist nahezu unmöglich mit Computern zu erschaffen, deswegen werden oft pseudo-random-number-generators (Generatoren von "Pseudozufälligen" Zahlen) genutzt um aus einer kleinen, hoffentlich zufälligen Seed-Zahl größere Mengen an zufälligen Zahlen zu generieren, diese Generatoren sind Deterministisch, d.h. sie müssen für ein und denselben Seed immer dieselben Zufallszahlen generieren. Hierbei ist es sehr wichtig, das die Generatoren keine Muster aufweisen, da diese im Cybersecurity Beispiel für einen Angriff genutzt werden können. Hier baut ihr so einen pseudo-random-number-generator.
 \begin{enumerate}
 	\item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen.
 	\item Ladet euch das Rahmenprogramm hier: \newline \url{\vkUrlDayOneHighperformer}  \newline  herunter.
