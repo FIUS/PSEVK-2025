@@ -1,4 +1,4 @@
-% Dieses sheet hat nur die Aufgaben, das heißt es beginnt erst nach der inhaltlichen Präsi, wo schon alle Internet und intelliJ haben sollten.
+% Dieses sheet hat nur die Aufgaben, dass heißt es beginnt erst nach der inhaltlichen Präsi, wo schon alle Internet und intelliJ haben sollten.
 \documentclass{../../sheet}
 \renewcommand{\logopath}{../../logos/}
 
@@ -150,12 +150,12 @@ Gibt folgendes aus:
 	      \end{ausgabe}
 	\item Erstelle eine Variable mit einem beliebigen Wert und gib sie aus, ändere im selben Programmdurchlauf den Wert der Variable und gib sie nochmal aus.
 	\item Erstelle zwei \texttt{int}-Variablen und gib deren Summe und deren Produkt aus.
-	\item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), das die Person in der Variable begrüßt.
+	\item Erstelle eine Variable mit deinem Namen und schreibe genau ein Print (nicht mehr), dass die Person in der Variable begrüßt.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
-Während das Programm ausgeführt wird können auch Werte aus der Konsole eingelesen werden. Das geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} wird die Eingabe beendet.\\
+Während das Programm ausgeführt wird können auch Werte aus der Konsole eingelesen werden. Dies geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} wird die Eingabe beendet.\\
 Hinweis: Kommentiert am besten die Aufgaben aus, die ihr schon erledigt habt, sonst werden irgendwann bei jedem Durchlauf all eure Lösungen ausgeführt werden.
 \begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
@@ -250,7 +250,9 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 Vor allem in der Cybersecurity, aber auch in anderen Anwendungen wie Prozeduralen Systemen, sind Zufallszahlen sehr wichtig. 
 Echter Zufall ist nahezu unmöglich mit Computern zu erschaffen, deswegen werden oft pseudo-random-number-generators (Generatoren von "Pseudozufälligen" Zahlen) genutzt um aus einer kleinen, hoffentlich zufälligen Seed-Zahl größere Mengen an zufälligen Zahlen zu generieren, diese Generatoren sind Deterministisch, d.h. sie müssen für ein und denselben Seed immer dieselben Zufallszahlen generieren. Hierbei ist es sehr wichtig, das die Generatoren keine Muster aufweisen, da diese im Cybersecurity Beispiel für einen Angriff genutzt werden können. Hier baut ihr so einen pseudo-random-number-generator.
 \begin{enumerate}
-    \item Ladet euch das Rahmenprogramm \href{\vkUrlDayOneHighperformer}{hier} herunter. Dort bekommt ihr den Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren und if-Verzweigungen die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen.   
+	\item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen.
+	\item Ladet euch das Rahmenprogramm hier: \newline \url{\vkUrlDayOneHighperformer}  \newline  herunter.
+	      \newline Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.
 \end{enumerate}
 
 \newpage
