@@ -103,6 +103,6 @@ public class Grill {
                 }
             }
         }
-        System.out.println("Diese Grillung hat für " + zuGrillen.length + " Grillgüter " + grillZaehler + " Grillzyklen gebraucht, ich hoff das war nicht zu lang");
+        System.out.println("Diese Grillung hat für " + zuGrillen.length + " Grillgüter " + grillZaehler + " Grillzyklen gebraucht, ich hoffe, dass war nicht zu lang");
     }
 }

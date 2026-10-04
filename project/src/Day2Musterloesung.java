@@ -454,6 +454,6 @@ class Scratch {
         System.out.println("Die Formel ist unerfüllbar ist: " + unerfuellbar);
         System.out.println("Die Formel ist eine Tautologie ist: " + tautologie);
         System.out.println("Die Formel wird bei " + wahr + " von " + (int) Math.pow(2, numVars) + " Belegungen wahr");
-        System.out.println("Die Wahrscheinlichkeit das die Formel bei einer zufälligen Belegung wahr wird ist " + wahr / Math.pow(2, numVars) * 100 + "%");
+        System.out.println("Die Wahrscheinlichkeit, dass die Formel bei einer zufälligen Belegung wahr wird ist " + wahr / Math.pow(2, numVars) * 100 + "%");
     }
 }
