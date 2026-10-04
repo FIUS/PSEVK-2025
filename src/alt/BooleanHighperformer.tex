@@ -1,0 +1,37 @@
+\begin{document}
+
+\aufgabe{HIGHPERFORMER-Aufgabe: Formeln und Erfüllbarkeit}
+In der Highperformer Aufgabe heute geht es um die Erfüllbarkeit von Formeln. Eine Formel ist ein Boole'scher Ausdruck.
+\\\\
+Formeln werden in drei Kategorien unterteilt: immer wahr (Tautologien), immer falsch (unerfüllbar) oder je nach den Werten der Variablen manchmal wahr und manchmal falsch (erfüllbar).
+\\\\
+\textbf{Tautologie (ist immer wahr): } \texttt{(a || !a)}, da \texttt{a} entweder wahr oder falsch sein muss, somit ist die oder Verknüpfung von \texttt{a} und \texttt{!a} immer wahr.\\
+\textbf{Unerfüllbar (ist immer falsch): } \texttt{(a \&\& !b \&\& !a \&\& c)}, da \texttt{a} zugleich wahr und falsch sein müsste\\
+\textbf{Erfüllbar (kann wahr oder falsch sein): } \texttt{((a \&\& c) || b)}, da sie wahr wird wenn z.b. \texttt{b = true} ist, jedoch keine Tautologie, da die Gesamtformel auch falsch sein kann, bspw. mit \texttt{a = false}, \texttt{c = true} und \texttt{b = false}
+
+\begin{enumerate}
+    \item Prüfe folgende Boole'sche Ausdrücke mit einem Programm auf ihre Erfüllbarkeit indem du die jeweiligen Ausdrücke nacheinander in deinen Code kopierst und gib dann erfüllbar, unerfüllbar oder Tautologie aus.\\
+    Hinweis: Die Formeln haben bis zu 8 Variablen (a-h)
+          \begin{enumerate}
+              \item \begin{ausgabe} \texttt{(!(a \&\& b) || a) \&\& (!(c \&\& d) || c) \&\& (e || !e)} \end{ausgabe} %Tautologie
+              \item \begin{ausgabe} \texttt{((a \&\& b \&\& c) \&\& !(a || (b || c))) \&\& d} \end{ausgabe} %Unerfüllbar
+              \item \begin{ausgabe} \texttt{((a \&\& !b \&\& !c) || (!a \&\& b \&\& d)) \&\& (e || f)} \end{ausgabe} %Erfüllbar 3/16
+              \item \begin{ausgabe} \texttt{((a \&\& b) || (!a || b) || (!b)) \&\&
+                            ((c \&\& d) || (!c || d) || (!d)) \&\&
+                            ((e \&\& f) || (!e || f) || (!f)) \&\&
+                            ((g \&\& h) || (!g || h) || (!h))}
+                    \end{ausgabe} %Tautologie
+              \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c) \&\& (!a || !b || c)) \&\&
+                            ((d \&\& !e \&\& f) \&\& (!d || e || !f)) \&\&
+                            ((g \&\& h) \&\& (!g \&\& !h))}
+                    \end{ausgabe} %Unerfüllbar
+              \item \begin{ausgabe} \texttt{(!(a \&\& b \&\& c) || (a \&\& (b || c))) || (d || !d)} \end{ausgabe} %Tautologie
+              \item \begin{ausgabe} \texttt{((a \&\& b \&\& !c \&\& !d \&\& !e) ||
+                            (!a \&\& c \&\& d \&\& !b \&\& !e) ||
+                            (!b \&\& !c \&\& !d \&\& e \&\& f)) \&\& (!g || h)}
+                    \end{ausgabe} %Erfüllbar 9/128
+        \end{enumerate}
+        \item Modifiziere nun dein Programm: Wenn eine Formel erfüllbar ist, soll zusätzlich ausgegeben werden, wie viele Belegungen die Formel wahr oder falsch machen und wie groß die Wahrscheinlichkeit ist, dass eine zufällige Belegung wahr die Formel wahr werden lässt.
+    \end{enumerate}
+
+\end{document}
