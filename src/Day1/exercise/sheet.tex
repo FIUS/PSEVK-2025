@@ -246,11 +246,11 @@ Die Offizielle Dokumentation für Random findet ihr hier: \url{https://docs.orac
 
 
 \newpage
-\aufgabe{HIGHPERFORMER-Aufgabe: Zufallszahlen}
-Nutze auch hier den Java Zufallsgenerator wie in Aufgabe 4 eingeführt.
+\aufgabe{HIGHPERFORMER-Aufgabe: Pseudozufällige Zahlen}
+Vor allem in der Cybersecurity, aber auch in anderen Anwendungen wie Prozeduralen Systemen, sind Zufallszahlen sehr wichtig. 
+Echter Zufall ist nahezu unmöglich mit Computern zu erschaffen, deswegen werden oft pseudo-random-number-generators (Generatoren von "Pseudozufälligen" Zahlen) genutzt um aus einer kleinen, hoffentlich zufälligen Seed-Zahl größere Mengen an zufälligen Zahlen zu generieren, diese Generatoren sind Deterministisch, d.h. sie müssen für ein und denselben Seed immer dieselben Zufallszahlen generieren. Hierbei ist es sehr wichtig, das die Generatoren keine Muster aufweisen, da diese im Cybersecurity Beispiel für einen Angriff genutzt werden können. Hier baut ihr so einen pseudo-random-number-generator.
 \begin{enumerate}
-    \item Modifiziere dein Moduloübungsprogramm aus Aufgabe 2.2 so, dass die beiden Anfangszahlen nicht mehr selbst eingegeben werden sondern so, dass diese zufällig generiert werden. Der Nutzer soll immer noch selber versuchen das Ergebnis zu berechnen. 
-    \item Ladet euch das Rahmenprogramm \href{\vkUrlDayOneHighperformer}{hier} herunter. Dort bekommt ihr einen sogenannten Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die PSE-Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen. Wenn ihr einen funktionierenden Ansatz habt, könnt ihr versuchen die Aufgabe noch auf eine andere Art zu lösen.   
+    \item Ladet euch das Rahmenprogramm \href{\vkUrlDayOneHighperformer}{hier} herunter. Dort bekommt ihr den Seed (eine 5-Stellige Zahl) vom eingebauten Java Zufallsgenerator. Generiert mit den mathematischen Operatoren und if-Verzweigungen die ihr jetzt kennt anhand dieses Seeds eine neue 10-Stellige Zufallszahl (ihr dürft natürlich nicht die \texttt{Random} Klasse verwenden). Wir (die Vorkurs Orgas) haben ein Testerprogramm geschrieben, dass versucht eure Lösung zu bewerten und eventuelle Schwächen eures Ansatzes aufzuzeigen, doch wenn ihr Lust habt könnt ihr auch versuchen den Test auszutricksen.   
 \end{enumerate}
 
 \newpage
