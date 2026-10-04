@@ -73,20 +73,20 @@
 	cross/.default={1pt}}
 
 \tikzset{
-	-|-/.style={
-			to path={
-					(\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
-					\tikztonodes
-				}
-		},
-	-|-/.default=0.5,
-	|-|/.style={
-			to path={
-					(\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
-					\tikztonodes
-				}
-		},
-	|-|/.default=0.5,
+-|-/.style={
+to path={
+		(\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
+		\tikztonodes
+	}
+},
+-|-/.default=0.5,
+|-|/.style={
+to path={
+		(\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
+		\tikztonodes
+	}
+},
+|-|/.default=0.5,
 }
 
 \makeatletter
@@ -197,7 +197,8 @@
 \newcommand{\custombackground}{
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south west] (uni) at (current page.south west) {\includegraphics[height=1.5em]{\lecture@pathprefix{}logo-uni.pdf}};
-		\node[right=0.5em of uni] {\includegraphics[height=1.5em]{\lecture@pathprefix{}fius-logo-neu.png}};
+		\node[right=0.5em of uni] (fius) {\includegraphics[height=1.5em]{\lecture@pathprefix{}fius-logo-neu.png}};
+		\node[anchor=south east, xshift=-2em] (theme) at (current page.south east) {\includegraphics[height=3em]{\lecture@pathprefix{}Theme.png}};
 	\end{tikzpicture}
 }
 \makeatother
@@ -234,8 +235,8 @@
 
 \BeforeBeginEnvironment{minted}{
 	\begin{tcolorbox}[colback=gray!5, colframe=black!80, boxrule=0.5pt, arc=2mm]
-}
-\AfterEndEnvironment{minted}{
+		}
+		\AfterEndEnvironment{minted}{
 	\end{tcolorbox}
 }
 
