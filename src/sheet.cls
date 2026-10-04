@@ -113,16 +113,16 @@
 
 \BeforeBeginEnvironment{minted}{
 	\begin{tcolorbox}[
-		colback=gray!5,
-		colframe=black!80,
-		boxrule=0.5pt,
-		arc=2mm,
-		enhanced,
-		boxsep=1pt,
-		left=4pt, right=4pt, top=4pt, bottom=4pt,
-	]
-}
-\AfterEndEnvironment{minted}{
+			colback=gray!5,
+			colframe=black!80,
+			boxrule=0.5pt,
+			arc=2mm,
+			enhanced,
+			boxsep=1pt,
+			left=4pt, right=4pt, top=4pt, bottom=4pt,
+		]
+		}
+		\AfterEndEnvironment{minted}{
 	\end{tcolorbox}
 }
 
@@ -135,6 +135,7 @@
 \RequirePackage{background}
 \RequirePackage{fancyhdr}
 \RequirePackage{etoolbox}
+\usetikzlibrary{positioning}
 
 % Logos groß Titelblatt
 \newcommand{\SetBigLogos}{
@@ -149,9 +150,10 @@
 					\node[anchor=north west, inner sep=30pt, shift={(0.5cm,-0.3cm)}]
 					at (current page.north west)
 					{\includegraphics[height=3em]{\logopath logo-uni.pdf}};
-					\node[anchor=north east, inner sep=30pt, shift={(-0.5cm,0.2cm)}]
+					\node[anchor=north east, inner sep=30pt, shift={(-0.5cm,0.2cm)}] (uni)
 					at (current page.north east)
 					{\includegraphics[height=6em]{\logopath fius-logo-neu.png}};
+					\node[left=0.5em of uni] (fius) {\includegraphics[height=6em]{\logopath Theme.png}};
 				\end{tikzpicture}
 			}
 	}
@@ -162,6 +164,11 @@
 	\fancyhf{}
 	\fancyhead[L]{\includegraphics[height=1.5em]{\logopath logo-uni.pdf}}
 	\fancyhead[R]{\includegraphics[height=1.8em]{\logopath fius-logo-neu.png}}
+	\fancyhead[R]{%
+		\raisebox{-0.15em}{\includegraphics[height=2em]{\logopath Theme.png}}%
+		\hspace{0.5em}%
+		\includegraphics[height=1.8em]{\logopath fius-logo-neu.png}%
+	}%
 	\fancyhead[C]{\@title}  % ← Ändere "2" je nach Tag!
 	\fancyfoot[C]{\thepage}
 	\renewcommand{\headrulewidth}{0.4pt}
