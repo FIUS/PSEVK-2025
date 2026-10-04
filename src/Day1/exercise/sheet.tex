@@ -87,6 +87,7 @@ System.out.println("\nLeerzeile");
 \end{ausgabe}
 \bigskip
 \textbf{Scanner:}
+Mit dem Scanner kann man Text aus der Konsole einlesen um ihn dann im Programm zu verwenden. Das Scanner Packet muss hierfür zuerst mit \texttt{import java.util.Scanner;} importiert werden.
 \begin{minted}[linenos=false]{java}
 import java.util.Scanner;
 
@@ -94,6 +95,8 @@ Scanner sc = new Scanner(System.in);
 int x = sc.nextInt();
 int y = sc.nextInt();
 System.out.println(x + y);
+String eineEingabe = sc.nextLine();
+System.out.println("Du hast "+ eineEingabe + " geschrieben.")
   \end{minted}
 
 \textbf{Booleanoperatoren:}

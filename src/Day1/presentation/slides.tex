@@ -370,30 +370,6 @@ System.out.println("Meine Lieblingszahl ist " + number + "!");
 \end{frame}
 
 
-\begin{frame}[fragile]
-	\frametitle{Eingabe mit \texttt{Scanner}}
-	\pause
-	Benutzereingaben werden in Java mit der \texttt{Scanner} Klasse verarbeitet
-	\pause
-	\begin{itemize}
-		\item Mit \texttt{Scanner} kann man Benutzereingaben aus der Konsole einlesen.
-		      \pause
-		\item Dafür muss die Klasse \texttt{Scanner} aus dem Paket \texttt{java.util} importiert werden.
-		      \pause
-		\item Imports steht ganz oben im Java-Quelltext
-	\end{itemize}
-	\pause
-	\begin{minted}{java}
-import java.util.Scanner;
-\end{minted}
-	\pause
-	\begin{minted}{java}
-Scanner scanner = new Scanner(System.in);
-String name = scanner.nextLine();
-System.out.println(name);
-  \end{minted}
-\end{frame}
-
 
 
 %BOOLEAN
@@ -407,7 +383,7 @@ System.out.println(name);
 		      \pause
 		\item z.B:
 		      \begin{minted}{java}
-boolean heuteDienstag = true;
+boolean heuteMontag = true;
     \end{minted}
 
 	\end{itemize}
@@ -422,11 +398,11 @@ boolean heuteDienstag = true;
 	\only<1->{Wenn \texttt{a} und \texttt{b} Werte sind, prüfen diese Operatoren Beziehungen zwischen ihnen:}
 
 	\begin{itemize}
-		\item<2->\texttt{heuteDienstag == esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} gleich \texttt{esRegnet} ist
+		\item<2->\texttt{heuteMontag == esRegnet} \quad Wahr, wenn \texttt{heuteMontag} gleich \texttt{esRegnet} ist
 		      \begin{minted}{java}
-boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag gleich esRegnet
+boolean result = (heuteMontag == esRegnet); // result true, wenn heuteMontag gleich esRegnet
     \end{minted}
-		      \achtung für Strings: \texttt{equals()} benutzen!
+		      \achtung  für Strings: \texttt{equals()} benutzen!
 
 	\end{itemize}
 \end{frame}
@@ -436,9 +412,9 @@ boolean result = (heuteDienstag == esRegnet); // result true, wenn heuteDienstag
 	\pause
 
 	\begin{itemize}
-		\item<1->\texttt{heuteDienstag != esRegnet} \quad Wahr, wenn \texttt{heuteDienstag} ungleich \texttt{esRegnet} ist
+		\item<1->\texttt{heuteMontag != esRegnet} \quad Wahr, wenn \texttt{heuteMontag} ungleich \texttt{esRegnet} ist
 		      \begin{minted}{java}
-boolean result = (heuteDienstag != esRegnet); // result true, wenn heuteDienstag ungleich esRegnet
+boolean result = (heuteMontag != esRegnet); // result true, wenn heuteMontag ungleich esRegnet
     \end{minted}
 
 		\item<3->\texttt{preis < geld} \quad Wahr, wenn \texttt{preis} kleiner als \texttt{geld} ist
@@ -521,14 +497,14 @@ if (Bedingung) {
 		      \pause
 		\item Beispiel:
 		      \begin{minted}{java}
-boolean heuteDienstag = true;
-if (heuteDienstag) {
-  System.out.println("Crazyyy heute ist Dienstag");
+boolean heuteMontag = true;
+if (heuteMontag) {
+  System.out.println("Crazyyy heute ist Montag");
 }
       \end{minted}
 		      \pause
 		      \begin{ausgabe}
-			      Crazyyy heute ist Dienstag
+			      Crazyyy heute ist Montag
 		      \end{ausgabe}
 	\end{itemize}
 \end{frame}
