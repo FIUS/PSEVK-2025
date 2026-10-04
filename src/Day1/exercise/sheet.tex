@@ -86,7 +86,7 @@ System.out.println("\nLeerzeile");
 	Leerzeile
 \end{ausgabe}
 \bigskip
-\textbf{Scanner:}
+\textbf{Scanner:}\\
 Mit dem Scanner kann man Text aus der Konsole einlesen um ihn dann im Programm zu verwenden. Das Scanner Packet muss hierfür zuerst mit \texttt{import java.util.Scanner;} importiert werden.
 \begin{minted}[linenos=false]{java}
 import java.util.Scanner;
@@ -106,8 +106,8 @@ System.out.println("Du hast "+ eineEingabe + " geschrieben.")
 	\item Logische Operatoren: \texttt{\&\&} (UND), \texttt{||} (ODER), \texttt{!} (NICHT)
 	\item \textbf{\texttt{if}, \texttt{else}, \texttt{else if}} zur Entscheidungslogik
 	      \begin{minted}[fontsize=\footnotesize,linenos=false]{java}
-if (x > 5 && x < 10) {
-  System.out.println("x ist zwischen 5 und 10");
+if (x > 5 && x <= 10) {
+  System.out.println("x ist zwischen 6 und 10");
 } else {
   System.out.println("x ist außerhalb");
 }
@@ -159,7 +159,7 @@ Gibt folgendes aus:
 \newpage
 \aufgabe{Aufgabe 2: Scanner}
 Während das Programm ausgeführt wird können auch Werte aus der Konsole eingelesen werden. Dies geht mit einem Scanner-Objekt. Mit \texttt{scannerObjekt.next()} wird die nächste eingegebene Zeile eingelesen. Mit \textbf{Enter} wird die Eingabe beendet.\\
-Hinweis: Kommentiert am besten die Aufgaben aus, die ihr schon erledigt habt, sonst werden irgendwann bei jedem Durchlauf all eure Lösungen ausgeführt werden.
+Hinweis: Kommentiert am besten die Aufgaben aus (setzt // vor jede Zeile, die nicht ausgeführt werden soll), die ihr schon erledigt habt, sonst werden irgendwann bei jedem Durchlauf all eure Lösungen ausgeführt werden.
 \begin{minted}[linenos=false]{java}
 Scanner derScanner = new Scanner(System.in);
 System.out.println("Gib deinen Namen ein: ");
@@ -173,7 +173,7 @@ System.out.println("Du heißt " + deinName);
 Wobei die obere Melanie vom Nutzer eingegeben wird.
 
 \begin{enumerate}
-	\item Programmiere einen Addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \texttt{Scanner.next()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
+	\item Programmiere einen Addierer, der zwei Zahlen einliest und die Summe ausgibt. Mit \\ \texttt{Scanner.nextLine()} funktioniert etwas nicht, überlegt mal warum (Tipp im \hyperlink{Aufgabe_2.1}{Codeanhang})?
 	      \begin{ausgabe}
 		      Gib eine Zahl ein: 12\\
 		      Gib noch eine Zahl ein: 3\\
