@@ -19,33 +19,37 @@ Um das WLAN für euren Laptop aufzusetzen braucht ihr die App von Eduroam. Hierf
 
 \aufgabe{WLAN - Windows}
 \begin{itemize}
-	\item Im Internet auf „geteduroam.app“ gehen und die Windows Version herunterladen
-	\item Dann nach Universität Stuttgart suchen
-	\item Nun Student wählen und eure Daten eingeben
-	\item Nun auf Verbinden klicken und fertig
+	\item Den Eduroam config Assistent öffnen: https://uni-stuttgart.de/eduroam
+	\item Auf continue clicken
+	\item Mit dem st-account anmelden
+	\item Mit Request new Certificate ein Zertifikat anfordern
+	\item Einen Gerätenamen eingeben
+	\item Die eduroam app bei https://geteduroam.app/ herunterladen
+	\item Uni Stuttgart auswählen
+	\item In der Studentenmail, z.B. unter bei https://mail.uni-stuttgart.de, die Serial number kopieren
+	\item Die Seriennummer in die geöffnete Website eingeben
 \end{itemize}
 
 \aufgabe{WLAN - MacOS}
 \begin{itemize}
-	\item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
-	\item Gruppe „Student“ wählen
-	\item Das Konfigurationspaket herunterladen
-	\item In euren Systemeinstellungen auf „Geräteverwaltung“ gehen
-	\item Nun über das Plus-Symbol das Konfigurationspaket hinzufügen
-	\item stxxxxx - Benutzername
-	\item euer Passwort eingeben
-	\item Nun auf Verbinden klicken und fertig
+  \item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
+  \item Klicke auf "continue"
+  \item Melde dich mit deinem ST-Account an
+  \item Klicke auf "Request new cert"
+  \item Gebe dem Zertifikat eine Bezeichnung
+  \item Scrolle nach unten und klicke auf macOS/iOS/iPadOS und lade dort das Zertifikat herunter
+  \item Offne die Einstellungen, klicke ganz open auf "Profil heruntergeladen" und klicke dort zwei mal auf das Eduroam Zertifikat
+  \item Klicke links auf "installieren"
 \end{itemize}
 \newpage
 \aufgabe{WLAN - Linux}
 \begin{itemize}
-	\item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
-	\item Als Benutzergruppe „Student“ wählen
-	\item Unten links auf „einen anderen Installer auswählen“ klicken
-	\item „Linux“ auswählen
-	\item Über den Button das Pythonskript herunterladen
-	\item Im Terminal mit \texttt{\$ python3 [Dateipfad zum Pythonskript]} ausführen.
-	\item Den Anweisungen folgen und Benutzername (stxxxxxx@stud.uni-stuttgart.de) sowie Passwort eingeben
+  \item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
+	\item Dann auf Continue Klicken
+	\item "Request new cert" => "Device name or description"-> Confirm form
+	\item Wenn ihr NetworkManager benutzt, laded das Zertifikat im PKCS\#12 Format herunter und nutzt dieses für Eduroam.
+	\item Ihr könnt Details dazu in der Tablelle dadrunter oder im Konfigurations Portal.
+	\item Falls ihr wpa\_supplicant direkt benutzt, ladet die Zertifikatsdatei im PEM Format herunter und folgt den Konfigurationsanweisungen auf der Seite.
 \end{itemize}
 
 \newpage
