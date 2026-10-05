@@ -39,13 +39,12 @@ Um das WLAN für euren Laptop aufzusetzen braucht ihr die App von Eduroam. Hierf
 \newpage
 \aufgabe{WLAN - Linux}
 \begin{itemize}
-	\item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
-	\item Als Benutzergruppe „Student“ wählen
-	\item Unten links auf „einen anderen Installer auswählen“ klicken
-	\item „Linux“ auswählen
-	\item Über den Button das Pythonskript herunterladen
-	\item Im Terminal mit \texttt{\$ python3 [Dateipfad zum Pythonskript]} ausführen.
-	\item Den Anweisungen folgen und Benutzername (stxxxxxx@stud.uni-stuttgart.de) sowie Passwort eingeben
+  \item Im Internet auf „uni-stuttgart.de/eduroam“ gehen
+	\item Dann auf Continue Klicken
+	\item "Request new cert" => "Device name or description"-> Confirm form
+	\item Wenn ihr NetworkManager benutzt, laded das Zertifikat im PKCS\#12 Format herunter und nutzt dieses für Eduroam.
+	\item Ihr könnt Details dazu in der Tablelle dadrunter oder im Konfigurations Portal.
+	\item Falls ihr wpa\_supplicant direkt benutzt, ladet die Zertifikatsdatei im PEM Format herunter und folgt den Konfigurationsanweisungen auf der Seite.
 \end{itemize}
 
 \newpage
