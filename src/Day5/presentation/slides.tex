@@ -12,7 +12,6 @@
 \usepackage{todonotes}
 \setuptodonotes{inline}
 
-
 \begin{document}
 
 \begin{frame}
@@ -20,191 +19,493 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Recap Tag 4}
+	\frametitle{Recap Tag 4: Klassen und Objekte}
+	\begin{itemize}
+		\item \textbf{Klasse}: Ein \textbf{Bauplan} für Objekte
+		      \begin{itemize}
+			      \item Definiert den Zustand über \textbf{Attribute} (Variablen)
+			      \item Definiert das Verhalten über \textbf{Methoden} (Funktionen)
+		      \end{itemize}
+		\item \textbf{Objekt}: Eine konkrete \textbf{Instanz} im Arbeitsspeicher
+	\end{itemize}
 	\pause
-	\begin{minted}{java}
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
 public class Student {
     String name;
     int matrikelnummer;
 
     void lernen() {
-	System.out.println(name + " lernt fleißig!");
+        System.out.println(name + " lernt fleißig!");
     }
 }
 	\end{minted}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Recap Tag 4}
+	\frametitle{Recap Tag 4: Konstruktoren \& Instanziierung}
+	\begin{itemize}
+		\item \textbf{Konstruktor}: Spezielle Methode zur Initialisierung von Objekten
+		      \begin{itemize}
+			      \item Heißt genauso wie die Klasse, hat \textbf{keinen} Rückgabetyp
+			      \item \texttt{this.name} unterscheidet Instanzattribut von Methodenparameter
+		      \end{itemize}
+		\item Neue Objekte werden mit \texttt{new} erzeugt:
+	\end{itemize}
 	\pause
-	\begin{minted}{java}
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
 public Student(String name, int matrikelnummer) {
-	this.name = name;
-	this.matrikelnummer = matrikelnummer;
+    this.name = name;
+    this.matrikelnummer = matrikelnummer;
 }
 
+// Objekte erzeugen
 Student paul = new Student("Paul", 12345);
-paul.lernen(); // → Paul lernt fleißig!
-	\end{minted}
-	\pause
-	\begin{minted}{java}
-Student anna = new Student("Anna", 67890);
-
-System.out.println(anna.matrikelnummer); // → 67890
-anna.lernen(); // → Anna lernt fleißig!
+paul.lernen(); // -> Paul lernt fleißig!
 	\end{minted}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Recap Tag 4}
-	\pause
-	\begin{minted}{java}
-public class Student {
-private final String name;
-public int matrikelnummer;
-
-public Student(String name, int matrikelnummer) {
-	this.name = name;
-	this.matrikelnummer = matrikelnummer;
-}
-}
-	\end{minted}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Map (Dictionary)}
+	\frametitle{Recap Tag 4: Referenzen im Speicher}
 	\begin{itemize}
-		\item Eine Map (oder ein Dictionary) ist eine Datenstruktur, die Schlüssel-Wert-Paare speichert.
-		\item Jeder Schlüssel ist eindeutig und wird verwendet, um den entsprechenden Wert zu finden.
-		\item Maps sind nützlich, um Daten zu organisieren und schnell auf sie zuzugreifen.
+		\item \textbf{Primitive Typen} (\texttt{int}, \texttt{boolean}): Der Wert liegt direkt in der Variable.
+		\item \textbf{Objekte}: Die Variable speichert eine \textbf{Referenz} (Adresse / Zeiger) auf das eigentliche Objekt im Speicher!
+	\end{itemize}
+	\pause
+	\vspace{0.6em}
+	\centering
+	\begin{tikzpicture}
+		\node[draw, rounded corners, fill=accent!15, minimum width=2.5cm, minimum height=0.8cm] (var) at (0, 0) {\texttt{Student s}};
+		\node[draw, rounded corners, fill=green!15, minimum width=3.5cm, minimum height=1.2cm, align=center] (obj) at (5.5, 0) {\textbf{Student-Objekt}\\ \footnotesize name: 'Paul'\\ \footnotesize matrikelnummer: 12345};
+
+		\draw[->, very thick, >=stealth] (var) -- node[above]{\footnotesize\textit{zeigt auf}} (obj);
+	\end{tikzpicture}
+	\vspace{0.6em}
+	\pause
+	\begin{itemize}
+		\item\achtung{} Zeigt eine Referenzvariable auf \textbf{kein} Objekt, hat sie den Wert \texttt{null}.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Map (Dictionary)}
+	\frametitle{Motivation: Warum Maps?}
 	\begin{itemize}
-		\item Wir wollen Werte mit einem \texttt{Schlüssel} verbinden → z. B. “Name” → Matrikelnummer
-		\item Dafür gibt es in Java Map-Strukturen - der Standard: HashMap
+		\item \textbf{Bisher: Arrays}
+		      \begin{itemize}
+			      \item Zugriff erfolgt rein über Zahlen-Indizes: \texttt{namen[0]}, \texttt{noten[4]}
+			      \item Was aber, wenn wir wissen wollen: \textit{„Welche Matrikelnummer hat Paul?“}
+			      \item Mit Arrays müssen wir jedes Element einzeln durchsuchen!
+		      \end{itemize}
+		\item\pause \textbf{Idee: Assoziativer Speicher}
+		      \begin{itemize}
+			      \item Direkter Zugriff über einen beliebigen Bezeichner (Schlüssel)!
+			      \item Analogie: \textbf{Wörterbuch} (Wort $\to$ Übersetzung), \textbf{Telefonbuch} (Name $\to$ Nummer), \textbf{Spind} (Nummer $\to$ Inhalt).
+		      \end{itemize}
+		\item\pause \textbf{In Java:} \textbf{Maps} (auch Dictionary oder Assoziatives Array genannt).
 	\end{itemize}
-	\begin{minted}{java}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Das Prinzip: Schlüssel-Wert-Paare}
+	\begin{itemize}
+		\item Eine Map verwaltet Paare aus \textbf{Schlüssel} (Key) und \textbf{Wert} (Value).
+		\item \textbf{Schlüssel (Key):} Eindeutiger Suchbegriff zum Nachschlagen.
+		\item \textbf{Wert (Value):} Die hinterlegte Information.
+	\end{itemize}
+	\vspace{0.8em}
+	\centering
+	\begin{tikzpicture}
+		\node[draw, rounded corners, fill=accent!20, minimum width=3cm, minimum height=0.8cm] (k1) at (0, 1.2) {\textbf{'Deutschland'}};
+		\node[draw, rounded corners, fill=accent!20, minimum width=3cm, minimum height=0.8cm] (k2) at (0, 0) {\textbf{'Frankreich'}};
+
+		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v1) at (6, 1.2) {\textbf{'Berlin'}};
+		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v2) at (6, 0) {\textbf{'Paris'}};
+
+		\draw[->, very thick, >=stealth] (k1) -- node[above]{\footnotesize\textit{map.get(...)}} (v1);
+		\draw[->, very thick, >=stealth] (k2) -- node[above]{\footnotesize\textit{map.get(...)}} (v2);
+
+		\node[above=0.2cm of k1] {\textbf{Schlüssel (Key)}};
+		\node[above=0.2cm of v1] {\textbf{Wert (Value)}};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{HashMap in Java: Syntax}
+	\begin{itemize}
+		\item Die Standard-Implementierung in Java ist \texttt{HashMap} aus \texttt{java.util.HashMap}.
+		\item Syntax: \texttt{HashMap<SchlüsselTyp, WertTyp> name = new HashMap<>();}
+	\end{itemize}
+	\pause
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
 import java.util.HashMap;
-	\end{minted}
-	\begin{minted}{java}
-HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
 
-System.out.println(studis.get("Melanie"));
+// Erstellt eine Map von String (Land) auf String (Hauptstadt)
+HashMap<String, String> hauptstaedte = new HashMap<>();
+
+// Eintrag hinzufügen: put(Schlüssel, Wert)
+hauptstaedte.put("Deutschland", "Berlin");
+hauptstaedte.put("Frankreich", "Paris");
+
+// Wert abfragen: get(Schlüssel)
+System.out.println(hauptstaedte.get("Deutschland"));
 	\end{minted}
+	\pause
 	\begin{ausgabe}
-		1976370
+		Berlin
 	\end{ausgabe}
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Wichtig: Wrapper-Klassen für primitive Typen}
+	\begin{itemize}
+		\item\achtungitem In Java-Generics (\texttt{<...>}) sind \textbf{keine primitiven Typen} erlaubt!
+		\item\fehleritem \texttt{HashMap<String, int>} $\to$ \alert{Kompilierfehler!}
+		\item Stattdessen nutzen wir die zugehörigen \textbf{Wrapper-Klassen}:
+	\end{itemize}
+	\pause
+	\vspace{0.4em}
+	\begin{center}
+		\rowcolors{2}{tablerow}{white}
+		\begin{tabular}{l l l}
+			\rowcolor{tablehead}
+			\textbf{Primitiver Typ} & \textbf{Wrapper-Klasse} & \textbf{Beispiel-Map}                \\
+			\texttt{int}            & \texttt{Integer}        & \texttt{HashMap<String, Integer>}    \\
+			\texttt{double}         & \texttt{Double}         & \texttt{HashMap<String, Double>}     \\
+			\texttt{boolean}        & \texttt{Boolean}        & \texttt{HashMap<String, Boolean>}    \\
+			\texttt{char}           & \texttt{Character}      & \texttt{HashMap<Character, Integer>} \\
+			\texttt{long}           & \texttt{Long}           & \texttt{HashMap<String, Long>}       \\
+		\end{tabular}
+	\end{center}
+	\pause
+	\vspace{0.4em}
+	\begin{itemize}
+		\item \textbf{Autoboxing}: Java wandelt \texttt{int} und \texttt{Integer} im Code automatisch für euch um.
+	\end{itemize}
+\end{frame}
+
 \begin{frame}
-	\frametitle{Map - Funktionen}
+	\frametitle{Die wichtigsten Map-Funktionen}
 	\begin{table}[h]
 		\centering
 		\rowcolors{2}{tablerow}{white}
 		\begin{tabular}{l l}
 			\rowcolor{tablehead}
-			\textbf{Funktion}       & \textbf{Beschreibung}                    \\
-			\texttt{put(k, v)}      & Fügt einen neuen Schlüssel-Wert-Paar ein \\
-			\texttt{get(k)}         & Gibt den Wert zu einem Schlüssel zurück  \\
-			\texttt{remove(k)}      & Entfernt einen Eintrag                   \\
-			\texttt{containsKey(k)} & Prüft, ob Schlüssel existiert            \\
-			\texttt{keySet()}       & Gibt alle Schlüssel zurück               \\
-			\texttt{values()}       & Gibt alle Werte zurück                   \\
-			\texttt{size()}         & Gibt die Anzahl der Einträge zurück      \\
+			\textbf{Methode}          & \textbf{Bedeutung}                                               \\
+			\texttt{put(key, value)}  & Fügt ein Paar ein (oder aktualisiert den Wert)                   \\
+			\texttt{get(key)}         & Holt den Wert zum Schlüssel                                      \\
+			\texttt{remove(key)}      & Entfernt den Eintrag zum Schlüssel                               \\
+			\texttt{containsKey(key)} & Prüft, ob der Schlüssel existiert (\texttt{true}/\texttt{false}) \\
+			\texttt{size()}           & Gibt die Anzahl gespeicherter Paare zurück                       \\
+			\texttt{keySet()}         & Gibt die Menge aller Schlüssel zurück                            \\
+			\texttt{values()}         & Gibt alle Werte zurück                                           \\
 		\end{tabular}
 	\end{table}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Map - remove()}
+	\frametitle{Besonderheit 1: Schlüssel sind eindeutig!}
 	\begin{itemize}
-		\item Die \texttt{remove()} Funktion entfernt einen Eintrag aus der Map
-		\item Gibt den entfernten Wert zurück oder \texttt{null}, falls der Schlüssel nicht existiert
+		\item Ein Schlüssel kann in einer Map \textbf{nur genau einmal} existieren.
+		\item Wird ein vorhandener Schlüssel erneut mit \texttt{put()} eingefügt, wird der alte Wert \textbf{überschrieben}!
 	\end{itemize}
-	\begin{minted}{java}
-HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
+	\pause
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
+HashMap<String, Integer> punkte = new HashMap<>();
+punkte.put("Paul", 10);
+System.out.println("Punkte: " + punkte.get("Paul"));
 
-System.out.println("Vor remove: " + studis.size());
-Integer removed = studis.remove("Paul");
-System.out.println("Entfernter Wert: " + removed);
-System.out.println("Nach remove: " + studis.size());
+// Neuer Spielstand für Paul:
+punkte.put("Paul", 25);
+System.out.println("Punkte neu: " + punkte.get("Paul"));
+System.out.println("Anzahl Spieler: " + punkte.size());
 	\end{minted}
+	\pause
 	\begin{ausgabe}
-		Vor remove: 2 \newline
-		Entfernter Wert: 1249609 \newline
-		Nach remove: 1
+		Punkte: 10 \newline
+		Punkte neu: 25 \newline
+		Anzahl Spieler: 1
 	\end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Map - containsKey()}
+	\frametitle{Besonderheit 2: Unbekannte Schlüssel \& \texttt{null}}
 	\begin{itemize}
-		\item Die \texttt{containsKey()} Funktion prüft, ob ein bestimmter Schlüssel in der Map existiert
-		\item Gibt \texttt{true} zurück, wenn der Schlüssel vorhanden ist, sonst \texttt{false}
+		\item Existiert ein Schlüssel nicht in der Map, liefert \texttt{get()} den Wert \texttt{null}.
+		\item\achtung{} Vorsicht beim Zuweisen an primitive Datentypen (Unboxing von \texttt{null} führt zu Fehler)!
 	\end{itemize}
-	\begin{minted}{java}
-HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
+	\pause
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
+HashMap<String, Integer> alter = new HashMap<>();
+alter.put("Melanie", 21);
 
-System.out.println("Paul existiert: " + studis.containsKey("Paul"));
-
-if (studis.containsKey("Melanie")) {
-    System.out.println("Melanies Matrikelnummer: " + studis.get("Melanie"));
+System.out.println(alter.get("Paul")); // -> null
+	\end{minted}
+	\pause
+	\begin{itemize}
+		\item \textbf{Best Practice:} Vor dem Zugriff mit \texttt{containsKey()} prüfen:
+	\end{itemize}
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
+if (alter.containsKey("Paul")) {
+    System.out.println("Pauls Alter: " + alter.get("Paul"));
+} else {
+    System.out.println("Paul ist noch nicht eingetragen!");
 }
 	\end{minted}
-	\begin{ausgabe}
-		Paul existiert: false \newline
-		Melanies Matrikelnummer: 1976370
-	\end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Map - keySet()}
+	\frametitle{Über eine Map iterieren}
 	\begin{itemize}
-		\item Die \texttt{keySet()} Funktion gibt alle Schlüssel der Map als Set zurück
-		\item Nützlich zum Iterieren über alle Einträge der Map
+		\item Über ein Array iterieren wir mit einem Index (\texttt{i = 0\dots}).
+		\item Bei Maps iterieren wir über die \textbf{Menge aller Schlüssel} (\texttt{keySet()}):
 	\end{itemize}
-	\begin{minted}{java}
-HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
+	\pause
+	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
+HashMap<String, String> hauptstaedte = new HashMap<>();
+hauptstaedte.put("Deutschland", "Berlin");
+hauptstaedte.put("Frankreich", "Paris");
 
-System.out.print("Alle Namen: ");
-for (String name : studis.keySet()) {
-    System.out.print(name + ", ");
+for (String land : hauptstaedte.keySet()) {
+    String stadt = hauptstaedte.get(land);
+    System.out.println(land + " -> " + stadt);
 }
 	\end{minted}
+	\pause
 	\begin{ausgabe}
-		Alle Namen: Paul, Melanie,
+		Deutschland -> Berlin \newline
+		Frankreich -> Paris
 	\end{ausgabe}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Map - values()}
-	\begin{itemize}
-		\item Die \texttt{values()} Funktion gibt alle Werte der Map als Collection zurück
-		\item Ermöglicht den Zugriff auf alle gespeicherten Werte ohne die Schlüssel
-	\end{itemize}
-	\begin{minted}{java}
-HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
+\begin{frame}[plain]
+	\centering
+	{\Huge\bfseries{Kurzes Quiz zu Maps!}}
+\end{frame}
 
-System.out.println("Alle Matrikelnummern: ");
-for (Integer number : studis.values()) {
-    System.out.println(number + ", ");
-}
-	\end{minted}
-	\begin{ausgabe}
-		Alle Matrikelnummern: 1249609, 1976370,
-	\end{ausgabe}
+\begin{frame}[plain]
+	\centering
+	{\Huge\bfseries{TODO FUIZ QUIZ}}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+	\frametitle{Datenstrukturen selber bauen: Warum?}
+	\begin{itemize}
+		\item Bisher kennen wir als Sammlung für mehrere Werte nur \textbf{Arrays}:
+		      \begin{minted}[fontsize=\footnotesize, linenos=false]{java}
+int[] zahlen = new int[4];
+		      \end{minted}
+		\item\pause \textbf{Das Problem bei Arrays:}
+		      \begin{itemize}
+			      \item Feste Größe wie ein Eierkarton mit fixer Anzahl Fächer!
+			      \item Will man ein zusätzliches Element einfügen, muss man ein neues, größeres Array erstellen und alles umkopieren.
+			      \item Will man etwas in der Mitte einfügen oder löschen, müssen alle nachfolgenden Elemente aufwändig verschoben werden.
+		      \end{itemize}
+		\item\pause \textbf{Das Ziel:} Eine dynamische Datenstruktur, die flexibel wachsen und schrumpfen kann!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Das Prinzip einer Verketteten Liste}
+	\begin{itemize}
+		\item Statt eines starren Speicherblocks verbinden wir einzelne \textbf{Knoten} (\texttt{Node}).
+		\item \textbf{Analogie:} Eine Schnitzeljagd oder ein Zug aus Waggons:
+		      \begin{itemize}
+			      \item Jeder Zettel/Waggon enthält seine eigene Information (\texttt{value}).
+			      \item Jeder Zettel verweist auf den \textbf{nächsten Zettel} (\texttt{nextNode}).
+		      \end{itemize}
+		\item Der letzte Knoten verweist auf \texttt{null} (Ende der Kette).
+	\end{itemize}
+	\vspace{0.8em}
+	\centering
+	\includegraphics[width=0.88\linewidth]{../exercise/img/linkedlist.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Die Bausteine: \texttt{Node} und \texttt{List}}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Der Knoten (\texttt{Node}):}
+			\begin{itemize}
+				\item Speichert den Wert (\texttt{value}).
+				\item Speichert die Referenz auf den nächsten Knoten (\texttt{nextNode}).
+				\item Eine Klasse kann Attribute vom Typ \textbf{ihrer eigenen Klasse} haben!
+			\end{itemize}
+		\end{column}
+		\pause
+		\begin{column}{0.5\textwidth}
+			\textbf{Die Liste (\texttt{List}):}
+			\begin{itemize}
+				\item Verwaltet die Kette nach außen.
+				\item Muss sich nur merken, wo der Anfang ist: \textbf{Startknoten} (\texttt{startNode}).
+				\item Ist \texttt{startNode == null}, ist die Liste leer.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\pause
+	\vspace{1.2em}
+	\begin{tcolorbox}[colback=accent!10, colframe=accent]
+		Alle Elemente der Liste erreichen wir, indem wir vom Startknoten aus Schritt für Schritt den Pfeilen folgen!
+	\end{tcolorbox}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Denkmodell: Durch die Kette wandern}
+	\begin{itemize}
+		\item Wie schaut man sich alle Elemente nacheinander an (z.\,B. zum Ausgeben)?
+		\item \textbf{Das Vorgehen:}
+		      \begin{enumerate}
+			      \item Starte beim ersten Knoten (\texttt{startNode}).
+			      \item Schau dir den Wert des aktuellen Knotens an.
+			      \item Gehe einen Schritt weiter zum Nachfolger (\texttt{nextNode}).
+			      \item Wiederhole das, bis du bei \texttt{null} (dem Ende) ankommst!
+		      \end{enumerate}
+	\end{itemize}
+	\vspace{0.8em}
+	\centering
+	\begin{tikzpicture}
+		\node[draw, rounded corners, fill=accent!15, minimum width=1.8cm] (n1) at (0, 0) {[ 12 ]};
+		\node[draw, rounded corners, fill=accent!15, minimum width=1.8cm] (n2) at (3, 0) {[ 99 ]};
+		\node[draw, rounded corners, fill=accent!15, minimum width=1.8cm] (n3) at (6, 0) {[ 37 ]};
+		\node (n4) at (8.5, 0) {\texttt{null}};
+
+		\draw[->, thick, >=stealth] (n1) -- (n2);
+		\draw[->, thick, >=stealth] (n2) -- (n3);
+		\draw[->, thick, >=stealth] (n3) -- (n4);
+
+		\node[draw, circle, fill=green!30, inner sep=2pt] (ptr) at (0, 0.9) {\footnotesize Zeiger};
+		\draw[->, very thick, green!70!black] (ptr) -- (n1);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Denkmodell: Element anhängen (\texttt{add})}
+	\begin{itemize}
+		\item Wie hängt man ein neues Element ans Ende der Liste an?
+	\end{itemize}
+	\pause
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Fall 1: Liste ist leer}
+			\begin{itemize}
+				\item Der Startknoten ist bisher \texttt{null}.
+				\item Das neue Element wird einfach der neue \texttt{startNode}.
+			\end{itemize}
+		\end{column}
+		\pause
+		\begin{column}{0.5\textwidth}
+			\textbf{Fall 2: Liste hat Elemente}
+			\begin{itemize}
+				\item Wandere durch die Kette bis zum \textbf{letzten Knoten} (dessen Nachfolger noch \texttt{null} ist).
+				\item Biege dessen Nachfolger-Zeiger so um, dass er auf das neue Element zeigt!
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\pause
+	\vspace{1.2em}
+	\centering
+	\begin{tikzpicture}
+		\node[draw, rounded corners, fill=accent!15, minimum width=1.6cm] (n1) at (0, 0) {[ A ]};
+		\node[draw, rounded corners, fill=accent!15, minimum width=1.6cm] (n2) at (2.8, 0) {[ B ]};
+		\node[draw, rounded corners, fill=green!20, minimum width=1.6cm] (n3) at (6.2, 0) {\textbf{[ Neu ]}};
+
+		\draw[->, thick] (n1) -- (n2);
+		\draw[->, very thick, green!70!black] (n2) -- node[above]{\footnotesize neuer Zeiger} (n3);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Denkmodell: Element löschen (\texttt{remove})}
+	\begin{itemize}
+		\item Wie entfernt man ein Kettenglied aus der Mitte?
+		\item \textbf{Die Eleganz der Liste:} Man muss keine Elemente im Speicher verschieben!
+		\item Man \textbf{biegt einfach die Referenz um}: Der Vorgänger überspringt den gelöschten Knoten und zeigt direkt auf dessen Nachfolger!
+	\end{itemize}
+	\vspace{0.8em}
+	\centering
+	\begin{tikzpicture}[node distance=2cm, auto]
+		\node[draw, rounded corners, minimum width=1.6cm, fill=accent!10] (A) at (0,0) {\textbf{[ A ]}};
+		\node[draw, rounded corners, minimum width=1.6cm, fill=red!20] (B) at (3,0) {\textbf{[ B ]}};
+		\node[draw, rounded corners, minimum width=1.6cm, fill=accent!10] (C) at (6,0) {\textbf{[ C ]}};
+
+		\draw[->, thick, dashed, red] (A) -- (B);
+		\draw[->, thick, dashed, red] (B) -- (C);
+		\draw[->, very thick, green!70!black] (A) to [bend left=40] node[above] {\small Zeiger umbiegen: A zeigt direkt auf C} (C);
+	\end{tikzpicture}
+	\vspace{0.8em}
+	\pause
+	\begin{itemize}
+		\item Knoten \textbf{B} wird von niemandem mehr referenziert $\to$ Java löscht ihn automatisch (Garbage Collection)!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Denkmodell: Rekursion auf Datenstrukturen}
+	\begin{itemize}
+		\item Eine Liste ist von Natur aus rekursiv aufgebaut:
+		      \begin{center}
+			      \textit{„Ein Knoten, gefolgt von einer etwas kleineren Rest-Liste.“}
+		      \end{center}
+		\item\pause \textbf{Das Prinzip der Delegation:}
+		      \begin{itemize}
+			      \item Ein Knoten erledigt seinen eigenen Anteil (z.\,B. seinen eigenen Wert hinzuzählen).
+			      \item Dann delegiert er an seinen Nachfolger: \textit{„Mach du bitte mit dem Zwischenergebnis weiter!“}
+		      \end{itemize}
+		\item\pause \textbf{Basisfall (Abbruch):}
+		      \begin{itemize}
+			      \item Wenn ein Knoten keinen Nachfolger mehr hat (\texttt{nextNode == null}), ist das Ende der Kette erreicht und das Gesamtergebnis steht fest!
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Ausblick: Bäume (Trees)}
+	\begin{itemize}
+		\item In einer verketteten Liste hat jeder Knoten maximal \textbf{einen} Nachfolger (linear).
+		\item Was passiert, wenn ein Knoten \textbf{zwei oder mehr} Nachfolger haben kann?
+		\item $\to$ Es entsteht eine verzweigte Hierarchie: Ein \textbf{Baum}!
+	\end{itemize}
+	\pause
+	\vspace{0.3em}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item \textbf{Wurzel (Root):} Oberster Startknoten
+				\item \textbf{Kinder (Children):} Untergeordnete Knoten
+				\item \textbf{Blätter (Leaves):} Knoten ohne Kinder
+				\item \textbf{Binärbaum:} Maximal \textbf{zwei} Kinder pro Knoten (\texttt{links} und \texttt{rechts})
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.85\linewidth]{../exercise/img/baum.png}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Warum Bäume? (Highperformer)}
+	\begin{itemize}
+		\item Bäume spiegeln viele reale Strukturen wider (Dateisysteme mit Ordnern, Stammbäume, HTML-Dokumente).
+		\item \textbf{Extrem schnelle Suche (Binäre Suchbäume):}
+		      \begin{itemize}
+			      \item Bei jedem Schritt entscheidet man: Geh nach links oder nach rechts?
+			      \item Wie beim Zahlenraten: „Ist die Zahl größer oder kleiner?“
+			      \item Mit jedem Schritt halbiert sich der verbleibende Suchraum!
+		      \end{itemize}
+		\item Mehr dazu und spannende Algorithmen findet ihr in der \textbf{Highperformer-Aufgabe} auf dem Übungsblatt.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\vkEventDayFiveTitle}
+	\centering
+	\Large
+	\textbf{\vkEventDayFiveText}
+	\vspace{1.2em}
+	\begin{figure}
+		\includegraphics[height=3.8cm]{../../logos/Theme.png}
+	\end{figure}
 \end{frame}
 
 \renewcommand{\feedbackurl}{\vkFeedbackUrlDayFive}
