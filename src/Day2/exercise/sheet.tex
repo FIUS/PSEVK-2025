@@ -31,6 +31,22 @@ for (int i = 0; i < 5; i++) {
 }
           \end{minted}
     \item \textbf{\texttt{break}}: beendet Schleife vorzeitig
+    \begin{minted}[fontsize=\footnotesize, linenos]{java}
+Scanner scanner = new Scanner(System.in);
+
+String passwort = "diegrillung";
+String abbruchBedingung = "abbruch";
+String momentaneEingabe = "";
+
+while (!momentaneEingabe.equals(passwort)) {
+    momentaneEingabe = scanner.nextLine();
+
+    if (momentaneEingabe.equals(abbruchBedingung)) {
+        break;
+    }
+}
+System.out.println("I'm in");
+\end{minted}
 
 \end{itemize}
 

@@ -1,12 +1,12 @@
 public class CodeTogetherMuster {
     public static void main(String[] args) {
         
-        int momentaneWurst = 4;
-        int letzteWurst = 8;
+        int momentanerBurger = 4;
+        int letzterBurger = 8;
 
-        while (momentaneWurst <= letzteWurst) {
-            System.out.println("Schmeiß Wurst Nr." + momentaneWurst + " auf den Grill");
-            momentaneWurst++;
+        while (momentanerBurger <= letzterBurger) {
+            System.out.println("Schmeiß Burger Nr." + momentanerBurger + " auf den Grill");
+            momentanerBurger++;
         }
     }
 }
