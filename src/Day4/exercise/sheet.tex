@@ -9,9 +9,6 @@
 \aufgabe{\vkEventDayFourTitle}
 \vkEventDayFourText
 
-\aufgabe{Musterlösungen}
-https://fius.de/angebote/pse-vorkurs-materialien/
-
 \newpage
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Klassensyntax:}
@@ -63,16 +60,15 @@ anna.lernen(); // → Anna lernt fleißig!
 \newpage
 
 \aufgabe{Aufgabe 1: Klassen}
-Heute werden wir eine Klassenstruktur umsetzen, die ein Modell für eine Grillung sein soll.
 
 \begin{enumerate}
     \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine neue \texttt{Student}-Klasse. 
-    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivation. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
-    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und die Motivation bei 20. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
+    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivationslevel. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
+    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und das Motivationslevel bei 20. Semester und Name sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
     \item Erstelle eine Funktion \texttt{lernen()} welche das Wissen des Studenten um 10 erhöht aber dafür die Motivation um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
     \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird die Motivation wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
-    \item Erweitere die Lern Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
-    \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt. Gib dabei den Hungerbalken der Studenten aus.
+    \item Erweitere die \texttt{lernen} Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
+    \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt.
 \end{enumerate}
 
 \newpage
