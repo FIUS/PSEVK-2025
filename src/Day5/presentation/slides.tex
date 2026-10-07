@@ -26,7 +26,7 @@
 			      \item Definiert den Zustand über \textbf{Attribute} (Variablen)
 			      \item Definiert das Verhalten über \textbf{Methoden} (Funktionen)
 		      \end{itemize}
-		\item \textbf{Objekt}: Eine konkrete \textbf{Instanz} im Arbeitsspeicher
+		\item \textbf{Objekt}: Eine konkrete \textbf{Instanz} einer Klasse
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -46,7 +46,7 @@ public class Student {
 	\begin{itemize}
 		\item \textbf{Konstruktor}: Spezielle Methode zur Initialisierung von Objekten
 		      \begin{itemize}
-			      \item Heißt genauso wie die Klasse, hat \textbf{keinen} Rückgabetyp
+			      \item Heisst genauso wie die Klasse, hat \textbf{keinen} Rückgabetyp
 			      \item \texttt{this.name} unterscheidet Instanzattribut von Methodenparameter
 		      \end{itemize}
 		\item Neue Objekte werden mit \texttt{new} erzeugt:
@@ -64,30 +64,30 @@ paul.lernen(); // -> Paul lernt fleißig!
 	\end{minted}
 \end{frame}
 
-\begin{frame}[fragile]
-	\frametitle{Recap Tag 4: Referenzen im Speicher}
-	\begin{itemize}
-		\item \textbf{Primitive Typen} (\texttt{int}, \texttt{boolean}): Der Wert liegt direkt in der Variable.
-		\item \textbf{Objekte}: Die Variable speichert eine \textbf{Referenz} (Adresse / Zeiger) auf das eigentliche Objekt im Speicher!
-	\end{itemize}
-	\pause
-	\vspace{0.6em}
-	\centering
-	\begin{tikzpicture}
-		\node[draw, rounded corners, fill=accent!15, minimum width=2.5cm, minimum height=0.8cm] (var) at (0, 0) {\texttt{Student s}};
-		\node[draw, rounded corners, fill=green!15, minimum width=3.5cm, minimum height=1.2cm, align=center] (obj) at (5.5, 0) {\textbf{Student-Objekt}\\ \footnotesize name: 'Paul'\\ \footnotesize matrikelnummer: 12345};
+% \begin{frame}[fragile]
+% 	\frametitle{Recap Tag 4: Referenzen im Speicher}
+% 	\begin{itemize}
+% 		\item \textbf{Primitive Typen} (\texttt{int}, \texttt{boolean}): Der Wert liegt direkt in der Variable.
+% 		\item \textbf{Objekte}: Die Variable speichert eine \textbf{Referenz} (Adresse / Zeiger) auf das eigentliche Objekt im Speicher!
+% 	\end{itemize}
+% 	\pause
+% 	\vspace{0.6em}
+% 	\centering
+% 	\begin{tikzpicture}
+% 		\node[draw, rounded corners, fill=accent!15, minimum width=2.5cm, minimum height=0.8cm] (var) at (0, 0) {\texttt{Student s}};
+% 		\node[draw, rounded corners, fill=green!15, minimum width=3.5cm, minimum height=1.2cm, align=center] (obj) at (5.5, 0) {\textbf{Student-Objekt}\\ \footnotesize name: 'Paul'\\ \footnotesize matrikelnummer: 12345};
+%
+% 		\draw[->, very thick, >=stealth] (var) -- node[above]{\footnotesize\textit{zeigt auf}} (obj);
+% 	\end{tikzpicture}
+% 	\vspace{0.6em}
+% 	\pause
+% 	\begin{itemize}
+% 		\item\achtung{} Zeigt eine Referenzvariable auf \textbf{kein} Objekt, hat sie den Wert \texttt{null}.
+% 	\end{itemize}
+% \end{frame}
 
-		\draw[->, very thick, >=stealth] (var) -- node[above]{\footnotesize\textit{zeigt auf}} (obj);
-	\end{tikzpicture}
-	\vspace{0.6em}
-	\pause
-	\begin{itemize}
-		\item\achtung{} Zeigt eine Referenzvariable auf \textbf{kein} Objekt, hat sie den Wert \texttt{null}.
-	\end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]
-	\frametitle{Motivation: Warum Maps?}
+	\frametitle{Warum Maps?}
 	\begin{itemize}
 		\item \textbf{Bisher: Arrays}
 		      \begin{itemize}
@@ -97,15 +97,15 @@ paul.lernen(); // -> Paul lernt fleißig!
 		      \end{itemize}
 		\item\pause \textbf{Idee: Assoziativer Speicher}
 		      \begin{itemize}
-			      \item Direkter Zugriff über einen beliebigen Bezeichner (Schlüssel)!
-			      \item Analogie: \textbf{Wörterbuch} (Wort $\to$ Übersetzung), \textbf{Telefonbuch} (Name $\to$ Nummer), \textbf{Spind} (Nummer $\to$ Inhalt).
+			      \item Direkter Zugriff über einen beliebigen Schlüssel!
+			      \item \textbf{Wörterbuch} (Wort $\to$ Übersetzung), \textbf{Telefonbuch} (Name $\to$ Nummer), \textbf{Spind} (Nummer $\to$ Inhalt).
 		      \end{itemize}
-		\item\pause \textbf{In Java:} \textbf{Maps} (auch Dictionary oder Assoziatives Array genannt).
+		\item\pause \textbf{In Java:} \textbf{Maps} (Dictionary)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Das Prinzip: Schlüssel-Wert-Paare}
+	\frametitle{Schlüssel-Wert-Paare}
 	\begin{itemize}
 		\item Eine Map verwaltet Paare aus \textbf{Schlüssel} (Key) und \textbf{Wert} (Value).
 		\item \textbf{Schlüssel (Key):} Eindeutiger Suchbegriff zum Nachschlagen.
@@ -156,11 +156,12 @@ System.out.println(hauptstaedte.get("Deutschland"));
 
 \begin{frame}[fragile]
 	\frametitle{Wichtig: Wrapper-Klassen für primitive Typen}
-	\begin{itemize}
-		\item\achtungitem In Java-Generics (\texttt{<...>}) sind \textbf{keine primitiven Typen} erlaubt!
-		\item\fehleritem \texttt{HashMap<String, int>} $\to$ \alert{Kompilierfehler!}
-		\item Stattdessen nutzen wir die zugehörigen \textbf{Wrapper-Klassen}:
-	\end{itemize}
+	\achtung In Java-Generics (\texttt{<...>}) sind \textbf{keine primitiven Typen} erlaubt!
+	\newline
+	\fehler \texttt{HashMap<String, int>} $\to$ \alert{Kompilierfehler!}
+	\newline
+	Stattdessen nutzen wir die zugehörigen \textbf{Wrapper-Klassen}:
+
 	\pause
 	\vspace{0.4em}
 	\begin{center}
@@ -175,11 +176,6 @@ System.out.println(hauptstaedte.get("Deutschland"));
 			\texttt{long}           & \texttt{Long}           & \texttt{HashMap<String, Long>}       \\
 		\end{tabular}
 	\end{center}
-	\pause
-	\vspace{0.4em}
-	\begin{itemize}
-		\item \textbf{Autoboxing}: Java wandelt \texttt{int} und \texttt{Integer} im Code automatisch für euch um.
-	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -230,7 +226,7 @@ System.out.println("Anzahl Spieler: " + punkte.size());
 	\frametitle{Besonderheit 2: Unbekannte Schlüssel \& \texttt{null}}
 	\begin{itemize}
 		\item Existiert ein Schlüssel nicht in der Map, liefert \texttt{get()} den Wert \texttt{null}.
-		\item\achtung{} Vorsicht beim Zuweisen an primitive Datentypen (Unboxing von \texttt{null} führt zu Fehler)!
+		\item\achtung{} Vorsicht beim Zuweisen an primitive Datentypen!
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -286,10 +282,8 @@ for (String land : hauptstaedte.keySet()) {
 	{\Huge\bfseries{TODO FUIZ QUIZ}}
 \end{frame}
 
-
-
 \begin{frame}[fragile]
-	\frametitle{Datenstrukturen selber bauen: Warum?}
+	\frametitle{Datenstrukturen}
 	\begin{itemize}
 		\item Bisher kennen wir als Sammlung für mehrere Werte nur \textbf{Arrays}:
 		      \begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -297,22 +291,20 @@ int[] zahlen = new int[4];
 		      \end{minted}
 		\item\pause \textbf{Das Problem bei Arrays:}
 		      \begin{itemize}
-			      \item Feste Größe wie ein Eierkarton mit fixer Anzahl Fächer!
-			      \item Will man ein zusätzliches Element einfügen, muss man ein neues, größeres Array erstellen und alles umkopieren.
+			      \item Feste Grösse
+			      \item Will man ein zusätzliches Element einfügen, muss man alles in ein neues Array kopieren.
 			      \item Will man etwas in der Mitte einfügen oder löschen, müssen alle nachfolgenden Elemente aufwändig verschoben werden.
 		      \end{itemize}
-		\item\pause \textbf{Das Ziel:} Eine dynamische Datenstruktur, die flexibel wachsen und schrumpfen kann!
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Das Prinzip einer Verketteten Liste}
+	\frametitle{Verkettete Liste}
 	\begin{itemize}
 		\item Statt eines starren Speicherblocks verbinden wir einzelne \textbf{Knoten} (\texttt{Node}).
-		\item \textbf{Analogie:} Eine Schnitzeljagd oder ein Zug aus Waggons:
 		      \begin{itemize}
-			      \item Jeder Zettel/Waggon enthält seine eigene Information (\texttt{value}).
-			      \item Jeder Zettel verweist auf den \textbf{nächsten Zettel} (\texttt{nextNode}).
+			      \item Jeder Knoten enthält seine eigene Information (\texttt{value}).
+			      \item Jeder Knoten verweist auf einen \textbf{weiteren Knoten} (\texttt{nextNode}).
 		      \end{itemize}
 		\item Der letzte Knoten verweist auf \texttt{null} (Ende der Kette).
 	\end{itemize}
@@ -322,7 +314,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Die Bausteine: \texttt{Node} und \texttt{List}}
+	\frametitle{ \texttt{Node} und \texttt{List}}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\textbf{Der Knoten (\texttt{Node}):}
@@ -336,7 +328,6 @@ int[] zahlen = new int[4];
 		\begin{column}{0.5\textwidth}
 			\textbf{Die Liste (\texttt{List}):}
 			\begin{itemize}
-				\item Verwaltet die Kette nach außen.
 				\item Muss sich nur merken, wo der Anfang ist: \textbf{Startknoten} (\texttt{startNode}).
 				\item Ist \texttt{startNode == null}, ist die Liste leer.
 			\end{itemize}
@@ -350,7 +341,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Denkmodell: Durch die Kette wandern}
+	\frametitle{Durch die Kette wandern}
 	\begin{itemize}
 		\item Wie schaut man sich alle Elemente nacheinander an (z.\,B. zum Ausgeben)?
 		\item \textbf{Das Vorgehen:}
@@ -379,7 +370,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Denkmodell: Element anhängen (\texttt{add})}
+	\frametitle{Element anhängen (\texttt{add})}
 	\begin{itemize}
 		\item Wie hängt man ein neues Element ans Ende der Liste an?
 	\end{itemize}
@@ -415,7 +406,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Denkmodell: Element löschen (\texttt{remove})}
+	\frametitle{Element löschen (\texttt{remove})}
 	\begin{itemize}
 		\item Wie entfernt man ein Kettenglied aus der Mitte?
 		\item \textbf{Die Eleganz der Liste:} Man muss keine Elemente im Speicher verschieben!
@@ -440,7 +431,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Denkmodell: Rekursion auf Datenstrukturen}
+	\frametitle{Rekursion auf Datenstrukturen}
 	\begin{itemize}
 		\item Eine Liste ist von Natur aus rekursiv aufgebaut:
 		      \begin{center}
@@ -459,7 +450,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Ausblick: Bäume (Trees)}
+	\frametitle{Bäume (Trees)}
 	\begin{itemize}
 		\item In einer verketteten Liste hat jeder Knoten maximal \textbf{einen} Nachfolger (linear).
 		\item Was passiert, wenn ein Knoten \textbf{zwei oder mehr} Nachfolger haben kann?
@@ -484,7 +475,7 @@ int[] zahlen = new int[4];
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Warum Bäume? (Highperformer)}
+	\frametitle{Warum Bäume?}
 	\begin{itemize}
 		\item Bäume spiegeln viele reale Strukturen wider (Dateisysteme mit Ordnern, Stammbäume, HTML-Dokumente).
 		\item \textbf{Extrem schnelle Suche (Binäre Suchbäume):}
