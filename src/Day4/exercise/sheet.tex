@@ -66,16 +66,38 @@ anna.lernen(); // → Anna lernt fleißig!
 Heute werden wir eine Klassenstruktur umsetzen, die ein Modell für eine Grillung sein soll.
 
 \begin{enumerate}
-    \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle jeweils eine neue \texttt{Main}-Klasse, sowie eine \texttt{Grill}-Klasse. In der \texttt{Main} kann jetzt auf die Grillklasse und ihre Funktionen zugegriffen werden.
-    \item Gib deiner Grillklasse einen Konstruktor, der ausgibt, dass ein neuer Grill erstellt wird. Teste den Konstruktor der Grillklasse in dem du ein Grillobjekt in der Main-\textit{Funktion} der Main-\textit{Klasse} erstellst und in einer Variable mit dem Typ \texttt{Grill} speicherst.
-    \item Füge dem Grill Attribute hinzu. Jeder Grill sollte einen Grillmeister (Name als \texttt{String}), eine maximale Würstchenanzahl (\texttt{int}), eine maximale Hitze (\texttt{int}), sowie eine momentane Hitze (\texttt{int}) haben. Erweitere nun den Konstruktor, sodass er den Namen des Grillmeisters, die maximale Würstchenanzahl und die maximale Hitze als Parameter entgegennimmt und anschließend die Attribute entsprechend setzt. Momentane Hitze soll bei der Erstellung des Grills noch 0 sein.
-    \item Gib dem Grill eine oder mehrere Funktionen zur Kontrolle der Hitze. Gestalte sie so wie du es für sinnvoll hältst. Beachte, dass der Grill eine maximale Hitze hat und Hitze nicht negativ sein kann. 
-    \item Füge dem Grill ein Array der Größe \texttt{maximaleWuerstchen} hinzu, dass die Würstchen symbolisieren soll. An Stellen an denen kein Würstchen liegt, soll -1 im Array stehen. Bei der Initialisierung sollen keine Würstchen auf dem Grill liegen.
-    \item Erstelle eine Funktion, um Würstchen auf den Grill zu legen. Ein Würstchen wird mit Garstufe 0 auf den Grill gelegt. 
-    \item Füge dem Grill eine \texttt{Grillen} Funktion hinzu, die die momentane Hitze auf die Garstufe jedes Würstchen addiert.
-    \item Erstelle eine \texttt{runternehmen}-Funktion, die ein Würstchen vom Grill nimmt und ausgibt, ob es noch roh, gut durch oder verbrannt ist. Ein Würstchen ist durch, wenn seine Garstufe zwischen 10 und 15 ist. Unter 10 ist ein Würstchen noch roh, über 15 ist es verbrannt.
-    \item Nutze die main um einen beispielhaften Grillablauf einer mehr oder weniger erfolgreichen Grillerei darzustellen.
+    \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine neue \texttt{Student}-Klasse. 
+    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivation. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
+    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und die Motivation bei 20. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
+    \item Erstelle eine Funktion \texttt{lernen()} welche das Wissen des Studenten um 10 erhöht aber dafür die Motivation um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
+    \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird die Motivation wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
+    \item Erweitere die Lern Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
+    \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt. Gib dabei den Hungerbalken der Studenten aus.
 \end{enumerate}
+
+\newpage
+\aufgabe{Aufgabe 2: 187}
+In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester und Wissen. Solltest du Aufgabe 1 nicht gemacht haben erstelle diese.
+\begin{enumerate}
+    \item Erstelle in Student eine neue Klasse problemErklaeren(Student student) die einen anderen Student als Parameter entgegennimmt.
+    \item In problemErklaeren() soll der Student welcher Hilfe erhält sein Wissen um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
+    \item Gib zudem eine Nachricht aus welcher Student wem gerade hilft. Beachte ob es sich um einen Ersti oder einen Tutor handelt. Ein Tutor ist ein Student der im 3. Semester oder höher ist.
+    \item erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine problemErklaeren() Funktion genutzt wird.
+\end{enumerate}
+
+\newpage
+\aufgabe{Aufgabe 3: Ein Ersti kommt selten allein}
+Um unseren Vorkurs komplett zu machen brauchen wir noch Räume.
+\textit{(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+\begin{enumerate}
+    \item Erstelle eine neue Klasse \text{Raum} mit den Attributen \text{Raumnummer}, \text{Tutoren} und \text{Ersties}. Überlege insbesonders bei Tutoren und Ersites welcher Datentyp sich eignet (Es kann mehrere Ersits und Tutoren in ienem Raum geben).
+    \item schreibe Konstruktor ein Raum wird anfangs leer initialisiert es gibt also noch keine Tutoren und Ersites
+    \item Erweiter die Klasse um eine Funktion \texttt{tutorHinzufuegen(Student student)} die einen Tutor in den Raum hinzufügt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
+    \item schriebe eine Funktion \texttt{erstieHinzufuegen(Student student)} die einen Ersti in den Raum hinzufügt. Ein Erstie kann nur eiem Raum, zugeteilt werden wenn es dort bereits mindestens einen Tutor gibt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
+    \item Schreibe eine Funktion \texttt{statistikAusgeben()} die ausgibt welcheTutoren und welche Erstis sich in dem Raum befinden.
+    \item Teste deine Funktionen in dem du mehrer Räume erstellst und diese mit Tutoren und Ersties füllst.
+\end{enumerate}
+
 
 \newpage
 \aufgabe{Aufgabe 2: Klassen in Klassen}
