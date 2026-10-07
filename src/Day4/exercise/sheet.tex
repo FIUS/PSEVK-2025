@@ -63,37 +63,38 @@ anna.lernen(); // → Anna lernt fleißig!
 
 \begin{enumerate}
     \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine neue \texttt{Student}-Klasse. 
-    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivationslevel. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
-    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und das Motivationslevel bei 20. Semester und Name sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-Funktion erstellst und in einer Variable speicherst.
-    \item Erstelle eine Funktion \texttt{lernen()} welche das Wissen des Studenten um 10 erhöht aber dafür die Motivation um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
-    \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird die Motivation wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
+    \item Füge deiner Klasse folgende Attribute hinzu: \texttt{Name}, \texttt{aktuelles Semester}, \texttt{Wissen} \newline und \texttt{Motivationslevel}. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
+    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das \texttt{Wissen} immer bei 0 und das \texttt{Motivationslevel} bei 20. \texttt{Aktuelles Semester} und \texttt{Name} sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-Funktion erstellst und in einer Variable speicherst.
+    \item Erstelle eine Funktion \texttt{lernen()} welche das \texttt{Wissen} des Studenten um 10 erhöht aber dafür das \texttt{Motivationslevel} um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
+    \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird das \texttt{Motivationslevel} wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
     \item Erweitere die \texttt{lernen} Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
     \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Erstis und Tutoren}
-\textit{(Falls du die Aufgabe davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+(Falls du die Aufgabe davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name}, \texttt{semester}, \texttt{motivation} und \texttt{wissen}).
 
-In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester, Motivation und Wissen.
+In dieser Aufgabe interagieren Objekte miteinander.
 \begin{enumerate}
+    \item Erweitere deinen Konstruktor damit Studenten abhängig von ihrem Semester ein anderes Startwissen haben. Ein Student im 1. Semester startet mit 0 \texttt{Wissen}. Für jedes weitere Semester erhöht sich das Startwissen um 20. Alle starten mit einer \texttt{Motivation} von 20.
     \item Erstelle in Student eine neue Methode \texttt{problemErklaeren(Student student)} die einen anderen Student als Parameter entgegennimmt, dem ein Problem erklärt wird. Damit ein Student einem anderen ein Problem erklären kann, muss er mehr Wissen haben als der Andere.
-    \item In \texttt{problemErklaeren()} soll der Student welcher Hilfe erhält sein Wissen um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
+    \item In \texttt{problemErklaeren()} soll der Student welcher Hilfe erhält sein \texttt{Wissen} um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
     \item Gib zudem eine Nachricht aus welcher Student wem gerade hilft. Gib zusätzlich aus ob es sich um einen Ersti oder Tutor handelt. Ein Tutor ist ein Student der im 3. Semester oder höher ist.
     \item Erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine \texttt{problemErklaeren()} Funktion genutzt wird.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 3: Ein Ersti kommt selten allein}
-\textit{(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).
 
 
 Um unseren Vorkurs komplett zu machen brauchen wir noch Räume.
 \begin{enumerate}
-    \item Erstelle eine neue Klasse \texttt{Raum} mit den Attributen \texttt{Raumnummer}, \texttt{Tutoren} und \texttt{Erstis}. Überlege insbesonders bei Tutoren und Erstis welcher Datentyp sich eignet (Es kann mehrere Erstis und Tutoren in jedem Raum geben).
+    \item Erstelle eine neue Klasse \texttt{Raum} mit den Attributen \texttt{Raumnummer}, \texttt{Tutoren} und \texttt{Erstis}. Überlege insbesonders bei Tutoren und Erstis welcher Datentyp sich eignet (Es kann mehrere Erstis und Tutoren in jedem Raum geben). Ein Raum hat eine maximale Tutorenanzahl und eine maximale Erstieanzahl.
     \item Schreibe einen Konstruktor für die \texttt{Raum}-Klasse. Ein Raum wird anfangs leer initialisiert, d.h. es gibt noch keine Tutoren und Erstis. 
     \item Erweitere die Klasse um eine Funktion \texttt{tutorHinzufuegen(Student student)} die einen Tutor in den Raum hinzufügt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
-    \item Schreibe eine Funktion \texttt{erstiHinzufuegen(Student student)} die einen Ersti in den Raum hinzufügt. Ein Ersti kann nur einem Raum zugeteilt werden wenn es dort bereits mindestens einen Tutor gibt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
+    \item Schreibe eine Funktion \texttt{studentHinzufuegen(Student student)} die einen Student in den Raum hinzufügt. Prüfe ob es sich um einen Ersti oder Tutor handelt. Ein Ersti kann nur einem Raum zugeteilt werden wenn es dort bereits mindestens einen Tutor gibt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde und was er ist.
     \item Schreibe eine Funktion \texttt{leuteAusgeben()} die ausgibt welche Tutoren und welche Erstis sich in dem Raum befinden.
     \item Teste deine Funktionen indem du mehrere Räume erstellst und diese mit Tutoren und Erstis füllst.
 \end{enumerate}
