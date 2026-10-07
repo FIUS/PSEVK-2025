@@ -9,9 +9,6 @@
 \aufgabe{\vkEventDayFourTitle}
 \vkEventDayFourText
 
-\aufgabe{Musterlösungen}
-https://fius.de/angebote/pse-vorkurs-materialien/
-
 \newpage
 \aufgabe{Präsentations-Cheatsheet}
 \textbf{Klassensyntax:}
@@ -63,53 +60,38 @@ anna.lernen(); // → Anna lernt fleißig!
 \newpage
 
 \aufgabe{Aufgabe 1: Klassen}
-Heute werden wir eine Klassenstruktur umsetzen, die ein Modell für eine Grillung sein soll.
 
 \begin{enumerate}
     \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine neue \texttt{Student}-Klasse. 
-    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivation. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
-    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und die Motivation bei 20. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
+    \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivationslevel. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
+    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und das Motivationslevel bei 20. Semester und Name sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
     \item Erstelle eine Funktion \texttt{lernen()} welche das Wissen des Studenten um 10 erhöht aber dafür die Motivation um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
     \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird die Motivation wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
-    \item Erweitere die Lern Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
-    \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt. Gib dabei den Hungerbalken der Studenten aus.
+    \item Erweitere die \texttt{lernen} Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
+    \item Simuliere einen möglichen Ablauf in der Main-Funktion, in dem du mehrere Studentobjekte erstellst und diese lernen und essen lässt.
 \end{enumerate}
 
 \newpage
-\aufgabe{Aufgabe 2: 187}
-In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester und Wissen. Solltest du Aufgabe 1 nicht gemacht haben erstelle diese.
+\aufgabe{Aufgabe 2: Erstis und Tutoren}
+In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester, Motivation und Wissen. Solltest du Aufgabe 1 nicht gemacht haben erstelle eine Klasse mit den 4 Attributen.
 \begin{enumerate}
-    \item Erstelle in Student eine neue Klasse problemErklaeren(Student student) die einen anderen Student als Parameter entgegennimmt.
-    \item In problemErklaeren() soll der Student welcher Hilfe erhält sein Wissen um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
-    \item Gib zudem eine Nachricht aus welcher Student wem gerade hilft. Beachte ob es sich um einen Ersti oder einen Tutor handelt. Ein Tutor ist ein Student der im 3. Semester oder höher ist.
-    \item erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine problemErklaeren() Funktion genutzt wird.
+    \item Erstelle in Student eine neue Methode \texttt{problemErklaeren(Student student)} die einen anderen Student als Parameter entgegennimmt, dem ein Problem erklärt wird. Damit ein Student einem anderen ein Problem erklären kann, muss er mehr Wissen haben als der Andere.
+    \item In \texttt{problemErklaeren()} soll der Student welcher Hilfe erhält sein Wissen um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
+    \item Gib zudem eine Nachricht aus welcher Student wem gerade hilft. Gib zusätzlich aus ob es sich um einen Ersti oder Tutor handelt. Ein Tutor ist ein Student der im 3. Semester oder höher ist.
+    \item erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine \texttt{problemErklaeren()} Funktion genutzt wird.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 3: Ein Ersti kommt selten allein}
 Um unseren Vorkurs komplett zu machen brauchen wir noch Räume.
-\textit{(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).
 \begin{enumerate}
-    \item Erstelle eine neue Klasse \text{Raum} mit den Attributen \text{Raumnummer}, \text{Tutoren} und \text{Ersties}. Überlege insbesonders bei Tutoren und Ersites welcher Datentyp sich eignet (Es kann mehrere Ersits und Tutoren in ienem Raum geben).
-    \item schreibe Konstruktor ein Raum wird anfangs leer initialisiert es gibt also noch keine Tutoren und Ersites
-    \item Erweiter die Klasse um eine Funktion \texttt{tutorHinzufuegen(Student student)} die einen Tutor in den Raum hinzufügt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
-    \item schriebe eine Funktion \texttt{erstieHinzufuegen(Student student)} die einen Ersti in den Raum hinzufügt. Ein Erstie kann nur eiem Raum, zugeteilt werden wenn es dort bereits mindestens einen Tutor gibt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
-    \item Schreibe eine Funktion \texttt{statistikAusgeben()} die ausgibt welcheTutoren und welche Erstis sich in dem Raum befinden.
-    \item Teste deine Funktionen in dem du mehrer Räume erstellst und diese mit Tutoren und Ersties füllst.
-\end{enumerate}
-
-
-\newpage
-\aufgabe{Aufgabe 2: Klassen in Klassen}
-Eine Sache, die dir vielleicht schon aufgefallen ist, ist dass wir momentan leider nur Würstchen Grillen können und auch bei denen nur genau eine Sorte. Dafür wird jetzt eine neue Grillgut-Klasse erstellt, die viel flexibler sein soll und unserer (leider digitalen) Grillung viel mehr ermöglichen wird.
-\begin{enumerate}
-    \item Erstelle eine neue Klasse (wieder mit neuer Datei) namens \texttt{Grillgut}. Sie soll einen Grillguttyp (\texttt{String}, z.B. Currywurst), eine minimale Garstufe (\texttt{int}), eine maximale Garstufe (\texttt{int}), eine momentane Garstufe (\texttt{int}), eine Hitzetoleranz (\texttt{int}) und einen verbrannt (\texttt{Boolean}) Status haben. \texttt{Hitzetoleranz} stellt dar, dass ein Grillgut es nicht aushält über einer bestimmten Temperatur gegrillt zu werden (man kann Würstchen nicht statt fünf Minuten auf 200 Grad eine Minute auf 1000 Grad grillen). 
-    \item Implementiere einen Konstruktor, der manche der obigen Attribute als Parameter entgegennimmt (die bei denen es dir sinnvoll erscheint), aber alle Attribute initialisiert, d.h. nach der Ausführung des Konstruktors sollten alle Attribute einen Wert haben.
-    \item Erstelle eine \texttt{grillen} Funktion in der \texttt{Grillgut}-Klasse, die eine Hitze als Parameter entgegennimmt und das Grillgut entsprechend grillt. Beachte, dass ein Grillgut sofort verbrennt, wenn es mit einer Hitze gegrillt wird, die höher ist als seine Hitzetoleranz.
-    \item Erstelle zudem eine \texttt{vomGrillNehmen} Funktion die ausgibt was gerade vom Grill genommen wurde und auch ausgibt wie durch es ist.
-    \item Gehe zurück zu deiner Grillklasse und ersetze das \texttt{int[] aufDemGrill} Array mit einem \texttt{Grillgut[] aufDemGrill}. Mache als Folge dessen sinnvolle Anpassungen in der Grillklasse, die die Funktionen aus Grillgut verwenden.
-    \item Nutze die main-Funktion um einen neuen beispielhaften Grillablauf einer mehr oder weniger erfolgreichen
-    Grillung darzustellen, aber jetzt mit vielen unterschiedlichen Grillgütern.
+    \item Erstelle eine neue Klasse \texttt{Raum} mit den Attributen \texttt{Raumnummer}, \texttt{Tutoren} und \texttt{Erstis}. Überlege insbesonders bei Tutoren und Erstis welcher Datentyp sich eignet (Es kann mehrere Erstis und Tutoren in jedem Raum geben).
+    \item Schreibe einen Konstruktor für die \texttt{Raum}-Klasse. Ein Raum wird anfangs leer initialisiert, d.h. es gibt noch keine Tutoren und Erstis. 
+    \item Erweitere die Klasse um eine Funktion \texttt{tutorHinzufuegen(Student student)} die einen Tutor in den Raum hinzufügt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
+    \item Schreibe eine Funktion \texttt{erstiHinzufuegen(Student student)} die einen Ersti in den Raum hinzufügt. Ein Ersti kann nur einem Raum zugeteilt werden wenn es dort bereits mindestens einen Tutor gibt. Gib außerdem aus, dass der Student dem Raum hinzugefügt wurde.
+    \item Schreibe eine Funktion \texttt{leuteAusgeben()} die ausgibt welche Tutoren und welche Erstis sich in dem Raum befinden.
+    \item Teste deine Funktionen indem du mehrere Räume erstellst und diese mit Tutoren und Erstis füllst.
 \end{enumerate}
 
 \newpage
