@@ -106,38 +106,4 @@ Gerade in größeren Projekten passiert es sehr oft, dass ihr euch in den Code a
 \begin{enumerate}
     \item Erstelle in der gegebenen Grillklasse eine Funktion, die ein Array zufälliger \texttt{Grillgut}-Objekte entgegennimmt und in möglichst wenigen aufrufen der \texttt{grillen}-Funktion alle grillt (genau wie \texttt{suboptimaleGrillung}, nur hoffentlich besser). Nutze aus, dass nur die \texttt{grillen}-Funktion in der Zeit gezählt wird und 'kostenlos' die Hitze umgestellt werden kann, sowie auf den Grill gelegt und wieder heruntergenommen werden kann. Es darf natürlich am Ende keine verbrannten oder rohen Würstchen geben. Wir haben auch einen beispielhaften (nicht-optimalen) Algorithmus gebastelt. Vielleicht kriegt ihr es hin, dass eurer im Durchschnitt schneller wird.
 \end{enumerate}
-
-
-\newpage
-\aufgabe{Codeanhang}
-\hypertarget{Codeanhang1}{}
-\begin{minted}[linenos=false]{java}
-public void optimaleGrillerei(Grillgut[] zuGrillen) {
-    int anzahlDurch = 0;
-    int draufGelegt = 0;
-    while (anzahlDurch < zuGrillen.length) {
-        int momentaneMaxHitze = maxHitze;
-        for (int i = 0; i < aufDemGrill.length; i++) {
-            if (aufDemGrill[i] == null && draufGelegt <zuGrillen.length) {
-                aufDemGrill[i] = zuGrillen[draufGelegt];
-                draufGelegt++;
-            }
-            if (aufDemGrill[i] != null) {
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].hitzetoleranz);
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].maxDurchheit - aufDemGrill[i].durchheit);
-            }
-        }
-        setzeHitze(momentaneMaxHitze);
-        grillen();
-        for (int i = 0; i < aufDemGrill.length; i++) {
-            if (aufDemGrill[i] != null && aufDemGrill[i].durchheit <= aufDemGrill[i].maxDurchheit &&aufDemGrill[i].durchheit >= aufDemGrill[i].minDurchheit && !aufDemGrill[i].verbrannt) {
-                anzahlDurch++;
-                runternehmen(i);
-            }
-        }
-    }
-    System.out.println("Diese Grillung hat für " +zuGrillen.length + " Grillgüter " + grillZaehler + "Grillzyklen gebraucht, ich hoff das war nicht zulang");
-}
-\end{minted}
-
 \end{document}
