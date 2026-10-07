@@ -64,7 +64,7 @@ anna.lernen(); // → Anna lernt fleißig!
 \begin{enumerate}
     \item In Java haben Klassen im Allgemeinen jeweils eine eigene Datei. Erstelle eine neue \texttt{Student}-Klasse. 
     \item Füge deiner Klasse folgende Attribute hinzu: Name, aktuelles Semester, Wissen und Motivationslevel. Überlege mit deinen Nebensitzenden, ob ein Student noch andere Attribute haben sollte. Implementiere diese in der Klasse.
-    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und das Motivationslevel bei 20. Semester und Name sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-\textit{Funktion} erstellst und in einer Variable speicherst.
+    \item Gib deiner \texttt{Student}-Klasse einen Konstruktor, der ausgibt, dass ein neuer Student erstellt wird. Außerdem sollen alle Attribute mit einem Wert initialisiert werden. Dabei startet das Wissen immer bei 0 und das Motivationslevel bei 20. Semester und Name sollen dem Konstruktor als Parameter übergeben werden. Teste den Konstruktor in dem du ein Studentobjekt in der Main-Funktion erstellst und in einer Variable speicherst.
     \item Erstelle eine Funktion \texttt{lernen()} welche das Wissen des Studenten um 10 erhöht aber dafür die Motivation um 5 reduziert. Gib außerdem aus, dass der Student gerade lernt.
     \item Erstelle eine Funktion welche dem Student die Möglichkeit gibt in der Mensa zu speisen. Dadurch wird die Motivation wieder auf 20 gesetzt. Gestalte sie so wie du es für sinnvoll hältst. 
     \item Erweitere die \texttt{lernen} Funktion. Sollte ein Student mit 0 Motivation versuchen zu lernen soll er nicht lernen können und stattdessen sagen das er etwas essen möchte.
@@ -73,18 +73,22 @@ anna.lernen(); // → Anna lernt fleißig!
 
 \newpage
 \aufgabe{Aufgabe 2: Erstis und Tutoren}
-In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester, Motivation und Wissen. Solltest du Aufgabe 1 nicht gemacht haben erstelle eine Klasse mit den 4 Attributen.
+\textit{(Falls du die Aufgabe davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+
+In dieser Aufgabe interagieren Objekte miteinander. Hierfür benötigen wir eine Student klasse mit den Attributen Name, Semester, Motivation und Wissen.
 \begin{enumerate}
     \item Erstelle in Student eine neue Methode \texttt{problemErklaeren(Student student)} die einen anderen Student als Parameter entgegennimmt, dem ein Problem erklärt wird. Damit ein Student einem anderen ein Problem erklären kann, muss er mehr Wissen haben als der Andere.
     \item In \texttt{problemErklaeren()} soll der Student welcher Hilfe erhält sein Wissen um 10 erhöhen. Der Student der Hilfe gibt verliert dafür 4 Motivation.
     \item Gib zudem eine Nachricht aus welcher Student wem gerade hilft. Gib zusätzlich aus ob es sich um einen Ersti oder Tutor handelt. Ein Tutor ist ein Student der im 3. Semester oder höher ist.
-    \item erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine \texttt{problemErklaeren()} Funktion genutzt wird.
+    \item Erstelle einen Student der mindestens im 3. Semester ist und als Tutor fungiert. Erstelle außerdem mehrere Erstis. Simuliere mehrere Situationen wo deine \texttt{problemErklaeren()} Funktion genutzt wird.
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 3: Ein Ersti kommt selten allein}
+\textit{(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).}
+
+
 Um unseren Vorkurs komplett zu machen brauchen wir noch Räume.
-(Falls du die Aufgaben davor übersprungen hast, schreibe dir  eine \texttt{Student}-Klasse mit den Attributen \texttt{name} und \texttt{semester}).
 \begin{enumerate}
     \item Erstelle eine neue Klasse \texttt{Raum} mit den Attributen \texttt{Raumnummer}, \texttt{Tutoren} und \texttt{Erstis}. Überlege insbesonders bei Tutoren und Erstis welcher Datentyp sich eignet (Es kann mehrere Erstis und Tutoren in jedem Raum geben).
     \item Schreibe einen Konstruktor für die \texttt{Raum}-Klasse. Ein Raum wird anfangs leer initialisiert, d.h. es gibt noch keine Tutoren und Erstis. 
@@ -97,43 +101,9 @@ Um unseren Vorkurs komplett zu machen brauchen wir noch Räume.
 \newpage
 \aufgabe{HIGHPERFORMER: Optimale Grillerei}
 Stellt euch vor, es war ein langer Tag im PSE-Vorkurs und ihr habt euch eine Grillung verdient, doch der Grill ist klein und es gibt viele unterschiedliche Grillgüter, sowie viele hungrige Studis. Jetzt muss eine Methode her um möglichst schnell alles gegrillt zu bekommen und das natürlich ohne, dass ein einziges Stück verbrennt oder roh bleiben muss.
+
+Gerade in größeren Projekten passiert es sehr oft, dass ihr euch in den Code anderer Leute einlesen müsst. Hier findet ihr die gegebenen Klassen: \\\url{https://fius.de/angebote/pse-vorkurs-materialien/}
 \begin{enumerate}
-    \item Füge dem Grill einen Zähler hinzu, der bei jedem Aufruf der \texttt{grillen}-Funktion hochgezählt wird und ausgegeben wird. So kann die Dauer einer Grillerei gemessen werden.
-    \item Programmiere in der Grillklasse eine Funktion die eine zufällige Anzahl (zwischen 50 und 500) an Grillgütern (genannt \texttt{Mysterywurst}) mit zufälligen minimalen (zwischen 5 und 20) und maximalen Garstufen (zwischen 10 und 40) initialisiert. Achte jedoch drauf, dass die minimale Garstufe nie größer ist als die maximale. Die Hitzetoleranz soll genauso zufällig gesetzt werden (zwischen 1 und 10). Diese sollen alle in einem \texttt{Grillgut[]} Array gesammelt werden und von der Funktion zurückgegeben werden. 
-    \item Erstelle wieder in der Grillklasse eine Funktion, die eins von den in der Highperformer-Aufgabe 1. generierten Arrays von \texttt{Grillgut}-Objekten entgegennimmt und in möglichst wenigen aufrufen der \texttt{grillen}-Funktion alle grillt. Nutze aus, dass nur die \texttt{grillen}-Funktion in der Zeit gezählt wird und "kostenlos" die Hitze umgestellt werden kann, sowie auf den Grill gelegt und wieder heruntergenommen werden kann. Es darf natürlich am Ende keine verbrannten oder rohen Würstchen geben. Wir haben einen beispielhaften (nicht-optimalen) Algorithmus \hyperlink{Codeanhang1}{Codeanhang} gebastelt. Vielleicht kriegt ihr es hin, dass eurer im Durchschnitt schneller wird.
+    \item Erstelle in der gegebenen Grillklasse eine Funktion, die ein Array zufälliger \texttt{Grillgut}-Objekte entgegennimmt und in möglichst wenigen aufrufen der \texttt{grillen}-Funktion alle grillt (genau wie \texttt{suboptimaleGrillung}, nur hoffentlich besser). Nutze aus, dass nur die \texttt{grillen}-Funktion in der Zeit gezählt wird und 'kostenlos' die Hitze umgestellt werden kann, sowie auf den Grill gelegt und wieder heruntergenommen werden kann. Es darf natürlich am Ende keine verbrannten oder rohen Würstchen geben. Wir haben auch einen beispielhaften (nicht-optimalen) Algorithmus gebastelt. Vielleicht kriegt ihr es hin, dass eurer im Durchschnitt schneller wird.
 \end{enumerate}
-
-
-\newpage
-\aufgabe{Codeanhang}
-\hypertarget{Codeanhang1}{}
-\begin{minted}[linenos=false]{java}
-public void optimaleGrillerei(Grillgut[] zuGrillen) {
-    int anzahlDurch = 0;
-    int draufGelegt = 0;
-    while (anzahlDurch < zuGrillen.length) {
-        int momentaneMaxHitze = maxHitze;
-        for (int i = 0; i < aufDemGrill.length; i++) {
-            if (aufDemGrill[i] == null && draufGelegt <zuGrillen.length) {
-                aufDemGrill[i] = zuGrillen[draufGelegt];
-                draufGelegt++;
-            }
-            if (aufDemGrill[i] != null) {
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].hitzetoleranz);
-                momentaneMaxHitze = Math.min(momentaneMaxHitze, aufDemGrill[i].maxDurchheit - aufDemGrill[i].durchheit);
-            }
-        }
-        setzeHitze(momentaneMaxHitze);
-        grillen();
-        for (int i = 0; i < aufDemGrill.length; i++) {
-            if (aufDemGrill[i] != null && aufDemGrill[i].durchheit <= aufDemGrill[i].maxDurchheit &&aufDemGrill[i].durchheit >= aufDemGrill[i].minDurchheit && !aufDemGrill[i].verbrannt) {
-                anzahlDurch++;
-                runternehmen(i);
-            }
-        }
-    }
-    System.out.println("Diese Grillung hat für " +zuGrillen.length + " Grillgüter " + grillZaehler + "Grillzyklen gebraucht, ich hoff das war nicht zulang");
-}
-\end{minted}
-
 \end{document}

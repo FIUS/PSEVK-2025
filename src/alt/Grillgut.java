@@ -1,5 +1,3 @@
-// Aufgabe 2:
-
 public class Grillgut {
     String typ;
     int minDurchheit;
