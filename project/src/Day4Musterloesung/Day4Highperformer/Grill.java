@@ -1,16 +1,18 @@
 import java.util.Random;
 
-// Aufgabe 2:
 
 public class Grill {
-    String grillmeister;
-    int maxWuerstchen;
-    int maxHitze;
-    int momentaneHitze;
-    Grillgut[] aufDemGrill;
-    int grillZaehler;
+    String grillmeister; // der Name des Grillmeisters
+    int maxWuerstchen; // Anzahl der Grillgüter die auf den Grill passen
+    int maxHitze; // Die höchstmögliche Hitze des Grills
+    int momentaneHitze; // Die Hitze mit die grillen funktion die grillgüter grillt
+    Grillgut[] aufDemGrill; // ein array von Grillgütern, die momentan auf dem Grill liegen
+    int grillZaehler; // ein Zähler für die Anzahl der Aufrufen der Grillen Funktion
 
     public Grill(String grillmeister, int maxWuerstchen, int maxHitze) {
+        /**
+         * Initialisiert alle benötigten Werte
+        */
         System.out.println("Es wird ein Grill erstellt.");
         this.grillmeister = grillmeister;
         this.maxWuerstchen = maxWuerstchen;
@@ -22,6 +24,9 @@ public class Grill {
     }
 
     public void setzeHitze(int zielHitze) {
+        /**
+         * Setzt die momentane Hitze auf die gegebene Zielhitze, falls diese möglich ist
+        */
         if (zielHitze < maxHitze && zielHitze > 0) {
             this.momentaneHitze = zielHitze;
             System.out.println("Hitze auf " + zielHitze + " gesetzt.");
@@ -31,6 +36,9 @@ public class Grill {
     }
 
     public void aufGrillLegen(int stelle, Grillgut grillgut) {
+        /**
+         * Nimmt ein Grillgut entgegen und versucht es an der Stelle stelle auf den Grill zu legen, falls dort Platz ist. 
+        */
         if (stelle < maxWuerstchen && stelle >= 0 && aufDemGrill[stelle] == null) {
             aufDemGrill[stelle] = grillgut;
             System.out.println(grillgut.typ + " an Stelle " + stelle + " auf den Grill gelegt.");
@@ -40,6 +48,9 @@ public class Grill {
     }
 
     public void runternehmen(int stelle) {
+        /**
+         * Nimmt das Grillgut vom Grill und ruft die vomGrillNehmen Funktion dessen auf, welche ausgibt ob es gut gegrillt ist.
+        */
         if (stelle < maxWuerstchen && stelle >= 0 && aufDemGrill[stelle] != null) {
             aufDemGrill[stelle].vomGrillNehmen();
             aufDemGrill[stelle] = null;
@@ -47,6 +58,10 @@ public class Grill {
     }
 
     public void grillen() {
+        /**
+         * Grillt alle Grillgüter, d.h. addiert die Hitze des Grills zur Durchheit aller Grillgüter. 
+         * Zählt zudem den grillZaehler um eins hoch. 
+        */
         System.out.println("Es wird gegrillt");
         for (int i = 0; i < maxWuerstchen; i++) {
             if (aufDemGrill[i] != null) {
@@ -56,8 +71,13 @@ public class Grill {
         grillZaehler++;
     }
 
-    // Highperformer Aufgabe 2:
     public Grillgut[] zufaelligeGrillgueter() {
+        /**
+         * Generiert ein Array von 50 - 500 zufälligen Grillgütern, welche alle unbedingt gegrillt werden wollen.
+         * Die Mindurchheit ist zwischen 5 und 15
+         * Die Maxdurchheit ist zwischen 10 und 30 und ist aber immer größer als die Mindurchheit
+         * Die Hitzetoleranz ist zwischen 1 und 10
+        */
         Random rnd = new Random();
         int numGrillgueter = rnd.nextInt(451) + 50;
         Grillgut[] grillgueter = new Grillgut[numGrillgueter];
@@ -68,15 +88,14 @@ public class Grill {
             while (maxDurchheit < minDurchheit) {
                 maxDurchheit = rnd.nextInt(31) + 10;
             }
-            int hitzeToleranz = rnd.nextInt(10) + 1;
+            int hitzeToleranz = rnd.nextInt(11) + 1;
 
             grillgueter[i] = new Grillgut("Mysterysteak", minDurchheit, maxDurchheit, hitzeToleranz);
         }
         return grillgueter;
     }
 
-    // Highperformer Aufgabe 3:
-    public void optimaleGrillerei(Grillgut[] zuGrillen) {
+    public void suboptimaleGrillerei(Grillgut[] zuGrillen) {
         int anzahlDurch = 0;
         int draufGelegt = 0;
         while (anzahlDurch < zuGrillen.length) {
@@ -104,5 +123,18 @@ public class Grill {
             }
         }
         System.out.println("Diese Grillung hat für " + zuGrillen.length + " Grillgüter " + grillZaehler + " Grillzyklen gebraucht, ich hoffe, dass war nicht zu lang");
+    }
+
+    public boolean alleGutDurch (Grillgut[] zuPruefen) {
+        /**
+         * Prüft ob alle Grillgüter gut durch sind und nichts verbrannt bzw. Roh ist.
+        */
+       boolean alleGut = true; 
+       for (int i = 0; i < zuPruefen.length; i++) {
+            if (verbrannt || durchheit > maxDurchheit || durchheit < minDurchheit) {
+                alleGut = false;
+            }
+       }
+       return alleGut;
     }
 }
