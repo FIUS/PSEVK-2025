@@ -281,8 +281,7 @@ int[] zahlen = new int[4];
 		\item\pause \textbf{Das Problem bei Arrays:}
 		      \begin{itemize}
 			      \item Feste Grösse
-			      \item Will man ein zusätzliches Element einfügen, muss man alles in ein neues Array kopieren.
-			      \item Will man etwas in der Mitte einfügen oder löschen, müssen alle nachfolgenden Elemente aufwändig verschoben werden.
+			      \item Beim Einfügen muss das Array erstellt werden
 		      \end{itemize}
 	\end{itemize}
 \end{frame}
@@ -290,9 +289,9 @@ int[] zahlen = new int[4];
 \begin{frame}[fragile]
 	\frametitle{Verkettete Liste}
 	\begin{itemize}
-		\item Statt eines starren Speicherblocks verbinden wir einzelne \textbf{Knoten} (\texttt{Node}).
+		\item Es werden einzelne \textbf{Knoten} verbunden (\texttt{Node}).
 		      \begin{itemize}
-			      \item Jeder Knoten enthält seine eigene Information (\texttt{value}).
+			      \item Knoten haben einen Wert (\texttt{value}).
 			      \item Jeder Knoten verweist auf einen \textbf{weiteren Knoten} (\texttt{nextNode}).
 		      \end{itemize}
 		\item Der letzte Knoten verweist auf \texttt{null} (Ende der Kette).
@@ -310,37 +309,28 @@ int[] zahlen = new int[4];
 			\begin{itemize}
 				\item Speichert den Wert (\texttt{value}).
 				\item Speichert die Referenz auf den nächsten Knoten (\texttt{nextNode}).
-				\item Eine Klasse kann Attribute vom Typ \textbf{ihrer eigenen Klasse} haben!
+				\item Nodes haben Attribute vom Typ Node
 			\end{itemize}
 		\end{column}
 		\pause
 		\begin{column}{0.5\textwidth}
 			\textbf{Die Liste (\texttt{List}):}
 			\begin{itemize}
-				\item Muss sich nur merken, wo der Anfang ist: \textbf{Startknoten} (\texttt{startNode}).
-				\item Ist \texttt{startNode == null}, ist die Liste leer.
+				\item Muss sich nur merken, wo der Anfang ist: \textbf{Startknoten} (\texttt{startNode})
+				\item Ist \texttt{startNode == null}, ist die Liste leer
 			\end{itemize}
 		\end{column}
 	\end{columns}
-	\pause
-	\vspace{1.2em}
-	\begin{tcolorbox}[colback=accent!10, colframe=accent]
-		Alle Elemente der Liste erreichen wir, indem wir vom Startknoten aus Schritt für Schritt den Pfeilen folgen!
-	\end{tcolorbox}
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Durch die Kette wandern}
-	\begin{itemize}
-		\item Wie schaut man sich alle Elemente nacheinander an (z.\,B. zum Ausgeben)?
-		\item \textbf{Das Vorgehen:}
+	\frametitle{Über eine LinkedList iterieren}
 		      \begin{enumerate}
-			      \item Starte beim ersten Knoten (\texttt{startNode}).
-			      \item Schau dir den Wert des aktuellen Knotens an.
-			      \item Gehe einen Schritt weiter zum Nachfolger (\texttt{nextNode}).
-			      \item Wiederhole das, bis du bei \texttt{null} (dem Ende) ankommst!
+			      \item Starte beim (\texttt{startNode}).
+			      \item betrachte aktuelle Node
+			      \item Gehe zur nächsten Node (\texttt{nextNode}).
+			      \item Wiederhole bis man \texttt{null} (das Ende) erreicht
 		      \end{enumerate}
-	\end{itemize}
 	\vspace{0.8em}
 	\centering
 	\begin{tikzpicture}
@@ -365,8 +355,8 @@ int[] zahlen = new int[4];
 		\begin{column}{0.5\textwidth}
 			\textbf{Fall 1: Liste ist leer}
 			\begin{itemize}
-				\item Der Startknoten ist bisher \texttt{null}.
-				\item Das neue Element wird einfach der neue \texttt{startNode}.
+				\item Der Startknoten ist bisher \texttt{null}
+				\item Bei \texttt{startNode} einfügen
 			\end{itemize}
 		\end{column}
 		\pause
@@ -374,7 +364,7 @@ int[] zahlen = new int[4];
 			\textbf{Fall 2: Liste hat Elemente}
 			\begin{itemize}
 				\item Wandere durch die Kette bis zum \textbf{letzten Knoten} (dessen Nachfolger noch \texttt{null} ist).
-				\item Biege dessen Nachfolger-Zeiger so um, dass er auf das neue Element zeigt!
+				\item Beim letzten Knoten einfügen 
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -394,9 +384,7 @@ int[] zahlen = new int[4];
 \begin{frame}[fragile]
 	\frametitle{Element löschen (\texttt{remove})}
 	\begin{itemize}
-		\item Wie entfernt man ein Kettenglied aus der Mitte?
-		\item \textbf{Die Eleganz der Liste:} Man muss keine Elemente im Speicher verschieben!
-		\item Man \textbf{biegt einfach die Referenz um}: Der Vorgänger überspringt den gelöschten Knoten und zeigt direkt auf dessen Nachfolger!
+		\item Die Referenz über den zu-löschenden Knoten umleiten  
 	\end{itemize}
 	\vspace{0.8em}
 	\centering
@@ -412,35 +400,16 @@ int[] zahlen = new int[4];
 	\vspace{0.8em}
 	\pause
 	\begin{itemize}
-		\item Knoten \textbf{B} wird von niemandem mehr referenziert $\to$ Java löscht ihn automatisch (Garbage Collection)!
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Rekursion auf Datenstrukturen}
-	\begin{itemize}
-		\item Eine Liste ist von Natur aus rekursiv aufgebaut:
-		      \begin{center}
-			      \textit{„Ein Knoten, gefolgt von einer etwas kleineren Rest-Liste.“}
-		      \end{center}
-		\item\pause \textbf{Das Prinzip der Delegation:}
-		      \begin{itemize}
-			      \item Ein Knoten erledigt seinen eigenen Anteil (z.\,B. seinen eigenen Wert hinzuzählen).
-			      \item Dann delegiert er an seinen Nachfolger: \textit{„Mach du bitte mit dem Zwischenergebnis weiter!“}
-		      \end{itemize}
-		\item\pause \textbf{Basisfall (Abbruch):}
-		      \begin{itemize}
-			      \item Wenn ein Knoten keinen Nachfolger mehr hat (\texttt{nextNode == null}), ist das Ende der Kette erreicht und das Gesamtergebnis steht fest!
-		      \end{itemize}
+		\item Knoten \textbf{B} wird von niemandem mehr referenziert $\to$ wird automatisch gelöscht
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Bäume (Trees)}
 	\begin{itemize}
-		\item In einer verketteten Liste hat jeder Knoten maximal \textbf{einen} Nachfolger (linear).
-		\item Was passiert, wenn ein Knoten \textbf{zwei oder mehr} Nachfolger haben kann?
-		\item $\to$ Es entsteht eine verzweigte Hierarchie: Ein \textbf{Baum}!
+		\item In einer verketteten Liste hat jeder Knoten maximal \textbf{einen} Nachfolger
+		\item Mehrere Nachfolger pro Knoten?
+		\item $\to$ verzweigte Hierarchie: Ein \textbf{Baum}!
 	\end{itemize}
 	\pause
 	\vspace{0.3em}
@@ -458,20 +427,6 @@ int[] zahlen = new int[4];
 			\includegraphics[width=0.85\linewidth]{../exercise/img/baum.png}
 		\end{column}
 	\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Warum Bäume?}
-	\begin{itemize}
-		\item Bäume spiegeln viele reale Strukturen wider (Dateisysteme mit Ordnern, Stammbäume, HTML-Dokumente).
-		\item \textbf{Extrem schnelle Suche (Binäre Suchbäume):}
-		      \begin{itemize}
-			      \item Bei jedem Schritt entscheidet man: Geh nach links oder nach rechts?
-			      \item Wie beim Zahlenraten: „Ist die Zahl größer oder kleiner?“
-			      \item Mit jedem Schritt halbiert sich der verbleibende Suchraum!
-		      \end{itemize}
-		\item Mehr dazu und spannende Algorithmen findet ihr in der \textbf{Highperformer-Aufgabe} auf dem Übungsblatt.
-	\end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
