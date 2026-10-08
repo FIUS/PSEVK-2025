@@ -26,6 +26,7 @@
 			      \item Zustand: \textbf{Attribute} (Variablen)
 			      \item Verhalten: \textbf{Funktionen}
 		      \end{itemize}
+			  \pause
 		\item \textbf{Objekt}: konkret existierende Klasse
 	\end{itemize}
 	\pause
@@ -45,10 +46,13 @@ public class Student {
 	\frametitle{Recap Tag 4: Konstruktoren \& Instanziierung}
 	\begin{itemize}
 		\item \textbf{Konstruktor}: Spezielle Methode zur Initialisierung von Objekten
+		
 		      \begin{itemize}
 			      \item Heisst wie die Klasse, hat \textbf{keinen} Rückgabetyp
 		      \end{itemize}
+		\pause
 		\item \texttt{this} referenziert das eigene Objekt
+		\pause
 		\item Neue Objekte werden mit \texttt{new} erzeugt:
 	\end{itemize}
 	\pause
@@ -107,9 +111,12 @@ paul.lernen(); // -> Paul lernt fleißig!
 	\frametitle{Schlüssel-Wert-Paare}
 	\begin{itemize}
 		\item Maps sind \textbf{Schlüssel} (Key) und \textbf{Wert} (Value) Paare.
+		\pause
 		\item \textbf{Schlüssel (Key):} Einzigartiges Suchobjekt
+		\pause
 		\item \textbf{Wert (Value):} Zum Schlüssel gehörige Information
 	\end{itemize}
+	\pause
 	\vspace{0.8em}
 	\centering
 	\begin{tikzpicture}
@@ -294,8 +301,10 @@ int[] zahlen = new int[4];
 			      \item Knoten haben einen Wert (\texttt{value}).
 			      \item Jeder Knoten verweist auf einen \textbf{weiteren Knoten} (\texttt{nextNode}).
 		      \end{itemize}
+			  \pause
 		\item Der letzte Knoten verweist auf \texttt{null} (Ende der Kette).
 	\end{itemize}
+	\pause
 	\vspace{0.8em}
 	\centering
 	\includegraphics[width=0.88\linewidth]{../exercise/img/linkedlist.png}
@@ -308,7 +317,9 @@ int[] zahlen = new int[4];
 			\textbf{Der Knoten (\texttt{Node}):}
 			\begin{itemize}
 				\item Speichert den Wert (\texttt{value}).
+				\pause
 				\item Speichert die Referenz auf den nächsten Knoten (\texttt{nextNode}).
+				\pause
 				\item Nodes haben Attribute vom Typ Node
 			\end{itemize}
 		\end{column}
@@ -317,6 +328,7 @@ int[] zahlen = new int[4];
 			\textbf{Die Liste (\texttt{List}):}
 			\begin{itemize}
 				\item Muss sich nur merken, wo der Anfang ist: \textbf{Startknoten} (\texttt{startNode})
+				\pause
 				\item Ist \texttt{startNode == null}, ist die Liste leer
 			\end{itemize}
 		\end{column}
@@ -327,9 +339,12 @@ int[] zahlen = new int[4];
 	\frametitle{Über eine LinkedList iterieren}
 		      \begin{enumerate}
 			      \item Starte beim (\texttt{startNode}).
+			      \pause
 			      \item betrachte aktuelle Node
+			      \pause
 			      \item Gehe zur nächsten Node (\texttt{nextNode}).
-			      \item Wiederhole bis man \texttt{null} (das Ende) erreicht
+			     \pause 
+				  \item Wiederhole bis man \texttt{null} (das Ende) erreicht
 		      \end{enumerate}
 	\vspace{0.8em}
 	\centering
@@ -431,7 +446,7 @@ int[] zahlen = new int[4];
 
 \begin{frame}[plain]
 	\centering
-	{\Huge\bfseries{Kurzes Quiz zu Maps!}}
+	{\Huge\bfseries{Quiz los gehts!}}
 \end{frame}
 
 
