@@ -21,12 +21,12 @@
 \begin{frame}[fragile]
 	\frametitle{Recap Tag 4: Klassen und Objekte}
 	\begin{itemize}
-		\item \textbf{Klasse}: Ein \textbf{Bauplan} für Objekte
+		\item \textbf{Klasse}: \textbf{Bauplan} für Objekte
 		      \begin{itemize}
-			      \item Definiert den Zustand über \textbf{Attribute} (Variablen)
-			      \item Definiert das Verhalten über \textbf{Methoden} (Funktionen)
+			      \item Zustand: \textbf{Attribute} (Variablen)
+			      \item Verhalten: \textbf{Funktionen}
 		      \end{itemize}
-		\item \textbf{Objekt}: Eine konkrete \textbf{Instanz} einer Klasse
+		\item \textbf{Objekt}: konkret existierende Klasse
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -46,9 +46,9 @@ public class Student {
 	\begin{itemize}
 		\item \textbf{Konstruktor}: Spezielle Methode zur Initialisierung von Objekten
 		      \begin{itemize}
-			      \item Heisst genauso wie die Klasse, hat \textbf{keinen} Rückgabetyp
-			      \item \texttt{this.name} unterscheidet Instanzattribut von Methodenparameter
+			      \item Heisst wie die Klasse, hat \textbf{keinen} Rückgabetyp
 		      \end{itemize}
+		\item \texttt{this} referenziert das eigene Objekt
 		\item Neue Objekte werden mit \texttt{new} erzeugt:
 	\end{itemize}
 	\pause
@@ -87,29 +87,28 @@ paul.lernen(); // -> Paul lernt fleißig!
 % \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Warum Maps?}
+	\frametitle{Maps}
 	\begin{itemize}
 		\item \textbf{Bisher: Arrays}
 		      \begin{itemize}
-			      \item Zugriff erfolgt rein über Zahlen-Indizes: \texttt{namen[0]}, \texttt{noten[4]}
-			      \item Was aber, wenn wir wissen wollen: \textit{„Welche Matrikelnummer hat Paul?“}
-			      \item Mit Arrays müssen wir jedes Element einzeln durchsuchen!
+			      \item Zugriff nur mit Zahlen-Indizes: 
 		      \end{itemize}
-		\item\pause \textbf{Idee: Assoziativer Speicher}
+		\item\pause \textbf{Maps}
 		      \begin{itemize}
-			      \item Direkter Zugriff über einen beliebigen Schlüssel!
-			      \item \textbf{Wörterbuch} (Wort $\to$ Übersetzung), \textbf{Telefonbuch} (Name $\to$ Nummer), \textbf{Spind} (Nummer $\to$ Inhalt).
+			      \item Schlüssel können beliebig sein
+			      \item \textbf{Wörterbuch} (Wort $\to$ Übersetzung)
+				  \item \textbf{Telefonbuch} (Name $\to$ Nummer)
+				  \item \textbf{Spind} (Nummer $\to$ Inhalt)
 		      \end{itemize}
-		\item\pause \textbf{In Java:} \textbf{Maps} (Dictionary)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Schlüssel-Wert-Paare}
 	\begin{itemize}
-		\item Eine Map verwaltet Paare aus \textbf{Schlüssel} (Key) und \textbf{Wert} (Value).
-		\item \textbf{Schlüssel (Key):} Eindeutiger Suchbegriff zum Nachschlagen.
-		\item \textbf{Wert (Value):} Die hinterlegte Information.
+		\item Maps sind \textbf{Schlüssel} (Key) und \textbf{Wert} (Value) Paare.
+		\item \textbf{Schlüssel (Key):} Einzigartiges Suchobjekt
+		\item \textbf{Wert (Value):} Zum Schlüssel gehörige Information
 	\end{itemize}
 	\vspace{0.8em}
 	\centering
@@ -117,11 +116,11 @@ paul.lernen(); // -> Paul lernt fleißig!
 		\node[draw, rounded corners, fill=accent!20, minimum width=3cm, minimum height=0.8cm] (k1) at (0, 1.2) {\textbf{'Deutschland'}};
 		\node[draw, rounded corners, fill=accent!20, minimum width=3cm, minimum height=0.8cm] (k2) at (0, 0) {\textbf{'Frankreich'}};
 
-		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v1) at (6, 1.2) {\textbf{'Berlin'}};
-		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v2) at (6, 0) {\textbf{'Paris'}};
+		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v1) at (9, 1.2) {\textbf{'Berlin'}};
+		\node[draw, rounded corners, fill=green!20, minimum width=3cm, minimum height=0.8cm] (v2) at (9, 0) {\textbf{'Paris'}};
 
-		\draw[->, very thick, >=stealth] (k1) -- node[above]{\footnotesize\textit{map.get(...)}} (v1);
-		\draw[->, very thick, >=stealth] (k2) -- node[above]{\footnotesize\textit{map.get(...)}} (v2);
+		\draw[->, very thick, >=stealth] (k1) -- node[above]{\footnotesize\textit{hauptstaedte.get('Deutschland')}} (v1);
+		\draw[->, very thick, >=stealth] (k2) -- node[above]{\footnotesize\textit{hauptstaedte.get('Frankreich')}} (v2);
 
 		\node[above=0.2cm of k1] {\textbf{Schlüssel (Key)}};
 		\node[above=0.2cm of v1] {\textbf{Wert (Value)}};
@@ -131,8 +130,8 @@ paul.lernen(); // -> Paul lernt fleißig!
 \begin{frame}[fragile]
 	\frametitle{HashMap in Java: Syntax}
 	\begin{itemize}
-		\item Die Standard-Implementierung in Java ist \texttt{HashMap} aus \texttt{java.util.HashMap}.
-		\item Syntax: \texttt{HashMap<SchlüsselTyp, WertTyp> name = new HashMap<>();}
+		\item In Java nutzen wir \texttt{HashMap} aus \texttt{java.util.HashMap}
+		\item Syntax: \\\texttt{HashMap<SchlüsselTyp, WertTyp> name = new HashMap<>();}
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -155,7 +154,7 @@ System.out.println(hauptstaedte.get("Deutschland"));
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Wichtig: Wrapper-Klassen für primitive Typen}
+	\frametitle{Wrapper-Klassen}
 	\newline
 	\fehler \texttt{HashMap<String, int>} $\to$ \alert{Fehler!}
 	\newline
@@ -197,10 +196,10 @@ System.out.println(hauptstaedte.get("Deutschland"));
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Besonderheit 1: Schlüssel sind eindeutig!}
+	\frametitle{Schlüssel}
 	\begin{itemize}
-		\item Ein Schlüssel kann in einer Map \textbf{nur genau einmal} existieren.
-		\item Wird ein vorhandener Schlüssel erneut mit \texttt{put()} eingefügt, wird der alte Wert \textbf{überschrieben}!
+		\item Schlüssel sind \textbf{eindeutig}.
+		\item \texttt{put()} \textbf{überschreibt} existierende Werte
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -222,10 +221,9 @@ System.out.println("Anzahl Spieler: " + punkte.size());
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Besonderheit 2: Unbekannte Schlüssel \& \texttt{null}}
+	\frametitle{Unbekannte Schlüssel \& \texttt{null}}
 	\begin{itemize}
-		\item Existiert ein Schlüssel nicht in der Map, liefert \texttt{get()} den Wert \texttt{null}.
-		\item\achtung{} Vorsicht beim Zuweisen an primitive Datentypen!
+		\item bei nicht-vorhandenen Schlüsseln liefert \texttt{get()} \texttt{null}
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -236,7 +234,7 @@ System.out.println(alter.get("Paul")); // -> null
 	\end{minted}
 	\pause
 	\begin{itemize}
-		\item \textbf{Best Practice:} Vor dem Zugriff mit \texttt{containsKey()} prüfen:
+		\item \textbf{Zur Sicherheit:} Vor dem Zugriff mit \texttt{containsKey()} prüfen:
 	\end{itemize}
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
 if (alter.containsKey("Paul")) {
@@ -248,10 +246,10 @@ if (alter.containsKey("Paul")) {
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Über eine Map iterieren}
+	\frametitle{Über Maps iterieren}
 	\begin{itemize}
-		\item Über ein Array iterieren wir mit einem Index (\texttt{i = 0\dots}).
-		\item Bei Maps iterieren wir über die \textbf{Menge aller Schlüssel} (\texttt{keySet()}):
+		\item Bei Maps mit der \textbf{Menge aller Schlüssel} (\texttt{keySet()})
+		\item Die Menge erst zum Array konvertieren mit \texttt{.toArray()}
 	\end{itemize}
 	\pause
 	\begin{minted}[fontsize=\footnotesize, linenos=false]{java}
@@ -259,8 +257,8 @@ HashMap<String, String> hauptstaedte = new HashMap<>();
 hauptstaedte.put("Deutschland", "Berlin");
 hauptstaedte.put("Frankreich", "Paris");
 
-for (String land : hauptstaedte.keySet()) {
-    String stadt = hauptstaedte.get(land);
+for (int landID = 0; landID < hauptstaedte.size(); landID++) {
+    String stadt = hauptstaedte.get(hauptstaedte.keySet().toArray()[landID]);
     System.out.println(land + " -> " + stadt);
 }
 	\end{minted}
@@ -271,101 +269,7 @@ for (String land : hauptstaedte.keySet()) {
 	\end{ausgabe}
 \end{frame}
 
-\begin{frame}[plain]
-	\centering
-	{\Huge\bfseries{Kurzes Quiz zu Maps!}}
-\end{frame}
 
-\begin{frame}[plain]
-	\centering
-	{\Huge\bfseries{TODO FUIZ QUIZ}}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 1: Bei Maps kann man...}
-	\begin{ausgabe}
-		... nicht über die Elemente iterieren
-	\end{ausgabe}
-	\begin{ausgabe}
-		... über den Index der Elemente iterieren
-	\end{ausgabe}
-	\begin{ausgabe}
-		\textcolor<2->{green!100!black}{... über die Menge der Schlüssel iterieren}
-	\end{ausgabe}
-	\begin{ausgabe}
-		... über die Menge der Werte iterieren
-	\end{ausgabe}
-
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 2: Was psssiert wenn ein bereits existierender Schlüssel mit einer put() Operation in eine Map eigefügt wird?}
-	\begin{ausgabe}
-		\textcolor<2->{green!100!black}{Der alte Wert wird überschrieben}
-	\end{ausgabe}
-	\begin{ausgabe}
-		Der neue Wert wird verworfen
-	\end{ausgabe}
-	\begin{ausgabe}
-		Ein zweiter Schlüssel wird erstellt
-	\end{ausgabe}
-	\begin{ausgabe}
-		Es wird ein Fehler geworfen
-	\end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 3: Was ist der Vorteil einer verketteten Liste gegenüber einem Array?}
-	\begin{ausgabe}
-		Schnellerer Index Zugriff
-	\end{ausgabe}
-	\begin{ausgabe}
-		\textcolor<2->{green!100!black}{Dynamische Größenanpassung}
-	\end{ausgabe}
-	\begin{ausgabe}
-		Einfachere Implementierung
-	\end{ausgabe}
-	\begin{ausgabe}
-		Feste Größe
-	\end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 4: Wie löscht man das Element B in der Verketteten Liste: A -> B -> C }
-	\begin{ausgabe}
-		Den Knoten auf welchen B zeigt merken
-	\end{ausgabe}
-	\begin{ausgabe}
-		In den Vorgänger von B gehen (also A)
-	\end{ausgabe}
-	\begin{ausgabe}
-		In A den Zeiger auf C stellen
-	\end{ausgabe}
-	\begin{ausgabe}
-		B löschen
-	\end{ausgabe}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 5: Tippe auf die Blätter}
-	\includegraphics[width=0.6\linewidth]{../exercise/img/baum.png}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Frage 6: Wie viele Kinder darf ein Knoten in einem Binärbaum maximal haben?}
-	\begin{ausgabe}
-		1
-	\end{ausgabe}
-	\begin{ausgabe}
-		\textcolor<2->{green!100!black}{2}
-	\end{ausgabe}
-	\begin{ausgabe}
-		unendlich viele
-	\end{ausgabe}
-	\begin{ausgabe}
-		keine
-	\end{ausgabe}
-\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Datenstrukturen}
@@ -568,6 +472,103 @@ int[] zahlen = new int[4];
 		      \end{itemize}
 		\item Mehr dazu und spannende Algorithmen findet ihr in der \textbf{Highperformer-Aufgabe} auf dem Übungsblatt.
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+	\centering
+	{\Huge\bfseries{Kurzes Quiz zu Maps!}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Frage 1: Bei Maps kann man...}
+	\begin{ausgabe}
+		... nicht über die Elemente iterieren
+	\end{ausgabe}
+	\begin{ausgabe}
+		... über den Index der Elemente iterieren
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{... über die Menge der Schlüssel iterieren}
+	\end{ausgabe}
+	\begin{ausgabe}
+		... über die Menge der Werte iterieren
+	\end{ausgabe}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 2: Was psssiert wenn ein bereits existierender Schlüssel mit einer put() Operation in eine Map eigefügt wird?}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Der alte Wert wird überschrieben}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Der neue Wert wird verworfen
+	\end{ausgabe}
+	\begin{ausgabe}
+		Ein zweiter Schlüssel wird erstellt
+	\end{ausgabe}
+	\begin{ausgabe}
+		Es wird ein Fehler geworfen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 3: Was ist der Vorteil einer verketteten Liste gegenüber einem Array?}
+	\begin{ausgabe}
+		Schnellerer Index Zugriff
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Dynamische Größenanpassung}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Einfachere Implementierung
+	\end{ausgabe}
+	\begin{ausgabe}
+		Feste Größe
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 4: Wie löscht man das Element B in der Verketteten Liste: A -> B -> C }
+	\begin{ausgabe}
+		Den Knoten auf welchen B zeigt merken
+	\end{ausgabe}
+	\begin{ausgabe}
+		In den Vorgänger von B gehen (also A)
+	\end{ausgabe}
+	\begin{ausgabe}
+		In A den Zeiger auf C stellen
+	\end{ausgabe}
+	\begin{ausgabe}
+		B löschen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 5: Tippe auf die Blätter}
+	\includegraphics[width=0.6\linewidth]{../exercise/img/baum.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 6: Tippe auf die Wurzel}
+	\includegraphics[width=0.6\linewidth]{../exercise/img/baum.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 7: Wie viele Kinder darf ein Knoten in einem Binärbaum maximal haben?}
+	\begin{ausgabe}
+		1
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{2}
+	\end{ausgabe}
+	\begin{ausgabe}
+		unendlich viele
+	\end{ausgabe}
+	\begin{ausgabe}
+		keine
+	\end{ausgabe}
 \end{frame}
 
 \begin{frame}
