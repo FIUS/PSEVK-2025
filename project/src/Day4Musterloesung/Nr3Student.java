@@ -1,6 +1,6 @@
 public class Student {
     public String name;
-    int aktuellesSemester;
+    public int aktuellesSemester;
 
     public Student(String name, int aktuellesSemester){
         this.name = name;
