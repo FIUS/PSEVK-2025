@@ -59,8 +59,8 @@ https://fius.de/angebote/pse-vorkurs-materialien/
 import java.util.HashMap;
 
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
+studis.put("Melanie", 1976370L);
+studis.put("Paul", 1249609L);
 
 System.out.println(studis.get("Melanie"));
 	\end{minted}
@@ -68,16 +68,16 @@ System.out.println(studis.get("Melanie"));
 
 \newpage
 \aufgabe{Aufgabe 1: Maps}
-Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verbinden:
+Maps verbinden einen Schlüssel mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verknüpfen:
 \begin{minted}[linenos=false]{java}
 Map<String, Long> telefonbuch = new HashMap<String, Long>();
 //erstes Parameter ist der Schlüssel, zweites ist der Wert
-telefonbuch.put("Paul Griller", 1374927394);
-telefonbuch.put("Melanie Barbecue", 9257632984);
+telefonbuch.put("Paul Griller", 1374927394L);
+telefonbuch.put("Melanie Barbecue", 9257632984L);
 \end{minted}
 
 \begin{enumerate}
-    \item Hole die Nummer von Paul Griller aus der Map und gebe sie in der Konsole aus.
+    \item Hole die Nummer von Paul Griller aus der Map und gib sie in der Konsole aus.
 
           \begin{ausgabe}
               Paul Griller: 1374927394
@@ -89,7 +89,7 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
               Paul Griller: 1374927394, Melanie Barbecue: 9257632984
           \end{ausgabe}
 
-    \item Schreibe eine Funktion die einen String entgegennimmt und in einer Map speichert, wie oft jedes Zeichen darin vorkommt.
+    \item Schreibe eine Funktion, die einen String entgegennimmt und in einer Map speichert, wie oft jedes Zeichen darin vorkommt.
           Gib die Map anschließend mithilfe deiner Funktion aus 1.2 aus.
           
           Aus ...
@@ -104,7 +104,7 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
 
             \textbf{Hinweis:} Verwende \texttt{split("")}, um einen String in einzelne Zeichen aufzuteilen und diese anschließend zu durchlaufen. Mehr dazu findest du in der Java-Dokumentation: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.         
 
-    \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt. Statt einzelner Zeichen sollen nun Zeichenfolgen der Länge \texttt{length} gezählt werden.
+    \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt. Statt einzelner Zeichen sollen nun aufeinanderfolgende Zeichenfolgen der Länge \texttt{length} gezählt werden. 
 
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
