@@ -14,6 +14,10 @@ public class Day5Musterloesung {
         // 1.2
         printMap(telefonbuch);
 
+        // 1.3
+        checkIfInMap(telefonbuch, "Paul Griller");
+        checkIfInMap(telefonbuch, "Manuel Neuer");
+
     }
     
 
@@ -25,6 +29,15 @@ public class Day5Musterloesung {
     }
 
     // 1.3
+    public static void checkIfInMap(HashMap<String, Long> map, String key) {
+        if (map.containsKey(key)) {
+            System.out.println(key + ": " + map.get(key));
+        } else {
+            System.out.println(key + " ist nicht in der Map enthalten.");
+        }
+    }
+
+    // 1.4
     public static void countLetters(String text) {
         String[] letters = text.split("");
 
@@ -41,7 +54,7 @@ public class Day5Musterloesung {
         printMap(letterMap);
     }
 
-    // 1.4
+    // 1.5
     public static void countSequences(String text, int length) {
         HashMap<String, Long> sequenceMap = new HashMap<>();
 
