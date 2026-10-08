@@ -83,18 +83,27 @@ telefonbuch.put("Melanie Barbecue", 9257632984);
               Paul Griller: 1374927394
           \end{ausgabe}
 
-    \item Schreibe eine Funktion die einen String entgegennimmt und in einem Dictionary speichert, wie oft jeder Buchstabe darin vorkommt.
-     
-          Beispiel:
+    \item Schreibe eine Funktion die eine Map entgegennimmt und alle Schlüssel und die dazugehörigen Werte ausgibt:
+    \newline Mit mapBezeichner.keySet().toArray() bekommen wir ein Array aller Schlüssel einer Map. Nutze diese Funktionen um über die Schlüssel zu iterieren. Über die Werte kann man ganz ähnlich iterieren, überlege wie. Teste deine Funktion mit der Map aus 1.1.
+          \begin{ausgabe}
+              Paul Griller: 1374927394, Melanie Barbecue: 9257632984
+          \end{ausgabe}
+
+    \item Schreibe eine Funktion die einen String entgegennimmt und in einer Map speichert, wie oft jeder Buchstabe darin vorkommt.
+          Printe die Map mithilfe deiner Funktion aus 1.2
+          
+          Aus ...
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
           \end{ausgabe}
+          ... wird dann ...
+           \begin{ausgabe}
+             : 6, b: 1, d: 1, e: 10, g: 9, h: 1, i: 6, l: 7, m: 3, -: 1, n: 3, o: 1, p: 1, r: 7, s: 2, ü: 2, ß: 1, 
 
-          Hinweis: Verwende die \texttt{split("")} Funktion auf einem String um ihn in ein Zeichenarray umzuwandeln. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
-    \item Erweitere die Funktion aus der vorherigen Teilaufgabe und gebe die Map aus. Die Ausgabe soll wie folgt aussehen:
-          \begin{ausgabe}
-              g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
           \end{ausgabe}
+
+          Hinweis: Verwende \texttt{split(\char34\char34)} um einem String zwischen den einzelnen Zeichen zu trennen und ihn in ein Zeichenarray umzuwandeln. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
+         
 
     \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt und statt einzelne Buchstaben, jetzt Buchstabenfolgen der Länge \texttt{length} zählt.
 
