@@ -28,14 +28,14 @@ public class Day5Musterloesung {
     public static void countLetters(String text) {
         String[] letters = text.split("");
 
-        HashMap<String, int> letterMap = new HashMap<>();
+        HashMap<String, Long> letterMap = new HashMap<>();
 
         for (int i = 0; i < letters.length; i++) {
             String letter = letters[i];
             if (letterMap.containsKey(letter)) {
-                letterMap.put(letter, letterMap.get(letter) + 1);
+                letterMap.put(letter, letterMap.get(letter) + 1L);
             } else {
-                letterMap.put(letter, 1);
+                letterMap.put(letter, 1L);
             }
         }
         printMap(letterMap);
@@ -48,7 +48,7 @@ public class Day5Musterloesung {
         String[] sequences = text.split("");
         String sequence;
 
-        for (int i = 0; i < sequences.length - length; i++) {
+        for (int i = 0; i <= sequences.length - length; i++) {
             sequence = "";
             for (int j = 0; j < length; j++) {
                 sequence += sequences[i + j];
