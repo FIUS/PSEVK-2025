@@ -157,7 +157,7 @@ System.out.println(hauptstaedte.get("Deutschland"));
 \begin{frame}[fragile]
 	\frametitle{Wichtig: Wrapper-Klassen für primitive Typen}
 	\newline
-	\fehler \texttt{HashMap<String, int>} $\to$ \alert{Kompilierfehler!}
+	\fehler \texttt{HashMap<String, int>} $\to$ \alert{Fehler!}
 	\newline
 	Stattdessen nutzen wir die zugehörigen \textbf{Wrapper-Klassen}:
 
@@ -279,6 +279,92 @@ for (String land : hauptstaedte.keySet()) {
 \begin{frame}[plain]
 	\centering
 	{\Huge\bfseries{TODO FUIZ QUIZ}}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 1: Bei Maps kann man...}
+	\begin{ausgabe}
+		... nicht über die Elemente iterieren
+	\end{ausgabe}
+	\begin{ausgabe}
+		... über den Index der Elemente iterieren
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{... über die Menge der Schlüssel iterieren}
+	\end{ausgabe}
+	\begin{ausgabe}
+		... über die Menge der Werte iterieren
+	\end{ausgabe}
+
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 2: Was psssiert wenn ein bereits existierender Schlüssel mit einer put() Operation in eine Map eigefügt wird?}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Der alte Wert wird überschrieben}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Der neue Wert wird verworfen
+	\end{ausgabe}
+	\begin{ausgabe}
+		Ein zweiter Schlüssel wird erstellt
+	\end{ausgabe}
+	\begin{ausgabe}
+		Es wird ein Fehler geworfen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 3: Was ist der Vorteil einer verketteten Liste gegenüber einem Array?}
+	\begin{ausgabe}
+		Schnellerer Index Zugriff
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{Dynamische Größenanpassung}
+	\end{ausgabe}
+	\begin{ausgabe}
+		Einfachere Implementierung
+	\end{ausgabe}
+	\begin{ausgabe}
+		Feste Größe
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 4: Wie löscht man das Element B in der Verketteten Liste: A -> B -> C }
+	\begin{ausgabe}
+		Den Knoten auf welchen B zeigt merken
+	\end{ausgabe}
+	\begin{ausgabe}
+		In den Vorgänger von B gehen (also A)
+	\end{ausgabe}
+	\begin{ausgabe}
+		In A den Zeiger auf C stellen
+	\end{ausgabe}
+	\begin{ausgabe}
+		B löschen
+	\end{ausgabe}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 5: Tippe auf die Blätter?}
+	\image[width=0.88\linewidth]{../exercise/img/tree.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Frage 6: Wie viele Kinder darf ein Knoten in einem Binärbaum maximal haben?}
+	\begin{ausgabe}
+		1
+	\end{ausgabe}
+	\begin{ausgabe}
+		\textcolor<2->{green!100!black}{2}
+	\end{ausgabe}
+	\begin{ausgabe}
+		unendlich viele
+	\end{ausgabe}
+	\begin{ausgabe}
+		keine
+	\end{ausgabe}
 \end{frame}
 
 \begin{frame}[fragile]
