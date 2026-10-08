@@ -3,17 +3,9 @@ import java.util.Map;
 
 public class Day5Musterloesung {
     // Aufgabe 1
-    public static void Aufgabe11(Map<String, Long> map) {
-        for (int i = 0; i < map.size(); i++) {
-            System.out.println(map.keySet().toArray()[i] + ": " + map.values().toArray()[i]);
-        }
+    System.out.println("Paul Griller: " + map.get("Paul Griller"));
 
-        //Alternative
-        /*for (Map.Entry<String, Long> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }*/
-    }
-
+    // Aufgabe 2
     public static void Aufgabe12(String text) {
         String[] letters = text.split("");
         Map<String, Long> letterMap = new HashMap<>();
