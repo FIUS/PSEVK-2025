@@ -534,8 +534,8 @@ public class Universitaet {
 		\item<2-> Neue Funktion in \texttt{Universitaet}:
 		      \begin{minted}{java}
 public void pruefungsvorbereitung() {
-	for (Student s : alleStudis) {
-		s.lernen();
+	for (int studiID = 0; studiID < alleStudis.length; studiID++) {
+		alleStudis[studiID].lernen();
 	}
 }
 \end{minted}
