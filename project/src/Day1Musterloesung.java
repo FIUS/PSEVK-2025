@@ -101,9 +101,9 @@ public class Day1Musterloesung {
 
             System.out.print("Bist du ein Ersti (true oder false eingeben)? ");
             boolean ersti = sc.nextBoolean();
-            int preis = 7;
+            int preis = 8;
             if (ersti) {
-                preis = 3;
+                preis = 5;
             }
             System.out.println("Für dich sinds " + preis + " Euro");
         } else {
