@@ -12,23 +12,15 @@ public class Day5Musterloesung {
         System.out.println("Paul Griller hat folgende Telefonnummer: " + telefonbuch.get("Paul Griller"));
 
         // 1.2
-        printMap(telefonbuch);
-
-        // 1.3
         checkIfInMap(telefonbuch, "Paul Griller");
         checkIfInMap(telefonbuch, "Manuel Neuer");
 
+        // 1.3
+        printMap(telefonbuch);
+
     }
     
-
     // 1.2
-    public static void printMap(Map<String, Long> map) {
-        for (int i = 0; i < map.size(); i++) {
-            System.out.println(map.keySet().toArray()[i] + ": " + map.values().toArray()[i]);
-        }
-    }
-
-    // 1.3
     public static void checkIfInMap(HashMap<String, Long> map, String key) {
         if (map.containsKey(key)) {
             System.out.println(key + ": " + map.get(key));
@@ -36,6 +28,15 @@ public class Day5Musterloesung {
             System.out.println(key + " ist nicht in der Map enthalten.");
         }
     }
+
+    // 1.3
+    public static void printMap(Map<String, Long> map) {
+        for (int i = 0; i < map.size(); i++) {
+            System.out.println(map.keySet().toArray()[i] + ": " + map.values().toArray()[i]);
+        }
+    }
+
+    
 
     // 1.4
     public static void countLetters(String text) {
