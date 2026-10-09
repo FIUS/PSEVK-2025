@@ -2,39 +2,66 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Day5Musterloesung {
-    // Aufgabe 1
-    System.out.println("Paul Griller: " + map.get("Paul Griller"));
+    
+    public static void main(String[] args) {
+        // 1.1
+        HashMap<String, Long> telefonbuch = new HashMap<String, Long>();
+        telefonbuch.put("Paul Griller", 1374927394L);
+        telefonbuch.put("Melanie Barbecue", 9257632984L);
 
-    // Aufgabe 2
-    public static void Aufgabe12(String text) {
+        System.out.println("Paul Griller hat folgende Telefonnummer: " + telefonbuch.get("Paul Griller"));
+
+        // 1.2
+        printMap(telefonbuch);
+
+        // 1.3
+        checkIfInMap(telefonbuch, "Paul Griller");
+        checkIfInMap(telefonbuch, "Manuel Neuer");
+
+    }
+    
+
+    // 1.2
+    public static void printMap(Map<String, Long> map) {
+        for (int i = 0; i < map.size(); i++) {
+            System.out.println(map.keySet().toArray()[i] + ": " + map.values().toArray()[i]);
+        }
+    }
+
+    // 1.3
+    public static void checkIfInMap(HashMap<String, Long> map, String key) {
+        if (map.containsKey(key)) {
+            System.out.println(key + ": " + map.get(key));
+        } else {
+            System.out.println(key + " ist nicht in der Map enthalten.");
+        }
+    }
+
+    // 1.4
+    public static void countLetters(String text) {
         String[] letters = text.split("");
-        Map<String, Long> letterMap = new HashMap<>();
-        for (String letter : letters) {
+
+        HashMap<String, Long> letterMap = new HashMap<>();
+
+        for (int i = 0; i < letters.length; i++) {
+            String letter = letters[i];
             if (letterMap.containsKey(letter)) {
-                letterMap.put(letter, letterMap.get(letter) + 1);
+                letterMap.put(letter, letterMap.get(letter) + 1L);
             } else {
                 letterMap.put(letter, 1L);
             }
         }
-        Aufgabe11(letterMap);
+        printMap(letterMap);
     }
 
-    public static void Aufgabe13(String text, int length) {
-        Map<String, Long> sequenceMap = new HashMap<>();
-
-        /*for (int i = 0; i <= text.length() - length; i++) {
-            String sequence = text.substring(i, i + length);
-            if (sequenceMap.containsKey(sequence)) {
-                sequenceMap.put(sequence, sequenceMap.get(sequence) + 1);
-            } else {
-                sequenceMap.put(sequence, 1L);
-            }
-        }*/
+    // 1.5
+    public static void countSequences(String text, int length) {
+        HashMap<String, Long> sequenceMap = new HashMap<>();
 
         String[] sequences = text.split("");
         String sequence;
 
-        for (int i = 0; i < sequences.length - length; i++) {
+        for (int i = 0; i <= sequences.length - length; i++) {
             sequence = "";
             for (int j = 0; j < length; j++) {
                 sequence += sequences[i + j];
@@ -47,16 +74,8 @@ public class Day5Musterloesung {
             }
         }
 
-        Aufgabe11(sequenceMap);
+        printMap(sequenceMap);
     }
 
-    public static void main(String[] args) {
-        Map<String, Long> telefonbuch = new HashMap<>();
-        telefonbuch.put("Paul Griller", 1374927394L);
-        telefonbuch.put("Menalie Barbecue", 9257632984L);
-
-        Aufgabe11(telefonbuch);
-        Aufgabe12("grimmige griller grillen glühend gern grobe grillgemüse-spieße.");
-        Aufgabe13("grimmige griller grillen glühend gern grobe grillgemüse-spieße.", 3);
-    }
+    
 }

@@ -15,7 +15,13 @@ public class List {
     }
 
     public void removeNode(Node node){
+        if (startNode == node) {
+            startNode = node.nextNode;
+            return;
+        }
+
         Node tempNode = startNode;
+        
         while(tempNode.nextNode != node){
             tempNode = tempNode.nextNode;
         }

@@ -59,8 +59,8 @@ https://fius.de/angebote/pse-vorkurs-materialien/
 import java.util.HashMap;
 
 HashMap<String, Integer> studis = new HashMap<>();
-studis.put("Melanie", 1976370);
-studis.put("Paul", 1249609);
+studis.put("Melanie", 1976370L);
+studis.put("Paul", 1249609L);
 
 System.out.println(studis.get("Melanie"));
 	\end{minted}
@@ -68,63 +68,71 @@ System.out.println(studis.get("Melanie"));
 
 \newpage
 \aufgabe{Aufgabe 1: Maps}
-Maps verbinden ein Schlüsselelement mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verbinden:
+Maps verbinden einen Schlüssel mit einem Wert. Diese können auch unterschiedliche Datentypen haben. Ein Telefonbuch könnte beispielsweise als Map dargestellt werden um Namen mit Telefonnummern zu verknüpfen:
 \begin{minted}[linenos=false]{java}
 Map<String, Long> telefonbuch = new HashMap<String, Long>();
 //erstes Parameter ist der Schlüssel, zweites ist der Wert
-telefonbuch.put("Paul Griller", 1374927394);
-telefonbuch.put("Melanie Barbecue", 9257632984);
+telefonbuch.put("Paul Griller", 1374927394L);
+telefonbuch.put("Melanie Barbecue", 9257632984L);
 \end{minted}
 
 \begin{enumerate}
-    \item Hole die Nummer von Paul Griller aus der Map und gebe sie in der Konsole aus.
+    \item Hole die Nummer von Paul Griller aus der Map und gib sie in der Konsole aus.
 
           \begin{ausgabe}
               Paul Griller: 1374927394
           \end{ausgabe}
 
-    \item Schreibe eine Funktion die einen String entgegennimmt und in einem Dictionary speichert, wie oft jeder Buchstabe darin vorkommt.
-     
-          Beispiel:
+    \item Schreibe eine Funktion die eine Map entgegennimmt und alle Schlüssel mit den dazugehörigen Werten ausgibt:
+    \newline Mit \texttt{mapBezeichner.keySet().toArray()} erhält man ein Array mit allen Schlüsseln einer Map. Nutze diese Funktion, um über die Schlüssel zu iterieren. Über die Werte kann man auf ähnliche Weise iterieren. Überlege, wie das funktioniert. Teste deine Funktion mit der Map aus 1.1.
+          \begin{ausgabe}
+              Paul Griller: 1374927394, Melanie Barbecue: 9257632984
+          \end{ausgabe}
+    
+    \item Schreibe eine Funktion, die eine Map und einen Schlüssel entgegennimmt. Prüfe, ob der Schlüssel in der Map vorhanden ist. Falls ja, gib den zugehörigen Wert aus. Falls nicht, gib eine entsprechende Meldung aus. Teste deine Funktion mit der Map aus 1.1.
+    \item Schreibe eine Funktion, die einen String entgegennimmt und in einer Map speichert, wie oft jedes Zeichen darin vorkommt.
+          Gib die Map anschließend mithilfe deiner Funktion aus 1.2 aus.
+          
+          Aus ...
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
           \end{ausgabe}
+          ... wird dann beispielsweise...
+           \begin{ausgabe}
+             : 6, b: 1, d: 1, e: 10, g: 9, h: 1, i: 6, l: 7, m: 3, -: 1, n: 3, o: 1, p: 1, r: 7, s: 2, ü: 2, ß: 1, 
 
-          Hinweis: Verwende die \texttt{split("")} Funktion auf einem String um ihn in ein Zeichenarray umzuwandeln. Mehr dazu findest du hier: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.
-    \item Erweitere die Funktion aus der vorherigen Teilaufgabe und gebe die Map aus. Die Ausgabe soll wie folgt aussehen:
-          \begin{ausgabe}
-              g: 9, r: 7, i: 6, m: 3, e: 10,  : 6, l: 7, n: 3, ü: 2, h: 1, d: 1, o: 1, b: 1, s: 2, -: 1, p: 1, ß: 1, .: 1
           \end{ausgabe}
 
-    \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt und statt einzelne Buchstaben, jetzt Buchstabenfolgen der Länge \texttt{length} zählt.
+            \textbf{Hinweis:} Verwende \texttt{split("")}, um einen String in einzelne Zeichen aufzuteilen und diese anschließend zu durchlaufen. Mehr dazu findest du in der Java-Dokumentation: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-}.         
+
+    \item Erweitere deine Funktion, sodass sie zusätzlich zum String einen Integer \texttt{length} entgegennimmt. Statt einzelner Zeichen sollen nun aufeinanderfolgende Zeichenfolgen der Länge \texttt{length} gezählt werden. 
 
           \begin{ausgabe}
               grimmige griller grillen glühend gern grobe grillgemüse-spieße.
           \end{ausgabe}
           wird bei \texttt{length = 3} zu:
           \begin{ausgabe}
-              gri: 4, rim: 1, imm: 1, mmi: 1, mig: 1, ige: 1, ge : 1, e g: 2,  gr: 4, ril: 3, ill: 3, lle: 2, ler: 1, er : 1, r g: 1, len: 1, en : 1, n g: 2,  gl: 1, glü: 1, lüh: 1, ühe: 1, hen: 1, end: 1, nd : 1, d g: 1,  ge: 1, ger: 1, ern: 1, rn : 1, gro: 1, rob: 1, obe: 1, be : 1, llg: 1, lge: 1, gem: 1, emü: 1, müs: 1, üse: 1, se-: 1, e-s: 1, -sp: 1, spi: 1, pie: 1, ieß: 1, eße: 1, ße.: 1
+    ieß: 1, ge : 1, rob: 1,  gl: 1, ige: 1, imm: 1, mmi: 1, mig: 1, e-s: 1, -sp: 1,  gr: 4, lge: 1, üse: 1, pie: 1, gem: 1, hen: 1, er : 1, ril: 3, len: 1, ger: 1, emü: 1, en : 1, rim: 1, ler: 1, lüh: 1, end: 1, se-: 1, gri: 4, ern: 1, lle: 2, rn : 1, gro: 1, müs: 1, llg: 1, ill: 3, d g: 1, nd : 1, e g: 2, spi: 1, obe: 1, n g: 2, glü: 1, r g: 1, ühe: 1, be : 1,  ge: 1, 
           \end{ausgabe}
 
 \end{enumerate}
 
 \newpage
 \aufgabe{Aufgabe 2: Datenstrukturen selber erstellen}
-In Java kann jederzeit eine neue Datenstruktur gebaut werden, die dann auch an die Eigenheiten der Problemstellung angepasst sein kann. \\
-Ihr habt ja sicher schon gemerkt, das Arrays etwas sperrig zu nutzen sind, da deren Größe komplett statisch ist. Im Folgenden bauen wir eine Listen-Datenstruktur welche dieses Problem löst. Sie soll aus einzelnen Knotenobjekten bestehen, die dann untereinander verbunden werden. \\
+In der Präsentation haben wir das Konzept von LinkedLists kennengelernt. In dieser Aufgabe werden wir eine LinkedList selbst bauen. Hier noch einmal das Konzept von LinkedLists graphisch dargestellt:
 \\
 \includegraphics[width=\linewidth]{img/linkedlist.png}
 
 \begin{enumerate}
     \item Erstelle eine Knotenklasse namens \texttt{Node}. Jede Knotenklasse soll einen Wert \texttt{value} vom Typ \texttt{int}, sowie einen Folgeknoten \texttt{nextNode} vom Typ \texttt{Node} als Attribute haben. Erstelle einen sinnvollen Konstruktor.
     \item Erstelle jetzt die Listenklasse. Jede \texttt{List} hat einen Startknoten \texttt{startNode}. Programmiere wieder einen sinnvollen Konstruktor.
-    \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Füge um dies zu ändern der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen.
+    \item Noch besteht jede dieser Listen nur aus einem einzelnen Startknoten. Um dies zu ändern, füge der \texttt{List} Klasse eine \texttt{add(Node newElement)} Funktion hinzu. Sie soll eine neue Node ans Ende der Liste anfügen. 
     \item Gib der \texttt{List} Klasse außerdem eine \texttt{remove(Node element)} Funktion. Achte darauf, dass dabei eventuelle Folgeelemente nicht ''Elternlos'' zurückgelassen werden.
     \item Programmiere eine \texttt{printElements()} Funktion, die alle Elemente in der Liste anschaulich in der Konsole ausgibt.
-    \item In dieser Aufgabe soll die Summe der Werte unserer Liste berechnet werden. Schreibe dazu eine Funktion in der Klasse Node, die die bisherige Summe entgegennimmt, ihren eigenen Wert hinzuaddiert und sich dann im nächsten Knoten selbst aufruft. Wenn die Methode auf den letzten Knoten in der Liste stößt, soll die berechnete Gesamtsumme zurückgegeben werden. Füge zuletzt der Klasse „List“ eine Funktion hinzu, die die Summenfunktion im ersten Knoten (natürlich mit bisheriger Summe 0) aufruft.
+    \item In dieser Aufgabe soll die Summe der Werte unserer Liste berechnet werden. Schreibe dazu eine Funktion in der Klasse \texttt{Node}, die die bisherige Summe entgegennimmt, den eigenen Wert hinzuaddiert und sich anschließend beim nächsten Knoten selbst aufruft. Wenn die Methode den letzten Knoten der Liste erreicht, soll die berechnete Gesamtsumme zurückgegeben werden. Füge dafür in der Klasse \texttt{List} eine Funktion hinzu, die die Summenfunktion beim ersten Knoten mit der bisherigen Summe 0 aufruft.
 \end{enumerate}
 
-Du hast gerade eine einfache LinkedList programmiert. LinkedLists sind sehr wichtig als Datenstruktur mit Variabler Größe und sie existieren auch in nativem Java: \url{https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html}
+
 
 \newpage
 \aufgabe{HIGHPERFORMER-Aufgabe: Bäume}
